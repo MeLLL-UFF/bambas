@@ -1,0 +1,881 @@
+,text,label,category
+0,stamped out,['Loaded_Language'],Manipulative_wording
+1,"This is the new Sweden; the new, exciting dynamic, multicultural paradise that so many here in this assembly ... have fought to create for so many years",['Flag-Waving'],Justification
+2,reckless appeasement,['Loaded_Language'],Manipulative_wording
+3,disastrous,['Loaded_Language'],Manipulative_wording
+4,	“It’s a new monster.”	,['Loaded_Language'],Manipulative_wording
+5,milquetoast,['Loaded_Language'],Manipulative_wording
+6,Barack Obama's reckless appeasement of the Iranian regime has enabled its rise as a hegemonic threat,['Causal_Oversimplification'],Simplification
+7,turned his back on millions of dissidents,['Exaggeration_Minimisation'],Manipulative_wording
+8,giving rise to ISIS’s re-emergence in Iraq,['Causal_Oversimplification'],Simplification
+9,turning Iraq into a virtual vassal state of the largest state sponsor of terrorism,['Exaggeration_Minimisation'],Manipulative_wording
+10,"legitimized Iran's path to eventually becoming a nuclear-armed state,",['Causal_Oversimplification'],Simplification
+11,American blood,['Flag-Waving'],Justification
+12,could actually accelerate the cycle of violence and perpetuate conflict rather than get us to a sustainable outcome.,['Appeal_to_fear-prejudice'],Justification
+13,Whether the Trump administration follows through remains to be seen.,['Doubt'],Attack_on_reputation
+14,virtual vassal,['Loaded_Language'],Manipulative_wording
+15,sordid,['Loaded_Language'],Manipulative_wording
+16,Threatened,"['Appeal_to_fear-prejudice', 'Repetition']",Justification_Manipulative_wording
+17,threatened,['Repetition'],Manipulative_wording
+18,threatened,['Repetition'],Manipulative_wording
+19,threatened,['Repetition'],Manipulative_wording
+20,threatened,['Repetition'],Manipulative_wording
+21,threats,['Repetition'],Manipulative_wording
+22,largely ignored it,['Loaded_Language'],Manipulative_wording
+23,harsh position,['Loaded_Language'],Manipulative_wording
+24,their dream of independence is all but dead.,['Exaggeration_Minimisation'],Manipulative_wording
+25,But what if the Baghdad regime of Haider al-Abadi does not agree?	What if the Quds Force does not go home to Iran and the Shiite militias that helped retake Kirkuk refuse to enlist in the Iraqi army?	,['Whataboutism'],Distraction
+26,"Do we accept that outcome, pack up and go home?	Or do we leave our forces in Syria and Iraq and defy any demand from Assad to vacate his country?	",['Black-and-White_Fallacy'],
+27,"apparently clueless to the presence of 800 U.S. troops in Niger,",['Doubt'],Attack_on_reputation
+28,Would the American people support such a war with U.S. troops?	,['Flag-Waving'],Justification
+29,"If we rely on the Kurds in Syria, we lose NATO ally Turkey,",['Black-and-White_Fallacy'],
+30,terrorist`,['Name_Calling_Labeling'],Attack_on_reputation
+31,And only one force in the region has the power to reverse the present outcome of Syria's civil war--the United States.	,['Flag-Waving'],Justification
+32,"A failure by the United States to defend its allies or promote new political arrangements for (Syria and Iraq) will lead only to more war, the rise of new terrorist threats, and, ultimately, the necessity of more U.S.	intervention.",['Appeal_to_fear-prejudice'],Justification
+33,what if the,['Doubt'],Attack_on_reputation
+34,What if,['Doubt'],Attack_on_reputation
+35,Or do we leave our forces in Syria and Iraq and defy any demand from Assad to vacate his country?	,['Appeal_to_fear-prejudice'],Justification
+36,"secure, is that really a victory?",['Doubt'],Attack_on_reputation
+37,"If we rely on the Kurds in Syria, we lose NATO ally Turkey, which regards Syria's Kurds as collaborators of the PKK in Turkey, which even the U.S. designates a terrorist organization.	",['Appeal_to_fear-prejudice'],Justification
+38,interventionist Post,['Name_Calling_Labeling'],Attack_on_reputation
+39,"If he crosses, he joins Bush II in the history books.",['Reductio_ad_hitlerum'],
+40,"ERO has removed more than 1,700 foreign fugitives from the United States who were sought in their native countries for serious crimes, including kidnapping, rape and murder",['Appeal_to_fear-prejudice'],Justification
+41,control,['Repetition'],Manipulative_wording
+42,control,['Repetition'],Manipulative_wording
+43,ugly,['Loaded_Language'],Manipulative_wording
+44,very ugly,['Loaded_Language'],Manipulative_wording
+45,bombshell,['Loaded_Language'],Manipulative_wording
+46,hostile,['Loaded_Language'],Manipulative_wording
+47,American people,['Flag-Waving'],Justification
+48,very nervous,['Loaded_Language'],Manipulative_wording
+49,remarkable,['Loaded_Language'],Manipulative_wording
+50,controlled,['Repetition'],Manipulative_wording
+51,bad,"['Loaded_Language', 'Name_Calling_Labeling']",Manipulative_wording_Attack_on_reputation
+52,national security,['Flag-Waving'],Justification
+53,Bombshell,['Loaded_Language'],Manipulative_wording
+54,plot,['Loaded_Language'],Manipulative_wording
+55,huge,['Loaded_Language'],Manipulative_wording
+56,American hero,['Flag-Waving'],Justification
+57,devastating,['Loaded_Language'],Manipulative_wording
+58,bad actor,"['Loaded_Language', 'Name_Calling_Labeling']",Manipulative_wording_Attack_on_reputation
+59,hostile regime,['Name_Calling_Labeling'],Attack_on_reputation
+60,without a shred of doubt,['Repetition'],Manipulative_wording
+61,without a shadow of a doubt,['Repetition'],Manipulative_wording
+62,without a doubt,['Repetition'],Manipulative_wording
+63,control,['Repetition'],Manipulative_wording
+64,control,['Repetition'],Manipulative_wording
+65,controlled,['Repetition'],Manipulative_wording
+66,control,['Repetition'],Manipulative_wording
+67,control,['Repetition'],Manipulative_wording
+68,annoying,['Loaded_Language'],Manipulative_wording
+69,peeling back an onion.	You peel one part and then you find another part.,['Obfuscation_Intentional_Vagueness_Confusion'],Manipulative_wording
+70,"ERO has removed more than 1,700 foreign fugitives from the United States who were sought in their native countries for serious crimes, including kidnapping, rape and murder",['Appeal_to_fear-prejudice'],Justification
+71,Our dedicated officers strive to make our communities safer,"['Exaggeration_Minimisation', 'Repetition']",Manipulative_wording_Manipulative_wording
+72,public safety,['Repetition'],Manipulative_wording
+73,"Our dedicated officers strive to make our communities safer by arresting convicted criminal aliens and removing them from the United States despite the reckless sanctuary policies that are currently in place in Cook County that put our communities at risk,",['Appeal_to_Authority'],Justification
+74,"By removing criminal aliens from the streets, our ICE officers provide an invaluable community service by improving public safety.”","['Appeal_to_Authority', 'Exaggeration_Minimisation', 'Repetition']",Justification_Manipulative_wording_Manipulative_wording
+75,reckless sanctuary policies,['Name_Calling_Labeling'],Attack_on_reputation
+76,our communities,['Flag-Waving'],Justification
+77,protect the nation,['Flag-Waving'],Justification
+78,protect the integrity of our immigration laws,['Flag-Waving'],Justification
+79,corrupt,['Loaded_Language'],Manipulative_wording
+80,fraudulent,['Loaded_Language'],Manipulative_wording
+81,national security,['Flag-Waving'],Justification
+82,“threatened”,['Appeal_to_fear-prejudice'],Justification
+83,Arabic Linguist for the Navy for five years,['Red_Herring'],Distraction
+84,a Senior Intel Analyst for the Department of Defense (DoD),['Red_Herring'],Distraction
+85,"Lambert also speaks fluent Arabic and Farsi (Persian), along with French and Italian",['Red_Herring'],Distraction
+86,former Reagan Justice Dept,['Red_Herring'],Distraction
+87,a hopeless hellhole,['Loaded_Language'],Manipulative_wording
+88,Demolition Man,['Loaded_Language'],Manipulative_wording
+89,Sweden.	That tells you everything,['Thought-terminating_Cliches'],
+90,a hopeless hellhole where the native population is overtaxed and terrorized by warring foreign gangs,['Exaggeration_Minimisation'],Manipulative_wording
+91,Of course they can't cope,['Doubt'],Attack_on_reputation
+92,stamped out,['Loaded_Language'],Manipulative_wording
+93,Mass repression and police powers that don't actually address the cause of the problem,['Doubt'],Attack_on_reputation
+94,Have the American people been had again?	,"['Doubt', 'Flag-Waving']",Attack_on_reputation_Justification
+95,"Are the 2,000 U.S. troops in Syria really up to that task,",['Doubt'],Attack_on_reputation
+96,ruthless,['Loaded_Language'],Manipulative_wording
+97,risks a major U.S. war with no allies but the Kurds?,['Appeal_to_fear-prejudice'],Justification
+98,"Have the generals taking us into Syria told the president how and when, if ever, they plan to get us out?	",['Doubt'],Attack_on_reputation
+99,mortal peril ,['Appeal_to_fear-prejudice'],Justification
+100,"terror nests,",['Name_Calling_Labeling'],Attack_on_reputation
+101,"terror army,`",['Name_Calling_Labeling'],Attack_on_reputation
+102,traitors.`	,['Name_Calling_Labeling'],Attack_on_reputation
+103,blatant attack on the sovereignty and territorial integrity,['Loaded_Language'],Manipulative_wording
+104,flagrant violation of international law.`,['Loaded_Language'],Manipulative_wording
+105,by what authority do U.S. forces remain to arm troops to keep the Damascus government from reimposing its authority on its own territory?	,['Doubt'],Attack_on_reputation
+106,Donald Trump won the presidency on a promise of no more unnecessary wars.	,['Causal_Oversimplification'],Simplification
+107,"Are we prepared for a shooting war with a Syrian army, backed by Russia, Iran, Hezbollah and Shiite militias from Iraq, Afghanistan and Pakistan, to hold onto a fourth of Syria's territory in alliance with Kurds?	",['Appeal_to_fear-prejudice'],Justification
+108,"If Erdogan is serious, a clash with the U.S. is coming,",['Appeal_to_fear-prejudice'],Justification
+109,Does not the Syrian government have a point?	,['Doubt'],Attack_on_reputation
+110,"But who authorized this strategic commitment,",['Doubt'],Attack_on_reputation
+111,people,['Repetition'],Manipulative_wording
+112,That’s crazy,"['Loaded_Language', 'Thought-terminating_Cliches']",Manipulative_wording
+113,"This is the new Sweden; the new, exciting dynamic, multicultural paradise that so many here in this assembly … have fought to create for so many years","['Exaggeration_Minimisation', 'Flag-Waving']",Manipulative_wording_Justification
+114,`disaster`,['Loaded_Language'],Manipulative_wording
+115,`disaster` potential witness,['Name_Calling_Labeling'],Attack_on_reputation
+116,"Of course, we know what Obama did with his daily briefings.	They are somewhere in the White House sewer system.	",['Doubt'],Attack_on_reputation
+117,purportedly,['Doubt'],Attack_on_reputation
+118,lies` and `ridiculous`,['Loaded_Language'],Manipulative_wording
+119,monumental stupidity.,['Loaded_Language'],Manipulative_wording
+120,"Has President Trump thought through where we are going with this deepening commitment in Syria,",['Doubt'],Attack_on_reputation
+121,"If you (Americans) are committed to countering Iran in the region, then you must do so in Syria--first.`	",['Flag-Waving'],Justification
+122,bargaining chip,['Name_Calling_Labeling'],Attack_on_reputation
+123,Erdogan exploded:,['Loaded_Language'],Manipulative_wording
+124,"active diplomacy, not military action.",['Black-and-White_Fallacy'],
+125,"What outcome would justify another U.S. war in a region where all the previous wars in this century have left us bleeding, bankrupt, divided and disillusioned?	",['Flag-Waving'],Justification
+126,"bleeding, bankrupt, divided and disillusioned?",['Loaded_Language'],Manipulative_wording
+127,what would be the U.S. vital interest?,['Flag-Waving'],Justification
+128,"When he was running , Donald Trump seemed to understand this.	",['Doubt'],Attack_on_reputation
+129,ICE help keep our communities safe.”,"['Flag-Waving', 'Repetition']",Justification_Manipulative_wording
+130,ICE’s commitment regarding the role we play in keeping our communities safe,['Repetition'],Manipulative_wording
+131,"agency’s ongoing efforts to protect the nation, uphold public safety, and protect the integrity of our immigration laws and border controls.",['Repetition'],Manipulative_wording
+132,efforts to protect the nation,['Flag-Waving'],Justification
+133,protect the integrity of our immigration laws and border controls.,['Flag-Waving'],Justification
+134,And Dems have become honorary members of MS-13,['Exaggeration_Minimisation'],Manipulative_wording
+135,radical leftist boss,['Name_Calling_Labeling'],Attack_on_reputation
+136,this reckless decision,['Loaded_Language'],Manipulative_wording
+137,“making clear that this reckless decision was based on her political agenda.”,['Appeal_to_Authority'],Justification
+138,some of them were able to elude us thanks to the mayor’s irresponsible decision.”,['Appeal_to_Authority'],Justification
+139,irresponsible decision,['Loaded_Language'],Manipulative_wording
+140,"a Democrat,",['Red_Herring'],Distraction
+141,community's a lot less safe than it would've been.`,"['Appeal_to_Authority', 'Appeal_to_fear-prejudice']",Justification_Justification
+142,quite clearly,['Exaggeration_Minimisation'],Manipulative_wording
+143,a gang lookout yelling ‘police’,['Name_Calling_Labeling'],Attack_on_reputation
+144,who betrayed ,['Exaggeration_Minimisation'],Manipulative_wording
+145,Democrat,['Red_Herring'],Distraction
+146,Democratic,['Red_Herring'],Distraction
+147,mayor’s decision to publicize her suspicions about ICE operations further increased that risk for my officers and alerted criminal aliens — making clear that this reckless decision was based on her political agenda.,['Appeal_to_Authority'],Justification
+148,reckless decision,['Loaded_Language'],Manipulative_wording
+149,"Unlike the politicians who attempt to undermine ICE’s critical mission, our officers will continue to fulfill their sworn duty to protect public safety",['Appeal_to_Authority'],Justification
+150,"True to the left's support for criminality over law and order,",['Appeal_to_Authority'],Justification
+151,criminal convictions and other public safety threats `remain at large` in the area -- an indeterminate number of whom may have been tipped off by a Democrat mayor who betrayed the law-abiding citizens of Northern California.	,['Appeal_to_Authority'],Justification
+152,further increased that risk for my officers and alerted criminal aliens,['Appeal_to_fear-prejudice'],Justification
+153,our officers will continue to fulfill their sworn duty to protect public safety,['Flag-Waving'],Justification
+154,remain at large,['Loaded_Language'],Manipulative_wording
+155,who betrayed,['Loaded_Language'],Manipulative_wording
+156,The price of a sanctuary city for illegal aliens is paid in abused children.	Just ask the abused children of Oakland.	,['Loaded_Language'],Manipulative_wording
+157,Sanctuary,['Name_Calling_Labeling'],Attack_on_reputation
+158,"ICE’s ongoing and steady commitment to public safety,”","['Appeal_to_Authority', 'Repetition']",Justification_Manipulative_wording
+159,we continue focus on the arrest of individuals who are criminal aliens and public safety threats.,['Repetition'],Manipulative_wording
+160,"Because of the tireless efforts of these professional officers, there are fewer criminals in our communities.”",['Exaggeration_Minimisation'],Manipulative_wording
+161,Sanctuary City Mayor Protected Illegal Alien Mexican Rapist,['Exaggeration_Minimisation'],Manipulative_wording
+162,Democratic,['Red_Herring'],Distraction
+163,Sanctuary,['Name_Calling_Labeling'],Attack_on_reputation
+164,Except when she's fighting for their rapists instead,['Loaded_Language'],Manipulative_wording
+165,unsavory characters,['Loaded_Language'],Manipulative_wording
+166,it's good odds that it began with Obama holdovers ensconced in the governme,['Appeal_to_Authority'],Justification
+167,reckless disregard,['Loaded_Language'],Manipulative_wording
+168,just keeps getting worse.,['Loaded_Language'],Manipulative_wording
+169,shocked,['Loaded_Language'],Manipulative_wording
+170,there is no doubt that businesses employing illegal aliens are committing a crime,['Loaded_Language'],Manipulative_wording
+171,Illegal Alien Wife Beaters,['Name_Calling_Labeling'],Attack_on_reputation
+172,How dare you!”,['Loaded_Language'],Manipulative_wording
+173,"How dare you needlessly endanger the lives of our law enforcement officers to promote a radical, open borders agenda.”	","['Appeal_to_Authority', 'Exaggeration_Minimisation']",Justification_Manipulative_wording
+174,How dare you,['Loaded_Language'],Manipulative_wording
+175,said that hundreds more escaped because of Schaaf’s warning,['Appeal_to_Authority'],Justification
+176,real war on women,['Loaded_Language'],Manipulative_wording
+177,"ICE’s commitment to public safety through targeted enforcement efforts,”",['Repetition'],Manipulative_wording
+178,"This operation reflects ICE’s commitment to public safety through targeted enforcement efforts,”",['Appeal_to_Authority'],Justification
+179,I applaud the brave men and women of ICE who put themselves in harm’s way daily,['Exaggeration_Minimisation'],Manipulative_wording
+180,the brave men and women of ICE who put themselves in harm’s way daily to keep our community safe.,['Repetition'],Manipulative_wording
+181,I applaud the brave men and women of ICE who put themselves in harm’s way daily to keep our community safe,['Flag-Waving'],Justification
+182,mass shooting,['Appeal_to_fear-prejudice'],Justification
+183,shootings,['Repetition'],Manipulative_wording
+184,shootings,['Repetition'],Manipulative_wording
+185,violence,['Repetition'],Manipulative_wording
+186,protect,['Repetition'],Manipulative_wording
+187,protecting,['Repetition'],Manipulative_wording
+188,protect,['Repetition'],Manipulative_wording
+189,dumb down,['Repetition'],Manipulative_wording
+190,dumbed down,['Repetition'],Manipulative_wording
+191,Gun-Free Schools,['Slogans'],Call
+192,misnamed,['Loaded_Language'],Manipulative_wording
+193,indoctrination,['Repetition'],Manipulative_wording
+194,indoctrinated,['Repetition'],Manipulative_wording
+195,rampant,['Loaded_Language'],Manipulative_wording
+196,violence,['Repetition'],Manipulative_wording
+197,violence,['Repetition'],Manipulative_wording
+198,violence,['Repetition'],Manipulative_wording
+199,violence,['Repetition'],Manipulative_wording
+200,exploded,['Exaggeration_Minimisation'],Manipulative_wording
+201,bullying,['Loaded_Language'],Manipulative_wording
+202,disturbed,['Loaded_Language'],Manipulative_wording
+203,forcing,['Loaded_Language'],Manipulative_wording
+204,It’s the very reason the governments of the world still exist.,['Causal_Oversimplification'],Simplification
+205,Governments are nothing more than a handful of people,['Exaggeration_Minimisation'],Manipulative_wording
+206,absolute horror,['Loaded_Language'],Manipulative_wording
+207,leftist social engineering,['Name_Calling_Labeling'],Attack_on_reputation
+208,indoctrination,['Repetition'],Manipulative_wording
+209,Indoctrination,['Repetition'],Manipulative_wording
+210,bad,['Loaded_Language'],Manipulative_wording
+211,brainwashing,['Loaded_Language'],Manipulative_wording
+212,social engineering,['Repetition'],Manipulative_wording
+213,brainwashing,['Repetition'],Manipulative_wording
+214,There is no better way to keep the Catholic family together and committed to the Catholic restoration than the Catholic home school.	,['Black-and-White_Fallacy'],
+215,swamped,['Loaded_Language'],Manipulative_wording
+216,exploded,['Exaggeration_Minimisation'],Manipulative_wording
+217,revolution,['Loaded_Language'],Manipulative_wording
+218,violence,['Loaded_Language'],Manipulative_wording
+219,bullying,['Loaded_Language'],Manipulative_wording
+220,couldn't be happier,['Exaggeration_Minimisation'],Manipulative_wording
+221,Catholic,['Repetition'],Manipulative_wording
+222,Catholic,['Repetition'],Manipulative_wording
+223,deadly,['Loaded_Language'],Manipulative_wording
+224,massacres,['Loaded_Language'],Manipulative_wording
+225,ferocious,['Loaded_Language'],Manipulative_wording
+226,the only reason why there is general interest in the Qur’an among non-Muslims is to seek an answer to the question of whether or not it justifies and encourages Islamic terrorism,['Causal_Oversimplification'],Simplification
+227,Foolish,['Name_Calling_Labeling'],Attack_on_reputation
+228,kill infidels,['Appeal_to_fear-prejudice'],Justification
+229,best possible,['Exaggeration_Minimisation'],Manipulative_wording
+230,war against Jews and Christians,['Appeal_to_fear-prejudice'],Justification
+231,worst of sins,['Exaggeration_Minimisation'],Manipulative_wording
+232,"To eradicate these, Muslims are required to wage war until there exists none of it in the world, and the only religion is that of Allah.	",['Black-and-White_Fallacy'],
+233,“right-wing Islamophobes”,['Name_Calling_Labeling'],Attack_on_reputation
+234,terrifying,['Loaded_Language'],Manipulative_wording
+235,kill them wherever you find them,['Appeal_to_fear-prejudice'],Justification
+236,“kill them wherever you find them.”,['Repetition'],Manipulative_wording
+237,"God’s inexhaustible mercy, indeed.	",['Doubt'],Attack_on_reputation
+238,massive,['Loaded_Language'],Manipulative_wording
+239,sex slaves,['Loaded_Language'],Manipulative_wording
+240,How would Garry Wills explain all that?,['Doubt'],Attack_on_reputation
+241,preposterously,['Loaded_Language'],Manipulative_wording
+242,legerdemain,['Loaded_Language'],Manipulative_wording
+243,hypocrites,['Loaded_Language'],Manipulative_wording
+244,To “emigrate in the cause of Allah” is to leave one’s home and join up with the Muslims,['Black-and-White_Fallacy'],
+245,violence,['Loaded_Language'],Manipulative_wording
+246,naïve,['Loaded_Language'],Manipulative_wording
+247,misleadingly sunny view,['Loaded_Language'],Manipulative_wording
+248,thoughtless,['Loaded_Language'],Manipulative_wording
+249,to end national security,['Appeal_to_fear-prejudice'],Justification
+250,Anything a Republican president does is exactly like the Holocaust.	,['Reductio_ad_hitlerum'],
+251,compared US immigration policy to Nazi Germany,['Reductio_ad_hitlerum'],
+252,death-camp,['Appeal_to_fear-prejudice'],Justification
+253,particularly stupid,['Loaded_Language'],Manipulative_wording
+254,only shameless Zionists would attempt to equate killing Jews with killing Jews.	,['Black-and-White_Fallacy'],
+255,killed them all,['Appeal_to_fear-prejudice'],Justification
+256,extermination,['Appeal_to_fear-prejudice'],Justification
+257,The attacks here are motivated by a desire for open borders.,['Causal_Oversimplification'],Simplification
+258,forever.		,['Exaggeration_Minimisation'],Manipulative_wording
+259,human shields,['Loaded_Language'],Manipulative_wording
+260,shameless,['Name_Calling_Labeling'],Attack_on_reputation
+261,Nazi,['Repetition'],Manipulative_wording
+262,Nazi,['Repetition'],Manipulative_wording
+263,Nazi,['Repetition'],Manipulative_wording
+264,Nazi,['Repetition'],Manipulative_wording
+265,remarkable ignorance,['Loaded_Language'],Manipulative_wording
+266,partisans of Satan,['Name_Calling_Labeling'],Attack_on_reputation
+267,We will simply lose….,['Appeal_to_fear-prejudice'],Justification
+268,a battle between us and the entire religion,['Exaggeration_Minimisation'],Manipulative_wording
+269,entire religion,['Repetition'],Manipulative_wording
+270,“entire religion”,['Repetition'],Manipulative_wording
+271,entire religion,['Repetition'],Manipulative_wording
+272,entire religion,['Repetition'],Manipulative_wording
+273,innumerable,['Exaggeration_Minimisation'],Manipulative_wording
+274,the highest dignity,['Exaggeration_Minimisation'],Manipulative_wording
+275,exterminate the infidels,['Appeal_to_fear-prejudice'],Justification
+276,nothing but dirt,['Exaggeration_Minimisation'],Manipulative_wording
+277,most treacherous in regard to all they do,['Exaggeration_Minimisation'],Manipulative_wording
+278,useless,['Loaded_Language'],Manipulative_wording
+279,Sure,['Loaded_Language'],Manipulative_wording
+280,degradation,['Loaded_Language'],Manipulative_wording
+281,vilify,['Loaded_Language'],Manipulative_wording
+282,humiliate,['Loaded_Language'],Manipulative_wording
+283,dirt,['Loaded_Language'],Manipulative_wording
+284,mainstream hack politician,['Name_Calling_Labeling'],Attack_on_reputation
+285,absurd,['Loaded_Language'],Manipulative_wording
+286,excuse,['Doubt'],Attack_on_reputation
+287,some very good actors on the Left,['Doubt'],Attack_on_reputation
+288,idol,['Name_Calling_Labeling'],Attack_on_reputation
+289,separating,['Repetition'],Manipulative_wording
+290,separated,['Repetition'],Manipulative_wording
+291,separating,['Repetition'],Manipulative_wording
+292,separating,['Repetition'],Manipulative_wording
+293,separating,['Repetition'],Manipulative_wording
+294,separated,['Repetition'],Manipulative_wording
+295,separation,['Repetition'],Manipulative_wording
+296,cruel,['Loaded_Language'],Manipulative_wording
+297,insensitive,['Loaded_Language'],Manipulative_wording
+298,he is lying,['Doubt'],Attack_on_reputation
+299,massacring Jews,['Appeal_to_fear-prejudice'],Justification
+300,wholesale slaughter of Jews,['Appeal_to_fear-prejudice'],Justification
+301,crocodile tears,['Exaggeration_Minimisation'],Manipulative_wording
+302,fashion,['Repetition'],Manipulative_wording
+303,fashion,['Repetition'],Manipulative_wording
+304,what the Jews call ‘the Holocaust,['Doubt'],Attack_on_reputation
+305,historical lies,['Repetition'],Manipulative_wording
+306,historical lie,['Repetition'],Manipulative_wording
+307,The Jews claim that it happened to them alone,['Straw_Men'],Distraction
+308,Inhuman and criminal annihilation runs in the veins of many in the West,['Appeal_to_fear-prejudice'],Justification
+309,exceptional,['Loaded_Language'],Manipulative_wording
+310,groaned under the heavy yoke,['Loaded_Language'],Manipulative_wording
+311,annihilation,['Repetition'],Manipulative_wording
+312,annihilated,['Repetition'],Manipulative_wording
+313,annihilation,['Repetition'],Manipulative_wording
+314,annihilate,['Repetition'],Manipulative_wording
+315,annihilated,['Repetition'],Manipulative_wording
+316,annihilated,['Repetition'],Manipulative_wording
+317,annihilate,['Repetition'],Manipulative_wording
+318,annihilation,['Repetition'],Manipulative_wording
+319,annihilation,['Repetition'],Manipulative_wording
+320,annihilated,['Repetition'],Manipulative_wording
+321,annihilated,['Repetition'],Manipulative_wording
+322,annihilation,['Repetition'],Manipulative_wording
+323,annihilated,['Repetition'],Manipulative_wording
+324,annihilated,['Repetition'],Manipulative_wording
+325,horrible,['Loaded_Language'],Manipulative_wording
+326,	“The Democrats want open borders and they don’t care about crime.”	,"['Appeal_to_fear-prejudice', 'Straw_Men']",Justification_Distraction
+327,American people,['Flag-Waving'],Justification
+328,"“We want children staying together,”",['Slogans'],Call
+329,Illegals Have To Go!,['Slogans'],Call
+330,America's tax dollars,['Flag-Waving'],Justification
+331,worthless,['Loaded_Language'],Manipulative_wording
+332,a blanket purge ,['Loaded_Language'],Manipulative_wording
+333,reeling over ,['Loaded_Language'],Manipulative_wording
+334,purges the names ,['Loaded_Language'],Manipulative_wording
+335,a somewhat geeky ex-lawyer ,['Name_Calling_Labeling'],Attack_on_reputation
+336,gut-wrenching stories ,['Loaded_Language'],Manipulative_wording
+337,bringing a saint to Newark,['Name_Calling_Labeling'],Attack_on_reputation
+338,"an abuser of seminarians, minors or priests",['Name_Calling_Labeling'],Attack_on_reputation
+339,dreamed up ,['Loaded_Language'],Manipulative_wording
+340,"Are Father Martin and his pals in the episcopacy really so enlightened over every pope, saint, and moral theologian in history",['Doubt'],Attack_on_reputation
+341,So why are our bishops playing dumb,['Doubt'],Attack_on_reputation
+342,This is what the Church of Accompaniment is all about,['Causal_Oversimplification'],Simplification
+343,a hideous violation ,['Loaded_Language'],Manipulative_wording
+344,"Who are these bishops that think they can play fast and loose not only with the moral theology of the Catholic Church, but also with the immortal souls of their flock",['Doubt'],Attack_on_reputation
+345,Under no circumstances…except for those dreamed up by a number of bishops in this country who apparently think that it should be left up to individual parishes to decide if they are LGBTQ-friendly or not,['Doubt'],Attack_on_reputation
+346,an “ideology of evil,['Name_Calling_Labeling'],Attack_on_reputation
+347,the 2005 and 2007 settlements were apparently considered ancient history,['Exaggeration_Minimisation'],Manipulative_wording
+348,Pope John Paul THE GREAT ,['Name_Calling_Labeling'],Attack_on_reputation
+349,an intolerant homophobe,['Name_Calling_Labeling'],Attack_on_reputation
+350,the scandalized faithful ,['Name_Calling_Labeling'],Attack_on_reputation
+351,the strong and vibrant faith ,['Loaded_Language'],Manipulative_wording
+352,one of the most prominent Churchmen in the United States in the last quarter century,"['Exaggeration_Minimisation', 'Name_Calling_Labeling']",Manipulative_wording_Attack_on_reputation
+353,"I don’t think that the Church in the United States will rest — and confidence will be restored — until the matter is independently investigated and explained, and assurances are given that there are safeguards in place to make sure that something like this couldn’t happen again",['Appeal_to_fear-prejudice'],Justification
+354,good Catholics ,['Name_Calling_Labeling'],Attack_on_reputation
+355,sober reminders ,['Loaded_Language'],Manipulative_wording
+356,"no one can be above the law, regardless of rank or privilege",['Slogans'],Call
+357,heavenly patron,['Name_Calling_Labeling'],Attack_on_reputation
+358,horrific scandal ,['Loaded_Language'],Manipulative_wording
+359,candid explanation ,['Loaded_Language'],Manipulative_wording
+360,an `inclusive community` that `welcomes all` and `judges none,['Name_Calling_Labeling'],Attack_on_reputation
+361,"All very well and good, except for the fact that the Church's constant and unchanging moral teaching on this makes no such allowance",['Causal_Oversimplification'],Simplification
+362,"Basing itself on Sacred Scripture, which presents homosexual acts as acts of grave depravity, tradition has always declared that `homosexual acts are intrinsically disordered.`	They are contrary to the natural law.	They close the sexual act to the gift of life.	They do not proceed from a genuine affective and sexual complementarity.	Under no circumstances can they be approved",['Causal_Oversimplification'],Simplification
+363,gay lifestyle,['Name_Calling_Labeling'],Attack_on_reputation
+364,Pope John Paul `The GREAT's,['Name_Calling_Labeling'],Attack_on_reputation
+365,"thus the inclination itself must be seen as an objective disorder.	Therefore special concern and pastoral attention should be directed to those who have this condition, lest they be led to believe that the living out of this orientation in homosexual activity is a morally acceptable option.	It is not",['Causal_Oversimplification'],Simplification
+366,episcopal fans ,['Name_Calling_Labeling'],Attack_on_reputation
+367,stop humiliating herself by stooping to accommodate ,['Loaded_Language'],Manipulative_wording
+368,a special interest group that obviously doesn't care about her or the moral code by which she governs,['Name_Calling_Labeling'],Attack_on_reputation
+369,the straight Catholics,['Name_Calling_Labeling'],Attack_on_reputation
+370,a new ideology of evil,['Name_Calling_Labeling'],Attack_on_reputation
+371,more insidious ,['Loaded_Language'],Manipulative_wording
+372,to pit human rights against the family and man,['Loaded_Language'],Manipulative_wording
+373,and his pals in the episcopacy ,['Name_Calling_Labeling'],Attack_on_reputation
+374,everlasting damnation ,['Loaded_Language'],Manipulative_wording
+375,everlasting damnation is the price to be paid for this kind of inclusivity and toleration,['Appeal_to_fear-prejudice'],Justification
+376,"Or is it not so that it is both negligent and uncharitable for some bishops to refuse to inform their faithful that according to the Church's own infallible teaching, everlasting damnation is the price to be paid for this kind of inclusivity and toleration",['Doubt'],Attack_on_reputation
+377,we call FOUL even louder ,['Loaded_Language'],Manipulative_wording
+378,ANY sins of the flesh,['Loaded_Language'],Manipulative_wording
+379,"We're all sinners, of course",['Thought-terminating_Cliches'],
+380,playing dumb,['Loaded_Language'],Manipulative_wording
+381,closing an episcopal eye to ,['Loaded_Language'],Manipulative_wording
+382,"Quite obviously, it is because what they are actually closing an episcopal eye to are the folks who want to keep right on sinning--and sinning proudly",['Causal_Oversimplification'],Simplification
+383,sinning proudly,['Loaded_Language'],Manipulative_wording
+384,green-lighting vice and mortal sin,['Loaded_Language'],Manipulative_wording
+385,a hideous violation of everything these bishops supposedly believe as Catholic priests,['Exaggeration_Minimisation'],Manipulative_wording
+386,the `gay lifestyle,['Name_Calling_Labeling'],Attack_on_reputation
+387,cries to heaven for vengeance,['Loaded_Language'],Manipulative_wording
+388,climate of tolerance,['Name_Calling_Labeling'],Attack_on_reputation
+389,The Catholic Church's new-found `climate of tolerance` is exactly what McCarrick and company are counting on,['Appeal_to_fear-prejudice'],Justification
+390,"It is truly homophobic for any bishop to lie to the gay community about this, and to risk the immortal souls of the sheep merely so that the shepherd might pride himself on occupying the politically correct high ground",['Doubt'],Attack_on_reputation
+391,gross dereliction of duty,['Loaded_Language'],Manipulative_wording
+392,"we hope and pray that all the good U.S. bishops would jump at the opportunity to issue statements reaffirming the Church's clear teaching against all sins of the flesh, homo- and heterosexual",['Flag-Waving'],Justification
+393,"This is gross dereliction of duty, and we hope and pray that all the good U.S. bishops would jump at the opportunity to issue statements reaffirming the Church's clear teaching against all sins of the flesh, homo- and heterosexual",['Appeal_to_fear-prejudice'],Justification
+394,Our bishops must make it absolutely clear that the Church's moral theology on homosexuality will not and can not be trumped by the dictates of political correctness,['Appeal_to_fear-prejudice'],Justification
+395,an evil spirit that can be driven out only by prayer and fasting,['Name_Calling_Labeling'],Attack_on_reputation
+396,Until the Church and her bishops get back to reaffirming traditional Catholic teaching on human sexuality we can forget about seeing an end to the sexual abuse crisis and the massive problem of homosexuality in the clergy,['Appeal_to_fear-prejudice'],Justification
+397,remain in the toilet ,['Loaded_Language'],Manipulative_wording
+398,will remain in the toilet indefinitely,['Exaggeration_Minimisation'],Manipulative_wording
+399,the forces of darkness ,['Name_Calling_Labeling'],Attack_on_reputation
+400,"we would also humbly beg him to take it one step further by publicly proclaiming his profession of belief in the Church's official teaching against the mortal sin of homosexual acts and the so-called `gay lifestyle,` which includes her long-held teaching that homosexual activity between clerics is an ecclesiastical crime",['Appeal_to_fear-prejudice'],Justification
+401,To make matters worse (if that is even possible,['Exaggeration_Minimisation'],Manipulative_wording
+402,Is it any wonder that priests and laity alike are changing their attitude on the `gay lifestyle` and violations of the Sixth Commandment when so many bishops are working to remove the stigma attached to this sin that Scripture tells us cries to heaven for vengeance,['Doubt'],Attack_on_reputation
+403,profoundly disturbing,['Loaded_Language'],Manipulative_wording
+404,"Well played, Cardinal Wuerl",['Loaded_Language'],Manipulative_wording
+405,rampant homosexuality ,['Loaded_Language'],Manipulative_wording
+406,"heretical homilies, sodomitical clergy and an increasingly lavender liturgy",['Loaded_Language'],Manipulative_wording
+407,unfairly smearing ,['Loaded_Language'],Manipulative_wording
+408,after the scandal erupted ,['Loaded_Language'],Manipulative_wording
+409,have reopened wounding questions ,['Loaded_Language'],Manipulative_wording
+410,"All this and rampant homosexuality in the priesthood, too... along with a `trivialized liturgy` (according to Pope Benedict XVI) and widespread apostasy among the faithful?	Remind me again: What exactly has Vatican II and the last fifty years of aggiornamento given us?	Because I can't seem to think of a darn thing, apart from heretical homilies, sodomitical clergy and an increasingly lavender liturgy",['Doubt'],Attack_on_reputation
+411,of a darn thing,['Loaded_Language'],Manipulative_wording
+412,"You know what, guys?	Thanks, but no thanks.	You can take your 'Church of Accompaniment` to prison with you.	I'd sooner let my kids be accompanied by fans of the Oakland Raiders than turn them over to you",['Doubt'],Attack_on_reputation
+413,on the cutting edge of change,['Loaded_Language'],Manipulative_wording
+414,"Thanks, but no thanks",['Loaded_Language'],Manipulative_wording
+415,an information war,['Loaded_Language'],Manipulative_wording
+416,"But recent abuse-related scandals, from Chile to Australia, have reopened wounding questions about accountability and whether church officials are still covering up crimes at the highest levels",['Doubt'],Attack_on_reputation
+417,The new wave of allegations has called Pope Francis’s handling of abuse into question as many Catholics look to him to help the church regain its credibility,['Doubt'],Attack_on_reputation
+418,"The pope’s track record has been mixed, something some outsiders attribute to his learning curve or shortcomings ",['Doubt'],Attack_on_reputation
+419,a notoriously change-averse institution,['Name_Calling_Labeling'],Attack_on_reputation
+420,a towering figure in the U.S. church ,"['Exaggeration_Minimisation', 'Name_Calling_Labeling']",Manipulative_wording_Attack_on_reputation
+421,"And how honest the church has been about this crisis.	Most bishops, besides apologies, have not been on the cutting edge of change",['Doubt'],Attack_on_reputation
+422,"I know, lots of luck with that one",['Loaded_Language'],Manipulative_wording
+423,a `God of Surprises` who is uber-merciful and doesn't judge,['Name_Calling_Labeling'],Attack_on_reputation
+424,"a pope who, according to Father Thomas Rosica, `breaks Catholic traditions whenever he wants, because he is 'free from disordered attachments","['Appeal_to_Authority', 'Doubt', 'Name_Calling_Labeling']",Justification_Attack_on_reputation_Attack_on_reputation
+425,These are the people that are going to `accompany us` and our children in the `synodal Church` with its new orientation,['Doubt'],Attack_on_reputation
+426,You don't say,['Loaded_Language'],Manipulative_wording
+427,Church of Accompaniment,['Name_Calling_Labeling'],Attack_on_reputation
+428,take your 'Church of Accompaniment` to prison with you,['Loaded_Language'],Manipulative_wording
+429,the most vile clergy sex scandal in history,['Exaggeration_Minimisation'],Manipulative_wording
+430,I am tired ,['Repetition'],Manipulative_wording
+431,sickening,['Loaded_Language'],Manipulative_wording
+432,"Unless and until we take seriously our call to sanctity, we, as an institution and as individuals, will continue to suffer the “wages of sin",['Appeal_to_fear-prejudice'],Justification
+433,now-culturally-acceptable acts of homosexuality ,['Name_Calling_Labeling'],Attack_on_reputation
+434,publically-deplorable acts of pedophilia,['Name_Calling_Labeling'],Attack_on_reputation
+435,pray ,['Repetition'],Manipulative_wording
+436,a “hater,['Name_Calling_Labeling'],Attack_on_reputation
+437,a courageous shepherd ,['Name_Calling_Labeling'],Attack_on_reputation
+438,the degenerate and even criminal shepherds,['Name_Calling_Labeling'],Attack_on_reputation
+439,gruesome detail ,['Loaded_Language'],Manipulative_wording
+440,wreaking great devastation in the vineyard of the Lord,['Loaded_Language'],Manipulative_wording
+441,"stave off, this deep illness in the Church",['Loaded_Language'],Manipulative_wording
+442,the wrath of the enemies of the Church,['Loaded_Language'],Manipulative_wording
+443,a whole slew of issues ,['Exaggeration_Minimisation'],Manipulative_wording
+444,sins and outrages ,['Loaded_Language'],Manipulative_wording
+445,a port in the storm ,['Name_Calling_Labeling'],Attack_on_reputation
+446,light in the darkness ,['Loaded_Language'],Manipulative_wording
+447,a bishop with the courage to look the beast in the eye and speak its name out loud,['Name_Calling_Labeling'],Attack_on_reputation
+448,DEFEND BISHOP MORLINO ,['Loaded_Language'],Manipulative_wording
+449,the Church needs now is more hatred,['Loaded_Language'],Manipulative_wording
+450,It is an act of love to hate sin and to call others to turn away from sin,['Causal_Oversimplification'],Simplification
+451,"In our opinion, during the most vile clergy sex scandal in history, every bishop in the country must do exactly what Bishop Morlino has done, i.e., issue a statement of fidelity to the Church’s moral theology, specifically her teaching against the mortal sin of homosexual acts",['Bandwagon'],
+452,"They will be crucified in the media, yes",['Exaggeration_Minimisation'],Manipulative_wording
+453,their thoroughly scandalized flocks ,['Name_Calling_Labeling'],Attack_on_reputation
+454,they are absolutely committed to the defense and enforcement of the Church’s moral teaching ,['Exaggeration_Minimisation'],Manipulative_wording
+455,But they will also be doing their sacred duty before God in reassuring their thoroughly scandalized flocks that they are absolutely committed to the defense and enforcement of the Church’s moral teaching at a time when it is under scurrilous attack from within.	Nothing less will do,['Appeal_to_fear-prejudice'],Justification
+456,"we respectfully demand that the rest of the American bishops either follow suit or face the charge of being complicit with the degenerate and even criminal shepherds, accounts of whose betrayal and vice now dominate the news","['Appeal_to_fear-prejudice', 'Black-and-White_Fallacy']",Justification
+457,I am tired of this,['Slogans'],Call
+458,gravely hurt,['Loaded_Language'],Manipulative_wording
+459,those entrusted with immense responsibility from the Lord for the care of His people,['Name_Calling_Labeling'],Attack_on_reputation
+460,"quite literally, enough to make someone sick",['Exaggeration_Minimisation'],Manipulative_wording
+461,sickness ,['Repetition'],Manipulative_wording
+462,"evil, evil that cries out for justice ",['Name_Calling_Labeling'],Attack_on_reputation
+463,sin ,['Repetition'],Manipulative_wording
+464,we have excused sin in the name of a mistaken notion of mercy,['Causal_Oversimplification'],Simplification
+465,pastoral,['Name_Calling_Labeling'],Attack_on_reputation
+466,"In the end, the excuses do not matter.	We must be done with sin.	It must be rooted out and again considered unacceptable",['Appeal_to_fear-prejudice'],Justification
+467,the license for sin to have a home in individuals at every level of the Church,['Loaded_Language'],Manipulative_wording
+468,what the Church needs now is more hatred,['Loaded_Language'],Manipulative_wording
+469,It is an act of love to hate sin and to call others to turn away from sin,['Causal_Oversimplification'],Simplification
+470,"powerful priests, bishops, and cardinals",['Name_Calling_Labeling'],Attack_on_reputation
+471,but also are in violation of the natural moral law for all,['Causal_Oversimplification'],Simplification
+472,the most notorious and highest in ranking case,['Exaggeration_Minimisation'],Manipulative_wording
+473,seriously scandalous,['Loaded_Language'],Manipulative_wording
+474,appalling actions ,['Loaded_Language'],Manipulative_wording
+475,wreaking great devastation ,['Exaggeration_Minimisation'],Manipulative_wording
+476,hated with a perfect hatred,['Exaggeration_Minimisation'],Manipulative_wording
+477,"it also offers the guilty party an opportunity to make expiation for his sin in this life (if he willingly accepts his punishment), thus sparing him worse punishment in the life to come",['Causal_Oversimplification'],Simplification
+478,"many good and virtuous priests, bishops, and cardinals",['Name_Calling_Labeling'],Attack_on_reputation
+479,many great and respectable seminaries ,['Name_Calling_Labeling'],Attack_on_reputation
+480,so many holy and faithful seminarians,['Name_Calling_Labeling'],Attack_on_reputation
+481,swiftly and vigorously,['Loaded_Language'],Manipulative_wording
+482,"as a holy priest, a hard working priest, and a pure and happy priest ",['Name_Calling_Labeling'],Attack_on_reputation
+483,"injure the very Body of Christ, His Church",['Loaded_Language'],Manipulative_wording
+484,scandalous ,['Loaded_Language'],Manipulative_wording
+485,scandalous ,"['Loaded_Language', 'Repetition']",Manipulative_wording_Manipulative_wording
+486,our own personal holiness ,['Loaded_Language'],Manipulative_wording
+487,"I will be offering a public Mass of reparation on Friday, September 14, the Feast of the Triumph of the Holy Cross, at Holy Name Heights and I ask all pastors to do the same in their own parishes",['Bandwagon'],
+488,cast out sin from our own lives and run toward holiness,['Loaded_Language'],Manipulative_wording
+489,we will serve the Lord,['Slogans'],Call
+490,look the beast in the eye and speak its name out loud,['Loaded_Language'],Manipulative_wording
+491,crucified ,['Loaded_Language'],Manipulative_wording
+492,scurrilous ,['Loaded_Language'],Manipulative_wording
+493,"These actions, committed by more than a few, can only be classified as evil, evil that cries out for justice and sin that must be cast out from our Church",['Causal_Oversimplification'],Simplification
+494,Why do we do this?	Is it out of an earnest desire to display a misguided sense of being “pastoral?” Have we covered over the truth out of fear?	Are we afraid of being disliked by people in this world?	Or are we afraid of being called hypocrites because we are not striving tirelessly for holiness in our own lives,['Doubt'],Attack_on_reputation
+495,a sin so grave that it cries out to heaven for vengeance,['Exaggeration_Minimisation'],Manipulative_wording
+496,Failure to do so will lead to dismissal from diocesan sponsorship,['Appeal_to_fear-prejudice'],Justification
+497,credibly accused child sex abusers ,['Name_Calling_Labeling'],Attack_on_reputation
+498,how much filth,['Loaded_Language'],Manipulative_wording
+499,The heart-wrenching pain ,['Loaded_Language'],Manipulative_wording
+500,"With shame and repentance, we acknowledge as an ecclesial community that we were not where we should have been, that we did not act in a timely manner, realizing the magnitude and the gravity of the damage done to so many lives.	We showed no care for the little ones; we abandoned them",['Doubt'],Attack_on_reputation
+501,"Like his predecessor, Francis has promised “zero tolerance” on child abuse, but scandals have kept recurring in several parts of the world — including in Australia recently",['Doubt'],Attack_on_reputation
+502,rocked by clergy sex abuse scandals,['Loaded_Language'],Manipulative_wording
+503,which cries out to heaven,['Loaded_Language'],Manipulative_wording
+504,with sorrow and shame,['Loaded_Language'],Manipulative_wording
+505,I’m not sure what his words will be and I’m not sure that a simple apology is what survivors of abuse want,['Doubt'],Attack_on_reputation
+506,"If he expresses an apology, it needs to be more than ‘we’re sorry",['Doubt'],Attack_on_reputation
+507,With shame and repentance,['Loaded_Language'],Manipulative_wording
+508,no effort to beg pardon and to seek to repair the harm done will ever be sufficient,['Exaggeration_Minimisation'],Manipulative_wording
+509,"The pope) begs for forgiveness, but still does not admit or own the deliberate policy of cover up designed & implemented by the #Vatican",['Doubt'],Attack_on_reputation
+510,outcry,['Loaded_Language'],Manipulative_wording
+511,"According to church expert John L Allen, an editor at specialized website Crux.com, the Catholic Church has a structural problem when it comes to dealing with cover up accusations.	“Sixteen years since the crisis first erupted in the U.S., almost ten years since that happened in Ireland, and now more than five years since Francis was elected, the Catholic Church still has no credible, transparent process for handling cases when the accusation against a bishop isn’t the direct commission of abuse but rather covering up someone else’s crimes,” Allen said in a Sunday column",['Appeal_to_Authority'],Justification
+512,"the Catholic Church still has no credible, transparent process for handling cases when the accusation against a bishop isn’t the direct commission of abuse but rather covering up someone else’s crimes",['Doubt'],Attack_on_reputation
+513,"It is essential that we, as a Church, be able to acknowledge and condemn, with sorrow and shame, the atrocities perpetrated by consecrated persons, clerics, and all those entrusted with the mission of watching over and caring for those most vulnerable",['Appeal_to_fear-prejudice'],Justification
+514,the Catholic Church has a structural problem when it comes to dealing with cover up accusations,['Doubt'],Attack_on_reputation
+515,erupted ,['Loaded_Language'],Manipulative_wording
+516,catastrophic situation ,['Loaded_Language'],Manipulative_wording
+517,violent extremists,"['Name_Calling_Labeling', 'Repetition']",Attack_on_reputation_Manipulative_wording
+518,right-wing Islamophobes,['Name_Calling_Labeling'],Attack_on_reputation
+519,absolutely mind-boggling ,['Loaded_Language'],Manipulative_wording
+520,Zilch,['Loaded_Language'],Manipulative_wording
+521,absurdly and tragically,['Loaded_Language'],Manipulative_wording
+522,vicious and potent ,['Loaded_Language'],Manipulative_wording
+523,baffling and shameful silence ,['Loaded_Language'],Manipulative_wording
+524,"contemptuous, snickering and roaring laughter ",['Loaded_Language'],Manipulative_wording
+525,crucially correct,['Loaded_Language'],Manipulative_wording
+526,the skyrocketing phenomenon ,['Exaggeration_Minimisation'],Manipulative_wording
+527,unbelievers ,['Name_Calling_Labeling'],Attack_on_reputation
+528,the unceasing onslaught ,['Loaded_Language'],Manipulative_wording
+529,leftist enablers,['Name_Calling_Labeling'],Attack_on_reputation
+530,the disastrous Obama administration,['Name_Calling_Labeling'],Attack_on_reputation
+531,the life-saving turn-around disposition ,['Loaded_Language'],Manipulative_wording
+532,stealth Jihad,['Name_Calling_Labeling'],Attack_on_reputation
+533,"9 concrete steps that, if implemented by a future American administration, would make a big difference in preserving our civilization and in defending Americans from terrorism",['Flag-Waving'],Justification
+534,our enemy ,['Name_Calling_Labeling'],Attack_on_reputation
+535,our enemy (i.e.	Islamic Jihad,['Name_Calling_Labeling'],Attack_on_reputation
+536,our enemy ,['Repetition'],Manipulative_wording
+537,"The Obama administration continues to refuse to label our enemy and, therefore, it continues to enable our defeat in the terror war",['Doubt'],Attack_on_reputation
+538,our enemy (i.e.	Islamic law,['Name_Calling_Labeling'],Attack_on_reputation
+539,pathetic and destructive ,['Loaded_Language'],Manipulative_wording
+540,completely incapacitates us,['Exaggeration_Minimisation'],Manipulative_wording
+541,the destructive fantasy ,['Loaded_Language'],Manipulative_wording
+542,extremists,['Name_Calling_Labeling'],Attack_on_reputation
+543,who just happen to be the Left’s political opponents ,['Red_Herring'],Distraction
+544,whom the administration obviously considers to be the real threat to American security,['Causal_Oversimplification'],Simplification
+545,is trash and needs to be thrown in the garbage,['Loaded_Language'],Manipulative_wording
+546,to destroy our civilization from within ,['Loaded_Language'],Manipulative_wording
+547,"as Robert Spencer advises, there needs to be legislation that will bar all such groups and affiliated individuals from advising the government or receiving any grants from it",['Appeal_to_Authority'],Justification
+548,Countering-Jihad” Strategy,['Name_Calling_Labeling'],Attack_on_reputation
+549,Counter-Jihad strategy ,['Name_Calling_Labeling'],Attack_on_reputation
+550,absurdity,['Loaded_Language'],Manipulative_wording
+551,Jihadists ,['Name_Calling_Labeling'],Attack_on_reputation
+552,"as Sebastian Gorka urges in Defeating Jihad: The Winnable War, the government needs to lay down a vision, an actual “threat doctrine analysis” in a thorough document, just like George Kennan’s Long Telegram and NSC-68 did in laying out the strategic foundation to fighting communism in the Cold War.	It is absolutely mind-boggling that nothing of this sort exists today in our terror war — and it is a reflection of the Left being in charge and of the destructive defeat that it is sowing",['Appeal_to_Authority'],Justification
+553,destructive defeat ,['Loaded_Language'],Manipulative_wording
+554,"Sebastian Gorka is crucially correct, therefore, when he recommends a national counter-propaganda campaign that involves a two-part approach",['Appeal_to_Authority'],Justification
+555,an anti-Jihadist version of Islam,['Name_Calling_Labeling'],Attack_on_reputation
+556,unbelievers,['Name_Calling_Labeling'],Attack_on_reputation
+557,the jihadists,"['Name_Calling_Labeling', 'Repetition']",Attack_on_reputation_Manipulative_wording
+558,jihadis ,['Name_Calling_Labeling'],Attack_on_reputation
+559,unbelievers ,"['Name_Calling_Labeling', 'Repetition']",Attack_on_reputation_Manipulative_wording
+560,the suicidal leftist notion ,['Name_Calling_Labeling'],Attack_on_reputation
+561,buffer their lip-service against terror ,['Loaded_Language'],Manipulative_wording
+562,jihadists,['Name_Calling_Labeling'],Attack_on_reputation
+563,As Robert Spencer counsels,['Appeal_to_Authority'],Justification
+564,Counter-Jihadists ,['Name_Calling_Labeling'],Attack_on_reputation
+565,we need to bring in people who actually love America and want to protect it,['Flag-Waving'],Justification
+566,noble and courageous individuals ,['Name_Calling_Labeling'],Attack_on_reputation
+567,brave Muslim individuals who genuinely reject Jihad ,['Name_Calling_Labeling'],Attack_on_reputation
+568,anti-jihadist vision ,['Name_Calling_Labeling'],Attack_on_reputation
+569,Islam cannot be Islam without Jihad,['Black-and-White_Fallacy'],
+570,at least a million hilarious satirical sketches,['Exaggeration_Minimisation'],Manipulative_wording
+571,vigorously defend ,['Loaded_Language'],Manipulative_wording
+572,slanders ,['Loaded_Language'],Manipulative_wording
+573,totalitarian leftist and Islamic forces,['Name_Calling_Labeling'],Attack_on_reputation
+574,the crippling effect ,['Loaded_Language'],Manipulative_wording
+575,the totalitarian Mullahs ,['Name_Calling_Labeling'],Attack_on_reputation
+576,pathetic rules and lives ,['Loaded_Language'],Manipulative_wording
+577,Sharia’s gatekeepers,['Name_Calling_Labeling'],Attack_on_reputation
+578,tyrants ,['Name_Calling_Labeling'],Attack_on_reputation
+579,skyrocketing phenomenon ,['Loaded_Language'],Manipulative_wording
+580,"Below are 9 concrete steps that, if implemented by a future American administration, would make a big difference in preserving our civilization and in defending Americans from terrorism",['Appeal_to_fear-prejudice'],Justification
+581,Countering Violent Extremism,['Slogans'],Call
+582,Countering Violent Extremism,['Slogans'],Call
+583,"On the other hand, this focus allows the administration to perpetuate the destructive fantasy that there are other types of “extremists” — who just happen to be the Left’s political opponents — that pose a great threat to the country",['Flag-Waving'],Justification
+584,Countering Violent Extremism,['Slogans'],Call
+585,Countering Violent Extremism,['Slogans'],Call
+586,getting surreal in the creepiest and most harrowing Stalinist sense,['Loaded_Language'],Manipulative_wording
+587,totalitarian suffocation of free thought and expression,['Loaded_Language'],Manipulative_wording
+588,that daring to give suggestions on how our civilization can stop jihadist attacks and another 9/11 is against Facebook’s ‘community standards,['Causal_Oversimplification'],Simplification
+589,vicious and potent ,['Loaded_Language'],Manipulative_wording
+590,that merit at least a million hilarious satirical sketches,['Exaggeration_Minimisation'],Manipulative_wording
+591,how to best defend American lives from jihad,['Flag-Waving'],Justification
+592,countering-jihad’ strategy,['Name_Calling_Labeling'],Attack_on_reputation
+593,Jihadi Attacks ,['Name_Calling_Labeling'],Attack_on_reputation
+594,Jihadist Psychopath,['Name_Calling_Labeling'],Attack_on_reputation
+595,"Charming, Seducing, and Devouring Us",['Loaded_Language'],Manipulative_wording
+596,Jihadist Psychopath ,['Name_Calling_Labeling'],Attack_on_reputation
+597,totalitarian plantation ,['Name_Calling_Labeling'],Attack_on_reputation
+598,enslaved and dutifully following his orders,['Loaded_Language'],Manipulative_wording
+599,tyrannical plantation ,['Name_Calling_Labeling'],Attack_on_reputation
+600,is a real doozy,['Loaded_Language'],Manipulative_wording
+601,jihadi attacks ,['Name_Calling_Labeling'],Attack_on_reputation
+602,jihadi ,['Repetition'],Manipulative_wording
+603,Jihadist Psychopath,['Name_Calling_Labeling'],Attack_on_reputation
+604,"Charming, Seducing, and Devouring Us",['Loaded_Language'],Manipulative_wording
+605,Islamic jihadist attack ,['Name_Calling_Labeling'],Attack_on_reputation
+606,Stalinist sense,['Reductio_ad_hitlerum'],
+607,Unholy Alliance masters ,['Name_Calling_Labeling'],Attack_on_reputation
+608,the skyrocketing jihadist stabbings in Europe ,['Exaggeration_Minimisation'],Manipulative_wording
+609,jihadist attacks ,['Name_Calling_Labeling'],Attack_on_reputation
+610,moderate Muslims ,['Name_Calling_Labeling'],Attack_on_reputation
+611,horrifying ,['Loaded_Language'],Manipulative_wording
+612,Facebook’s masters ,['Name_Calling_Labeling'],Attack_on_reputation
+613,"a move that is, clearly, horrifying to Facebook’s masters and therefore also violates their ‘community standards",['Causal_Oversimplification'],Simplification
+614,honor killings and other Shariah barbarities,['Loaded_Language'],Manipulative_wording
+615,the anger and hatred ,['Loaded_Language'],Manipulative_wording
+616,Facebook’s guardians ,['Name_Calling_Labeling'],Attack_on_reputation
+617,who are clearly on the side of the Shariah enforcers and oppressors of Muslim women and girls,['Causal_Oversimplification'],Simplification
+618,Shariah enforcers and oppressors of Muslim women and girls,['Name_Calling_Labeling'],Attack_on_reputation
+619,lashed out ,['Loaded_Language'],Manipulative_wording
+620,anti-“hate” policies,['Name_Calling_Labeling'],Attack_on_reputation
+621,hateful conduct,['Name_Calling_Labeling'],Attack_on_reputation
+622,baffling and shameful ,['Loaded_Language'],Manipulative_wording
+623,vigorously defend them ,['Loaded_Language'],Manipulative_wording
+624,slanders ,['Loaded_Language'],Manipulative_wording
+625,totalitarian leftist and Islamic forces,['Name_Calling_Labeling'],Attack_on_reputation
+626,skyrocketing ,['Loaded_Language'],Manipulative_wording
+627,"The government needs, he said, to “implement a concrete ‘countering-jihad’ strategy",['Appeal_to_Authority'],Justification
+628,And he said it needs to affirm “Shariah’s assault on the U.S. Constitution as seditious,['Appeal_to_Authority'],Justification
+629,It goes without saying that this retraction and surrender by Facebook occurred only because of the wide publicity that Jamie's banning had received,['Causal_Oversimplification'],Simplification
+630,of the insane variety,['Loaded_Language'],Manipulative_wording
+631,their unrelenting effort to suffocate dissent and conservative voices,['Loaded_Language'],Manipulative_wording
+632,vociferous protest,['Loaded_Language'],Manipulative_wording
+633,leftist brownshirt-style assault on free speech,['Loaded_Language'],Manipulative_wording
+634,leftist hate groups ,['Name_Calling_Labeling'],Attack_on_reputation
+635,a stand-up noble gentleman ,['Name_Calling_Labeling'],Attack_on_reputation
+636,a racially charged event,['Name_Calling_Labeling'],Attack_on_reputation
+637,a vicious lie ,['Loaded_Language'],Manipulative_wording
+638,"At this dire moment, we all need to amplify our voices in defense of free speech.	And we need to adamantly defend all the truth-tellers at the very moment they come under attack.	We also need to contact our representatives and to call for a Congressional investigation into this pernicious assault by the fascist Left on our liberties",['Appeal_to_fear-prejudice'],Justification
+639,in such a fascistic manner ,['Reductio_ad_hitlerum'],
+640,hateful conduct,['Name_Calling_Labeling'],Attack_on_reputation
+641,hateful conduct,['Name_Calling_Labeling'],Attack_on_reputation
+642,Jihadist Psychopath,['Name_Calling_Labeling'],Attack_on_reputation
+643,"Charming, Seducing, and Devouring Us",['Loaded_Language'],Manipulative_wording
+644,Jihadist Psychopath ,['Name_Calling_Labeling'],Attack_on_reputation
+645,totalitarian plantation ,['Name_Calling_Labeling'],Attack_on_reputation
+646,enslaved and dutifully following his orders,['Loaded_Language'],Manipulative_wording
+647,tyrannical plantation ,['Name_Calling_Labeling'],Attack_on_reputation
+648,our free speech victory,['Loaded_Language'],Manipulative_wording
+649,"We have no doubt, of course, that no “mistake” had actually occurred in this matter and that the ban has only been lifted because of the publicity that we engaged in -- and received",['Causal_Oversimplification'],Simplification
+650,this story is crucial to amplify now more than ever,['Exaggeration_Minimisation'],Manipulative_wording
+651,leftist-run social media,['Name_Calling_Labeling'],Attack_on_reputation
+652,totalitarian attack ,['Name_Calling_Labeling'],Attack_on_reputation
+653,surreal affair ,['Loaded_Language'],Manipulative_wording
+654,Facebook's Unholy Alliance masters ,['Name_Calling_Labeling'],Attack_on_reputation
+655,Jihadist attacks ,['Name_Calling_Labeling'],Attack_on_reputation
+656,"This suggested, of course, that giving advice on how to prevent another 9/11, and all other Jihadist attacks against America, is now against Facebook’s ‘community standards",['Causal_Oversimplification'],Simplification
+657,tyrannical behavior ,['Name_Calling_Labeling'],Attack_on_reputation
+658,we are immensely grateful for all the massive support that was given to us across the Internet,['Exaggeration_Minimisation'],Manipulative_wording
+659,Leading brave conservative figures ,['Name_Calling_Labeling'],Attack_on_reputation
+660,with absolutely no explanation,['Exaggeration_Minimisation'],Manipulative_wording
+661,the leftist totalitarians ,['Name_Calling_Labeling'],Attack_on_reputation
+662,totalitarians ,['Repetition'],Manipulative_wording
+663,brave conservative truth-tellers ,['Name_Calling_Labeling'],Attack_on_reputation
+664,especially disturbing,['Loaded_Language'],Manipulative_wording
+665,smear ,['Loaded_Language'],Manipulative_wording
+666,the Southern Poverty Law Center (SPLC) hate machine,['Name_Calling_Labeling'],Attack_on_reputation
+667,trying to run the Center out of business and suffocate free speech in America,['Loaded_Language'],Manipulative_wording
+668,and suffocate free speech in America,['Flag-Waving'],Justification
+669,are preparing new attacks against the Freedom Center and other conservative groups and individuals 24/7,['Exaggeration_Minimisation'],Manipulative_wording
+670,smeared ,['Loaded_Language'],Manipulative_wording
+671,falsely and maliciously ,['Loaded_Language'],Manipulative_wording
+672,disgusting and venomous level ,['Loaded_Language'],Manipulative_wording
+673,destructive agenda,['Loaded_Language'],Manipulative_wording
+674,the Stalinist Left's ,['Reductio_ad_hitlerum'],
+675,the Stalinist Left's war on America and on everything on which it stands,['Flag-Waving'],Justification
+676,the truth-tellers ,['Name_Calling_Labeling'],Attack_on_reputation
+677,pernicious assault ,['Loaded_Language'],Manipulative_wording
+678,the fascist Left ,['Reductio_ad_hitlerum'],
+679,The battle for America -- and for the West -- is on,['Flag-Waving'],Justification
+680,immensely grateful ,['Loaded_Language'],Manipulative_wording
+681,"why would Facebook remove such a page, let alone in such a fascistic manner -- and never explain why",['Doubt'],Attack_on_reputation
+682,because no one wants to be gay and black,['Exaggeration_Minimisation'],Manipulative_wording
+683,I’m a generation older than all of you I know comedy,['Appeal_to_Authority'],Justification
+684,"no one looks in the mirror and thinks, ‘this black thing is too easy, let me just add another thing to it",['Exaggeration_Minimisation'],Manipulative_wording
+685,none of his remarks were offensive,['Exaggeration_Minimisation'],Manipulative_wording
+686,"The message they were trying to send with the event was opposite to the jokes he was making, and using people’s ethnicity as the crux of his jokes could be funny but still offensive...He definitely wasn’t the most crass comedian I’ve ever heard but for the event it was inappropriate",['Doubt'],Attack_on_reputation
+687,demonizing people ,['Loaded_Language'],Manipulative_wording
+688,the biggest terror threat in this country is white men,['Exaggeration_Minimisation'],Manipulative_wording
+689,the absurdity ,['Loaded_Language'],Manipulative_wording
+690,white men,['Repetition'],Manipulative_wording
+691,"Nah, it’s just CNN doing what CNN does… spewing more fake news for your viewing pleasure",['Doubt'],Attack_on_reputation
+692,thought it would be fun ,['Loaded_Language'],Manipulative_wording
+693,Stop Demonizing People,['Appeal_to_fear-prejudice'],Justification
+694,demonize,['Repetition'],Manipulative_wording
+695,Stop Demonizing People ,['Loaded_Language'],Manipulative_wording
+696,Talk about an absolute hypocrite,['Loaded_Language'],Manipulative_wording
+697,How can he contradict himself like that and not even bat an eyelid,['Doubt'],Attack_on_reputation
+698,gotten incredible help along the way,['Exaggeration_Minimisation'],Manipulative_wording
+699,demonizing people ,['Loaded_Language'],Manipulative_wording
+700,the biggest terror threat in this country is white men,['Exaggeration_Minimisation'],Manipulative_wording
+701,"We have to stop demonizing people and realize the biggest terror threat in this country is white men, most of them radicalized to the right, and we have to start doing something about them,” Lemon said.	“There is no travel ban on them… there is no white guy ban",['Appeal_to_fear-prejudice'],Justification
+702,to demonize ,['Loaded_Language'],Manipulative_wording
+703,the biggest terror threat ,['Exaggeration_Minimisation'],Manipulative_wording
+704,demonizing ,"['Loaded_Language', 'Repetition']",Manipulative_wording_Manipulative_wording
+705,demonizing ,['Loaded_Language'],Manipulative_wording
+706,Demonizing ,['Loaded_Language'],Manipulative_wording
+707,Demonizing ,['Loaded_Language'],Manipulative_wording
+708,"Don Lemon thinks things like this, are just fine, and wants these people in the US.	He just doesn't want white men here",['Causal_Oversimplification'],Simplification
+709,"There, I said it",['Loaded_Language'],Manipulative_wording
+710,utterly insane,['Loaded_Language'],Manipulative_wording
+711,Good luck with that!,['Thought-terminating_Cliches'],
+712,"is “a progressive” who is “a part of the crazy, crazy, crazies",['Exaggeration_Minimisation'],Manipulative_wording
+713,"crazy, crazy, crazies","['Exaggeration_Minimisation', 'Repetition']",Manipulative_wording_Manipulative_wording
+714,useful idiot,['Loaded_Language'],Manipulative_wording
+715,completely undercut ,['Loaded_Language'],Manipulative_wording
+716,That’s not for them to know,['Thought-terminating_Cliches'],
+717,to appeal to white guilt,['Loaded_Language'],Manipulative_wording
+718,Good luck with that,['Loaded_Language'],Manipulative_wording
+719,a lawful man ,['Name_Calling_Labeling'],Attack_on_reputation
+720,"Gillum is not a lawful man as he does not support the right to keep and bear arms, but rather considers Americans as criminals who need to prove their innocence before obtaining a gun",['Flag-Waving'],Justification
+721,Florida gubernatorial candidate and George Soros-backed ,['Name_Calling_Labeling'],Attack_on_reputation
+722,the utter racism of Smith,['Loaded_Language'],Manipulative_wording
+723,This is a f***ed up state,['Loaded_Language'],Manipulative_wording
+724,It’s a cracker state,['Loaded_Language'],Manipulative_wording
+725,Cracks Racist Joke ,['Loaded_Language'],Manipulative_wording
+726,"how mean, nasty and evil they have been ",['Loaded_Language'],Manipulative_wording
+727,that’s childish,['Loaded_Language'],Manipulative_wording
+728,and every person with dark skin on the planet,['Exaggeration_Minimisation'],Manipulative_wording
+729,kick them in the shins,['Loaded_Language'],Manipulative_wording
+730,What was even more amazing ,['Exaggeration_Minimisation'],Manipulative_wording
+731,Crooked` Hillary,['Name_Calling_Labeling'],Attack_on_reputation
+732,"Clearly, she was speaking of all black people and not being specific to Holder or Booker as they look nothing alike",['Causal_Oversimplification'],Simplification
+733,Disgusting ,['Loaded_Language'],Manipulative_wording
+734,The Evil Doings Of Israel,"['Loaded_Language', 'Repetition']",Manipulative_wording_Manipulative_wording
+735,They are rooted in bigotry toward a belief about what Muslims are stereotyped to believe,['Appeal_to_fear-prejudice'],Justification
+736,Evil Doings Of Israel,['Loaded_Language'],Manipulative_wording
+737,she will cruise to victory,['Loaded_Language'],Manipulative_wording
+738,hypnotized ,['Loaded_Language'],Manipulative_wording
+739,Israel has hypnotized the world,['Exaggeration_Minimisation'],Manipulative_wording
+740,the evil doings of Israel,"['Loaded_Language', 'Repetition']",Manipulative_wording_Manipulative_wording
+741,evil doings,['Loaded_Language'],Manipulative_wording
+742,"She is a hijab-wearing, devout Muslim, and Islamic Jew-hatred is in the Quran",['Causal_Oversimplification'],Simplification
+743,hateful views ,['Loaded_Language'],Manipulative_wording
+744,"but this is the way the Democrat leadership, and the Democrat base, thinks.	They want candidates like Ilhan Omar.	And they know they’ll win, because this is their base today",['Causal_Oversimplification'],Simplification
+745,"Neither the Democrat leadership nor the Democrat base cares that she married her brother.	She is a Muslim and a leftist, so she can further their identity politics.	That’s all that matters to them",['Causal_Oversimplification'],Simplification
+746,who masterminded the 1993 World Trade Center.,['Reductio_ad_hitlerum'],
+747,"Fine.	I don’t care if you go and do that, go ahead",['Thought-terminating_Cliches'],
+748,There is more.	Fox News also reported that Sinema “promoted events at Arizona State University featuring a lawyer convicted for aiding an Islamist terror organization and its leader,['Reductio_ad_hitlerum'],
+749,the Left hates America,['Loaded_Language'],Manipulative_wording
+750,hysterical hyperbole,['Loaded_Language'],Manipulative_wording
+751,it’s just a reaction to the evil deeds of the U.S. and Israel,['Causal_Oversimplification'],Simplification
+752,Ellison is attempting to do that same.,['Bandwagon'],
+753,You're a failure if you can't keep a man,"['Black-and-White_Fallacy', 'Repetition']",Manipulative_wording
+754,Murder and lying comes easy for white people,"['Exaggeration_Minimisation', 'Repetition']",Manipulative_wording_Manipulative_wording
+755,"If you like down with dogs, you're going to get fleas","['Appeal_to_fear-prejudice', 'Black-and-White_Fallacy', 'Loaded_Language']",Justification_Manipulative_wording
+756,paralleled Jews with termites,['Loaded_Language'],Manipulative_wording
+757,"I absolutely, unqualifiedly denounce and reject the views of Louis Farrakhan",['Exaggeration_Minimisation'],Manipulative_wording
+758,his views and mine were absolutely incompatible,['Exaggeration_Minimisation'],Manipulative_wording
+759,"here's a still frame of Ellison just a few feet away from a man who has called on 10,000 blacks to stalk and murder white people",['Reductio_ad_hitlerum'],
+760,to pull an Obama,['Loaded_Language'],Manipulative_wording
+761,You’re a failure if you can’t keep a man,['Black-and-White_Fallacy'],
+762,Murder and lying comes easy for white people,['Exaggeration_Minimisation'],Manipulative_wording
+763,praised him ,['Loaded_Language'],Manipulative_wording
+764,praised him ,['Loaded_Language'],Manipulative_wording
+765,"Yeah, right, Hakim",['Loaded_Language'],Manipulative_wording
+766,"absolutely, unqualifiedly denounce and reject ",['Loaded_Language'],Manipulative_wording
+767,it doesn’t work,"['Repetition', 'Thought-terminating_Cliches']",Manipulative_wording
+768,"Tlaib, of course, had nothing to say about the genocidal incitement against Jews and Israel that regularly features on Palestinian television",['Whataboutism'],Distraction
+769,have been overwhelmingly elected ,['Exaggeration_Minimisation'],Manipulative_wording
+770,"unfortunately, in reality neither one is worth celebrating",['Doubt'],Attack_on_reputation
+771,vendetta against ,['Loaded_Language'],Manipulative_wording
+772,"no country, not one",['Exaggeration_Minimisation'],Manipulative_wording
+773,is even more hateful than Tlaib,['Exaggeration_Minimisation'],Manipulative_wording
+774,hypnotized ,['Loaded_Language'],Manipulative_wording
+775,the evil doings of Israel,['Loaded_Language'],Manipulative_wording
+776,she doubled down and attacked ,['Loaded_Language'],Manipulative_wording
+777,"You are a hateful sad man, I pray to Allah you get the help you need and find happiness",['Doubt'],Attack_on_reputation
+778,"There is much, much worse about Omar",['Exaggeration_Minimisation'],Manipulative_wording
+779,the increasing balkanization ,['Loaded_Language'],Manipulative_wording
+780,"Forthrightly pro-America, pro-Israel candidates would stand little to no chance in either of their districts.	And that is indicative of a much larger problem",['Appeal_to_fear-prejudice'],Justification
+781,overwhelmingly ,['Loaded_Language'],Manipulative_wording
+782,triumphs of America’s “diversity,['Flag-Waving'],Justification
+783,"For me, U.S. aid should be leverage.	I will be using my position in Congress so that no country, not one, should be able to get aid from the U.S. when they still promote that kind of injustice",['Flag-Waving'],Justification
+784,a hateful sad man,['Name_Calling_Labeling'],Attack_on_reputation
+785,extraordinary work ,['Loaded_Language'],Manipulative_wording
+786,steadfastly ignored,['Loaded_Language'],Manipulative_wording
+787,to trigger ,['Loaded_Language'],Manipulative_wording
+788,they are “normalizing and enabling Nazis” by supporting Rick Scott and Ron DeSantis,['Appeal_to_fear-prejudice'],Justification
+789,they are “normalizing and enabling Nazis” by supporting Rick Scott and Ron DeSantis,['Appeal_to_fear-prejudice'],Justification
+790,that’s childish,"['Loaded_Language', 'Thought-terminating_Cliches']",Manipulative_wording
+791,Cracks Racist Joke ,['Loaded_Language'],Manipulative_wording
+792,just how evil and awful ,['Loaded_Language'],Manipulative_wording
+793,hypocritically toeing ,['Loaded_Language'],Manipulative_wording
+794,"Childish, indeed.	Insulting, indeed",['Loaded_Language'],Manipulative_wording
+795,kick them in the shins,['Loaded_Language'],Manipulative_wording
+796,rather extraordinarily,['Loaded_Language'],Manipulative_wording
+797,"Sorry Hillary, we don’t think they look anything alike.	Or did you mean all black people",['Doubt'],Attack_on_reputation
+798,concludes so eloquently,['Loaded_Language'],Manipulative_wording
+799,"As The American Mirror’s Kyle Olsen concludes so eloquently, Hillary Clinton appears to benefit from her progressive privilege – it is the only thing that protects her from getting the ‘Roseanne treatment’, and not being dismissed in disgrace",['Appeal_to_Authority'],Justification
+800,dismissed in disgrace,['Loaded_Language'],Manipulative_wording
+801,Death to America”,['Repetition'],Manipulative_wording
+802,Death to America!” – America Is The “Great Satan,['Slogans'],Call
+803,Death to America,"['Loaded_Language', 'Slogans']",Manipulative_wording_Call
+804,Death to America,"['Loaded_Language', 'Repetition', 'Slogans']",Manipulative_wording_Manipulative_wording_Call
+805,Great Satan,['Repetition'],Manipulative_wording
+806,Victory Will Be Yours,['Slogans'],Call
+807,Death to America,"['Loaded_Language', 'Slogans']",Manipulative_wording_Call
+808,America has never been a democracy,"['Doubt', 'Exaggeration_Minimisation']",Attack_on_reputation_Manipulative_wording
+809,blasted ,['Loaded_Language'],Manipulative_wording
+810,Satan seeks to divide Muslims ,['Loaded_Language'],Manipulative_wording
+811,he assimilates with ,['Loaded_Language'],Manipulative_wording
+812,Death to America,['Loaded_Language'],Manipulative_wording
+813,"a part of the crazy, crazy, crazies",['Name_Calling_Labeling'],Attack_on_reputation
+814,"a “F***ed up,” “cracker state",['Name_Calling_Labeling'],Attack_on_reputation
+815,that will never happen,['Repetition'],Manipulative_wording
+816,a “cracker state,['Name_Calling_Labeling'],Attack_on_reputation
+817,"a “crazy, crazy,” Democrat",['Name_Calling_Labeling'],Attack_on_reputation
+818,a part of the crazy crazy crazies,"['Name_Calling_Labeling', 'Repetition']",Attack_on_reputation_Manipulative_wording
+819,a Progressive,['Name_Calling_Labeling'],Attack_on_reputation
+820,You whip ’em up,['Loaded_Language'],Manipulative_wording
+821,"What we found in the Gillum campaign was just what we found in Missouri, Tennessee and Arizona, a candidate lying to the voters he needs to win the election",['Doubt'],Attack_on_reputation
+822,are f***ed up,['Loaded_Language'],Manipulative_wording
+823,whip them up ,"['Loaded_Language', 'Repetition']",Manipulative_wording_Manipulative_wording
+824,"Omar Smith, who says he went to college with Gillum, reveals Gillum cannot fulfill his campaign promises even if he wanted to",['Appeal_to_Authority'],Justification
+825,Whip up” the poor into a “frenzy ,['Loaded_Language'],Manipulative_wording
+826,whip” lower income individuals “into a frenzy,"['Loaded_Language', 'Repetition']",Manipulative_wording_Manipulative_wording
+827,whip them up into a frenzy ,['Loaded_Language'],Manipulative_wording
+828,whip ’em up,['Loaded_Language'],Manipulative_wording
+829,whip up ,['Loaded_Language'],Manipulative_wording
+830,You have to appeal to white guilt,"['Loaded_Language', 'Repetition']",Manipulative_wording_Manipulative_wording
+831,Gillum Makes Promises He Can’t Keep,['Doubt'],Attack_on_reputation
+832,You have to whip them up into a frenzy in order for them to vote,['Exaggeration_Minimisation'],Manipulative_wording
+833,the moderates,['Name_Calling_Labeling'],Attack_on_reputation
+834,to appeal to white guilt,['Loaded_Language'],Manipulative_wording
+835,Gillum campaign makes promises it knows it can’t keep,['Doubt'],Attack_on_reputation
+836,reveals Gillum cannot fulfill his campaign promises even if he wanted to,['Doubt'],Attack_on_reputation
+837,"When asked how Gillum would fund all the programs he says he wants to fund, Smith says Gillum “can’t",['Doubt'],Attack_on_reputation
+838,Smith explains that most of Gillum’s campaign promises could never be implemented,['Doubt'],Attack_on_reputation
+839,"So, let’s go back to Mr. Gillum’s platform, right?	Raise the corporate tax in Florida from 7 to 11 percent.	That will never happen.	Raise teacher’s pay to $50,000, that will never happen.	Give me another position.	Medicare for all, that will never happen",['Doubt'],Attack_on_reputation
+840,Whip up” the poor into a “frenzy in order for them to vote,['Exaggeration_Minimisation'],Manipulative_wording
+841,Gillum’s fairy tale platform,['Name_Calling_Labeling'],Attack_on_reputation
+842,"You whip ’em up.	The poor, the middle income.	You have to whip them up into a frenzy in order for them to vote",['Exaggeration_Minimisation'],Manipulative_wording
+843,needs to appeal to “white guilt,['Loaded_Language'],Manipulative_wording
+844,be]cause that’s what it is,['Thought-terminating_Cliches'],
+845,you are way out of left field,['Loaded_Language'],Manipulative_wording
+846,"We don’t, do we have to let [the voters] know what the agenda is ahead of time?	We can’t… We cannot… You alienate everybody",['Appeal_to_fear-prejudice'],Justification
+847,Gillum had to campaign on values he does not really believe,['Doubt'],Attack_on_reputation
+848,left of center,"['Name_Calling_Labeling', 'Repetition']",Attack_on_reputation_Manipulative_wording
+849,left of center,['Name_Calling_Labeling'],Attack_on_reputation
+850,"left, not left of center",['Name_Calling_Labeling'],Attack_on_reputation
+851,the moderates ,['Name_Calling_Labeling'],Attack_on_reputation
+852,the gun-toting people ,['Name_Calling_Labeling'],Attack_on_reputation
+853,But I don’t think he can say it just [be]cause he’s trying to get the moderates and the gun-toting people in North Florida,['Doubt'],Attack_on_reputation
+854,F***ed up,['Loaded_Language'],Manipulative_wording
+855,a progressive,['Name_Calling_Labeling'],Attack_on_reputation
+856,"a `F***ed up,` `cracker state","['Loaded_Language', 'Repetition']",Manipulative_wording_Manipulative_wording
+857,The rules in Florida are f***ed up,['Loaded_Language'],Manipulative_wording
+858,to appeal to white guilt,"['Loaded_Language', 'Repetition']",Manipulative_wording_Manipulative_wording
+859,"if Gillum is elected, none of the things outlined in his platform would happen.	He says that “that’s not for [voters] to know",['Doubt'],Attack_on_reputation
+860,Not for voters to know` programs won't happen,['Doubt'],Attack_on_reputation
+861,"You whip 'em up.	The poor, the middle income.	You have to whip them up into a frenzy in order for them to vote",['Exaggeration_Minimisation'],Manipulative_wording
+862,to appeal to white guilt,['Loaded_Language'],Manipulative_wording
+863,a f***ed up ass state,"['Loaded_Language', 'Repetition']",Manipulative_wording_Manipulative_wording
+864,a cracker state,"['Loaded_Language', 'Repetition']",Manipulative_wording_Manipulative_wording
+865,But I don’t think he can say it just [be]cause he’s trying to get the moderates and the gun-toting people in North Florida,['Doubt'],Attack_on_reputation
+866,the gun-toting people ,['Name_Calling_Labeling'],Attack_on_reputation
+867,wall-to-wall coverage in the media eviscerating Gilllum ,['Loaded_Language'],Manipulative_wording
+868,white voters ,['Name_Calling_Labeling'],Attack_on_reputation
+869,"if Gillum is elected, none of the things outlined in his platform would happen",['Appeal_to_fear-prejudice'],Justification
+870,a `F***ed up` `cracker state,['Loaded_Language'],Manipulative_wording
+871,racial slur ,['Loaded_Language'],Manipulative_wording
+872,thought crimes,['Name_Calling_Labeling'],Attack_on_reputation
+873,social justice crybullying ,['Loaded_Language'],Manipulative_wording
+874,Also the Left killed comedy.	This is what its corpse looks like,['Exaggeration_Minimisation'],Manipulative_wording
+875,the Left killed comedy,['Slogans'],Call
+876,"no one looks in the mirror and thinks, ‘this black thing is too easy, let me just add another thing to it",['Exaggeration_Minimisation'],Manipulative_wording
+877,Columbia snowflakes ,['Name_Calling_Labeling'],Attack_on_reputation
+878,"Comrades, these jokes you have been listening to are thought crimes",['Exaggeration_Minimisation'],Manipulative_wording
+879,"I'm sure Patel felt very, like, accepted",['Exaggeration_Minimisation'],Manipulative_wording
