@@ -1,0 +1,66 @@
+micro-f1: 0.383618455158113
+accuracy: 0.2834710743801653
+micro-precision: 0.5522388059701493
+micro-recall: 0.29388403494837173
+
+array(['Appeal_to_Authority', 'Appeal_to_fear-prejudice', 'Bandwagon',
+       'Black-and-White_Fallacy', 'Causal_Oversimplification', 'Doubt',
+       'Exaggeration_Minimisation', 'Flag-Waving', 'Loaded_Language',
+       'Name_Calling_Labeling',
+       'Obfuscation_Intentional_Vagueness_Confusion', 'Red_Herring',
+       'Reductio_ad_hitlerum', 'Repetition', 'Slogans', 'Straw_Men',
+       'Thought-terminating_Cliches', 'Whataboutism'], dtype='<U43')
+
+array([[[1161,    0],
+        [  49,    0]],
+
+       [[1082,    0],
+        [ 127,    1]],
+
+       [[1206,    0],
+        [   4,    0]],
+
+       [[1185,    0],
+        [  25,    0]],
+
+       [[1179,    0],
+        [  31,    0]],
+
+       [[1134,    5],
+        [  67,    4]],
+
+       [[1111,   14],
+        [  82,    3]],
+
+       [[1131,    1],
+        [  67,   11]],
+
+       [[ 565,  250],
+        [  94,  301]],
+
+       [[1006,   25],
+        [ 130,   49]],
+
+       [[1204,    0],
+        [   6,    0]],
+
+       [[1198,    0],
+        [  12,    0]],
+
+       [[1198,    0],
+        [  12,    0]],
+
+       [[1096,    1],
+        [ 112,    1]],
+
+       [[1175,    1],
+        [  34,    0]],
+
+       [[1208,    0],
+        [   2,    0]],
+
+       [[1191,    3],
+        [  16,    0]],
+
+       [[1191,    0],
+        [  19,    0]]])
