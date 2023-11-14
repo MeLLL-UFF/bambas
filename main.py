@@ -4,13 +4,14 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.neural_network import MLPClassifier
-from transformers import AutoModel, AutoTokenizer, BitsAndBytesConfig
+from transformers import AutoModel, AutoTokenizer
 from feature_extraction.feature_extraction import load_data_split, extract_features
 from feature_extraction.metrics import compute_scores
+from typing import List
 
 BATCH_SIZE = 64
 OUTPUT_CSV_PATH = "./results.csv"
-PTC_DATASET_DIR = "./dataset/"
+PTC_DATASET_DIR = "./dataset/ptc_adjust/"
 
 def load_ptc() -> List[pd.DataFrame]:
     train = pd.read_csv(PTC_DATASET_DIR+"ptc_preproc_train.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
@@ -78,5 +79,5 @@ def main():
     df.to_csv(OUTPUT_CSV_PATH)
     return None
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
