@@ -9,20 +9,28 @@ from feature_extraction.feature_extraction import load_data_split, extract_featu
 from feature_extraction.metrics import compute_scores
 from typing import List
 
-BATCH_SIZE = 64
+BATCH_SIZE = 32
 OUTPUT_CSV_PATH = "./results.csv"
-PTC_DATASET_DIR = "./dataset/ptc_adjust/"
+DATASET_DIR = "./dataset/"
+DEVICE = torch.device("cpu")#torch.device("cuda:1" if torch.cuda.is_available else "cpu")
+
+def load_semeval2024() -> List[pd.DataFrame]:
+    train = pd.read_csv(DATASET_DIR+"semeval2024/train.csv", sep=";").dropna(subset=["text"])[["text", "label"]]
+    train = train.drop_duplicates(subset=["text"])
+    test = pd.read_csv(DATASET_DIR+"semeval2024/validation.csv", sep=";").dropna(subset=["text"])[["text", "label"]]
+    test = test.drop_duplicates(subset=["text"])
+    return train, test
 
 def load_ptc() -> List[pd.DataFrame]:
-    train = pd.read_csv(PTC_DATASET_DIR+"ptc_preproc_train.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
+    train = pd.read_csv(DATASET_DIR+"ptc_adjust/ptc_preproc_train.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
     train = train.drop_duplicates(subset=["text"])
-    test = pd.read_csv(PTC_DATASET_DIR+"ptc_preproc_test.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
+    test = pd.read_csv(DATASET_DIR+"ptc_adjust/ptc_preproc_test.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
     test = test.drop_duplicates(subset=["text"])
     return train, test
 
 def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dataset):
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, normalization=True)
-    model = AutoModel.from_pretrained(model_name)
+    model = AutoModel.from_pretrained(model_name).to(DEVICE)
 
     def load_data_split_for_tokenizer(dataset):
         return load_data_split(tokenizer, dataset, BATCH_SIZE)
@@ -33,7 +41,8 @@ def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dat
         return extract_features(model, data_loader)
 
     train_features, test_features = map(extract_features_for_loader, [train_loader, test_loader])    
-    train_labels, test_labels = train_dataset["label"].str.split(",").to_numpy(), test_dataset["label"].str.split(",").to_numpy()
+    train_labels = train_dataset["label"].fillna("None").str.split(",").to_numpy()
+    test_labels = test_dataset["label"].fillna("None").str.split(",").to_numpy()
 
     del model
     gc.collect()
@@ -42,9 +51,20 @@ def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dat
     labels_with_duplicates = np.hstack(np.concatenate((train_labels, test_labels), axis=None))
     labels = [list(set(labels_with_duplicates))]
 
-    mlb = MultiLabelBinarizer()
-    train_labels_binarized = mlb.fit(labels).transform(train_labels)
-    test_labels_binarized = mlb.transform(test_labels)
+    dataset = pd.concat([train_dataset, test_dataset])
+    dataset = dataset.fillna("None")
+    dataset = dataset["label"].str.split(",")
+
+    dataset
+
+    labels_set = []
+    for labels in dataset: labels_set.extend(labels) 
+    labels_set = list(set(labels_set))
+    if "None" in labels_set: labels_set.remove("None")
+
+    mlb = MultiLabelBinarizer(classes=labels_set)
+    train_labels_binarized = mlb.fit_transform(train_labels)
+    test_labels_binarized = mlb.fit_transform(test_labels)
 
     ff = MLPClassifier(
         random_state=1,
@@ -62,7 +82,7 @@ def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dat
 
 
 def main():
-    train, test = load_ptc()
+    train, test = load_semeval2024()
     df = pd.DataFrame()
     results = []
     for model_name in ["xlm-roberta-base"]:
