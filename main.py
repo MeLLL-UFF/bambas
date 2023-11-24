@@ -10,9 +10,9 @@ from feature_extraction.metrics import compute_scores
 from typing import List
 
 BATCH_SIZE = 32
-OUTPUT_CSV_PATH = "./results.csv"
+OUTPUT_CSV_PATH = "./results_2411.csv"
 DATASET_DIR = "./dataset/"
-DEVICE = torch.device("cpu")#torch.device("cuda:1" if torch.cuda.is_available else "cpu")
+DEVICE = torch.device("cuda:0")#torch.device("cuda:1" if torch.cuda.is_available else "cpu")
 
 def load_semeval2024() -> List[pd.DataFrame]:
     train = pd.read_csv(DATASET_DIR+"semeval2024/train.csv", sep=";").dropna(subset=["text"])[["text", "label"]]

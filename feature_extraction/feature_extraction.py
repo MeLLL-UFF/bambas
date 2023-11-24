@@ -38,13 +38,13 @@ def load_data_split(tokenizer: AutoTokenizer,
                     collate_fn=data_collator)
 
 def extract_features(model: AutoModel, data_loader: DataLoader) -> np.ndarray:
-   last_hidden_states = torch.tensor([]).to(model.device)
+   last_hidden_states = torch.tensor([]).to("cpu")
    with torch.no_grad():
         for idx, batch in enumerate(data_loader):
             print(f'Running inference with batch no. {idx+1}')
             batch = {k: v.to(model.device) for k, v in batch.items()} 
             last_hidden_states_for_batch = model(**batch) 
-            last_hidden_states = torch.cat((last_hidden_states, last_hidden_states_for_batch[0].to(model.device)))
+            last_hidden_states = torch.cat((last_hidden_states, last_hidden_states_for_batch[0].to("cpu")))
 
         # extract [CLS] token hidden representation from output layer
         return last_hidden_states[:,0,:].cpu().numpy()
