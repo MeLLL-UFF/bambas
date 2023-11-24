@@ -1,0 +1,11 @@
+transformers
+pandas
+matplotlib
+torch
+numpy
+datasets
+scikit_learn
+notebook
+matplotlib
+emoji==0.6.0
+nltk
