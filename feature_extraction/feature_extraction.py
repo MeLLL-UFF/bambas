@@ -38,24 +38,24 @@ def load_data_split(tokenizer: AutoTokenizer,
                     collate_fn=data_collator)
 
 def extract_features(model: AutoModel, data_loader: DataLoader) -> np.ndarray:
-   last_hidden_states = torch.tensor([]).to(model.device)
+   last_hidden_states = torch.tensor([]).to("cpu")
    with torch.no_grad():
         for idx, batch in enumerate(data_loader):
             print(f'Running inference with batch no. {idx+1}')
             batch = {k: v.to(model.device) for k, v in batch.items()} 
             last_hidden_states_for_batch = model(**batch) 
-            last_hidden_states = torch.cat((last_hidden_states, last_hidden_states_for_batch[0].to(model.device)))
+            last_hidden_states = torch.cat((last_hidden_states, last_hidden_states_for_batch[0].to("cpu")))
 
         # extract [CLS] token hidden representation from output layer
         return last_hidden_states[:,0,:].cpu().numpy()
    
 if __name__ == "__main__":
-    DATASET_DIR = "../dataset/ptc_adjust/"
+    DATASET_DIR = "../dataset/semeval2024/"
     
     def load_ptc() -> List[pd.DataFrame]:
-        train = pd.read_csv(DATASET_DIR+"ptc_preproc_train.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
+        train = pd.read_csv(DATASET_DIR+"train.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
         train = train.drop_duplicates(subset=["text"])
-        test = pd.read_csv(DATASET_DIR+"ptc_preproc_test.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
+        test = pd.read_csv(DATASET_DIR+"test.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
         test = test.drop_duplicates(subset=["text"])
         return train, test
     
