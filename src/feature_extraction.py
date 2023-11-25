@@ -11,7 +11,8 @@ from datasets import Dataset
 from torch.utils.data import DataLoader
 from typing import List
 
-def load_data_split(tokenizer: AutoTokenizer, 
+
+def load_data_split(tokenizer: AutoTokenizer,
                     dataset: pd.DataFrame,
                     batch_size: int = 64) -> DataLoader:
     # Read CSV file
@@ -19,6 +20,7 @@ def load_data_split(tokenizer: AutoTokenizer,
     # # Create Dataset object
     ds = Dataset.from_pandas(dataset)
     # Define tokenizer function
+
     def tokenize_function(examples):
         return tokenizer(examples["text"], truncation=True, padding="longest")
     # Tokenize values in Dataset object
@@ -28,42 +30,52 @@ def load_data_split(tokenizer: AutoTokenizer,
     ds = ds.remove_columns("__index_level_0__")
     ds = ds.remove_columns("label")
     # Discover max_length for dataset
-    
 
     # Create DataCollator object
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer, padding="max_length")
     # Create DataLoader to be returned
-    return DataLoader(dataset=ds, 
-                    batch_size=batch_size, 
-                    collate_fn=data_collator)
+    return DataLoader(dataset=ds,
+                      batch_size=batch_size,
+                      collate_fn=data_collator)
 
-def extract_features(model: AutoModel, data_loader: DataLoader) -> np.ndarray:
-   last_hidden_states = torch.tensor([]).to("cpu")
-   with torch.no_grad():
+
+def extract_features(
+        model: AutoModel,
+        data_loader: DataLoader,
+        use_cls: bool = True,
+        layers_to_extract: List[int] = None) -> np.ndarray:
+    if use_cls:
+        assert layers_to_extract is None, "layers_to_extract argument is not supported if CLS token extraction is enabled, please choose one of the two"
+    if layers_to_extract is not None:
+        assert use_cls is False, "layers_to_extract argument is not supported if CLS token extraction is enabled, please choose one of the two"
+
+    last_hidden_states = torch.tensor([]).to("cpu")
+    with torch.no_grad():
         for idx, batch in enumerate(data_loader):
             print(f'Running inference with batch no. {idx+1}')
-            batch = {k: v.to(model.device) for k, v in batch.items()} 
-            last_hidden_states_for_batch = model(**batch) 
+            batch = {k: v.to(model.device) for k, v in batch.items()}
+            last_hidden_states_for_batch = model(**batch)
             last_hidden_states = torch.cat((last_hidden_states, last_hidden_states_for_batch[0].to("cpu")))
 
         # extract [CLS] token hidden representation from output layer
-        return last_hidden_states[:,0,:].cpu().numpy()
-   
+        return last_hidden_states[:, 0, :].cpu().numpy()
+
+
 if __name__ == "__main__":
     DATASET_DIR = "../dataset/semeval2024/"
-    
+
     def load_ptc() -> List[pd.DataFrame]:
-        train = pd.read_csv(DATASET_DIR+"train.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
+        train = pd.read_csv(DATASET_DIR + "train.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
         train = train.drop_duplicates(subset=["text"])
-        test = pd.read_csv(DATASET_DIR+"test.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
+        test = pd.read_csv(DATASET_DIR + "test.csv", sep=";").dropna(subset=["text", "label"])[["text", "label"]]
         test = test.drop_duplicates(subset=["text"])
         return train, test
-    
+
     train, test = load_ptc()
 
     dataloader = load_data_split(tokenizer=AutoTokenizer.from_pretrained("xlm-roberta-base"),
-                    dataset=train)
-    
+                                 dataset=train)
+
     print("dataloader is done")
     for idx, batch in enumerate(dataloader):
         print(f"batch {idx}:")
