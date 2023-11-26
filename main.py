@@ -48,7 +48,12 @@ def feature_extraction_with_pretrained_model(
     def extract_features_for_loader(data_loader):
         return extract_features(model, data_loader)
 
+    def extract_layer_features_for_loader(data_loader):
+        return extract_features(model, data_loader, use_cls=False, layers_to_extract=[
+                                4, 5, 6, 7], layer_aggregation_method="concatenate")
+
     train_features, test_features = map(extract_features_for_loader, [train_loader, test_loader])
+    # train_features, test_features = map(extract_layer_features_for_loader, [train_loader, test_loader])
     train_labels = train_dataset["label"].fillna("None").str.split(",").to_numpy()
     test_labels = test_dataset["label"].fillna("None").str.split(",").to_numpy()
 
