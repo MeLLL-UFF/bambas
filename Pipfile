@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+transformers = "*"
+pandas = "*"
+torch = "*"
+numpy = "*"
+datasets = "*"
+scikit-learn = "*"
+notebook = "*"
+nltk = "*"
+flake8 = "*"
+autopep8 = "*"
+sklearn-hierarchical-classification = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
