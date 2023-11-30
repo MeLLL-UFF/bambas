@@ -9,6 +9,8 @@ from feature_extraction.feature_extraction import load_data_split, extract_featu
 from feature_extraction.metrics import compute_scores
 from typing import List
 
+from config.config import get_config
+
 BATCH_SIZE = 32
 OUTPUT_CSV_PATH = "./results_2411.csv"
 DATASET_DIR = "./dataset/"
@@ -80,8 +82,11 @@ def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dat
     micro_f1, acc, prec, rec, cf_mtx = compute_scores(test_labels_binarized, test_predicted_labels_binarized)
     return micro_f1, acc, prec, rec, cf_mtx 
 
-
 def main():
+    
+    config = get_config("config/config.cfg")
+    print(config)
+
     train, test = load_semeval2024()
     df = pd.DataFrame()
     results = []

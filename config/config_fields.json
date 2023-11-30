@@ -1,0 +1,22 @@
+{
+    "main" : {
+        "batch_size":{"type":"int", "accepted_values":[]},
+        "output_csv_path":{"type":"str", "accepted_values":[]},
+        "device":{"type":"str", "accepted_values":[]}
+    },
+    "feature_extraction" : {
+        "dataset":{"type":"str", "accepted_values":["ptc", "semeval2024"]},
+        "language_model":{"type":"str", "accepted_values":[]},
+        "sentence_embedding_strategy":{"type":"str", "accepted_values":["cls_token"]},
+        "save_embeddings":{"type":"bool", "accepted_values":[]}
+    },
+    "classification" : {
+        "classifier_model":{"type":"str", "accepted_values":["mlp"]}
+    },
+    "model_adjust" : {
+        "adjust_model":{"type":"bool", "accepted_values":[]},
+        "datasets":{"type":"list", "accepted_values":[]},
+        "save_model_locally":{"type":"str", "accepted_values":[]},
+        "push_to_hub":{"type":"str", "accepted_values":[]}
+    }
+}
