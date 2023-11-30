@@ -9,6 +9,8 @@ from feature_extraction.feature_extraction import load_data_split, extract_featu
 from feature_extraction.metrics import compute_scores
 from typing import List
 
+from config.config import get_config
+
 BATCH_SIZE = 32
 OUTPUT_CSV_PATH = "./results_2411.csv"
 DATASET_DIR = "./dataset/"
@@ -29,6 +31,9 @@ def load_ptc() -> List[pd.DataFrame]:
     return train, test
 
 def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dataset):
+    
+    
+    
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, normalization=True)
     model = AutoModel.from_pretrained(model_name).to(DEVICE)
 
