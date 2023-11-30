@@ -11,10 +11,10 @@ from typing import List
 
 from config.config import get_config
 
-BATCH_SIZE = 32
-OUTPUT_CSV_PATH = "./results_2411.csv"
+# BATCH_SIZE = 32
+# OUTPUT_CSV_PATH = "./results_2411.csv"
 DATASET_DIR = "./dataset/"
-DEVICE = torch.device("cuda:0")#torch.device("cuda:1" if torch.cuda.is_available else "cpu")
+# DEVICE = torch.device("cuda:0")#torch.device("cuda:1" if torch.cuda.is_available else "cpu")
 
 def load_semeval2024() -> List[pd.DataFrame]:
     train = pd.read_csv(DATASET_DIR+"semeval2024/train.csv", sep=";").dropna(subset=["text"])[["text", "label"]]
@@ -30,12 +30,12 @@ def load_ptc() -> List[pd.DataFrame]:
     test = test.drop_duplicates(subset=["text"])
     return train, test
 
-def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dataset):
+def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dataset, device, batch_size):
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, normalization=True)
-    model = AutoModel.from_pretrained(model_name).to(DEVICE)
+    model = AutoModel.from_pretrained(model_name).to(device)
 
     def load_data_split_for_tokenizer(dataset):
-        return load_data_split(tokenizer, dataset, BATCH_SIZE)
+        return load_data_split(tokenizer, dataset, batch_size)
 
     train_loader, test_loader = map(load_data_split_for_tokenizer, [train_dataset, test_dataset])
 
@@ -85,13 +85,24 @@ def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dat
 def main():
     
     config = get_config("config/config.cfg")
-    print(config)
 
-    train, test = load_semeval2024()
+    train, test = None, None
+    if config["feature_extraction"]["dataset"] == "semeval2024":
+        train,test = load_semeval2024()
+    elif config["feature_extraction"]["dataset"] == "ptc":
+        train,test = load_ptc()
+    else:
+        raise ValueError("Unsupported dataset in config value {0}".format(config["feature_extraction"]["dataset"]))
+
     df = pd.DataFrame()
     results = []
-    for model_name in ["xlm-roberta-base"]:
-        micro_f1, acc, prec, rec, cf_mtx = feature_extraction_with_pretrained_model(model_name, train, test)
+    # This will later turn into a list
+    for model_name in [config["feature_extraction"]["language_model"]]:
+        micro_f1, acc, prec, rec, cf_mtx = \
+            feature_extraction_with_pretrained_model(model_name, 
+                                                     train, test, 
+                                                     config["main"]["device"], 
+                                                     config["main"]["batch_size"])
         results.append(dict(
             micro_f1 = micro_f1,
             acc = acc,
@@ -101,7 +112,7 @@ def main():
             model_name = model_name,
         ))
     df = pd.DataFrame.from_records(results)
-    df.to_csv(OUTPUT_CSV_PATH)
+    df.to_csv(config["main"]["output_csv_path"])
     return None
 
 if __name__ == "__main__":

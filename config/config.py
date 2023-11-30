@@ -1,8 +1,8 @@
 import json
 from configparser import ConfigParser
+import os
 
-
-with open("config_fields.json", mode="r") as file:
+with open(os.path.dirname(__file__)+"/config_fields.json", mode="r") as file:
     FIELD_VALIDATION = json.load(file)
 
 '''
