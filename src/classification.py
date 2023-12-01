@@ -50,10 +50,12 @@ def classify(args: Namespace):
     print("Loading dataset files")
     train, test, _ = load_dataset(args.dataset)
 
-    def fill_none_samples(dataset: pd.DataFrame) -> pd.DataFrame:
-        return dataset.fillna("None")
+    def fill_none_samples(df: pd.DataFrame) -> pd.DataFrame:
+        new_df = df.copy(deep=True)
+        new_df.loc[new_df["labels"].str.len() == 0, ["labels"]] = [[["None"]]]
+        return new_df
     
-    train, test, _ = map(fill_none_samples, [train, test, _])
+    train, test = map(fill_none_samples, [train, test])
     print(train.head())
     all_labels = pd.concat([train["labels"], test["labels"]])
 
@@ -88,7 +90,7 @@ def classify(args: Namespace):
 
     results_csv_path = f"{OUTPUT_DIR}/results.csv"
     if os.path.exists(results_csv_path):
-        results = pd.read_csv(results_csv_path)
+        results = pd.read_csv(results_csv_path, index_col=0)
     else:
         dir = os.path.sep.join(results_csv_path.split(os.path.sep)[:-1])
         print(f"Creating dir {dir}")
