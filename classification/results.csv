@@ -1,0 +1,2 @@
+,FE Model,FE Method,FE Layers,FE Layers Agg Method,FT Dataset,Test Dataset,Classifier,F1,Precision,Recall,Timestamp
+0,xlm-roberta-base,cls,,,semeval2024,test_set,MLP,0.2875309078064288,0.7102966841186736,0.18024800708591673,1701434572

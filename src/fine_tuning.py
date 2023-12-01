@@ -3,6 +3,7 @@ import torch
 import math
 import os
 import json
+import pandas as pd
 from argparse import Namespace
 from datasets import Dataset
 from transformers import DataCollatorForLanguageModeling, AutoTokenizer, AutoModelForMaskedLM, TrainingArguments, Trainer
@@ -24,15 +25,27 @@ def fine_tune(args: Namespace):
     push_model = args.push_model_to_hf_hub
 
     train, _, dev = map(Dataset.from_pandas, load_dataset(dataset))
-    tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
-    def tokenize(data):
-        return tokenizer(data["text"])
-    
-    train = train.map(tokenize, batched=True, num_proc=4, remove_columns=["text"])
-    dev = dev.map(tokenize, batched=True, num_proc=4, remove_columns=["text"])
 
-    device = "cuda:0" if torch.cuda.is_available() else "cpu"
-    model = AutoModelForMaskedLM.from_pretrained(model).to(device)
+    def remove_additional_columns(ds: Dataset):
+        columns = ds.column_names
+        to_remove = [col for col in columns if col != "text"]
+        return ds.remove_columns(to_remove)
+
+    train, dev = map(remove_additional_columns, [train, dev])
+
+    tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
+    device_map = {"": "cpu"}
+    if torch.cuda.is_available():
+        device_map = { "": 0 }
+    print(f"Using device: {device_map}")
+    
+    def tokenize(data):
+        return tokenizer(data["text"], padding=True, truncation=True)
+    
+    train = train.map(tokenize, batched=True, batch_size=64, num_proc=4, remove_columns=["text"])
+    dev = dev.map(tokenize, batched=True, batch_size=64, num_proc=4, remove_columns=["text"])
+
+    model = AutoModelForMaskedLM.from_pretrained(model, device_map=device_map)
 
     training_args = TrainingArguments(
         fine_tuned_name,
@@ -40,7 +53,10 @@ def fine_tune(args: Namespace):
         learning_rate = lr,
         weight_decay = weight_decay,
         push_to_hub = push_model,
-        no_cuda=device == "cuda:0",
+        # TODO: proper configuration
+        no_cuda=False,
+        # TODO: should disable wandb but it isn't working
+        report_to=None
     )
     data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm_probability=mlm_prob)
 

@@ -33,27 +33,39 @@ def save_predictions(test_df: pd.DataFrame, predictions: List[List[str]]) -> Tup
     return predictions_json_path, predictions_json
 
 
-def load_features(path: str) -> Dict[str, Any]:
+def load_features_info(path: str) -> Dict[str, Any]:
     with open(path, "r") as f:
         return json.load(f)
 
 
+def load_features_array(path: str) -> np.ndarray:
+    with open(path, "r") as f:
+        df = pd.DataFrame().from_records(json.load(f))
+        return np.array(df)
+
 def classify(args: Namespace):
-    train_ft, test_ft, dev_ft = map(load_features, [args.train_features, args.test_features, args.dev_features])
-    train, test, dev = load_dataset(args.dataset)
+    print("Loading features info files")
+    train_ft_info, test_ft_info, _ = map(load_features_info, [args.train_features, args.test_features, args.dev_features])
+
+    print("Loading dataset files")
+    train, test, _ = load_dataset(args.dataset)
 
     def fill_none_samples(dataset: pd.DataFrame) -> pd.DataFrame:
         return dataset.fillna("None")
     
-    train, test, dev = map(fill_none_samples, [train, test, dev])
-    dataset = pd.concat([train, test, dev])
+    train, test, _ = map(fill_none_samples, [train, test, _])
+    print(train.head())
+    all_labels = pd.concat([train["labels"], test["labels"]])
 
-    labels = [list(set(reduce(lambda x, y: x+y, dataset["labels"].to_numpy())))]
+    labels = [list(set(reduce(lambda x, y: x+y, all_labels.to_numpy().tolist())))]
     print(f"Labels: {labels}")
     print(f"No. of labels in dataset (includes non-labeled samples): {len(labels[0])}")
 
-    mlb = MultiLabelBinarizer(classes=labels)
-    train_labels = mlb.fit_transform(train["labels"].to_numpy())
+    mlb = MultiLabelBinarizer()
+    train_labels = mlb.fit(labels).transform(train["labels"].to_numpy())
+
+    print("Loading features array files")
+    train_ft, test_ft = map(load_features_array, [train_ft_info["features"], test_ft_info["features"]])
 
     # TODO: we are not using the validation set correctly. As such, only the train and test splits are used throughout this code.
     # We must implement manual validation set evaluation
@@ -64,21 +76,25 @@ def classify(args: Namespace):
         shuffle=True,
         early_stopping=True,
         verbose=True
-    ).fit(train_ft["features"], train_labels)
+    ).fit(train_ft, train_labels)
 
-    test_predicted_labels_binarized = ff.predict(test_ft["features"])
+    test_predicted_labels_binarized = ff.predict(test_ft)
     
     test_predicted_labels = mlb.inverse_transform(test_predicted_labels_binarized)
     pred_path, _ = save_predictions(test, test_predicted_labels)
 
     prec, rec, f1 = evaluate_h(pred_path, GOLD_PATH)
+    print(f"\nPrecision: {prec}\nRecall: {rec}\nF1: {f1}\n")
+
     results_csv_path = f"{OUTPUT_DIR}/results.csv"
     if os.path.exists(results_csv_path):
         results = pd.read_csv(results_csv_path)
     else:
-        os.makedirs(results_csv_path, exist_ok=True)
+        dir = os.path.sep.join(results_csv_path.split(os.path.sep)[:-1])
+        print(f"Creating dir {dir}")
+        os.makedirs(dir, exist_ok=True)
         results = pd.DataFrame(columns=["FE Model", "FE Method", "FE Layers", "FE Layers Agg Method", "FT Dataset", "Test Dataset", "Classifier", "F1", "Precision", "Recall", "Timestamp"])
-    results.loc[len(results.index)] = [train_ft["model"], train_ft["extraction_method"], train_ft["layers"], train_ft["layers_aggregation_method"], train_ft["dataset"], "test_set", "MLP", f1, prec, rec, int(time.time())]
+    results.loc[len(results.index)] = [train_ft_info["model"], train_ft_info["extraction_method"], train_ft_info["layers"], train_ft_info["layers_aggregation_method"], train_ft_info["dataset"], "test_set", "MLP", f1, prec, rec, int(time.time())]
     results.to_csv(results_csv_path)
 
 if __name__ == "__main__":
