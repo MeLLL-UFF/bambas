@@ -55,13 +55,13 @@ def fine_tune(args: Namespace):
         push_to_hub = push_model,
         # TODO: proper configuration
         no_cuda=False,
-        # TODO: should disable wandb but it isn't working
-        report_to=None
+        report_to=["none"]
     )
     data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm_probability=mlm_prob)
 
     trainer = Trainer(
         model=model,
+        tokenizer=tokenizer,
         args=training_args,
         train_dataset=train,
         eval_dataset=dev,
@@ -80,7 +80,7 @@ def fine_tune(args: Namespace):
         output_dir = f"{OUTPUT_DIR}/{fine_tuned_name}"
         os.makedirs(output_dir, exist_ok=True)
         print(f"Saving fine-tuned model to {output_dir}")
-        trainer.save_model(output_dir)
+        trainer.model.save_pretrained(output_dir)
 
     if push_model:
         print(f"Uploading fine-tuned model ({fine_tuned_name}) to HuggingFace Hub")
