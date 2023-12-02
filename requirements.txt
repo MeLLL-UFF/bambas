@@ -6,4 +6,5 @@ datasets
 scikit_learn
 notebook
 nltk
+scikit-multilearn
 sklearn-hierarchical-classification
