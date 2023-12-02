@@ -15,6 +15,7 @@ nltk = "*"
 flake8 = "*"
 autopep8 = "*"
 sklearn-hierarchical-classification = "*"
+scikit-multilearn = "*"
 
 [dev-packages]
 
