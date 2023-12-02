@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.neural_network import MLPClassifier
+from sklearn.linear_model import RidgeClassifier, LogisticRegression
 from transformers import AutoModel, AutoTokenizer
 from feature_extraction.feature_extraction import load_data_split, extract_features
 from feature_extraction.metrics import compute_scores
@@ -12,7 +13,7 @@ from typing import List
 from config.config import get_config
 
 BATCH_SIZE = 32
-OUTPUT_CSV_PATH = "./results_2411.csv"
+OUTPUT_CSV_PATH = "./linearregression_0212.csv"
 DATASET_DIR = "./dataset/"
 DEVICE = torch.device("cuda:0")#torch.device("cuda:1" if torch.cuda.is_available else "cpu")
 
@@ -30,10 +31,7 @@ def load_ptc() -> List[pd.DataFrame]:
     test = test.drop_duplicates(subset=["text"])
     return train, test
 
-def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dataset):
-    
-    
-    
+def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dataset): 
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, normalization=True)
     model = AutoModel.from_pretrained(model_name).to(DEVICE)
 
@@ -53,36 +51,34 @@ def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dat
     gc.collect()
     torch.cuda.empty_cache()
 
-    labels_with_duplicates = np.hstack(np.concatenate((train_labels, test_labels), axis=None))
-    labels = [list(set(labels_with_duplicates))]
-
     dataset = pd.concat([train_dataset, test_dataset])
     dataset = dataset.fillna("None")
     dataset = dataset["label"].str.split(",")
-
-    dataset
 
     labels_set = []
     for labels in dataset: labels_set.extend(labels) 
     labels_set = list(set(labels_set))
     if "None" in labels_set: labels_set.remove("None")
 
+    print(labels_set)
+
     mlb = MultiLabelBinarizer(classes=labels_set)
     train_labels_binarized = mlb.fit_transform(train_labels)
     test_labels_binarized = mlb.fit_transform(test_labels)
 
-    ff = MLPClassifier(
-        random_state=1,
-        max_iter=400,
-        alpha=0.0001,
-        shuffle=True,
-        early_stopping=True,
-        verbose=True
-    ).fit(train_features, train_labels_binarized)
+    lr = LogisticRegression()
 
-    test_predicted_labels_binarized = ff.predict(test_features)
+    num_labels = mlb.classes_.shape[-1]
+    preds = []
+    
+    for idx in range(num_labels):
+        lr.fit(X=train_features, y=train_labels_binarized.transpose()[idx])
+        pred_for_feature = lr.predict(test_features)
+        preds.append(pred_for_feature)
 
-    micro_f1, acc, prec, rec, cf_mtx = compute_scores(test_labels_binarized, test_predicted_labels_binarized)
+    test_predicted_labels_binarized = np.array(preds).transpose()
+
+    micro_f1, acc, prec, rec, cf_mtx = compute_scores(labels_set, test_labels_binarized, test_predicted_labels_binarized)
     return micro_f1, acc, prec, rec, cf_mtx 
 
 
@@ -98,7 +94,7 @@ def main():
             prec = prec,
             rec = rec,
             cf_mtx = cf_mtx,
-            model_name = model_name,
+            model_name = model_name
         ))
     df = pd.DataFrame.from_records(results)
     df.to_csv(OUTPUT_CSV_PATH)
