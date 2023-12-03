@@ -5,7 +5,7 @@ import os
 import json
 import pandas as pd
 from argparse import Namespace
-from datasets import Dataset
+from datasets import Dataset, concatenate_datasets
 from transformers import DataCollatorForLanguageModeling, AutoTokenizer, AutoModelForMaskedLM, TrainingArguments, Trainer
 from src.data import load_dataset
 from src.utils.workspace import get_workdir
@@ -27,8 +27,9 @@ def fine_tune(args: Namespace):
 
     train, dev, test = map(Dataset.from_pandas, load_dataset(dataset))
     if dataset != "semeval2024":
-        # in this case, we can use the test set too
-        dev = pd.concat([dev, test])
+        # in this case, we can use the test for evaluation and combine train+dev for training
+        train = concatenate_datasets([train, dev])
+        dev = test
 
     def remove_additional_columns(ds: Dataset):
         columns = ds.column_names
