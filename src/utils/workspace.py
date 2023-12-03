@@ -10,4 +10,4 @@ def get_workdir():
         return workdir
     except BaseException:
         print("Running outside Google Colab")
-        return "."
+        return os.getcwd()
