@@ -125,8 +125,7 @@ def extract_features(
 
 def save_ft_files(ft_data: Dict[str, Any], ft_path: str):
     ft_json = ft_data
-    ft_array_path = ft_path.split(".")[0] + "_array.json"
-    print("ft_array_path:", ft_array_path)
+    ft_array_path = os.path.dirname(ft_path) + os.path.sep + os.path.basename(ft_path).split('.')[0] + "_array.json"
     ft_array = ft_json["features"]
     ft_json["features"] = ft_array_path
     with open(ft_path, "w") as f:

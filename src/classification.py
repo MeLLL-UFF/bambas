@@ -150,7 +150,7 @@ def classify(args: Namespace):
                 "FE Method",
                 "FE Layers",
                 "FE Layers Agg Method",
-                "FT Dataset",
+                "FE Dataset",
                 "Test Dataset",
                 "Classifier",
                 "F1",
