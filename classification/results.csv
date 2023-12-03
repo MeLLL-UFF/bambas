@@ -1,6 +1,7 @@
-,FE Model,FE Method,FE Layers,FE Layers Agg Method,FT Dataset,Test Dataset,Classifier,F1,Precision,Recall,Timestamp
+,FE Model,FE Method,FE Layers,FE Layers Agg Method,FE Dataset,Test Dataset,Classifier,F1,Precision,Recall,Timestamp
 0,xlm-roberta-base,cls,,,semeval2024,dev_set,MLP,0.2875309078064288,0.7102966841186736,0.1802480070859167,1701434572.0
 1,xlm-roberta-base,cls,,,semeval2024,dev_set,HiMLP,0.3720184405692523,0.3398022702306847,0.41098317094774134,1701569172.0
 2,xlm-roberta-base,layers,"4, 5, 6, 7",avg,semeval2024,dev_set,HiMLP,0.3588640275387263,0.3489539748953975,0.36935341009743133,1701569959.0
 3,sentence-transformers/stsb-xlm-r-multilingual,sentence,,-,semeval2024,dev_set,HiMLP,0.3103953147877012,0.3456521739130435,0.2816651904340124,1701610955.0
 4,xlm-roberta-base,layers,"9, 10, 11, 12",avg,semeval2024,dev_set,HiMLP,0.3698125836680053,0.2972027972027972,0.4893711248892825,1701611946.0
+5,xlm-roberta-base-ptc2019,cls,,-,semeval2024,dev_set,HiMLP,0.3631051752921536,0.34333070244672453,0.3852967227635075,1701633006.0
