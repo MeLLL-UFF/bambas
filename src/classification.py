@@ -7,6 +7,10 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.neural_network import MLPClassifier
+from src.utils.br import BinaryRelevance
+from sklearn.linear_model import LogisticRegression, RidgeClassifier
+from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
+from sklearn.neighbors import KNeighborsClassifier, RadiusNeighborsClassifier
 from typing import List, Dict, Any, Tuple
 from src.data import load_dataset
 from src.utils.workspace import get_workdir
@@ -44,6 +48,7 @@ def load_features_info(path: str) -> Dict[str, Any]:
 def load_features_array(path: str) -> np.ndarray:
     with open(path, "r") as f:
         df = pd.DataFrame().from_records(json.load(f))
+        # print(np.array(df).shape)
         return np.array(df)
 
 
@@ -55,6 +60,7 @@ def classify(args: Namespace):
 
     print("Loading dataset files")
     train, dev, test = load_dataset(args.dataset)
+    print("Dataset Lengths", len(train), len(dev), len(test))
 
     all_labels = pd.concat([train["labels"], dev["labels"]])
 
@@ -65,13 +71,14 @@ def classify(args: Namespace):
     print(f"Labels: {labels}")
     print(f"No. of labels in {'DAG' if args.classifier == 'HiMLP' else 'train+dev datasets'}: {len(labels[0])}")
 
-    mlb = MultiLabelBinarizer()
+    mlb = MultiLabelBinarizer(classes=labels[0])
     train_labels = mlb.fit(labels).transform(train["labels"].to_numpy())
 
     print("Loading features array files")
     train_ft, test_ft, dev_ft = map(
         load_features_array, [
             train_ft_info["features"], test_ft_info["features"], dev_ft_info["features"]])
+    print("Features Lengths", len(train_ft), len(test_ft), len(dev_ft))
 
     if args.classifier == "MLP":
         # TODO: we are not using the validation set correctly. As such, only the train and test splits are used throughout this code.
@@ -102,13 +109,23 @@ def classify(args: Namespace):
             # no labels with prob lower than that will be considered for prediction
             mlb_prediction_threshold=0.35,
         )
+    elif args.classifier == "RidgeClassifier":
+        clf = RidgeClassifier()
+    elif args.classifier == "RandomForestClassifier":
+        clf = RandomForestClassifier()
+    elif args.classifier == "ExtraTreesClassifier":
+        clf = ExtraTreesClassifier()
+    elif args.classifier == "KNeighborsClassifier":
+        clf = KNeighborsClassifier()
+    elif args.classifier == "RadiusNeighborsClassifier":
+        clf = RadiusNeighborsClassifier()
+    elif args.classifier == "LogisticRegression":
+        clf = BinaryRelevance(
+            classifier = LogisticRegression(random_state=args.seed),
+            labels = labels[0]
+        )
     else:
         raise Exception("Not implemented yet")
-        # br_clf = BinaryRelevance(
-        #     classifier = LogisticRegression(random_state=args.seed),
-        #     require_dense = [True, False]
-        # ).fit(train_ft, train_labels)
-        # test_predicted_labels_binarized = br_clf.predict(test_ft)
 
     clf = clf.fit(train_ft, train_labels)
     dev_predicted_labels = clf.predict(dev_ft)
@@ -163,7 +180,9 @@ def classify(args: Namespace):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("classification", description="classification with feedforward model")
-    parser.add_argument("--classifier", type=str, choices=["MLP", "HiMLP", "BR-LR"], default="MLP")
+    parser.add_argument("--classifier", type=str, 
+                        # choices=["MLP", "HiMLP", "BR-LR"], 
+                        default="MLP")
     parser.add_argument(
         "--dataset",
         type=str,
@@ -174,11 +193,7 @@ if __name__ == "__main__":
         required=True)
     parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)
     parser.add_argument("--test_features", type=str, help="path to extracted features file (JSON)", required=True)
-    parser.add_argument(
-        "--dev_features",
-        type=str,
-        help="path to extracted features file (JSON). Currently not used",
-        required=True)
+    parser.add_argument("--dev_features", type=str, help="path to extracted features file (JSON). Currently not used", required=True)
     parser.add_argument("--max_iter", type=int, default=400, help="max iterations for ff classifier")
     parser.add_argument("--alpha", type=float, default=0.0001, help="weight of the L2 regularitation term")
     parser.add_argument("--seed", type=int, default=1, help="random seed for reproducibility")
