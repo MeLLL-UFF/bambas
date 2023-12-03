@@ -63,7 +63,7 @@ def classify(args: Namespace):
     else:
         labels = [list(set(reduce(lambda x, y: x + y, all_labels.to_numpy().tolist())))]
     print(f"Labels: {labels}")
-    print(f"No. of labels in dataset (includes non-labeled samples): {len(labels[0])}")
+    print(f"No. of labels in {'DAG' if args.classifier == 'HiMLP' else 'train+dev datasets'}: {len(labels[0])}")
 
     mlb = MultiLabelBinarizer()
     train_labels = mlb.fit(labels).transform(train["labels"].to_numpy())
@@ -140,7 +140,6 @@ def classify(args: Namespace):
                 "Precision",
                 "Recall",
                 "Timestamp"])
-    print(len(results.index))
     results.loc[len(results.index) + 1] = [train_ft_info["model"],
                                            train_ft_info["extraction_method"],
                                            train_ft_info["layers"],
