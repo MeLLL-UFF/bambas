@@ -3,34 +3,34 @@ Code for SemEval Task4 Subtask 1
 
 ## Environment
 
-* [python == 3.8](https://www.python.org/downloads/release/python-3818/)
-* [pip3](https://pip.pypa.io/en/stable/cli/pip_install/pipe)
-* [pipenv](https://pypi.org/project/pipenv/) or [conda](https://docs.conda.io/projects/miniconda/en/latest/) (optional but **strongly** recommended) - for environment isolationcon
+* [python == 3.8.18](https://www.python.org/downloads/release/python-3818/)
+* [pip3](https://pip.pypa.io/en/stable/cli/pip_install/)
+* [pipenv](https://pypi.org/project/pipenv/) or [conda](https://docs.conda.io/projects/miniconda/en/latest/) (optional but **strongly** recommended) - for environment isolation
 
 ## Installation
 
 First, clone `sklearn-hierarchical-classification` repository:
 
 ```sh
-$ git clone https://github.com/lfmatosm/sklearn-hierarchical-classification
+git clone https://github.com/lfmatosm/sklearn-hierarchical-classification
 ```
 
 ### With `pip`
 ```sh
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ### With `pipenv`
 ```sh
-$ pipenv shell
-$ pipenv install
+pipenv shell
+pipenv install
 ```
 
 If you encounter any problems related to installing `sklearn-hierarchical-classification` with `pipenv`, just ignore it.
 
 After the previous steps, use `pip` to install the local repository:
 ```sh
-$ pip install ../sklearn-hierarchical-classification # point to the cloned repository path
+pip install ../sklearn-hierarchical-classification # point to the cloned repository path
 ```
 
 ## Running
@@ -38,7 +38,7 @@ For a working Google Colab example, please refer to [this notebook](./Fine_tunin
 
 ### Fine-tuning
 ```sh
-$ python -m src.fine_tuning \
+python -m src.fine_tuning \
   --model xlm-roberta-base \
   --dataset ptc2019 \
   --fine_tuned_name xlm-roberta-base-ptc2019 \
@@ -47,7 +47,7 @@ $ python -m src.fine_tuning \
 
 ### Feature-extraction
 ```sh
-$ python -m src.feature_extraction \
+python -m src.feature_extraction \
   --model xlm-roberta-base \
   --dataset semeval2024 \
   --extraction_method cls
@@ -55,7 +55,7 @@ $ python -m src.feature_extraction \
 
 Or if you want to use specific hidden-layers:
 ```sh
-$ python -m src.feature_extraction \
+python -m src.feature_extraction \
   --model xlm-roberta-base \
   --dataset semeval2024 \
   --extraction_method layers \
@@ -63,9 +63,17 @@ $ python -m src.feature_extraction \
   --agg_method "avg"
 ```
 
+Or if you want to use sentence embeddings:
+```sh
+python -m src.feature_extraction \
+  --model "sentence-transformers/stsb-xlm-r-multilingual" \
+  --dataset semeval2024 \
+  --extraction_method sentence
+```
+
 ### Classification
 ```sh
-$ python -m src.classification \
+python -m src.classification \
   --classifier "HiMLP" \
   --dataset semeval2024 \
   --train_features "./feature_extraction/train_features.json" \

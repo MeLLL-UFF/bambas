@@ -4,17 +4,12 @@ import pandas as pd
 import numpy as np
 import torch
 import os
+import time
 from datasets import Dataset
 from torch.utils.data import DataLoader
-import pandas as pd
-import numpy as np
-import torch
 import json
 from transformers.modeling_outputs import BaseModelOutput
 from transformers import AutoModel, AutoTokenizer, DataCollatorWithPadding
-from datasets import Dataset
-from torch.utils.data import DataLoader
-from sentence_transformers import SentenceTransformer
 from typing import List, Any, Dict
 from src.data import load_dataset
 from src.utils.workspace import get_workdir
@@ -85,8 +80,15 @@ def get_layer_features(outputs: BaseModelOutput, layers: List[int], aggregation_
             embeddings = np.concatenate((embeddings, [sentence_embeddings]))
     return embeddings
 
+# Mean Pooling - Take attention mask into account for correct averaging
+def get_sentence_features(outputs: BaseModelOutput, attention_mask: torch.Tensor) -> np.ndarray:
+    token_embeddings = outputs[0].cpu()  # First element of model_output contains all token embeddings
+    input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float().cpu()
+    embeddings = torch.sum(token_embeddings * input_mask_expanded, 1) / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+    return embeddings.cpu().numpy()
 
-def extract_token_features(
+
+def extract_features(
         model: AutoModel,
         data_loader: DataLoader,
         extraction_method: str,
@@ -98,9 +100,11 @@ def extract_token_features(
     elif extraction_method == "layers":
         assert len(layers) > 0, "layers extraction method needs 'layers' argument to be passed"
         assert aggregation_method is not None, "layers extraction method needs 'agg_method' argument to be passed, use either 'avg' or 'concatenate'"
+    elif extraction_method == "sentence":
+        assert len(layers) == 0, "'layers' argument is not supported for sentence embedding models"
+        assert aggregation_method is None, "'agg_method' argument is not supported for sentence embedding models"
 
     features = None
-    print("starting new ft extr")
     with torch.no_grad():
         for idx, batch in enumerate(data_loader):
             print(f'Batch no. {idx+1}')
@@ -108,21 +112,15 @@ def extract_token_features(
             outputs = model(**batch)
             if extraction_method == "cls":
                 batch_features = get_cls_token_features(outputs)
-            else:
+            elif extraction_method == "layers":
                 batch_features = get_layer_features(outputs, layers, aggregation_method)
+            else:
+                batch_features = get_sentence_features(outputs, batch["attention_mask"])
             if features is None:
                 features = batch_features
             else:
                 features = np.concatenate((features, batch_features))
         return np.array(features)
-
-# TODO: integrate sentencetransformers models
-
-
-def extract_sentence_features(model: SentenceTransformer, sentences: List[str]) -> np.ndarray:
-    with torch.no_grad():
-        features = model.encode(sentences, batch_size=16, convert_to_numpy=True)
-        return features
 
 
 def save_ft_files(ft_data: Dict[str, Any], ft_path: str):
@@ -148,20 +146,12 @@ def feature_extraction(args: Namespace):
     dev_dl = load_data_split(tokenizer=tokenizer, dataset=dev)
     test_dl = load_data_split(tokenizer=tokenizer, dataset=test)
     train_ft, test_ft, dev_ft = map(
-        lambda dl: extract_token_features(
+        lambda dl: extract_features(
             model, dl, args.extraction_method, args.layers, args.agg_method), [
             train_dl, test_dl, dev_dl])
-    # TODO: integrate sentencetransformers models
-    # if "sentence-transformers/stsb-xlm-r-multilingual":
-    #     device = torch.device("cpu")
-    #     if torch.cuda.is_available():
-    #         device = torch.device("cuda:0")
-    #     print(f"Using device:{device}")
-    #     model = SentenceTransformer(args.model).to(device)
-    #     train_ft, test_ft, dev_ft = map(lambda dl: extract_sentence_features(model, dl), [train["text"].to_list(), test["text"].to_list(), dev["text"].to_list()])
     train_ft_json, test_ft_json, dev_ft_json = map(lambda ft: {
         "model": args.model,
-        "embeddings_type": "word",
+        "embeddings_type": "word" if args.extraction_method != "sentence" else "sentence",
         "extraction_method": args.extraction_method,
         "layers": ", ".join([str(arg) for arg in args.layers]) if args.layers is not None else "-",
         "layers_aggregation_method": args.agg_method if args.agg_method is not None else "-",
@@ -170,15 +160,17 @@ def feature_extraction(args: Namespace):
     }, [train_ft, test_ft, dev_ft])
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    train_ft_path = f"{OUTPUT_DIR}/train_features.json"
+    ts = int(time.time())
+    ft_prefix = f"{ts}_{args.model.replace('/', '-')}"
+    train_ft_path = f"{OUTPUT_DIR}/{ft_prefix}_train_features.json"
     save_ft_files(train_ft_json, train_ft_path)
     print(f"Saved feature-extraction file to {train_ft_path}")
 
-    test_ft_path = f"{OUTPUT_DIR}/test_features.json"
+    test_ft_path = f"{OUTPUT_DIR}/{ft_prefix}_test_features.json"
     save_ft_files(test_ft_json, test_ft_path)
     print(f"Saved feature-extraction file to {test_ft_path}")
 
-    dev_ft_path = f"{OUTPUT_DIR}/dev_features.json"
+    dev_ft_path = f"{OUTPUT_DIR}/{ft_prefix}_dev_features.json"
     save_ft_files(dev_ft_json, dev_ft_path)
     print(f"Saved feature-extraction file to {dev_ft_path}")
 
@@ -199,8 +191,8 @@ if __name__ == "__main__":
         type=str,
         choices=[
             "cls",
-            "layers"],
-        help="extraction method, 'cls' or 'layers'",
+            "layers", "sentence"],
+        help="extraction method, 'cls', 'layers' or 'sentence'",
         required=True)
     parser.add_argument(
         "--layers",
