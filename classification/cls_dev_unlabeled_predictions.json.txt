@@ -1,0 +1,6945 @@
+[
+    {
+        "id": "63292",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70419",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "63673",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71297",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66340",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77304",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76719",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78621",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64354",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69527",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63834",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "63225",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78675",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66933",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78661",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69180",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78636",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68040",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75948",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76218",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66685",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "69589",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64559",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66414",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63891",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70213",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77611",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79093",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76182",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71662",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76312",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65051",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "63970",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78841",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77118",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66740",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "63681",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79072",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65761",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77788",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79499",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64790",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76852",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69117",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79893",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "69421",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75874",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64763",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70333",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76253",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75939",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76386",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78681",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67822",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78143",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70136",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68057",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "69265",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66356",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "63296",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78860",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68880",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71739",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79258",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65711",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77546",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77055",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "65125",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66288",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71706",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77566",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77632",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78153",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77779",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70773",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68820",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65736",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77579",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77001",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64299",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71785",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77295",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75891",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75858",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69869",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68238",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71234",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67987",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "67841",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "66758",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76107",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64854",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65839",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66623",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67946",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76426",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66891",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66789",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66770",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70029",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69821",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63898",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64568",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70001",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65158",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64873",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77641",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70364",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64084",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66045",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64472",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69618",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76692",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70376",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67411",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64673",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63120",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76565",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76221",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70153",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "65450",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66299",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75710",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63730",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64896",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70961",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77690",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67755",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77136",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69510",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78999",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69642",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65991",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65225",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68159",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65844",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67711",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66368",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76617",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79850",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64942",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66012",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70793",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70852",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76204",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71465",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66102",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77777",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78107",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68947",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66094",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64408",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78564",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66108",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68041",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69664",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75950",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69371",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69903",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70005",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65279",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77864",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77113",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67619",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65566",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "63598",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69358",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66691",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75789",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75942",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65057",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65192",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65266",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66937",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79195",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70032",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70735",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65454",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67905",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64846",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63140",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69599",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64398",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76259",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66613",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69639",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "66460",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66068",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68991",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "69202",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71729",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65735",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69838",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69853",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64803",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69473",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69294",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65186",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69546",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78569",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78869",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66130",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65016",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66693",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77345",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66877",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76311",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77534",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68935",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69305",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75957",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65030",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79543",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79443",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67760",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63260",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79426",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70050",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67454",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65983",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68950",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70703",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68539",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76644",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65631",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "77085",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69663",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66805",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65090",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64973",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70359",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77983",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77167",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63853",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69773",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69588",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71600",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "66469",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65270",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68201",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78051",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66097",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71669",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79020",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71250",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70258",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75872",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68235",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69619",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67695",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66016",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77069",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64988",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69508",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65224",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76165",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76654",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68862",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78216",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65002",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67986",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67735",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66549",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75835",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66543",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69293",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64303",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69725",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66345",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76163",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64353",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78209",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75949",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79213",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64418",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65582",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78933",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71554",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77472",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63324",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65304",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67805",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "78359",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69544",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "63462",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75660",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63744",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68425",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76771",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64278",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77795",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75862",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66031",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75776",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68020",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78524",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77601",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "70202",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67834",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76757",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67870",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76768",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67710",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "63778",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69656",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "70170",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67643",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "66656",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65292",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67733",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69274",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71164",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67684",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "63656",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67996",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63387",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67696",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77561",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65432",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "63793",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70828",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76501",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79353",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78579",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "63614",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67327",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76125",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69501",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69777",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76427",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78834",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64701",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79346",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63828",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65205",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77516",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71780",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65815",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77175",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65259",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69836",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70113",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76642",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "66849",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65063",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76223",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64886",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "63953",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63425",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76522",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71082",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65400",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78328",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65900",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67501",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71124",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71071",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68457",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67480",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79148",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77887",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78751",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76952",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71323",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69101",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65415",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70491",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67116",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65888",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68514",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70469",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77914",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71363",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77943",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68435",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76912",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79767",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77948",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76988",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75002",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68473",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76932",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71350",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79174",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76036",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "79794",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67497",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "74966",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71083",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76979",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74960",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64162",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71404",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64203",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65403",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65328",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79145",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71304",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68466",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65872",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78831",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68525",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64256",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76989",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70500",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78306",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78323",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69042",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78262",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67557",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65362",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65948",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64262",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67523",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65406",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76066",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65919",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71331",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71142",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64257",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76970",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64241",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71078",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68495",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71394",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71328",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65393",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79809",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78277",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68496",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77961",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65949",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78326",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "74968",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78792",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65889",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76030",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70519",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76916",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79138",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71079",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65922",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64214",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69104",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79775",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79120",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64196",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67470",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69099",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71348",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69031",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64183",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79804",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67468",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67529",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64237",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69086",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70523",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70495",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69028",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67121",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71099",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "65896",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71126",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65879",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78766",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65938",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71091",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69016",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71070",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71088",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67517",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67467",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65387",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71139",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79135",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64205",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65916",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68476",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71379",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67098",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71354",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71138",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79803",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67533",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79777",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70511",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79128",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64188",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74948",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76922",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71137",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64180",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70440",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67552",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76040",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71047",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65350",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "74976",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71383",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65412",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "74954",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "78312",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76073",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67071",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75032",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76017",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78307",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78802",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67068",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79779",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77950",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78357",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68437",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "76025",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68509",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65908",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78767",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67534",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67493",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79154",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67084",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67117",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71115",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64250",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78335",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71375",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76915",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64159",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79123",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76080",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65850",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78270",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76904",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64261",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69047",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78752",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71366",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65325",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64226",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78356",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75003",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71371",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68501",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65419",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64170",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77922",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79780",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71337",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74958",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70499",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78321",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78283",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69068",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71131",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78333",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64209",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67088",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69049",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71355",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67058",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74974",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78832",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71059",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78800",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70461",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77947",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76054",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68483",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69091",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71119",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74991",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67471",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71062",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68456",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76945",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77968",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65880",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76976",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64260",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69017",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71399",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65330",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79824",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70477",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67569",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74973",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76944",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78769",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70492",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71358",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67094",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65915",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79805",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71310",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65375",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71069",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77933",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69084",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78296",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76923",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70463",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76967",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67148",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65912",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77907",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76084",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68506",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76037",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79806",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76947",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65389",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68479",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65397",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65370",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78298",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75031",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67070",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65942",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71340",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78807",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67518",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74971",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78316",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65885",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75018",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79811",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64254",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68531",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76992",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79163",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69051",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64238",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67120",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Appeal to authority",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "79823",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68491",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69020",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65939",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74990",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79137",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76077",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70480",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75009",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65360",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77921",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67119",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71057",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65861",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71128",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68469",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65385",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64213",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70429",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79801",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69052",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64246",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70512",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67509",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69046",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76098",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65890",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65928",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67486",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64190",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76068",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76949",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79170",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77908",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "79799",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78352",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67074",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71318",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76029",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71136",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76053",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64249",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77936",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "74985",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67123",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78798",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79825",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71316",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65334",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79820",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70439",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76951",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79144",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75034",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68511",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65343",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78827",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79147",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76971",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76925",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68452",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67076",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71064",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "68477",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65320",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68521",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68535",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64218",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77938",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "68460",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77956",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76062",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71303",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76093",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65347",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76919",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65870",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70516",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77940",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78273",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79768",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67525",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67535",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76994",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78310",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71055",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76924",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76088",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65935",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79792",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71312",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67125",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78325",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69043",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65930",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71046",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "67524",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67478",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67551",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64212",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78278",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71396",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79114",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77932",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65348",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65340",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64192",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76962",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67109",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76969",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76076",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65371",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79784",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77899",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65322",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77901",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65864",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71326",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71141",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "64167",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71098",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68459",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64244",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78344",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77885",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71390",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71329",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67541",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78287",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77946",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79146",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76011",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67085",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76039",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "67530",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70450",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69075",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76105",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78350",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65884",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65946",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64194",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65395",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76959",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71357",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78809",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79817",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67484",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70506",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78295",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65921",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69076",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67508",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68441",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65891",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79766",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70513",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71095",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71406",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "64245",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76056",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "71325",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70425",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65860",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65931",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67565",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65422",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78810",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71365",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67477",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77918",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67510",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65866",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70454",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76956",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77877",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70521",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65380",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76015",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64252",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67476",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67538",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65904",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68507",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70494",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70428",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75021",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74993",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77902",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75011",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71114",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78762",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67496",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70484",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69105",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65927",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76986",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64201",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64172",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78319",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76031",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68451",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69087",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76041",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70522",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65384",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64217",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79782",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65327",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76938",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78768",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71319",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65913",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67506",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64229",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71129",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67066",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78308",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79160",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "71370",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71076",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "79814",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67110",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78267",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69045",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77900",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "68449",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70468",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65349",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76930",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70471",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70438",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76024",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70478",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65941",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74955",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65391",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71105",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67077",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65878",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76018",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67481",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77949",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76980",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68463",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71118",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71044",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77955",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71097",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78773",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78794",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74959",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78343",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "74980",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70467",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64223",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78797",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78315",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75008",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "77941",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "65871",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65326",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76069",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65869",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78338",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64206",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70455",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78760",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78771",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70520",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71341",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67488",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79132",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71130",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65342",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76032",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71134",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64200",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79118",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65357",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65859",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65940",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70449",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78776",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67558",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70489",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76057",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71324",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65924",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78778",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78281",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65947",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "71040",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78765",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76096",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71102",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76086",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65376",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71353",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76014",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65333",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69065",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75027",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65895",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69044",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65364",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "78826",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70456",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71133",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64163",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70453",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67140",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67556",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64224",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65917",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78265",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71332",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67081",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67130",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "69027",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70443",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78276",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71127",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69095",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69111",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "74972",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71392",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65396",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74997",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "76921",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "76043",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65868",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "64222",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79786",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67107",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "70451",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78811",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71094",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78275",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78279",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76928",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67106",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77925",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67142",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65358",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75016",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Appeal to authority",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "79795",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75010",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70423",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71373",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67137",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65402",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79807",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "71090",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67141",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79810",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "67516",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "65910",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "77928",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating cliché"
+        ]
+    },
+    {
+        "id": "75033",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71343",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70426",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64176",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68485",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75006",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77886",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    }
+]
