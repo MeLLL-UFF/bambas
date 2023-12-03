@@ -14,11 +14,13 @@ from transformers.modeling_outputs import BaseModelOutput
 from transformers import AutoModel, AutoTokenizer, DataCollatorWithPadding
 from datasets import Dataset
 from torch.utils.data import DataLoader
+from sentence_transformers import SentenceTransformer
 from typing import List, Any, Dict
 from src.data import load_dataset
 from src.utils.workspace import get_workdir
 
 OUTPUT_DIR = f"{get_workdir()}/feature_extraction"
+
 
 def load_data_split(tokenizer: AutoTokenizer,
                     dataset: pd.DataFrame,
@@ -59,10 +61,10 @@ def get_cls_token_features(outputs: BaseModelOutput) -> np.ndarray:
 def get_layer_features(outputs: BaseModelOutput, layers: List[int], aggregation_method: str = "avg") -> np.ndarray:
     assert aggregation_method == "avg" or aggregation_method == "concatenate", "to aggregate hidden representation from multiple layers, you must select the aggregation method: 'avg' or 'concatenate'"
     # hidden states from all layers
-    all_hidden_states = torch.stack(outputs[1], dim=0)
+    all_hidden_states = torch.stack(outputs.hidden_states, dim=0)
     # select layers to extract features from
     selected_hidden_states = all_hidden_states[layers]
-    # reorder dimensions for ease of usage, result will be: 
+    # reorder dimensions for ease of usage, result will be:
     # s sentences * t tokens per sentence * l layers per token * u hidden units per layer
     hidden_states = selected_hidden_states.permute(1, 2, 0, 3)
     embeddings = None
@@ -84,15 +86,12 @@ def get_layer_features(outputs: BaseModelOutput, layers: List[int], aggregation_
     return embeddings
 
 
-def extract_features(
+def extract_token_features(
         model: AutoModel,
         data_loader: DataLoader,
         extraction_method: str,
         layers: List[int],
         aggregation_method: str = None) -> np.ndarray:
-    print("extraction_method:", extraction_method)
-    print("layers:", layers)
-    print("aggregation_method:", aggregation_method)
     if extraction_method == "cls":
         assert len(layers) == 0, "'layers' argument is not supported if CLS token extraction is enabled, please choose one of the two"
         assert aggregation_method is None, "'agg_method' argument is not supported if CLS token extraction is enabled, please choose one of the two"
@@ -117,33 +116,55 @@ def extract_features(
                 features = np.concatenate((features, batch_features))
         return np.array(features)
 
+# TODO: integrate sentencetransformers models
+
+
+def extract_sentence_features(model: SentenceTransformer, sentences: List[str]) -> np.ndarray:
+    with torch.no_grad():
+        features = model.encode(sentences, batch_size=16, convert_to_numpy=True)
+        return features
+
+
 def save_ft_files(ft_data: Dict[str, Any], ft_path: str):
     ft_json = ft_data
     ft_array_path = ft_path.split(".")[0] + "_array.json"
     ft_array = ft_json["features"]
     ft_json["features"] = ft_array_path
     with open(ft_path, "w") as f:
-        json.dump(ft_json, f)
+        json.dump(ft_json, f, indent=4)
 
     pd.Series(list(ft_array)).to_json(ft_array_path, orient="records")
 
+
 def feature_extraction(args: Namespace):
-    train, test, dev = load_dataset(args.dataset)
+    train, dev, test = load_dataset(args.dataset)
     tokenizer = AutoTokenizer.from_pretrained(args.model, use_fast=True)
     device_map = {"": "cpu"}
     if torch.cuda.is_available():
-        device_map = { "": 0 }
+        device_map = {"": 0}
     print(f"Using device: {device_map}")
-    model = AutoModel.from_pretrained(args.model, device_map=device_map)
+    model = AutoModel.from_pretrained(args.model, device_map=device_map, output_hidden_states=True)
     train_dl = load_data_split(tokenizer=tokenizer, dataset=train)
-    test_dl = load_data_split(tokenizer=tokenizer, dataset=test)
     dev_dl = load_data_split(tokenizer=tokenizer, dataset=dev)
-    train_ft, test_ft, dev_ft = map(lambda dl: extract_features(model, dl, args.extraction_method, args.layers, args.agg_method), [train_dl, test_dl, dev_dl])
+    test_dl = load_data_split(tokenizer=tokenizer, dataset=test)
+    train_ft, test_ft, dev_ft = map(
+        lambda dl: extract_token_features(
+            model, dl, args.extraction_method, args.layers, args.agg_method), [
+            train_dl, test_dl, dev_dl])
+    # TODO: integrate sentencetransformers models
+    # if "sentence-transformers/stsb-xlm-r-multilingual":
+    #     device = torch.device("cpu")
+    #     if torch.cuda.is_available():
+    #         device = torch.device("cuda:0")
+    #     print(f"Using device:{device}")
+    #     model = SentenceTransformer(args.model).to(device)
+    #     train_ft, test_ft, dev_ft = map(lambda dl: extract_sentence_features(model, dl), [train["text"].to_list(), test["text"].to_list(), dev["text"].to_list()])
     train_ft_json, test_ft_json, dev_ft_json = map(lambda ft: {
         "model": args.model,
+        "embeddings_type": "word",
         "extraction_method": args.extraction_method,
-        "layers": ", ".join(args.layers) if args.layers is not None else "",
-        "layers_aggregation_method": args.agg_method if args.agg_method is not None else "",
+        "layers": ", ".join([str(arg) for arg in args.layers]) if args.layers is not None else "-",
+        "layers_aggregation_method": args.agg_method if args.agg_method is not None else "-",
         "dataset": args.dataset,
         "features": ft,
     }, [train_ft, test_ft, dev_ft])
@@ -152,11 +173,11 @@ def feature_extraction(args: Namespace):
     train_ft_path = f"{OUTPUT_DIR}/train_features.json"
     save_ft_files(train_ft_json, train_ft_path)
     print(f"Saved feature-extraction file to {train_ft_path}")
-    
+
     test_ft_path = f"{OUTPUT_DIR}/test_features.json"
     save_ft_files(test_ft_json, test_ft_path)
     print(f"Saved feature-extraction file to {test_ft_path}")
-    
+
     dev_ft_path = f"{OUTPUT_DIR}/dev_features.json"
     save_ft_files(dev_ft_json, dev_ft_path)
     print(f"Saved feature-extraction file to {dev_ft_path}")
@@ -164,11 +185,37 @@ def feature_extraction(args: Namespace):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("feature_extraction", description="feature-extraction with pretrained models")
-    parser.add_argument("--dataset", type=str, choices=["ptc2019", "semeval2024"], help="corpus for feature-extraction", required=True)
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        choices=[
+            "ptc2019",
+            "semeval2024"],
+        help="corpus for feature-extraction",
+        required=True)
     parser.add_argument("--model", type=str, help="name or path to fine-tuned model", required=True)
-    parser.add_argument("--extraction_method", type=str, choices=["cls", "layers"], help="extraction method, 'cls' or 'layers'", required=True)
-    parser.add_argument("--layers", nargs='+', help="list of layers to extract, only supported if extraction_method=layers", default=[])
-    parser.add_argument("--agg_method", type=str, choices=["avg", "concatenate"], help="aggregation method to consolidate layer features, only supported if extraction_method=layer", default=None)
+    parser.add_argument(
+        "--extraction_method",
+        type=str,
+        choices=[
+            "cls",
+            "layers"],
+        help="extraction method, 'cls' or 'layers'",
+        required=True)
+    parser.add_argument(
+        "--layers",
+        nargs='+',
+        help="list of layers to extract, only supported if extraction_method=layers",
+        default=[])
+    parser.add_argument(
+        "--agg_method",
+        type=str,
+        choices=[
+            "avg",
+            "concatenate"],
+        help="aggregation method to consolidate layer features, only supported if extraction_method=layer",
+        default=None)
     args = parser.parse_args()
+    args.layers = [int(arg) for arg in args.layers]
     print("Arguments:", args)
     feature_extraction(args)

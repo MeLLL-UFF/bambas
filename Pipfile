@@ -14,8 +14,8 @@ notebook = "*"
 nltk = "*"
 flake8 = "*"
 autopep8 = "*"
-sklearn-hierarchical-classification = "*"
 scikit-multilearn = "*"
+sentence-transformers = "*"
 
 [dev-packages]
 

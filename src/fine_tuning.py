@@ -13,6 +13,7 @@ from huggingface_hub import interpreter_login
 
 OUTPUT_DIR = f"{get_workdir()}/fine_tuning"
 
+
 def fine_tune(args: Namespace):
     model = args.model
     dataset = args.dataset
@@ -24,7 +25,10 @@ def fine_tune(args: Namespace):
     save_model = args.save_model
     push_model = args.push_model_to_hf_hub
 
-    train, _, dev = map(Dataset.from_pandas, load_dataset(dataset))
+    train, dev, test = map(Dataset.from_pandas, load_dataset(dataset))
+    if dataset != "semeval2024":
+        # in this case, we can use the test set too
+        dev = pd.concat([dev, test])
 
     def remove_additional_columns(ds: Dataset):
         columns = ds.column_names
@@ -36,12 +40,12 @@ def fine_tune(args: Namespace):
     tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
     device_map = {"": "cpu"}
     if torch.cuda.is_available():
-        device_map = { "": 0 }
+        device_map = {"": 0}
     print(f"Using device: {device_map}")
-    
+
     def tokenize(data):
         return tokenizer(data["text"], padding=True, truncation=True)
-    
+
     train = train.map(tokenize, batched=True, batch_size=64, num_proc=4, remove_columns=["text"])
     dev = dev.map(tokenize, batched=True, batch_size=64, num_proc=4, remove_columns=["text"])
 
@@ -49,10 +53,10 @@ def fine_tune(args: Namespace):
 
     training_args = TrainingArguments(
         fine_tuned_name,
-        evaluation_strategy = "epoch",
-        learning_rate = lr,
-        weight_decay = weight_decay,
-        push_to_hub = push_model,
+        evaluation_strategy="epoch",
+        learning_rate=lr,
+        weight_decay=weight_decay,
+        push_to_hub=push_model,
         # TODO: proper configuration
         no_cuda=False,
         report_to=["none"]
@@ -69,7 +73,7 @@ def fine_tune(args: Namespace):
     )
     if push_model:
         interpreter_login(write_permission=True, new_session=False)
-    
+
     trainer.train()
 
     eval_results = trainer.evaluate()
@@ -87,17 +91,28 @@ def fine_tune(args: Namespace):
         trainer.push_to_hub()
     return None
 
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser("fine_tuning", description="fine-tuning with masked-language model (MLM) objective for language models")
+    parser = argparse.ArgumentParser("fine_tuning",
+                                     description="fine-tuning with masked-language model (MLM) objective for language models")
     parser.add_argument("--model", type=str, choices=["xlm-roberta-base"], help="model to fine-tune", required=True)
-    parser.add_argument("--dataset", type=str, choices=["ptc2019"], help="corpus for masked-language model pretraining task", required=True)
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        choices=["ptc2019"],
+        help="corpus for masked-language model pretraining task",
+        required=True)
     parser.add_argument("--fine_tuned_name", type=str, help="fine-tuned model name", required=True)
     # parser.add_argument("--batch_size", type=int, help="batch size for pretraining")
     parser.add_argument("--lr", type=float, default=2e-4, help="training learning rate")
     parser.add_argument("--weight_decay", type=float, default=0.001, help="training weight decay")
-    parser.add_argument("--mlm_probability", type=float, default=0.15, help="probability that a sentence token will be replaced with the [MASK] token")
+    parser.add_argument("--mlm_probability", type=float, default=0.15,
+                        help="probability that a sentence token will be replaced with the [MASK] token")
     parser.add_argument("--save_model", action="store_true", help="wheter to save adjusted model locally")
-    parser.add_argument("--push_model_to_hf_hub", action="store_true", help="wheter to upload adjusted model to HuggingFace hub. If True, you will be prompted for your authentication token")
+    parser.add_argument(
+        "--push_model_to_hf_hub",
+        action="store_true",
+        help="wheter to upload adjusted model to HuggingFace hub. If True, you will be prompted for your authentication token")
     args = parser.parse_args()
     print("Arguments:", args)
     fine_tune(args)

@@ -1,0 +1,6711 @@
+[
+    {
+        "id": "63292",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70419",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "63673",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71297",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66340",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77304",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76719",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78621",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64354",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "69527",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63834",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "63225",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78675",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66933",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78661",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69180",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78636",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "68040",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "75948",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76218",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "66685",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69589",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64559",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66414",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63891",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70213",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77611",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79093",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "76182",
+        "labels": [
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71662",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76312",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65051",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "63970",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78841",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77118",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66740",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "63681",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79072",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65761",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "77788",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79499",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "64790",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76852",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69117",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79893",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69421",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75874",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64763",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70333",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76253",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75939",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76386",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78681",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67822",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78143",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70136",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "68057",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Appeal to authority",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69265",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66356",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "63296",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78860",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68880",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71739",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79258",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65711",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77546",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77055",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65125",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66288",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71706",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77566",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "77632",
+        "labels": [
+            "Smears",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78153",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77779",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70773",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68820",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65736",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "77579",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77001",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64299",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71785",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77295",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75891",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75858",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69869",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68238",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71234",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67987",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67841",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66758",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76107",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "64854",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65839",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66623",
+        "labels": [
+            "Smears",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67946",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76426",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66891",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66789",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66770",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70029",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69821",
+        "labels": [
+            "Smears",
+            "Loaded Language"
+        ]
+    },
+    {
+        "id": "63898",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64568",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "70001",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65158",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64873",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77641",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70364",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64084",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66045",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "64472",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69618",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76692",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70376",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "67411",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64673",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63120",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76565",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76221",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70153",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65450",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66299",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75710",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63730",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "64896",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70961",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "77690",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67755",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77136",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69510",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78999",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69642",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65991",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65225",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68159",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65844",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67711",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66368",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76617",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79850",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64942",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66012",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70793",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70852",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76204",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71465",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66102",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77777",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78107",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "68947",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Loaded Language"
+        ]
+    },
+    {
+        "id": "66094",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64408",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78564",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66108",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68041",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "69664",
+        "labels": [
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "75950",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69371",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69903",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70005",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65279",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77864",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77113",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67619",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65566",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63598",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69358",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66691",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "75789",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "75942",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65057",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65192",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65266",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66937",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "79195",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70032",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70735",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65454",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67905",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64846",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63140",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69599",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64398",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76259",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "66613",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "69639",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66460",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66068",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "68991",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69202",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71729",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65735",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69838",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69853",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64803",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "69473",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69294",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65186",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69546",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78569",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78869",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66130",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65016",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66693",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77345",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66877",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76311",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77534",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68935",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69305",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "75957",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65030",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79543",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79443",
+        "labels": [
+            "Smears",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67760",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "63260",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79426",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70050",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67454",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65983",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68950",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70703",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68539",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76644",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65631",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77085",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69663",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "66805",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65090",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64973",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70359",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77983",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77167",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "63853",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "69773",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69588",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71600",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66469",
+        "labels": [
+            "Loaded Language"
+        ]
+    },
+    {
+        "id": "65270",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68201",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78051",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66097",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71669",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79020",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71250",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "70258",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "75872",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68235",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69619",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67695",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66016",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "77069",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64988",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "69508",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65224",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76165",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76654",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68862",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78216",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65002",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67986",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67735",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66549",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75835",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66543",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69293",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64303",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69725",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66345",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76163",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64353",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78209",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75949",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79213",
+        "labels": [
+            "Smears",
+            "Appeal to authority",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64418",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65582",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78933",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71554",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77472",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63324",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65304",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67805",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78359",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "69544",
+        "labels": [
+            "Smears",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "63462",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "75660",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63744",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68425",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "76771",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64278",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "77795",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "75862",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66031",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75776",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "68020",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78524",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77601",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70202",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67834",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76757",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67870",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76768",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67710",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "63778",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69656",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70170",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67643",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "66656",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65292",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67733",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69274",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71164",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67684",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "63656",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67996",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63387",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "67696",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77561",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65432",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63793",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "70828",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76501",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79353",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78579",
+        "labels": []
+    },
+    {
+        "id": "63614",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67327",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76125",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69501",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69777",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76427",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78834",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "64701",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "79346",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63828",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65205",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77516",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71780",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65815",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77175",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65259",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "69836",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70113",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76642",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "66849",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65063",
+        "labels": [
+            "Smears",
+            "Loaded Language"
+        ]
+    },
+    {
+        "id": "76223",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64886",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "63953",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "63425",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76522",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71082",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65400",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78328",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65900",
+        "labels": [
+            "Name calling/Labeling"
+        ]
+    },
+    {
+        "id": "67501",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71124",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71071",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68457",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67480",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79148",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77887",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78751",
+        "labels": []
+    },
+    {
+        "id": "76952",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71323",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69101",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65415",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Appeal to authority",
+            "Black-and-white Fallacy/Dictatorship"
+        ]
+    },
+    {
+        "id": "70491",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "67116",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65888",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68514",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70469",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77914",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71363",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77943",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "68435",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "76912",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79767",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77948",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76988",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "75002",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "68473",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76932",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71350",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79174",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears",
+            "Appeal to authority",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76036",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "79794",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67497",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "74966",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71083",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76979",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74960",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64162",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71404",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64203",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65403",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65328",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79145",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71304",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68466",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65872",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78831",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68525",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64256",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76989",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70500",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "78306",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78323",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "69042",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78262",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67557",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65362",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65948",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64262",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67523",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65406",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76066",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65919",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71331",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71142",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64257",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76970",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64241",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71078",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68495",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71394",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71328",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65393",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79809",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78277",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68496",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77961",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65949",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78326",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74968",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78792",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65889",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76030",
+        "labels": [
+            "Smears",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70519",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76916",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79138",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71079",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65922",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64214",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69104",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79775",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79120",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64196",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67470",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69099",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71348",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "69031",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64183",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79804",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67468",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67529",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64237",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69086",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70523",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "70495",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69028",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67121",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71099",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65896",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71126",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65879",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78766",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65938",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71091",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "69016",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71070",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "71088",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "67517",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67467",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65387",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71139",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79135",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64205",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65916",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Loaded Language"
+        ]
+    },
+    {
+        "id": "68476",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71379",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67098",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71354",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71138",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79803",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67533",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79777",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70511",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79128",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64188",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "74948",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76922",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71137",
+        "labels": [
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64180",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70440",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67552",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76040",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71047",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65350",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74976",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71383",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65412",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74954",
+        "labels": [
+            "Smears",
+            "Appeal to authority",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78312",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76073",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67071",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75032",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "76017",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78307",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78802",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67068",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79779",
+        "labels": [
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77950",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78357",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68437",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76025",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68509",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65908",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78767",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "67534",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67493",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79154",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67084",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67117",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71115",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64250",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78335",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71375",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76915",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64159",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79123",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76080",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65850",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78270",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76904",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64261",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69047",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78752",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71366",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65325",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64226",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78356",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75003",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71371",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68501",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65419",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64170",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77922",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79780",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71337",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74958",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70499",
+        "labels": [
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78321",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "78283",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69068",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71131",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78333",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64209",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67088",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "69049",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "71355",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67058",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "74974",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78832",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71059",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78800",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70461",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "77947",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76054",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "68483",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69091",
+        "labels": [
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71119",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "74991",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67471",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71062",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68456",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76945",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77968",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65880",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76976",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64260",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69017",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71399",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65330",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79824",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70477",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67569",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74973",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76944",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78769",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70492",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71358",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67094",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65915",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79805",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71310",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65375",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71069",
+        "labels": [
+            "Smears",
+            "Loaded Language"
+        ]
+    },
+    {
+        "id": "77933",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "69084",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78296",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "76923",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70463",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76967",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67148",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65912",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "77907",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76084",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68506",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76037",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79806",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76947",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65389",
+        "labels": []
+    },
+    {
+        "id": "68479",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65397",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65370",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78298",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75031",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67070",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65942",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71340",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78807",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67518",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "74971",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78316",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65885",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75018",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79811",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64254",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "68531",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76992",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79163",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "69051",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64238",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67120",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79823",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68491",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69020",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65939",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "74990",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79137",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76077",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70480",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75009",
+        "labels": [
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65360",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77921",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Loaded Language"
+        ]
+    },
+    {
+        "id": "67119",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71057",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65861",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71128",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "68469",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65385",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64213",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70429",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79801",
+        "labels": [
+            "Smears",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69052",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "64246",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70512",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67509",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69046",
+        "labels": [
+            "Loaded Language"
+        ]
+    },
+    {
+        "id": "76098",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65890",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65928",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67486",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64190",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76068",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "76949",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79170",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "77908",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79799",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78352",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67074",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "71318",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "76029",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71136",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76053",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64249",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77936",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "74985",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67123",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78798",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79825",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71316",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65334",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79820",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70439",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "76951",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79144",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "75034",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68511",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65343",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78827",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79147",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76971",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76925",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "68452",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67076",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71064",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "68477",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65320",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68521",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "68535",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64218",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77938",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "68460",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77956",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76062",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71303",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76093",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65347",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76919",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65870",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70516",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77940",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78273",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79768",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "67525",
+        "labels": [
+            "Smears",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67535",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76994",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78310",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71055",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76924",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76088",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65935",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79792",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71312",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67125",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78325",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "69043",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65930",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71046",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67524",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67478",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67551",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64212",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78278",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71396",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79114",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77932",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65348",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65340",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64192",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76962",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67109",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76969",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76076",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65371",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79784",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "77899",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65322",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77901",
+        "labels": [
+            "Smears",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65864",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71326",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71141",
+        "labels": [
+            "Smears",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64167",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71098",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "68459",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64244",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78344",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77885",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71390",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71329",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67541",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78287",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77946",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "79146",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76011",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67085",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76039",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67530",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70450",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69075",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76105",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78350",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65884",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65946",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64194",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65395",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76959",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71357",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78809",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79817",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67484",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "70506",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78295",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65921",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "69076",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67508",
+        "labels": [
+            "Smears",
+            "Loaded Language"
+        ]
+    },
+    {
+        "id": "68441",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65891",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79766",
+        "labels": [
+            "Smears",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70513",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71095",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71406",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64245",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76056",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71325",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70425",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65860",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65931",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67565",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65422",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "78810",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71365",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67477",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77918",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67510",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65866",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70454",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76956",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77877",
+        "labels": [
+            "Appeal to authority",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70521",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65380",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76015",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64252",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67476",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67538",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65904",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68507",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70494",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70428",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75021",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "74993",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77902",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75011",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71114",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78762",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67496",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70484",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "69105",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65927",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "76986",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64201",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64172",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78319",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76031",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68451",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "69087",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76041",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70522",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65384",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64217",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79782",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65327",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76938",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78768",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71319",
+        "labels": [
+            "Smears",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65913",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67506",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64229",
+        "labels": [
+            "Smears",
+            "Loaded Language"
+        ]
+    },
+    {
+        "id": "71129",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67066",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78308",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79160",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71370",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71076",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79814",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67110",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78267",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69045",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77900",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68449",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "70468",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65349",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76930",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70471",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70438",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76024",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70478",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65941",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "74955",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65391",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71105",
+        "labels": [
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67077",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65878",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76018",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67481",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77949",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76980",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68463",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71118",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71044",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77955",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "71097",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78773",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78794",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "74959",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78343",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "74980",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70467",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64223",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Loaded Language"
+        ]
+    },
+    {
+        "id": "78797",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78315",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75008",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "77941",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65871",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65326",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76069",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65869",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78338",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64206",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70455",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78760",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78771",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70520",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71341",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67488",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79132",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71130",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65342",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76032",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71134",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "64200",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "79118",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65357",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65859",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65940",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70449",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78776",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67558",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70489",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76057",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71324",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65924",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78778",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78281",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65947",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71040",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78765",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "76096",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71102",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76086",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65376",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71353",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "76014",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65333",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69065",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "75027",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65895",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69044",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "65364",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78826",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70456",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "71133",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64163",
+        "labels": [
+            "Smears",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70453",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67140",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67556",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "64224",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65917",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78265",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71332",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "67081",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67130",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69027",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70443",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78276",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71127",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "69095",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "69111",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "74972",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71392",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65396",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "74997",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76921",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76043",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "65868",
+        "labels": [
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "64222",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "79786",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67107",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "70451",
+        "labels": [
+            "Slogans",
+            "Black-and-white Fallacy/Dictatorship",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "78811",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71094",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "78275",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "78279",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "76928",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67106",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "77925",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67142",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65358",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75016",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "79795",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "75010",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "70423",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71373",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "67137",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "65402",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79807",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "71090",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "67141",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "79810",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "67516",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "65910",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "77928",
+        "labels": [
+            "Name calling/Labeling",
+            "Smears"
+        ]
+    },
+    {
+        "id": "75033",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "71343",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "70426",
+        "labels": [
+            "Smears",
+            "Whataboutism"
+        ]
+    },
+    {
+        "id": "64176",
+        "labels": [
+            "Smears"
+        ]
+    },
+    {
+        "id": "68485",
+        "labels": [
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "75006",
+        "labels": [
+            "Smears",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    },
+    {
+        "id": "77886",
+        "labels": [
+            "Smears",
+            "Whataboutism",
+            "Slogans",
+            "Thought-terminating clich\u00e9"
+        ]
+    }
+]
