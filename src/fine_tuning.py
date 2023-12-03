@@ -86,6 +86,7 @@ def fine_tune(args: Namespace):
         os.makedirs(output_dir, exist_ok=True)
         print(f"Saving fine-tuned model to {output_dir}")
         trainer.model.save_pretrained(output_dir)
+        trainer.tokenizer.save_pretrained(output_dir)
 
     if push_model:
         print(f"Uploading fine-tuned model ({fine_tuned_name}) to HuggingFace Hub")
