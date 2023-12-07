@@ -8,8 +8,9 @@ import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.neural_network import MLPClassifier
 from src.utils.br import BinaryRelevance
-from sklearn.linear_model import LogisticRegression, RidgeClassifier
-from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
+from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
+from sklearn.linear_model import LogisticRegression, RidgeClassifier, RidgeClassifierCV
+from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier
 from sklearn.neighbors import KNeighborsClassifier, RadiusNeighborsClassifier
 from typing import List, Dict, Any, Tuple
 from src.data import load_dataset
@@ -109,19 +110,34 @@ def classify(args: Namespace):
             # no labels with prob lower than that will be considered for prediction
             mlb_prediction_threshold=0.35,
         )
-    elif args.classifier == "RidgeClassifier":
-        clf = RidgeClassifier()
-    elif args.classifier == "RandomForestClassifier":
-        clf = RandomForestClassifier()
+    elif args.classifier == "DecisionTreeClassifier":
+        clf = DecisionTreeClassifier()
+    elif args.classifier == "ExtraTreeClassifier":
+        clf = ExtraTreeClassifier()
     elif args.classifier == "ExtraTreesClassifier":
         clf = ExtraTreesClassifier()
     elif args.classifier == "KNeighborsClassifier":
         clf = KNeighborsClassifier()
+    elif args.classifier == "MLPClassifier":
+        clf = MLPClassifier()
     elif args.classifier == "RadiusNeighborsClassifier":
         clf = RadiusNeighborsClassifier()
+    elif args.classifier == "RandomForestClassifier":
+        clf = RandomForestClassifier()
+    elif args.classifier == "RidgeClassifier":
+        clf = RidgeClassifier()
+    elif args.classifier == "RidgeClassifierCV":
+        clf = RidgeClassifierCV()
     elif args.classifier == "LogisticRegression":
         clf = BinaryRelevance(
-            classifier = LogisticRegression(random_state=args.seed),
+            classifier = LogisticRegression(random_state=args.seed,
+                                            max_iter=400,
+                                            multi_class="multinomial"),
+            labels = labels[0]
+        )
+    elif args.classifier == "GradientBoostingClassifier":
+        clf = BinaryRelevance(
+            classifier = GradientBoostingClassifier(random_state=args.seed),
             labels = labels[0]
         )
     else:
