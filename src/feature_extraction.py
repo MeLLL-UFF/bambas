@@ -136,6 +136,7 @@ def save_ft_files(ft_data: Dict[str, Any], ft_path: str):
 
 def feature_extraction(args: Namespace):
     train, dev, test = load_dataset(args.dataset)
+    print("Dataset Lengths", len(train), len(dev), len(test))
     tokenizer = AutoTokenizer.from_pretrained(args.model, use_fast=True)
     device_map = {"": "cpu"}
     if torch.cuda.is_available():
@@ -163,6 +164,7 @@ def feature_extraction(args: Namespace):
     ts = int(time.time())
     ft_prefix = f"{ts}_{args.model.replace('/', '-')}"
     train_ft_path = f"{OUTPUT_DIR}/{ft_prefix}_train_features.json"
+    print("train_ft_path:", train_ft_path)
     save_ft_files(train_ft_json, train_ft_path)
     print(f"Saved feature-extraction file to {train_ft_path}")
 
@@ -185,7 +187,11 @@ if __name__ == "__main__":
             "semeval2024"],
         help="corpus for feature-extraction",
         required=True)
-    parser.add_argument("--model", type=str, help="name or path to fine-tuned model", required=True)
+    parser.add_argument(
+        "--model", 
+        type=str, 
+        help="name or path to fine-tuned model", 
+        required=True)
     parser.add_argument(
         "--extraction_method",
         type=str,
