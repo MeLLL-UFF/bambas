@@ -12,6 +12,7 @@ from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
 from sklearn.linear_model import LogisticRegression, RidgeClassifier, RidgeClassifierCV
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier
 from sklearn.neighbors import KNeighborsClassifier, RadiusNeighborsClassifier
+from skmultilearn.adapt import MLkNN
 from typing import List, Dict, Any, Tuple
 from src.data import load_dataset
 from src.utils.workspace import get_workdir
@@ -118,6 +119,8 @@ def classify(args: Namespace):
         clf = ExtraTreesClassifier()
     elif args.classifier == "KNeighborsClassifier":
         clf = KNeighborsClassifier()
+    elif args.classifier == "MLkNN":
+        clf = MLkNN(k=3)
     elif args.classifier == "MLPClassifier":
         clf = MLPClassifier()
     elif args.classifier == "RadiusNeighborsClassifier":
