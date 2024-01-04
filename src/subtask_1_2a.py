@@ -239,6 +239,11 @@ def _read_gold_and_pred(pred_fpath, gold_fpath):
     return pred_labels, gold_labels
 
 
+def hf1_score(gold, pred):
+    with multi_labeled(gold, pred, G) as (gold_, pred_, graph_):
+        return _h_fbeta_score(gold_, pred_, graph_)
+
+
 def evaluate_h(pred_fpath, gold_fpath):
     pred_labels, gold_labels = _read_gold_and_pred(pred_fpath, gold_fpath)
 

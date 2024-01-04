@@ -7,6 +7,8 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.neural_network import MLPClassifier
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import make_scorer
 from src.utils.br import BinaryRelevance
 from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
 from sklearn.linear_model import LogisticRegression, RidgeClassifier, RidgeClassifierCV
@@ -18,7 +20,7 @@ from src.utils.workspace import get_workdir
 from src.subtask_1_2a import evaluate_h
 from sklearn_hierarchical_classification.classifier import HierarchicalClassifier
 from functools import reduce
-from src.subtask_1_2a import get_dag, get_dag_labels
+from src.subtask_1_2a import get_dag, get_dag_labels, hf1_score
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
 GOLD_PATH = f"{get_workdir()}/dataset/semeval2024/subtask1/validation.json"
@@ -62,15 +64,18 @@ def classify(args: Namespace):
     print("Loading dataset files")
     train, dev, test = load_dataset(args.dataset)
     print("Dataset Lengths", len(train), len(dev), len(test))
+    print("Concatenating train and dev sets")
+    train = pd.concat([train, dev])
+    print("Merged dataset length:", len(train))
 
     all_labels = pd.concat([train["labels"], dev["labels"]])
 
-    if args.classifier == "HiMLP":
+    if args.classifier == "HiMLP" or args.classifier == "GridHiMLP":
         labels = [get_dag_labels()]
     else:
         labels = [list(set(reduce(lambda x, y: x + y, all_labels.to_numpy().tolist())))]
     print(f"Labels: {labels}")
-    print(f"No. of labels in {'DAG' if args.classifier == 'HiMLP' else 'train+dev datasets'}: {len(labels[0])}")
+    print(f"No. of labels in {'DAG' if args.classifier == 'HiMLP' or args.classifier == 'GridHiMLP' else 'train+dev datasets'}: {len(labels[0])}")
 
     mlb = MultiLabelBinarizer(classes=labels[0])
     train_labels = mlb.fit(labels).transform(train["labels"].to_numpy())
@@ -80,6 +85,9 @@ def classify(args: Namespace):
         load_features_array, [
             train_ft_info["features"], test_ft_info["features"], dev_ft_info["features"]])
     print("Features Lengths", len(train_ft), len(test_ft), len(dev_ft))
+    print("Concatenating train and dev features arrays")
+    train_ft = np.concatenate((train_ft, dev_ft))
+    print("Merged features array length:", train_ft.shape)
 
     if args.classifier == "MLP":
         # TODO: we are not using the validation set correctly. As such, only the train and test splits are used throughout this code.
@@ -103,6 +111,8 @@ def classify(args: Namespace):
                 verbose=True
             ),
             class_hierarchy=get_dag(),
+            # prediction_depth="nmlnp",
+            # stopping_criteria=0.5,
             prediction_depth="mlnp",
             # Overcomes problem with dimension validation on sklearn_hierarchical_classification
             feature_extraction="raw",
@@ -110,6 +120,43 @@ def classify(args: Namespace):
             # no labels with prob lower than that will be considered for prediction
             mlb_prediction_threshold=0.35,
         )
+    elif args.classifier == "GridHiMLP":
+        estimator = HierarchicalClassifier(
+            base_estimator=MLPClassifier(
+                random_state=args.seed,
+                max_iter=args.max_iter,
+                alpha=args.alpha,
+                shuffle=True,
+                early_stopping=True,
+                verbose=True
+            ),
+            class_hierarchy=get_dag(),
+            mlb=mlb,
+        )
+
+        def hf1_custom_scorer(y_true, y_pred):
+            return hf1_score(y_true, y_pred)
+        
+        scorer = make_scorer(hf1_custom_scorer, greater_is_better=True)
+
+        parameters = {
+            # 'base_estimator': [
+            #     MLPClassifier(
+            #         random_state=args.seed,
+            #         max_iter=args.max_iter,
+            #         alpha=args.alpha,
+            #         shuffle=True,
+            #         early_stopping=True,
+            #         verbose=True
+            #     ),
+            # ],
+            # 'class_hierarchy': [get_dag()],
+            # 'mlb': [mlb],
+            'prediction_depth': ['mlnp'],
+            'feature_extraction': ['raw'],
+            'mlb_prediction_threshold': [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6],
+        }
+        clf = GridSearchCV(estimator=estimator, param_grid=parameters, scoring=scorer, n_jobs=-1)
     elif args.classifier == "DecisionTreeClassifier":
         clf = DecisionTreeClassifier()
     elif args.classifier == "ExtraTreeClassifier":
@@ -144,8 +191,11 @@ def classify(args: Namespace):
         raise Exception("Not implemented yet")
 
     clf = clf.fit(train_ft, train_labels)
+    if clf.best_params_ is not None:
+        print("Best params for gridsearch:", json.dumps(clf.best_params_, indent=4))
+
     dev_predicted_labels = clf.predict(dev_ft)
-    if args.classifier != "HiMLP":
+    if args.classifier != "HiMLP" and args.classifier != "GridHiMLP":
         dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels)
     pred_path, _ = save_predictions(dev, dev_predicted_labels, "dev")
 
@@ -188,7 +238,7 @@ def classify(args: Namespace):
 
     print("\nPredicting for test file")
     test_predicted_labels = clf.predict(test_ft)
-    if args.classifier != "HiMLP":
+    if args.classifier != "HiMLP" and args.classifier != "GridHiMLP":
         test_predicted_labels = mlb.inverse_transform(test_predicted_labels)
     pred_path, _ = save_predictions(test, test_predicted_labels, "dev_unlabeled")
     print(f"Finished successfully. dev_unlabeled predictions saved at {pred_path}")

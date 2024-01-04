@@ -18,18 +18,19 @@ def fine_tune(args: Namespace):
     model = args.model
     dataset = args.dataset
     fine_tuned_name = args.fine_tuned_name
-    # batch_size = args.batch_size
+    batch_size = args.batch_size
     lr = args.lr
     weight_decay = args.weight_decay
     mlm_prob = args.mlm_probability
     save_model = args.save_model
     push_model = args.push_model_to_hf_hub
+    save_strategy = args.save_strategy
 
     train, dev, test = map(Dataset.from_pandas, load_dataset(dataset))
-    if dataset != "semeval2024":
-        # in this case, we can use the test for evaluation and combine train+dev for training
-        train = concatenate_datasets([train, dev])
-        dev = test
+    # if dataset != "semeval2024":
+    # in this case, we can use the test for evaluation and combine train+dev for training
+    train = concatenate_datasets([train, dev])
+    dev = test
 
     def remove_additional_columns(ds: Dataset):
         columns = ds.column_names
@@ -47,8 +48,8 @@ def fine_tune(args: Namespace):
     def tokenize(data):
         return tokenizer(data["text"], padding=True, truncation=True)
 
-    train = train.map(tokenize, batched=True, batch_size=64, num_proc=4, remove_columns=["text"])
-    dev = dev.map(tokenize, batched=True, batch_size=64, num_proc=4, remove_columns=["text"])
+    train = train.map(tokenize, batched=True, batch_size=batch_size, num_proc=4, remove_columns=["text"])
+    dev = dev.map(tokenize, batched=True, batch_size=batch_size, num_proc=4, remove_columns=["text"])
 
     model = AutoModelForMaskedLM.from_pretrained(model, device_map=device_map)
 
@@ -60,7 +61,10 @@ def fine_tune(args: Namespace):
         push_to_hub=push_model,
         # TODO: proper configuration
         no_cuda=False,
-        report_to=["none"]
+        report_to=["none"],
+        per_device_train_batch_size=batch_size,
+        per_device_eval_batch_size=batch_size,
+        save_strategy=save_strategy
     )
     data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm_probability=mlm_prob)
 
@@ -101,11 +105,11 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dataset",
         type=str,
-        choices=["ptc2019"],
+        choices=["ptc2019", "semeval2024"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--fine_tuned_name", type=str, help="fine-tuned model name", required=True)
-    # parser.add_argument("--batch_size", type=int, help="batch size for pretraining")
+    parser.add_argument("--batch_size", type=int, help="batch size for pretraining", default=32)
     parser.add_argument("--lr", type=float, default=2e-4, help="training learning rate")
     parser.add_argument("--weight_decay", type=float, default=0.001, help="training weight decay")
     parser.add_argument("--mlm_probability", type=float, default=0.15,
@@ -115,6 +119,7 @@ if __name__ == "__main__":
         "--push_model_to_hf_hub",
         action="store_true",
         help="wheter to upload adjusted model to HuggingFace hub. If True, you will be prompted for your authentication token")
+    parser.add_argument("--save_strategy", type=str, help="save strategy for trainer, can be no, epoch or steps", default="epoch")
     args = parser.parse_args()
     print("Arguments:", args)
     fine_tune(args)
