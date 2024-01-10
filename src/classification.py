@@ -12,7 +12,6 @@ from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
 from sklearn.linear_model import LogisticRegression, RidgeClassifier, RidgeClassifierCV
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier
 from sklearn.neighbors import KNeighborsClassifier, RadiusNeighborsClassifier
-from skmultilearn.adapt import MLkNN
 from typing import List, Dict, Any, Tuple
 from src.data import load_dataset
 from src.utils.workspace import get_workdir
@@ -89,9 +88,9 @@ def classify(args: Namespace):
             random_state=args.seed,
             max_iter=args.max_iter,
             alpha=args.alpha,
-            shuffle=True,
+            shuffle=False,
             early_stopping=True,
-            verbose=True
+            verbose=True,
         )
     elif args.classifier == "HiMLP":
         clf = HierarchicalClassifier(
@@ -119,8 +118,8 @@ def classify(args: Namespace):
         clf = ExtraTreesClassifier()
     elif args.classifier == "KNeighborsClassifier":
         clf = KNeighborsClassifier()
-    elif args.classifier == "MLkNN":
-        clf = MLkNN(k=3)
+    # elif args.classifier == "MLkNN":
+    #     clf = MLkNN(k=3)
     elif args.classifier == "MLPClassifier":
         clf = MLPClassifier()
     elif args.classifier == "RadiusNeighborsClassifier":
@@ -199,8 +198,8 @@ def classify(args: Namespace):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("classification", description="classification with feedforward model")
-    parser.add_argument("--classifier", type=str, 
-                        # choices=["MLP", "HiMLP", "BR-LR"], 
+    parser.add_argument("--classifier", type=str,
+                        # choices=["MLP", "HiMLP", "BR-LR"],
                         default="MLP")
     parser.add_argument(
         "--dataset",
