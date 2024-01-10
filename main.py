@@ -71,11 +71,14 @@ def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dat
     labels_set = list(set(labels_set))
     if "None" in labels_set: labels_set.remove("None")
 
+    print(labels_set)
+
     mlb = MultiLabelBinarizer(classes=labels_set)
     train_labels_binarized = mlb.fit_transform(train_labels)
     test_labels_binarized = mlb.fit_transform(test_labels)
 
     lr = LogisticRegression()
+<<<<<<< HEAD
 
     num_labels = mlb.classes_.shape[-1]
     preds = []
@@ -87,6 +90,19 @@ def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dat
 
     test_predicted_labels_binarized = np.array(preds).transpose()
 
+=======
+
+    num_labels = mlb.classes_.shape[-1]
+    preds = []
+    
+    for idx in range(num_labels):
+        lr.fit(X=train_features, y=train_labels_binarized.transpose()[idx])
+        pred_for_feature = lr.predict(test_features)
+        preds.append(pred_for_feature)
+
+    test_predicted_labels_binarized = np.array(preds).transpose()
+
+>>>>>>> 3bd0aaa18f6c42dc6280ba2bf4f0bfe6ceb096d6
     micro_f1, acc, prec, rec, cf_mtx = compute_scores(labels_set, test_labels_binarized, test_predicted_labels_binarized)
     return micro_f1, acc, prec, rec, cf_mtx 
 
