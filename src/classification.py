@@ -20,13 +20,28 @@ from src.utils.workspace import get_workdir
 from src.subtask_1_2a import evaluate_h
 from sklearn_hierarchical_classification.classifier import HierarchicalClassifier
 from functools import reduce
-from src.subtask_1_2a import get_dag, get_dag_labels, hf1_score
+from src.subtask_1_2a import get_dag, get_dag_labels, get_dag_parents, get_leaf_parents, hf1_score
+from copy import deepcopy
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
 GOLD_PATH = f"{get_workdir()}/dataset/semeval2024/subtask1/validation.json"
 
+def append_dag_parents(leaves: List[str]) -> List[str]:
+    labels = deepcopy(leaves)
+    for leaf in leaves:
+        parents = get_leaf_parents(leaf)
+        labels = list(set(labels.extend(parents)))
+    return labels
 
-def save_predictions(test_df: pd.DataFrame, predictions: List[List[str]], kind: str) -> Tuple[str, List[Dict[str, Any]]]:
+def remove_non_leaf_nodes(df: pd.DataFrame) -> pd.DataFrame:
+    parents = get_dag_parents()
+    def remove_parents(labels: List[str]) -> List[str]:
+        return list(filter(lambda x: x not in parents, labels))
+
+    df["labels"] = df["labels"].apply(remove_parents)
+    return df
+
+def save_predictions(test_df: pd.DataFrame, predictions: List[List[str]], kind: str, timestamp: int) -> Tuple[str, List[Dict[str, Any]]]:
     predictions_json = []
     for idx, row in test_df.iterrows():
         predictions_json.append({
@@ -36,7 +51,7 @@ def save_predictions(test_df: pd.DataFrame, predictions: List[List[str]], kind: 
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     # submission format has txt extension but json format
-    predictions_json_path = f"{OUTPUT_DIR}/{kind}_predictions.json.txt"
+    predictions_json_path = f"{OUTPUT_DIR}/{timestamp}_{kind}_predictions.json.txt"
     with open(predictions_json_path, "w") as f:
         json.dump(predictions_json, f, indent=4)
 
@@ -64,8 +79,12 @@ def classify(args: Namespace):
     print("Loading dataset files")
     train, dev, test = load_dataset(args.dataset)
     print("Dataset Lengths", len(train), len(dev), len(test))
+    if args.leaves_only:
+        print("Removing non-leaf nodes for classification")
+        train, dev = map(remove_non_leaf_nodes, [train, dev])
+
     print("Concatenating train and dev sets")
-    train = pd.concat([train, dev])
+    train = pd.concat([train, dev]).sample(n = 100)
     print("Merged dataset length:", len(train))
 
     all_labels = pd.concat([train["labels"], dev["labels"]])
@@ -93,6 +112,7 @@ def classify(args: Namespace):
         # TODO: we are not using the validation set correctly. As such, only the train and test splits are used throughout this code.
         # We must implement manual validation set evaluation
         clf = MLPClassifier(
+            hidden_layer_sizes=(768, ),
             random_state=args.seed,
             max_iter=args.max_iter,
             alpha=args.alpha,
@@ -103,6 +123,7 @@ def classify(args: Namespace):
     elif args.classifier == "HiMLP":
         clf = HierarchicalClassifier(
             base_estimator=MLPClassifier(
+                hidden_layer_sizes=(768, ),
                 random_state=args.seed,
                 max_iter=args.max_iter,
                 alpha=args.alpha,
@@ -190,14 +211,22 @@ def classify(args: Namespace):
     else:
         raise Exception("Not implemented yet")
 
+    # print(train_labels, train_ft.shape, train_labels.shape)
     clf = clf.fit(train_ft, train_labels)
-    if clf.best_params_ is not None:
-        print("Best params for gridsearch:", json.dumps(clf.best_params_, indent=4))
+    if args.classifier == "GridHiMLP":
+        if clf.best_params_ is not None:
+            print("Best params for gridsearch:", json.dumps(clf.best_params_, indent=4))
 
     dev_predicted_labels = clf.predict(dev_ft)
+    # print(dev_predicted_labels, not np.any(dev_predicted_labels))
     if args.classifier != "HiMLP" and args.classifier != "GridHiMLP":
         dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels)
-    pred_path, _ = save_predictions(dev, dev_predicted_labels, "dev")
+    if args.leaves_only:
+        dev_predicted_labels = [append_dag_parents(x) for x in dev_predicted_labels]
+    # print(dev_predicted_labels)
+        
+    ts = int(time.time())
+    pred_path, _ = save_predictions(dev, dev_predicted_labels, "dev", ts)
 
     prec, rec, f1 = evaluate_h(pred_path, GOLD_PATH)
     print(f"\nValidation set:\n\tPrecision: {prec}\n\tRecall: {rec}\n\tF1: {f1}\n")
@@ -223,6 +252,7 @@ def classify(args: Namespace):
                 "Precision",
                 "Recall",
                 "Timestamp"])
+    
     results.loc[len(results.index) + 1] = [train_ft_info["model"],
                                            train_ft_info["extraction_method"],
                                            train_ft_info["layers"],
@@ -233,14 +263,16 @@ def classify(args: Namespace):
                                            f1,
                                            prec,
                                            rec,
-                                           int(time.time())]
+                                           ts]
     results.to_csv(results_csv_path)
 
     print("\nPredicting for test file")
     test_predicted_labels = clf.predict(test_ft)
     if args.classifier != "HiMLP" and args.classifier != "GridHiMLP":
         test_predicted_labels = mlb.inverse_transform(test_predicted_labels)
-    pred_path, _ = save_predictions(test, test_predicted_labels, "dev_unlabeled")
+    if args.leaves_only:
+        test_predicted_labels = [append_dag_parents(x) for x in test_predicted_labels]
+    pred_path, _ = save_predictions(test, test_predicted_labels, "dev_unlabeled", ts)
     print(f"Finished successfully. dev_unlabeled predictions saved at {pred_path}")
 
 
@@ -260,9 +292,10 @@ if __name__ == "__main__":
     parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)
     parser.add_argument("--test_features", type=str, help="path to extracted features file (JSON)", required=True)
     parser.add_argument("--dev_features", type=str, help="path to extracted features file (JSON). Currently not used", required=True)
-    parser.add_argument("--max_iter", type=int, default=400, help="max iterations for ff classifier")
+    parser.add_argument("--max_iter", type=int, default=200, help="max iterations for ff classifier")
     parser.add_argument("--alpha", type=float, default=0.0001, help="weight of the L2 regularitation term")
     parser.add_argument("--seed", type=int, default=1, help="random seed for reproducibility")
+    parser.add_argument("--leaves_only", action="store_true", help="classify with only leaf nodes and add parent nodes after prediction (manually)")
     args = parser.parse_args()
     print("Arguments:", args)
     classify(args)
