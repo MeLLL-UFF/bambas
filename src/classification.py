@@ -19,6 +19,8 @@ from src.subtask_1_2a import evaluate_h
 from sklearn_hierarchical_classification.classifier import HierarchicalClassifier
 from functools import reduce
 from src.subtask_1_2a import get_dag, get_dag_labels
+from imblearn.over_sampling import RandomOverSampler, SMOTE
+from src.confusion_matrix import *
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
 GOLD_PATH = f"{get_workdir()}/dataset/semeval2024/subtask1/validation.json"
@@ -71,10 +73,12 @@ def classify(args: Namespace):
         labels = [list(set(reduce(lambda x, y: x + y, all_labels.to_numpy().tolist())))]
     print(f"Labels: {labels}")
     print(f"No. of labels in {'DAG' if args.classifier == 'HiMLP' else 'train+dev datasets'}: {len(labels[0])}")
-
+    
     mlb = MultiLabelBinarizer(classes=labels[0])
     train_labels = mlb.fit(labels).transform(train["labels"].to_numpy())
-
+    dev_labels = mlb.fit(labels).transform(dev["labels"].to_numpy())
+    # test_labels = mlb.fit(labels).transform(test["labels"].to_numpy())
+    
     print("Loading features array files")
     train_ft, test_ft, dev_ft = map(
         load_features_array, [
@@ -128,26 +132,42 @@ def classify(args: Namespace):
         clf = RidgeClassifier()
     elif args.classifier == "RidgeClassifierCV":
         clf = RidgeClassifierCV()
+    elif args.classifier == "BRMLP":
+        clf = BinaryRelevance(
+            classifier = MLPClassifier(random_state=args.seed, 
+                                       max_iter=400),
+            labels = labels[0],
+            oversampler=RandomOverSampler(random_state=args.seed)
+        )
     elif args.classifier == "LogisticRegression":
         clf = BinaryRelevance(
             classifier = LogisticRegression(random_state=args.seed,
                                             max_iter=400,
                                             multi_class="multinomial"),
-            labels = labels[0]
+            labels = labels[0],
+            oversampler=RandomOverSampler(random_state=args.seed)
         )
     elif args.classifier == "GradientBoostingClassifier":
         clf = BinaryRelevance(
             classifier = GradientBoostingClassifier(random_state=args.seed),
-            labels = labels[0]
+            labels = labels[0],
+            oversampler=SMOTE(random_state=args.seed)
         )
     else:
         raise Exception("Not implemented yet")
 
+    # Check if label order is preserved in the binarizer
+    print("Sanity Check, identity matrix into mlb inverse transform:")
+    print(mlb.inverse_transform(np.identity(20, dtype=int)))
+    
     clf = clf.fit(train_ft, train_labels)
-    dev_predicted_labels = clf.predict(dev_ft)
+    dev_predicted_labels_binarized = clf.predict(dev_ft, dev_labels)
     if args.classifier != "HiMLP":
-        dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels)
+        dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels_binarized)
     pred_path, _ = save_predictions(dev, dev_predicted_labels, "dev")
+
+    # Create the Binary Relevance Confusion Matrix
+    cf_mtx = binary_relevance_confusion_matrix(np.array(dev_labels), np.array(dev_predicted_labels_binarized), labels[0])
 
     prec, rec, f1 = evaluate_h(pred_path, GOLD_PATH)
     print(f"\nValidation set:\n\tPrecision: {prec}\n\tRecall: {rec}\n\tF1: {f1}\n")
@@ -172,6 +192,7 @@ def classify(args: Namespace):
                 "F1",
                 "Precision",
                 "Recall",
+                "Confusion Matrix",
                 "Timestamp"])
     results.loc[len(results.index) + 1] = [train_ft_info["model"],
                                            train_ft_info["extraction_method"],
@@ -183,6 +204,7 @@ def classify(args: Namespace):
                                            f1,
                                            prec,
                                            rec,
+                                           cf_mtx,                                           
                                            int(time.time())]
     results.to_csv(results_csv_path)
 
