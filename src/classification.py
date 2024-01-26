@@ -136,8 +136,7 @@ def classify(args: Namespace):
         clf = BinaryRelevance(
             classifier = MLPClassifier(random_state=args.seed, 
                                        max_iter=400),
-            labels = labels[0],
-            oversampler=RandomOverSampler(random_state=args.seed)
+            labels = labels[0]
         )
     elif args.classifier == "LogisticRegression":
         clf = BinaryRelevance(
@@ -145,13 +144,33 @@ def classify(args: Namespace):
                                             max_iter=400,
                                             multi_class="multinomial"),
             labels = labels[0],
-            oversampler=RandomOverSampler(random_state=args.seed)
+            oversampler={
+                "Flag-waving":SMOTE(random_state=args.seed),
+                "Exaggeration/Minimisation":SMOTE(random_state=args.seed),
+                "Glittering generalities (Virtue)":RandomOverSampler(random_state=args.seed),
+                "Doubt":RandomOverSampler(random_state=args.seed),
+                "Causal Oversimplification":RandomOverSampler(random_state=args.seed),
+                "Slogans":RandomOverSampler(random_state=args.seed),
+                "Appeal to authority":SMOTE(random_state=args.seed),
+                "Thought-terminating cliché":RandomOverSampler(random_state=args.seed),
+                "Name calling/Labeling":SMOTE(random_state=args.seed),
+                "Repetition":RandomOverSampler(random_state=args.seed),
+                "Smears":SMOTE(random_state=args.seed),
+                "Reductio ad hitlerum":None,
+                "Misrepresentation of Someone's Position (Straw Man)":None,
+                "Appeal to fear/prejudice":SMOTE(random_state=args.seed),
+                "Black-and-white Fallacy/Dictatorship":SMOTE(random_state=args.seed),
+                "Presenting Irrelevant Data (Red Herring)":RandomOverSampler(random_state=args.seed),
+                "Obfuscation, Intentional vagueness, Confusion":None,
+                "Loaded Language":SMOTE(random_state=args.seed),
+                "Bandwagon":RandomOverSampler(random_state=args.seed),
+                "Whataboutism":SMOTE(random_state=args.seed)
+            }            
         )
     elif args.classifier == "GradientBoostingClassifier":
         clf = BinaryRelevance(
             classifier = GradientBoostingClassifier(random_state=args.seed),
-            labels = labels[0],
-            oversampler=SMOTE(random_state=args.seed)
+            labels = labels[0]
         )
     else:
         raise Exception("Not implemented yet")
