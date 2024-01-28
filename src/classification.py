@@ -245,7 +245,8 @@ if __name__ == "__main__":
         type=str,
         choices=[
             "ptc2019",
-            "semeval2024"],
+            "semeval2024",
+            "semeval_augmented"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)
