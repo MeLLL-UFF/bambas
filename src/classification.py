@@ -66,7 +66,6 @@ def load_features_info(path: str) -> Dict[str, Any]:
 def load_features_array(path: str) -> np.ndarray:
     with open(path, "r") as f:
         df = pd.DataFrame().from_records(json.load(f))
-        # print(np.array(df).shape)
         return np.array(df)
 
 
@@ -84,7 +83,7 @@ def classify(args: Namespace):
         train, dev = map(remove_non_leaf_nodes, [train, dev])
 
     print("Concatenating train and dev sets")
-    train = pd.concat([train, dev]).sample(n = 100)
+    train = pd.concat([train, dev])
     print("Merged dataset length:", len(train))
 
     all_labels = pd.concat([train["labels"], dev["labels"]])
@@ -98,6 +97,14 @@ def classify(args: Namespace):
 
     mlb = MultiLabelBinarizer(classes=labels[0])
     train_labels = mlb.fit(labels).transform(train["labels"].to_numpy())
+    # print(mlb.classes_)
+    # print(train_labels.shape)
+    # print(train_labels[0:5])
+    # print(train_labels[np.where(train_labels == 0)])
+
+    # print(train_ft_info)
+    # print(test_ft_info)
+    # print(dev_ft_info)
 
     print("Loading features array files")
     train_ft, test_ft, dev_ft = map(
@@ -114,7 +121,7 @@ def classify(args: Namespace):
         clf = MLPClassifier(
             hidden_layer_sizes=(768, ),
             random_state=args.seed,
-            max_iter=args.max_iter,
+            # max_iter=args.max_iter,
             alpha=args.alpha,
             shuffle=True,
             early_stopping=True,
@@ -125,7 +132,7 @@ def classify(args: Namespace):
             base_estimator=MLPClassifier(
                 hidden_layer_sizes=(768, ),
                 random_state=args.seed,
-                max_iter=args.max_iter,
+                # max_iter=args.max_iter,
                 alpha=args.alpha,
                 shuffle=True,
                 early_stopping=True,
@@ -217,7 +224,8 @@ def classify(args: Namespace):
         if clf.best_params_ is not None:
             print("Best params for gridsearch:", json.dumps(clf.best_params_, indent=4))
 
-    dev_predicted_labels = clf.predict(dev_ft)
+    dev_predicted_labels = clf.predict(train_ft)
+    # print("dev pred", dev_predicted_labels[0:10])
     # print(dev_predicted_labels, not np.any(dev_predicted_labels))
     if args.classifier != "HiMLP" and args.classifier != "GridHiMLP":
         dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels)
@@ -286,7 +294,7 @@ if __name__ == "__main__":
         type=str,
         choices=[
             "ptc2019",
-            "semeval2024"],
+            "semeval2024", "semeval2024_augmented"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)
@@ -296,6 +304,7 @@ if __name__ == "__main__":
     parser.add_argument("--alpha", type=float, default=0.0001, help="weight of the L2 regularitation term")
     parser.add_argument("--seed", type=int, default=1, help="random seed for reproducibility")
     parser.add_argument("--leaves_only", action="store_true", help="classify with only leaf nodes and add parent nodes after prediction (manually)")
+    # parser.add_argument("--leaves_only", action="store_true", help="classify with only leaf nodes and add parent nodes after prediction (manually)")
     args = parser.parse_args()
     print("Arguments:", args)
     classify(args)

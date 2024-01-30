@@ -6,6 +6,20 @@ from src.utils.workspace import get_workdir
 DATASET_DIR = f"{get_workdir()}/dataset"
 
 
+def _load_semeval2024_augmented() -> List[pd.DataFrame]:
+    # with open(f"{DATASET_DIR}/augmented/augmented_chatgpt_2201.json", "r") as f:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    # with open(f"{DATASET_DIR}/augmented/augmented_chatgpt_2201.json", "r") as g:
+    with open(f"{DATASET_DIR}/augmented/augmented_chatgpt_2601_br_Smears.json", "r") as g:
+        train_augmented = pd.DataFrame().from_records(json.load(g))
+        train = pd.concat([train, train_augmented])
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
+        validation = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_unlabeled.json", "r") as f:
+        dev_unlabeled = pd.DataFrame().from_records(json.load(f))
+    return train, validation, dev_unlabeled
+
 def _load_semeval2024() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
@@ -51,6 +65,8 @@ def load_dataset(dataset: str) -> List[pd.DataFrame]:
     """
     if dataset == "semeval2024":
         return _load_semeval2024()
+    elif dataset == "semeval2024_augmented":
+        return _load_semeval2024_augmented()
     elif dataset == "ptc2019":
         return _load_ptc2019()
     raise Exception(f"{dataset} is not available")

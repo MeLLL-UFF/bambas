@@ -105,7 +105,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dataset",
         type=str,
-        choices=["ptc2019", "semeval2024"],
+        choices=["ptc2019", "semeval2024", "semeval2024_augmented"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--fine_tuned_name", type=str, help="fine-tuned model name", required=True)

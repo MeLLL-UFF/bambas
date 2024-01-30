@@ -136,7 +136,7 @@ def fine_tune(args: Namespace):
     trainer.train()
 
     eval_results = trainer.evaluate()
-    print(f"(dev_set) Hierarchical F1: {eval_results['hier_f1']:.2f}")
+    # print(f"(dev_set) Hierarchical F1: {eval_results['hier_f1']:.2f}")
     print(f"(dev_set) Evaluation results: {json.dumps(eval_results, indent=4)}")
 
     if save_model:
@@ -154,7 +154,12 @@ def fine_tune(args: Namespace):
     # Prediction
     print("Predicting for test file. Tokenizing test df")
     ds = Dataset.from_pandas(test_df)
-    ds = ds.map(tokenize, batched=True, batch_size=batch_size, num_proc=4, remove_columns=dev.column_names)
+
+    def tokenize_test(data):
+        encoding = tokenizer(data["text"], padding=True, truncation=True)
+        return encoding
+    
+    ds = ds.map(tokenize_test, batched=True, batch_size=batch_size, num_proc=4, remove_columns=ds.column_names)
     # Remove original text from dataset
 
     # Create DataCollator object
@@ -233,7 +238,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dataset",
         type=str,
-        choices=["ptc2019", "semeval2024"],
+        choices=["ptc2019", "semeval2024", "semeval2024_augmented"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--fine_tuned_name", type=str, help="fine-tuned model name", required=True)
