@@ -6,9 +6,16 @@ from imblearn.over_sampling import RandomOverSampler, SMOTE
 from typing import Union
 from src.utils.workspace import get_workdir
 from sklearn.metrics import confusion_matrix
+from sklearn.multioutput import ClassifierChain
 import os
 
 OUTPUT_DIR = f"{get_workdir()}/classification/"
+
+# WIP for injecting oversamplers in ClassifierChain
+class ClassifierChainWrapper():
+    def __init__(self, classifier, labels, oversampler):
+        self.chains = []
+
 
 class BinaryRelevance():
     def __init__(self, classifier, labels, oversampler:Union[RandomOverSampler,SMOTE,dict , None]=None):
@@ -24,7 +31,7 @@ class BinaryRelevance():
         for idx in range(num_labels):
             x_, y_ = X, y
             y_ = y.transpose()[idx]
-            print("training with:", idx, "element")
+            print(f"Training binary classifier for label: {self.labels[idx]} ({idx+1}/{num_labels})")
 
             if self.oversamplers == None or self.oversamplers[self.labels[idx]] == None: pass
             else: x_, y_ = self.oversamplers[self.labels[idx]].fit_resample(x_,y_)

@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.neural_network import MLPClassifier
-from src.utils.br import BinaryRelevance
+from src.utils.br import BinaryRelevance, ClassifierChainWrapper
 from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
 from sklearn.linear_model import LogisticRegression, RidgeClassifier, RidgeClassifierCV
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier
@@ -136,42 +136,89 @@ def classify(args: Namespace):
         clf = BinaryRelevance(
             classifier = MLPClassifier(random_state=args.seed, 
                                        max_iter=400),
-            labels = labels[0]
+            labels = labels[0],
+            oversampler= {
+                "Flag-waving":SMOTE(sampling_strategy=0.5, random_state=args.seed),
+                "Exaggeration/Minimisation":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Glittering generalities (Virtue)":RandomOverSampler(sampling_strategy=0.7, random_state=args.seed),
+                "Doubt":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Causal Oversimplification":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Slogans":RandomOverSampler(sampling_strategy=0.6, random_state=args.seed),
+                "Appeal to authority":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Thought-terminating cliché":RandomOverSampler(sampling_strategy=0.8, random_state=args.seed),
+                "Name calling/Labeling":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Repetition":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Smears":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Reductio ad hitlerum":None, # SMOTE(sampling_strategy=args.sampling_strategy, random_state=args.seed),
+                "Misrepresentation of Someone's Position (Straw Man)":None,
+                "Appeal to fear/prejudice":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Black-and-white Fallacy/Dictatorship":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Presenting Irrelevant Data (Red Herring)":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Obfuscation, Intentional vagueness, Confusion":None,
+                "Loaded Language":SMOTE(sampling_strategy=0.9, random_state=args.seed),
+                "Bandwagon":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Whataboutism":SMOTE(sampling_strategy=0.9, random_state=args.seed)
+            }            
         )
     elif args.classifier == "LogisticRegression":
         clf = BinaryRelevance(
             classifier = LogisticRegression(random_state=args.seed,
-                                            max_iter=400,
+                                            max_iter=600,
                                             multi_class="multinomial"),
             labels = labels[0],
-            oversampler={
-                "Flag-waving":SMOTE(random_state=args.seed),
-                "Exaggeration/Minimisation":SMOTE(random_state=args.seed),
-                "Glittering generalities (Virtue)":RandomOverSampler(random_state=args.seed),
-                "Doubt":RandomOverSampler(random_state=args.seed),
-                "Causal Oversimplification":RandomOverSampler(random_state=args.seed),
-                "Slogans":RandomOverSampler(random_state=args.seed),
-                "Appeal to authority":SMOTE(random_state=args.seed),
-                "Thought-terminating cliché":RandomOverSampler(random_state=args.seed),
-                "Name calling/Labeling":SMOTE(random_state=args.seed),
-                "Repetition":RandomOverSampler(random_state=args.seed),
-                "Smears":SMOTE(random_state=args.seed),
-                "Reductio ad hitlerum":None,
+            oversampler= {
+                "Flag-waving":SMOTE(sampling_strategy=0.5, random_state=args.seed),
+                "Exaggeration/Minimisation":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Glittering generalities (Virtue)":RandomOverSampler(sampling_strategy=0.7, random_state=args.seed),
+                "Doubt":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Causal Oversimplification":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Slogans":RandomOverSampler(sampling_strategy=0.6, random_state=args.seed),
+                "Appeal to authority":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Thought-terminating cliché":RandomOverSampler(sampling_strategy=0.8, random_state=args.seed),
+                "Name calling/Labeling":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Repetition":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Smears":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Reductio ad hitlerum":None, # SMOTE(sampling_strategy=args.sampling_strategy, random_state=args.seed),
                 "Misrepresentation of Someone's Position (Straw Man)":None,
-                "Appeal to fear/prejudice":SMOTE(random_state=args.seed),
-                "Black-and-white Fallacy/Dictatorship":SMOTE(random_state=args.seed),
-                "Presenting Irrelevant Data (Red Herring)":RandomOverSampler(random_state=args.seed),
+                "Appeal to fear/prejudice":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Black-and-white Fallacy/Dictatorship":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Presenting Irrelevant Data (Red Herring)":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
                 "Obfuscation, Intentional vagueness, Confusion":None,
-                "Loaded Language":SMOTE(random_state=args.seed),
-                "Bandwagon":RandomOverSampler(random_state=args.seed),
-                "Whataboutism":SMOTE(random_state=args.seed)
+                "Loaded Language":SMOTE(sampling_strategy=0.9, random_state=args.seed),
+                "Bandwagon":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Whataboutism":SMOTE(sampling_strategy=0.9, random_state=args.seed)
             }            
         )
     elif args.classifier == "GradientBoostingClassifier":
-        clf = BinaryRelevance(
+         clf = BinaryRelevance(
             classifier = GradientBoostingClassifier(random_state=args.seed),
-            labels = labels[0]
+            labels = labels[0],
+            oversampler= {
+                "Flag-waving":SMOTE(sampling_strategy=0.5, random_state=args.seed),
+                "Exaggeration/Minimisation":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Glittering generalities (Virtue)":RandomOverSampler(sampling_strategy=0.7, random_state=args.seed),
+                "Doubt":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Causal Oversimplification":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Slogans":RandomOverSampler(sampling_strategy=0.6, random_state=args.seed),
+                "Appeal to authority":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Thought-terminating cliché":RandomOverSampler(sampling_strategy=0.8, random_state=args.seed),
+                "Name calling/Labeling":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Repetition":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Smears":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Reductio ad hitlerum":None, # SMOTE(sampling_strategy=args.sampling_strategy, random_state=args.seed),
+                "Misrepresentation of Someone's Position (Straw Man)":None,
+                "Appeal to fear/prejudice":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Black-and-white Fallacy/Dictatorship":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Presenting Irrelevant Data (Red Herring)":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Obfuscation, Intentional vagueness, Confusion":None,
+                "Loaded Language":SMOTE(sampling_strategy=0.9, random_state=args.seed),
+                "Bandwagon":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Whataboutism":SMOTE(sampling_strategy=0.9, random_state=args.seed)
+            }            
         )
+    elif args.classifier == "ClassifierChain":
+        from sklearn.multioutput import ClassifierChain
+        clf = ClassifierChain(base_estimator=LogisticRegression())
     else:
         raise Exception("Not implemented yet")
 
@@ -255,6 +302,7 @@ if __name__ == "__main__":
     parser.add_argument("--max_iter", type=int, default=400, help="max iterations for ff classifier")
     parser.add_argument("--alpha", type=float, default=0.0001, help="weight of the L2 regularitation term")
     parser.add_argument("--seed", type=int, default=1, help="random seed for reproducibility")
+    parser.add_argument("--sampling_strategy", type=float)
     args = parser.parse_args()
     print("Arguments:", args)
     classify(args)
