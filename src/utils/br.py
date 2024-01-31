@@ -52,7 +52,7 @@ class BinaryRelevance():
             with open(OUTPUT_DIR+"per_label_results.csv", mode="r") as file: 
                 lines = len(file.readlines())
                 lines -= 1
-                experiment_id = int(lines / 20) +1
+                experiment_id = int(lines / 23) +1
         # Predict for each label
         for idx in range(num_labels):
             preds_for_label = self.classifier_list[idx].predict(X)

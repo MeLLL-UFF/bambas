@@ -1,6 +1,6 @@
 # ft extraction using semeval base
 python -m src.feature_extraction \
- --dataset semeval2024 \
+ --dataset semeval_internal \
  --model jhu-clsp/bernice \
  --extraction_method cls
 
@@ -10,6 +10,14 @@ python -m src.feature_extraction \
  --model xlm-roberta-base \
  --extraction_method cls
 
+# semeval_internal
+python -m src.classification \
+ --dataset semeval_internal \
+ --train_features feature_extraction/1706729778_jhu-clsp-bernice_train_features.json \
+ --test_features feature_extraction/1706729778_jhu-clsp-bernice_test_features.json \
+ --dev_features feature_extraction/1706729778_jhu-clsp-bernice_dev_features.json \
+ --classifier LogisticRegression
+ 
 # semeval2024
 python -m src.classification \
  --dataset semeval2024 \

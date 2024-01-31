@@ -185,7 +185,8 @@ if __name__ == "__main__":
         choices=[
             "ptc2019",
             "semeval2024",
-            "semeval_augmented"],
+            "semeval_augmented",
+            "semeval_internal"],
         help="corpus for feature-extraction",
         required=True)
     parser.add_argument(

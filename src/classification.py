@@ -167,6 +167,9 @@ def classify(args: Namespace):
                                             multi_class="multinomial"),
             labels = labels[0],
             oversampler= {
+                "Distraction":RandomOverSampler(random_state=args.seed),
+                "Logos":RandomOverSampler(random_state=args.seed),
+                "Ad Hominem":RandomOverSampler(random_state=args.seed),
                 "Flag-waving":SMOTE(sampling_strategy=0.5, random_state=args.seed),
                 "Exaggeration/Minimisation":SMOTE(sampling_strategy=0.4, random_state=args.seed),
                 "Glittering generalities (Virtue)":RandomOverSampler(sampling_strategy=0.7, random_state=args.seed),
@@ -223,8 +226,8 @@ def classify(args: Namespace):
         raise Exception("Not implemented yet")
 
     # Check if label order is preserved in the binarizer
-    print("Sanity Check, identity matrix into mlb inverse transform:")
-    print(mlb.inverse_transform(np.identity(20, dtype=int)))
+    # print("Sanity Check, identity matrix into mlb inverse transform:")
+    # print(mlb.inverse_transform(np.identity(20, dtype=int)))
     
     clf = clf.fit(train_ft, train_labels)
     dev_predicted_labels_binarized = clf.predict(dev_ft, dev_labels)
@@ -293,7 +296,8 @@ if __name__ == "__main__":
         choices=[
             "ptc2019",
             "semeval2024",
-            "semeval_augmented"],
+            "semeval_augmented",
+            "semeval_internal"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)
