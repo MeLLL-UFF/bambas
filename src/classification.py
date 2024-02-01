@@ -19,13 +19,23 @@ from src.confusion_matrix import *
 from src.subtask_1_2a import evaluate_h
 from sklearn_hierarchical_classification.classifier import HierarchicalClassifier
 from functools import reduce
-from src.subtask_1_2a import get_dag, get_dag_labels
+from src.subtask_1_2a import get_dag, get_dag_labels, get_leaf_parents
 from imblearn.over_sampling import RandomOverSampler, SMOTE
+<<<<<<< HEAD
+=======
+from src.confusion_matrix import *
+>>>>>>> ae4962d1e735d5a10470c7e110f3410c93c59f80
 from copy import deepcopy
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
 GOLD_PATH = f"{get_workdir()}/dataset/semeval2024/subtask1/validation.json"
 
+def append_dag_parents(leaves: List[str]) -> List[str]:
+    labels = deepcopy(leaves)
+    for leaf in leaves:
+        parents = get_leaf_parents(leaf)
+        labels = list(set(labels.extend(parents)))
+    return labels
 
 def save_predictions(test_df: pd.DataFrame, predictions: List[List[str]], kind: str) -> Tuple[str, List[Dict[str, Any]]]:
     predictions_json = []
