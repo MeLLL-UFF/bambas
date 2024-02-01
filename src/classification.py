@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.neural_network import MLPClassifier
-from src.utils.br import BinaryRelevance, ClassifierChainWrapper, add_internals
+from src.utils.br import BinaryRelevance, add_internals, add_internals_preds
 from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
 from sklearn.linear_model import LogisticRegression, RidgeClassifier, RidgeClassifierCV
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier
@@ -21,10 +21,6 @@ from sklearn_hierarchical_classification.classifier import HierarchicalClassifie
 from functools import reduce
 from src.subtask_1_2a import get_dag, get_dag_labels, get_leaf_parents
 from imblearn.over_sampling import RandomOverSampler, SMOTE
-<<<<<<< HEAD
-=======
-from src.confusion_matrix import *
->>>>>>> ae4962d1e735d5a10470c7e110f3410c93c59f80
 from copy import deepcopy
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
@@ -178,7 +174,7 @@ def classify(args: Namespace):
     elif args.classifier == "LogisticRegression":
         clf = BinaryRelevance(
             classifier = LogisticRegression(random_state=args.seed,
-                                            max_iter=400,
+                                            max_iter=600,
                                             multi_class="multinomial"),
             labels = labels[0],
             oversampler= {
@@ -190,7 +186,7 @@ def classify(args: Namespace):
                 # "Justification":None,
                 "Ad Hominem":None,
                 "Distraction":None,
-                "Logos":RandomOverSampler(sampling_strategy=0.9),
+                "Logos":None,
                 "Flag-waving":SMOTE(sampling_strategy=0.5, random_state=args.seed),
                 "Exaggeration/Minimisation":SMOTE(sampling_strategy=0.4, random_state=args.seed),
                 "Glittering generalities (Virtue)":RandomOverSampler(sampling_strategy=0.7, random_state=args.seed),
@@ -254,6 +250,8 @@ def classify(args: Namespace):
     dev_predicted_labels_binarized = clf.predict(dev_ft, dev_labels)
     if args.classifier != "HiMLP":
         dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels_binarized)
+        # dev_predicted_labels = [list(label_list) for label_list in dev_predicted_labels]
+        # dev_predicted_labels = add_internals_preds(dev_predicted_labels)
     pred_path, _ = save_predictions(dev, dev_predicted_labels, "dev")
 
     # Create the Binary Relevance Confusion Matrix

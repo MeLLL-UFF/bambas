@@ -81,6 +81,17 @@ def add_internals(dataset):
         dataset["labels"][idx] = label_list
     return dataset
 
+def add_internals_preds(preds):
+    for idx, label_list in enumerate(preds):
+        for label in label_list:
+            parents = search_parents(label)
+            # if "Ad Hominem" in parents: label_list.append("Ad Hominem")
+            # if "Distraction" in parents: label_list.append("Distraction")
+            # if "Logos" in parents: label_list.append("Logos")
+            label_list.extend(parents)
+        preds[idx] = label_list
+    return preds
+
 # WIP for injecting oversamplers in ClassifierChain
 class ClassifierChainWrapper():
     def __init__(self, classifier, labels, oversampler):
