@@ -25,7 +25,7 @@ def _load_semeval_augmented() -> List[pd.DataFrame]:
     return train, validation, dev_unlabeled
 
 def _load_semeval_internal() -> List[pd.DataFrame]:
-    with open(f"{DATASET_DIR}/semeval_internal/train.json", "r") as f:
+    with open(f"{DATASET_DIR}/semeval_internal/train_internal.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
     with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
         validation = pd.DataFrame().from_records(json.load(f))

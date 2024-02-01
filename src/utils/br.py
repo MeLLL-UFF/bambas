@@ -11,6 +11,76 @@ import os
 
 OUTPUT_DIR = f"{get_workdir()}/classification/"
 
+HIERARCHY = {
+    "root": ["Logos", "Ethos", "Pathos"],
+    "Logos": ["Repetition", "Obfuscation, Intentional vagueness, Confusion", "Reasoning", "Justification"],
+    "Justification": [
+        "Slogans",
+        "Bandwagon",
+        "Appeal to authority",
+        "Flag-waving",
+        "Appeal to fear/prejudice",
+    ],
+    "Reasoning": [
+        "Simplification",
+        "Distraction",
+    ],
+    "Simplification": [
+        "Causal Oversimplification",
+        "Black-and-white Fallacy/Dictatorship",
+        "Thought-terminating cliché",
+    ],
+    "Distraction": [
+        "Misrepresentation of Someone's Position (Straw Man)",
+        "Presenting Irrelevant Data (Red Herring)",
+        "Whataboutism",
+    ],
+    "Ethos": [
+        "Appeal to authority",
+        "Glittering generalities (Virtue)",
+        "Bandwagon",
+        "Ad Hominem",
+        "Transfer",
+    ],
+    "Ad Hominem": [
+        "Doubt",
+        "Name calling/Labeling",
+        "Smears",
+        "Reductio ad hitlerum",
+        "Whataboutism",
+    ],
+    "Pathos": [
+        "Exaggeration/Minimisation",
+        "Loaded Language",
+        "Appeal to (Strong) Emotions",
+        "Appeal to fear/prejudice",
+        "Flag-waving",
+        "Transfer",
+    ]
+}
+
+def search_parents(label, hier=HIERARCHY, parents=[]):
+    parents = []
+    if label=="root":return []
+    for key in hier:
+        value = hier[key]
+        if key=="root":continue
+        if label in value: 
+            parents.append(key)
+            parents.extend(search_parents(key, hier, parents))
+    return parents
+
+def add_internals(dataset):
+    for idx, label_list in enumerate(dataset["labels"]):
+        for label in label_list:
+            parents = search_parents(label)
+            if "Ad Hominem" in parents: label_list.append("Ad Hominem")
+            if "Distraction" in parents: label_list.append("Distraction")
+            if "Logos" in parents: label_list.append("Logos")
+            # label_list.extend(parents)
+        dataset["labels"][idx] = label_list
+    return dataset
+
 # WIP for injecting oversamplers in ClassifierChain
 class ClassifierChainWrapper():
     def __init__(self, classifier, labels, oversampler):
@@ -52,7 +122,7 @@ class BinaryRelevance():
             with open(OUTPUT_DIR+"per_label_results.csv", mode="r") as file: 
                 lines = len(file.readlines())
                 lines -= 1
-                experiment_id = int(lines / 23) +1
+                experiment_id = int(lines / num_labels) +1
         # Predict for each label
         for idx in range(num_labels):
             preds_for_label = self.classifier_list[idx].predict(X)

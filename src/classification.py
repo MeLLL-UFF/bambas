@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.neural_network import MLPClassifier
-from src.utils.br import BinaryRelevance, ClassifierChainWrapper
+from src.utils.br import BinaryRelevance, ClassifierChainWrapper, add_internals
 from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
 from sklearn.linear_model import LogisticRegression, RidgeClassifier, RidgeClassifierCV
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier
@@ -15,12 +15,13 @@ from sklearn.neighbors import KNeighborsClassifier, RadiusNeighborsClassifier
 from typing import List, Dict, Any, Tuple
 from src.data import load_dataset
 from src.utils.workspace import get_workdir
+from src.confusion_matrix import *
 from src.subtask_1_2a import evaluate_h
 from sklearn_hierarchical_classification.classifier import HierarchicalClassifier
 from functools import reduce
 from src.subtask_1_2a import get_dag, get_dag_labels
 from imblearn.over_sampling import RandomOverSampler, SMOTE
-from src.confusion_matrix import *
+from copy import deepcopy
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
 GOLD_PATH = f"{get_workdir()}/dataset/semeval2024/subtask1/validation.json"
@@ -65,6 +66,7 @@ def classify(args: Namespace):
     train, dev, test = load_dataset(args.dataset)
     print("Dataset Lengths", len(train), len(dev), len(test))
 
+
     all_labels = pd.concat([train["labels"], dev["labels"]])
 
     if args.classifier == "HiMLP":
@@ -75,8 +77,11 @@ def classify(args: Namespace):
     print(f"No. of labels in {'DAG' if args.classifier == 'HiMLP' else 'train+dev datasets'}: {len(labels[0])}")
     
     mlb = MultiLabelBinarizer(classes=labels[0])
+    
     train_labels = mlb.fit(labels).transform(train["labels"].to_numpy())
-    dev_labels = mlb.fit(labels).transform(dev["labels"].to_numpy())
+    dev_internals = add_internals(deepcopy(dev))
+    dev_labels = mlb.fit(labels).transform(dev_internals["labels"].to_numpy())
+
     # test_labels = mlb.fit(labels).transform(test["labels"].to_numpy())
     
     print("Loading features array files")
@@ -163,13 +168,19 @@ def classify(args: Namespace):
     elif args.classifier == "LogisticRegression":
         clf = BinaryRelevance(
             classifier = LogisticRegression(random_state=args.seed,
-                                            max_iter=600,
+                                            max_iter=400,
                                             multi_class="multinomial"),
             labels = labels[0],
             oversampler= {
-                "Distraction":RandomOverSampler(random_state=args.seed),
-                "Logos":RandomOverSampler(random_state=args.seed),
-                "Ad Hominem":RandomOverSampler(random_state=args.seed),
+                # "Simplification":None,
+                # "Bandwagon":None,
+                # "Ethos":None,
+                # "Reasoning":None,
+                # "Pathos":None,
+                # "Justification":None,
+                "Ad Hominem":None,
+                "Distraction":None,
+                "Logos":RandomOverSampler(sampling_strategy=0.9),
                 "Flag-waving":SMOTE(sampling_strategy=0.5, random_state=args.seed),
                 "Exaggeration/Minimisation":SMOTE(sampling_strategy=0.4, random_state=args.seed),
                 "Glittering generalities (Virtue)":RandomOverSampler(sampling_strategy=0.7, random_state=args.seed),
