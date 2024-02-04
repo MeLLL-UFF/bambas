@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 __pycache__
+.*_old
+feature_extraction/*

@@ -14,7 +14,7 @@ from typing import List, Any, Dict
 from src.data import load_dataset
 from src.utils.workspace import get_workdir
 
-OUTPUT_DIR = f"{get_workdir()}/feature_extraction"
+OUTPUT_DIR = f"{get_workdir()}/feature_extraction/semeval2024/bernice"
 
 
 def load_data_split(tokenizer: AutoTokenizer,
