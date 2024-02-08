@@ -79,6 +79,7 @@ def classify(args: Namespace):
         labels = [get_dag_labels()]
     else:
         labels = [list(set(reduce(lambda x, y: x + y, all_labels.to_numpy().tolist())))]
+        labels[0].sort()
     print(f"Labels: {labels}")
     print(f"No. of labels in {'DAG' if args.classifier == 'HiMLP' else 'train+dev datasets'}: {len(labels[0])}")
     
