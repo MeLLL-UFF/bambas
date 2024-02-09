@@ -7,9 +7,8 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.neural_network import MLPClassifier
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import make_scorer
 from src.utils.br import BinaryRelevance
+from src.utils.br import BinaryRelevance, add_internals
 from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
 from sklearn.linear_model import LogisticRegression, RidgeClassifier, RidgeClassifierCV
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier
@@ -17,10 +16,12 @@ from sklearn.neighbors import KNeighborsClassifier, RadiusNeighborsClassifier
 from typing import List, Dict, Any, Tuple
 from src.data import load_dataset
 from src.utils.workspace import get_workdir
+from src.confusion_matrix import *
 from src.subtask_1_2a import evaluate_h
 from sklearn_hierarchical_classification.classifier import HierarchicalClassifier
 from functools import reduce
 from src.subtask_1_2a import get_dag, get_dag_labels, get_dag_parents, get_leaf_parents, hf1_score
+from imblearn.over_sampling import RandomOverSampler, SMOTE
 from copy import deepcopy
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
@@ -86,6 +87,7 @@ def classify(args: Namespace):
     train = pd.concat([train, dev])
     print("Merged dataset length:", len(train))
 
+
     all_labels = pd.concat([train["labels"], dev["labels"]])
 
     if args.classifier == "HiMLP" or args.classifier == "GridHiMLP":
@@ -93,19 +95,16 @@ def classify(args: Namespace):
     else:
         labels = [list(set(reduce(lambda x, y: x + y, all_labels.to_numpy().tolist())))]
     print(f"Labels: {labels}")
-    print(f"No. of labels in {'DAG' if args.classifier == 'HiMLP' or args.classifier == 'GridHiMLP' else 'train+dev datasets'}: {len(labels[0])}")
-
+    print(f"No. of labels in {'DAG' if args.classifier == 'HiMLP' else 'train+dev datasets'}: {len(labels[0])}")
+    
     mlb = MultiLabelBinarizer(classes=labels[0])
+    
     train_labels = mlb.fit(labels).transform(train["labels"].to_numpy())
-    # print(mlb.classes_)
-    # print(train_labels.shape)
-    # print(train_labels[0:5])
-    # print(train_labels[np.where(train_labels == 0)])
+    dev_internals = add_internals(deepcopy(dev))
+    dev_labels = mlb.fit(labels).transform(dev_internals["labels"].to_numpy())
 
-    # print(train_ft_info)
-    # print(test_ft_info)
-    # print(dev_ft_info)
-
+    # test_labels = mlb.fit(labels).transform(test["labels"].to_numpy())
+    
     print("Loading features array files")
     train_ft, test_ft, dev_ft = map(
         load_features_array, [
@@ -148,43 +147,43 @@ def classify(args: Namespace):
             # no labels with prob lower than that will be considered for prediction
             mlb_prediction_threshold=0.35,
         )
-    elif args.classifier == "GridHiMLP":
-        estimator = HierarchicalClassifier(
-            base_estimator=MLPClassifier(
-                random_state=args.seed,
-                max_iter=args.max_iter,
-                alpha=args.alpha,
-                shuffle=True,
-                early_stopping=True,
-                verbose=True
-            ),
-            class_hierarchy=get_dag(),
-            mlb=mlb,
-        )
+    # elif args.classifier == "GridHiMLP":
+    #     estimator = HierarchicalClassifier(
+    #         base_estimator=MLPClassifier(
+    #             random_state=args.seed,
+    #             max_iter=args.max_iter,
+    #             alpha=args.alpha,
+    #             shuffle=True,
+    #             early_stopping=True,
+    #             verbose=True
+    #         ),
+    #         class_hierarchy=get_dag(),
+    #         mlb=mlb,
+    #     )
 
-        def hf1_custom_scorer(y_true, y_pred):
-            return hf1_score(y_true, y_pred)
+    #     def hf1_custom_scorer(y_true, y_pred):
+    #         return hf1_score(y_true, y_pred)
         
-        scorer = make_scorer(hf1_custom_scorer, greater_is_better=True)
+    #     scorer = make_scorer(hf1_custom_scorer, greater_is_better=True)
 
-        parameters = {
-            # 'base_estimator': [
-            #     MLPClassifier(
-            #         random_state=args.seed,
-            #         max_iter=args.max_iter,
-            #         alpha=args.alpha,
-            #         shuffle=True,
-            #         early_stopping=True,
-            #         verbose=True
-            #     ),
-            # ],
-            # 'class_hierarchy': [get_dag()],
-            # 'mlb': [mlb],
-            'prediction_depth': ['mlnp'],
-            'feature_extraction': ['raw'],
-            'mlb_prediction_threshold': [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6],
-        }
-        clf = GridSearchCV(estimator=estimator, param_grid=parameters, scoring=scorer, n_jobs=-1)
+    #     parameters = {
+    #         # 'base_estimator': [
+    #         #     MLPClassifier(
+    #         #         random_state=args.seed,
+    #         #         max_iter=args.max_iter,
+    #         #         alpha=args.alpha,
+    #         #         shuffle=True,
+    #         #         early_stopping=True,
+    #         #         verbose=True
+    #         #     ),
+    #         # ],
+    #         # 'class_hierarchy': [get_dag()],
+    #         # 'mlb': [mlb],
+    #         'prediction_depth': ['mlnp'],
+    #         'feature_extraction': ['raw'],
+    #         'mlb_prediction_threshold': [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6],
+    #     }
+    #     clf = GridSearchCV(estimator=estimator, param_grid=parameters, scoring=scorer, n_jobs=-1)
     elif args.classifier == "DecisionTreeClassifier":
         clf = DecisionTreeClassifier()
     elif args.classifier == "ExtraTreeClassifier":
@@ -203,18 +202,102 @@ def classify(args: Namespace):
         clf = RidgeClassifier()
     elif args.classifier == "RidgeClassifierCV":
         clf = RidgeClassifierCV()
+    elif args.classifier == "BRMLP":
+        clf = BinaryRelevance(
+            classifier = MLPClassifier(random_state=args.seed, 
+                                       max_iter=400),
+            labels = labels[0],
+            oversampler= {
+                "Flag-waving":SMOTE(sampling_strategy=0.5, random_state=args.seed),
+                "Exaggeration/Minimisation":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Glittering generalities (Virtue)":RandomOverSampler(sampling_strategy=0.7, random_state=args.seed),
+                "Doubt":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Causal Oversimplification":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Slogans":RandomOverSampler(sampling_strategy=0.6, random_state=args.seed),
+                "Appeal to authority":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Thought-terminating cliché":RandomOverSampler(sampling_strategy=0.8, random_state=args.seed),
+                "Name calling/Labeling":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Repetition":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Smears":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Reductio ad hitlerum":None, # SMOTE(sampling_strategy=args.sampling_strategy, random_state=args.seed),
+                "Misrepresentation of Someone's Position (Straw Man)":None,
+                "Appeal to fear/prejudice":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Black-and-white Fallacy/Dictatorship":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Presenting Irrelevant Data (Red Herring)":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Obfuscation, Intentional vagueness, Confusion":None,
+                "Loaded Language":SMOTE(sampling_strategy=0.9, random_state=args.seed),
+                "Bandwagon":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Whataboutism":SMOTE(sampling_strategy=0.9, random_state=args.seed)
+            }            
+        )
     elif args.classifier == "LogisticRegression":
         clf = BinaryRelevance(
             classifier = LogisticRegression(random_state=args.seed,
-                                            max_iter=400,
+                                            max_iter=600,
                                             multi_class="multinomial"),
-            labels = labels[0]
+            labels = labels[0],
+            oversampler= {
+                # "Simplification":None,
+                # "Bandwagon":None,
+                # "Ethos":None,
+                # "Reasoning":None,
+                # "Pathos":None,
+                # "Justification":None,
+                "Ad Hominem":None,
+                "Distraction":None,
+                "Logos":None,
+                "Flag-waving":SMOTE(sampling_strategy=0.5, random_state=args.seed),
+                "Exaggeration/Minimisation":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Glittering generalities (Virtue)":RandomOverSampler(sampling_strategy=0.7, random_state=args.seed),
+                "Doubt":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Causal Oversimplification":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Slogans":RandomOverSampler(sampling_strategy=0.6, random_state=args.seed),
+                "Appeal to authority":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Thought-terminating cliché":RandomOverSampler(sampling_strategy=0.8, random_state=args.seed),
+                "Name calling/Labeling":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Repetition":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Smears":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Reductio ad hitlerum":None, # SMOTE(sampling_strategy=args.sampling_strategy, random_state=args.seed),
+                "Misrepresentation of Someone's Position (Straw Man)":None,
+                "Appeal to fear/prejudice":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Black-and-white Fallacy/Dictatorship":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Presenting Irrelevant Data (Red Herring)":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Obfuscation, Intentional vagueness, Confusion":None,
+                "Loaded Language":SMOTE(sampling_strategy=0.9, random_state=args.seed),
+                "Bandwagon":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Whataboutism":SMOTE(sampling_strategy=0.9, random_state=args.seed)
+            }            
         )
     elif args.classifier == "GradientBoostingClassifier":
-        clf = BinaryRelevance(
+         clf = BinaryRelevance(
             classifier = GradientBoostingClassifier(random_state=args.seed),
-            labels = labels[0]
+            labels = labels[0],
+            oversampler= {
+                "Flag-waving":SMOTE(sampling_strategy=0.5, random_state=args.seed),
+                "Exaggeration/Minimisation":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Glittering generalities (Virtue)":RandomOverSampler(sampling_strategy=0.7, random_state=args.seed),
+                "Doubt":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Causal Oversimplification":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Slogans":RandomOverSampler(sampling_strategy=0.6, random_state=args.seed),
+                "Appeal to authority":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Thought-terminating cliché":RandomOverSampler(sampling_strategy=0.8, random_state=args.seed),
+                "Name calling/Labeling":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Repetition":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+                "Smears":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Reductio ad hitlerum":None, # SMOTE(sampling_strategy=args.sampling_strategy, random_state=args.seed),
+                "Misrepresentation of Someone's Position (Straw Man)":None,
+                "Appeal to fear/prejudice":SMOTE(sampling_strategy=0.8, random_state=args.seed),
+                "Black-and-white Fallacy/Dictatorship":SMOTE(sampling_strategy=0.4, random_state=args.seed),
+                "Presenting Irrelevant Data (Red Herring)":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Obfuscation, Intentional vagueness, Confusion":None,
+                "Loaded Language":SMOTE(sampling_strategy=0.9, random_state=args.seed),
+                "Bandwagon":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+                "Whataboutism":SMOTE(sampling_strategy=0.9, random_state=args.seed)
+            }            
         )
+    elif args.classifier == "ClassifierChain":
+        from sklearn.multioutput import ClassifierChain
+        clf = ClassifierChain(base_estimator=LogisticRegression())
     else:
         raise Exception("Not implemented yet")
 
@@ -224,17 +307,18 @@ def classify(args: Namespace):
         if clf.best_params_ is not None:
             print("Best params for gridsearch:", json.dumps(clf.best_params_, indent=4))
 
-    dev_predicted_labels = clf.predict(train_ft)
-    # print("dev pred", dev_predicted_labels[0:10])
-    # print(dev_predicted_labels, not np.any(dev_predicted_labels))
-    if args.classifier != "HiMLP" and args.classifier != "GridHiMLP":
-        dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels)
+    clf = clf.fit(train_ft, train_labels)
+    dev_predicted_labels_binarized = clf.predict(dev_ft, dev_labels)
+    if args.classifier != "HiMLP":
+        dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels_binarized)
     if args.leaves_only:
         dev_predicted_labels = [append_dag_parents(x) for x in dev_predicted_labels]
-    # print(dev_predicted_labels)
-        
+    
     ts = int(time.time())
     pred_path, _ = save_predictions(dev, dev_predicted_labels, "dev", ts)
+
+    # Create the Binary Relevance Confusion Matrix
+    cf_mtx = binary_relevance_confusion_matrix(np.array(dev_labels), np.array(dev_predicted_labels_binarized), labels[0])
 
     prec, rec, f1 = evaluate_h(pred_path, GOLD_PATH)
     print(f"\nValidation set:\n\tPrecision: {prec}\n\tRecall: {rec}\n\tF1: {f1}\n")
@@ -259,6 +343,7 @@ def classify(args: Namespace):
                 "F1",
                 "Precision",
                 "Recall",
+                "Confusion Matrix",
                 "Timestamp"])
     
     results.loc[len(results.index) + 1] = [train_ft_info["model"],
@@ -271,6 +356,7 @@ def classify(args: Namespace):
                                            f1,
                                            prec,
                                            rec,
+                                           cf_mtx,                                           
                                            ts]
     results.to_csv(results_csv_path)
 
@@ -294,7 +380,10 @@ if __name__ == "__main__":
         type=str,
         choices=[
             "ptc2019",
-            "semeval2024", "semeval2024_augmented"],
+            "semeval2024", 
+            "semeval2024_augmented",
+            "semeval_augmented",
+            "semeval_internal"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)
@@ -304,7 +393,7 @@ if __name__ == "__main__":
     parser.add_argument("--alpha", type=float, default=0.0001, help="weight of the L2 regularitation term")
     parser.add_argument("--seed", type=int, default=1, help="random seed for reproducibility")
     parser.add_argument("--leaves_only", action="store_true", help="classify with only leaf nodes and add parent nodes after prediction (manually)")
-    # parser.add_argument("--leaves_only", action="store_true", help="classify with only leaf nodes and add parent nodes after prediction (manually)")
+    parser.add_argument("--sampling_strategy", type=float)
     args = parser.parse_args()
     print("Arguments:", args)
     classify(args)

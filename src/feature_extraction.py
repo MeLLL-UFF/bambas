@@ -34,7 +34,7 @@ def load_data_split(tokenizer: AutoTokenizer,
     ds = remove_additional_columns(ds)
 
     def tokenize_function(examples):
-        return tokenizer(examples["text"], truncation=True, padding="longest")
+        return tokenizer(examples["text"], max_length=120, truncation=True, padding="max_length")
     # Tokenize values in Dataset object
     ds = ds.map(tokenize_function, batched=True, batch_size=64, num_proc=4, remove_columns=["text"])
     # Remove original text from dataset
@@ -137,12 +137,12 @@ def save_ft_files(ft_data: Dict[str, Any], ft_path: str):
 def feature_extraction(args: Namespace):
     train, dev, test = load_dataset(args.dataset)
     print("Dataset Lengths", len(train), len(dev), len(test))
-    tokenizer = AutoTokenizer.from_pretrained(args.model, use_fast=True)
+    tokenizer = AutoTokenizer.from_pretrained(args.model, use_fast=True, use_auth_token=True)
     device_map = {"": "cpu"}
     if torch.cuda.is_available():
         device_map = {"": 0}
     print(f"Using device: {device_map}")
-    model = AutoModel.from_pretrained(args.model, device_map=device_map, output_hidden_states=True)
+    model = AutoModel.from_pretrained(args.model, device_map=device_map, output_hidden_states=True, use_auth_token=True)
     train_dl = load_data_split(tokenizer=tokenizer, dataset=train)
     dev_dl = load_data_split(tokenizer=tokenizer, dataset=dev)
     test_dl = load_data_split(tokenizer=tokenizer, dataset=test)
@@ -184,7 +184,10 @@ if __name__ == "__main__":
         type=str,
         choices=[
             "ptc2019",
-            "semeval2024", "semeval2024_augmented"],
+            "semeval2024",
+            "semeval2024_augmented",
+            "semeval_augmented",
+            "semeval_internal"],
         help="corpus for feature-extraction",
         required=True)
     parser.add_argument(

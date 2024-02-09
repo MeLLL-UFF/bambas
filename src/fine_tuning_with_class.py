@@ -136,7 +136,6 @@ def fine_tune(args: Namespace):
     trainer.train()
 
     eval_results = trainer.evaluate()
-    # print(f"(dev_set) Hierarchical F1: {eval_results['hier_f1']:.2f}")
     print(f"(dev_set) Evaluation results: {json.dumps(eval_results, indent=4)}")
 
     if save_model:
