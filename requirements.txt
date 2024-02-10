@@ -8,3 +8,5 @@ notebook
 nltk
 scikit-multilearn
 sklearn-hierarchical-classification
+imbalanced-learn
+matplotlib
