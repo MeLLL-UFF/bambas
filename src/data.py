@@ -25,27 +25,33 @@ def _load_semeval2024() -> List[pd.DataFrame]:
         train = pd.DataFrame().from_records(json.load(f))
     with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
         validation = pd.DataFrame().from_records(json.load(f))
-    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_unlabeled.json", "r") as f:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
         dev_unlabeled = pd.DataFrame().from_records(json.load(f))
-    return train, validation, dev_unlabeled
+    # with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
+    #     test_unlabeled = pd.DataFrame().from_records(json.load(f))
+    return train, validation, dev_unlabeled# , test_unlabeled
 
 def _load_semeval_augmented() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval_augmented/train_aug_ptc_reductio.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
     with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
         validation = pd.DataFrame().from_records(json.load(f))
-    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_unlabeled.json", "r") as f:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
         dev_unlabeled = pd.DataFrame().from_records(json.load(f))
-    return train, validation, dev_unlabeled
+    # with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
+    #     test_unlabeled = pd.DataFrame().from_records(json.load(f))
+    return train, validation, dev_unlabeled# , test_unlabeled
 
 def _load_semeval_internal() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval_internal/train_internal.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
     with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
         validation = pd.DataFrame().from_records(json.load(f))
-    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_unlabeled.json", "r") as f:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
         dev_unlabeled = pd.DataFrame().from_records(json.load(f))
-    return train, validation, dev_unlabeled
+    # with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
+    #     test_unlabeled = pd.DataFrame().from_records(json.load(f))
+    return train, validation, dev_unlabeled# , test_unlabeled
 
 
 def _load_ptc2019() -> List[pd.DataFrame]:

@@ -4,19 +4,28 @@ python -m src.feature_extraction \
  --model jhu-clsp/bernice \
  --extraction_method cls
 
+# semeval_internal
+python -m src.classification \
+ --dataset semeval2024 \
+ --train_features feature_extraction/semeval2024/bernice/1707079469_jhu-clsp-bernice_train_features.json \
+ --test_features feature_extraction/semeval2024/bernice/1707079469_jhu-clsp-bernice_test_features.json \
+ --dev_features feature_extraction/semeval2024/bernice/1707079469_jhu-clsp-bernice_dev_features.json \
+ --classifier LogisticRegression
+
+# semeval_internal trained with train test dev
+python -m src.classification \
+ --dataset semeval_internal \
+ --train_features feature_extraction/1706826974_jhu-clsp-bernice_train_features.json \
+ --test_features feature_extraction/1706826974_jhu-clsp-bernice_test_features.json \
+ --dev_features feature_extraction/1706826974_jhu-clsp-bernice_dev_features.json \
+ --classifier LogisticRegression
+
 # ft extraction semeval augmented
 python -m src.feature_extraction \
  --dataset semeval_augmented \
  --model xlm-roberta-base \
  --extraction_method cls
 
-# semeval_internal
-python -m src.classification \
- --dataset semeval_internal \
- --train_features feature_extraction/1706758905_jhu-clsp-bernice_train_features.json \
- --test_features feature_extraction/1706758905_jhu-clsp-bernice_test_features.json \
- --dev_features feature_extraction/1706758905_jhu-clsp-bernice_dev_features.json \
- --classifier LogisticRegression
  
 # semeval2024
 python -m src.classification \

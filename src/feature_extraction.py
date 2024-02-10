@@ -14,7 +14,7 @@ from typing import List, Any, Dict
 from src.data import load_dataset
 from src.utils.workspace import get_workdir
 
-OUTPUT_DIR = f"{get_workdir()}/feature_extraction"
+OUTPUT_DIR = f"{get_workdir()}/feature_extraction/"
 
 
 def load_data_split(tokenizer: AutoTokenizer,
@@ -162,23 +162,25 @@ def feature_extraction(args: Namespace):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     ts = int(time.time())
-    ft_prefix = f"{ts}_{args.model.replace('/', '-')}"
-    train_ft_path = f"{OUTPUT_DIR}/{ft_prefix}_train_features.json"
+    ft_prefix = f"{ts}_{args.model.replace('/', '-')}_" if args.output_dir=="" else ""
+    output_dir = args.output_dir if args.output_dir.endswith("/") else args.output_dir+"/"
+    train_ft_path = f"{OUTPUT_DIR}{output_dir}{ft_prefix}train_features.json"
     print("train_ft_path:", train_ft_path)
     save_ft_files(train_ft_json, train_ft_path)
     print(f"Saved feature-extraction file to {train_ft_path}")
 
-    test_ft_path = f"{OUTPUT_DIR}/{ft_prefix}_test_features.json"
+    test_ft_path = f"{OUTPUT_DIR}{output_dir}{ft_prefix}test_features.json"
     save_ft_files(test_ft_json, test_ft_path)
     print(f"Saved feature-extraction file to {test_ft_path}")
 
-    dev_ft_path = f"{OUTPUT_DIR}/{ft_prefix}_dev_features.json"
+    dev_ft_path = f"{OUTPUT_DIR}{output_dir}{ft_prefix}dev_features.json"
     save_ft_files(dev_ft_json, dev_ft_path)
     print(f"Saved feature-extraction file to {dev_ft_path}")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("feature_extraction", description="feature-extraction with pretrained models")
+    parser.add_argument("--output_dir", type=str, default="", help="directory for the feature files")
     parser.add_argument(
         "--dataset",
         type=str,

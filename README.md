@@ -36,6 +36,8 @@ pip install ../sklearn-hierarchical-classification # point to the cloned reposit
 ## Running
 For a working Google Colab example, please refer to [this notebook](./Fine_tuning_+_feature_extraction_+_class.ipynb).
 
+For a quickstart using a shell script, please refer to [this shell script](./quickstart.sh)
+
 ### Fine-tuning
 ```sh
 python -m src.fine_tuning \
@@ -50,7 +52,7 @@ python -m src.fine_tuning \
 python -m src.feature_extraction \
   --model xlm-roberta-base \
   --dataset semeval2024 \
-  --extraction_method cls
+  --extraction_method cls \
 ```
 
 Or if you want to use specific hidden-layers:
@@ -71,7 +73,32 @@ python -m src.feature_extraction \
   --extraction_method sentence
 ```
 
+You can also specify a folder for saving the features:
+```sh
+python -m src.feature_extraction \
+  --model "sentence-transformers/jhu-clsp/bernice" \
+  --dataset semeval2024 \
+  --extraction_method cls \
+  --output_dir test_folder/
+```
+
 ### Classification
+
+Using a Binary Relevance classifier. Notice those have a few optional arguments that may be relevant to Oversampling
+
+```sh
+python -m src.classification \
+  --classifier "LogisticRegression" \
+  --dataset semeval2024 \
+  --train_features "./feature_extraction/train_features.json" \
+  --test_features "./feature_extraction/test_features.json" \
+  --dev_features "./feature_extraction/dev_features.json" \
+  --seed 1 \
+  --oversampler Combination \
+  --sample_strategy 1
+```
+Using a hierarchic classifier
+
 ```sh
 python -m src.classification \
   --classifier "HiMLP" \

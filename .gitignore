@@ -3,3 +3,4 @@ __pycache__
 feature_extraction/**
 classification/*.json
 classification/*.txt
+.*_old

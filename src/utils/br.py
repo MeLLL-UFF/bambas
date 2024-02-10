@@ -92,10 +92,34 @@ def add_internals_preds(preds):
         preds[idx] = label_list
     return preds
 
+def evaluate_per_label(y_true:np.ndarray, y_pred:np.ndarray, labels:list):
+    num_labels = y_true.shape[1]
+
+    # Create the BR per label results if they havent been created yet
+    if not os.path.exists(OUTPUT_DIR+"per_label_results.csv"):
+        with open(OUTPUT_DIR+"per_label_results.csv", mode="w") as file: 
+            file.write("experiment,label,precision,recall,f1\n")
+            print("Creating per_label_results.txt file...")
+    with open(OUTPUT_DIR+"per_label_results.csv", mode="r") as file: 
+        last_line = file.readlines()[-1]
+        last_experiment_id = last_line.split(",")[0]
+        if last_experiment_id == "experiment":experiment_id = 1
+        else: experiment_id = int(last_experiment_id)+1
+    
+    # Evaluate prediction for each label
+    for idx in range(num_labels):
+        preds_for_label = y_pred.transpose()[idx]
+        precision, recall, f1, _ = precision_recall_fscore_support(y_true.transpose()[idx], preds_for_label)
+        _, precision = precision
+        _, recall = recall
+        _, f1 = f1
+        with open(OUTPUT_DIR+"per_label_results.csv", mode="a") as file: file.write(f"{experiment_id},\"{labels[idx]}\",{precision},{recall},{f1}\n")
+
 # WIP for injecting oversamplers in ClassifierChain
 class ClassifierChainWrapper():
     def __init__(self, classifier, labels, oversampler):
         self.chains = []
+
 
 
 class BinaryRelevance():
@@ -119,6 +143,8 @@ class BinaryRelevance():
 
             self.classifier_list[idx] = self.classifier_list[idx].fit(X=x_, y=y_)
         return self
+
+    
 
     def predict(self, X, Y_true:np.ndarray=np.ndarray([])):
         num_labels = len(self.labels)
@@ -148,16 +174,18 @@ class BinaryRelevance():
             # print(confusion_matrix(Y_true.transpose()[idx], preds_for_label))
             # print("Precison, Recall, F1")
             # print(f"{precision},{recall},{f1}")
-            with open(OUTPUT_DIR+"per_label_results.csv", mode="a") as file: file.write(f"{experiment_id},{self.labels[idx]},{precision},{recall},{f1}\n")
+            with open(OUTPUT_DIR+"per_label_results.csv", mode="a") as file: file.write(f"{experiment_id},\"{self.labels[idx]}\",{precision},{recall},{f1}\n")
 
         return np.array(preds).transpose()
 
 if __name__ == "__main__":
-    br = BinaryRelevance(classifier=LogisticRegression(), labels=["A","B","C"])
+    labels = ["A", "B", "C"]
+    br = BinaryRelevance(classifier=LogisticRegression(), labels=labels)
     x = np.array([[12,9, 0, 700],[1,-1,-50, 0.1], [12,12,64, 15555]])
     y = np.array([[1,0,1],
                   [1,1,0],
                   [0,1,1]])
 
     br.fit(x, y)
-    br.predict(x, y)
+    preds = br.predict(x)
+    evaluate_per_label(preds, y, labels)
