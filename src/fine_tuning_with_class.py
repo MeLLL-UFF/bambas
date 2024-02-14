@@ -19,6 +19,7 @@ from sklearn.preprocessing import MultiLabelBinarizer
 from transformers import AutoTokenizer, DataCollatorWithPadding
 from torch.utils.data import DataLoader
 from typing import Tuple, List
+from optuna import trial
 
 OUTPUT_DIR = f"{get_workdir()}/fine_tuning_with_class"
 GOLD_PATH = f"{get_workdir()}/dataset/semeval2024/subtask1/validation.json"
@@ -34,6 +35,10 @@ def fine_tune(args: Namespace):
     save_model = args.save_model
     push_model = args.push_model_to_hf_hub
     concat_train_dev = args.concat_train_dev
+    hypsearch = args.hypsearch
+    hpsearch_min = args.hpsearch_min
+    hpsearch_max = args.hpsearch_max
+    n_trials = args.n_trials
     save_strategy = args.save_strategy
 
     train_df, dev_df, test_df = load_dataset(dataset)
@@ -69,16 +74,20 @@ def fine_tune(args: Namespace):
     dev = dev.map(tokenize, batched=True, batch_size=batch_size, num_proc=4, remove_columns=dev.column_names)
     dev.set_format("torch")
 
-    model = AutoModelForSequenceClassification.from_pretrained(
-        model,
-        device_map=device_map,
-        num_labels=len(labels[0]),
-        problem_type="multi_label_classification",
-    )
+    def model_template():
+        return AutoModelForSequenceClassification.from_pretrained(
+            model,
+            device_map=device_map,
+            num_labels=len(labels[0]),
+            problem_type="multi_label_classification",
+        )
+    
+    def model_init(trial):
+        return model_template()
 
     args = TrainingArguments(
         fine_tuned_name,
-        evaluation_strategy="epoch",
+        evaluation_strategy=save_strategy,
         learning_rate=lr,
         weight_decay=weight_decay,
         push_to_hub=push_model,
@@ -103,6 +112,15 @@ def fine_tune(args: Namespace):
         preds = p.predictions[0] if isinstance(p.predictions, tuple) else p.predictions
         predictions = logits_to_predictions(preds)
 
+        all_zeros = not np.any(predictions)
+        if all_zeros:
+            print("No labels were predicted at all. Every metric is zero")
+            return {
+                "hier_f1": 0.,
+                "hier_precision": 0.,
+                "hier_recall": 0.,
+            }
+
         gold = mlb.inverse_transform(np.asarray(p.label_ids, dtype=int))
         pred = mlb.inverse_transform(predictions)
 
@@ -113,7 +131,8 @@ def fine_tune(args: Namespace):
         }
     
     trainer = Trainer(
-        model=model,
+        model=model_template() if not hypsearch else None,
+        model_init=None if not hypsearch else model_init,
         tokenizer=tokenizer,
         args=args,
         train_dataset=train,
@@ -123,112 +142,127 @@ def fine_tune(args: Namespace):
     if push_model:
         interpreter_login(write_permission=True, new_session=False)
 
-    trainer.train()
-
-    eval_results = trainer.evaluate()
-    print(f"(dev_set) Evaluation results: {json.dumps(eval_results, indent=4)}")
-
-    if save_model:
-        output_dir = f"{OUTPUT_DIR}/{fine_tuned_name}"
-        os.makedirs(output_dir, exist_ok=True)
-        print(f"Saving fine-tuned model to {output_dir}")
-        trainer.model.save_pretrained(output_dir)
-        trainer.tokenizer.save_pretrained(output_dir)
-
-    if push_model:
-        print(f"Uploading fine-tuned model ({fine_tuned_name}) to HuggingFace Hub")
-        trainer.push_to_hub()
-    
-    def predict(ds: Dataset) -> Tuple[List[str], np.ndarray]:
-        data_collator = DataCollatorWithPadding(tokenizer=tokenizer, padding="max_length", max_length=max_length)
-        dl = DataLoader(dataset=ds,
-                        batch_size=batch_size,
-                        collate_fn=data_collator)
-        test_predicted_labels = None
-        raw_predictions = None
-        with torch.no_grad():
-            for idx, batch in enumerate(dl):
-                print(f'Batch no. {idx+1}. Transferring to device')
-                encoding = {k:v.to(trainer.model.device) for k, v in batch.items()}
-                print("Prediction pass")
-                outputs = trainer.model(**encoding)
-                print("Retrieving logits")
-                logits = outputs.logits
-
-                print("Parsing logits")
-                sigmoid = torch.nn.Sigmoid()
-                probs = sigmoid(logits.cpu())
-                predictions = np.zeros(probs.shape)
-                predictions[np.where(probs >= 0.5)] = 1
-
-                print("Concatenating raw predictions")
-                if raw_predictions is None:
-                    raw_predictions = predictions
-                else:
-                    raw_predictions = np.concatenate((raw_predictions, predictions))
-                
-                print("Transforming to predictions")
-                pred = mlb.inverse_transform(predictions)
-                if test_predicted_labels is None:
-                    test_predicted_labels = pred
-                else:
-                    test_predicted_labels = np.concatenate((test_predicted_labels, pred))
-        return test_predicted_labels.tolist(), np.asarray(raw_predictions, dtype=int)
-    
-    # We manually evaluate so we can compute the confusion matrix
-    print("Manual prediction on dev_set")
-    dev_predicted_labels, dev_raw_predictions = predict(dev)
-
-    ts = int(time.time())
-    pred_path, _ = save_predictions(dev_df, dev_predicted_labels, "dev", ts)
-
-    prec, rec, f1 = evaluate_h(pred_path, GOLD_PATH)
-    print(f"\nValidation set:\n\tPrecision: {prec}\n\tRecall: {rec}\n\tF1: {f1}\n")
-
-    cf_mtx = binary_relevance_confusion_matrix(np.asarray(dev_labels, dtype=int), dev_raw_predictions, labels[0])
-
-    results_csv_path = f"{OUTPUT_DIR}/ft_with_class_results.csv"
-    print(f"Saving validation set results to {results_csv_path}")
-    if os.path.exists(results_csv_path):
-        results = pd.read_csv(results_csv_path, index_col=0)
+    if hypsearch:
+        print(f"Making hyperparameter search")
+        def optuna_hp_space(trial):
+            return {
+                "learning_rate": trial.suggest_float("learning_rate", hpsearch_min, hpsearch_max, log=True),
+            }
+        best_trial = trainer.hyperparameter_search(
+            direction="minimize",
+            backend="optuna",
+            hp_space=optuna_hp_space,
+            n_trials=n_trials,
+        )
+        print(f"Trial results: {json.dumps(best_trial, indent=4)}")
     else:
-        dir = os.path.sep.join(results_csv_path.split(os.path.sep)[:-1])
-        print(f"Creating dir {dir}")
-        os.makedirs(dir, exist_ok=True)
-        results = pd.DataFrame(
-            columns=[
-                "Model",
-                "Dataset",
-                "Test Dataset",
-                "F1",
-                "Precision",
-                "Recall",
-                "Confusion Matrix"
-                "Timestamp"])
     
-    results.loc[len(results.index) + 1] = [args.model,
-                                           args.dataset,
-                                           "dev_set",
-                                           f1,
-                                           prec,
-                                           rec,
-                                           cf_mtx,
-                                           ts]
-    results.to_csv(results_csv_path)
-    
-    # # Prediction
-    print("Predicting for test file. Tokenizing test df")
-    ds = Dataset.from_pandas(test_df)
+        trainer.train()
 
-    def tokenize_test_df(data):
-        encoding = tokenizer(data["text"], max_length=max_length, padding=True, truncation=True)
-        return encoding
-    
-    ds = ds.map(tokenize_test_df, batched=True, batch_size=batch_size, num_proc=4, remove_columns=ds.column_names)
+        eval_results = trainer.evaluate()
+        print(f"(dev_set) Evaluation results: {json.dumps(eval_results, indent=4)}")
 
-    test_predicted_labels, _ = predict(dev)
-    pred_path, _ = save_predictions(test_df, test_predicted_labels, "dev_unlabeled", ts)
-    print(f"Finished successfully. dev_unlabeled predictions saved at {pred_path}")
+        if save_model:
+            output_dir = f"{OUTPUT_DIR}/{fine_tuned_name}"
+            os.makedirs(output_dir, exist_ok=True)
+            print(f"Saving fine-tuned model to {output_dir}")
+            trainer.model.save_pretrained(output_dir)
+            trainer.tokenizer.save_pretrained(output_dir)
+
+        if push_model:
+            print(f"Uploading fine-tuned model ({fine_tuned_name}) to HuggingFace Hub")
+            trainer.push_to_hub()
+    
+    # def predict(ds: Dataset) -> Tuple[List[str], np.ndarray]:
+    #     data_collator = DataCollatorWithPadding(tokenizer=tokenizer, padding="max_length", max_length=max_length)
+    #     dl = DataLoader(dataset=ds,
+    #                     batch_size=batch_size,
+    #                     collate_fn=data_collator)
+    #     test_predicted_labels = None
+    #     raw_predictions = None
+    #     with torch.no_grad():
+    #         for idx, batch in enumerate(dl):
+    #             print(f'Batch no. {idx+1}. Transferring to device')
+    #             encoding = {k:v.to(trainer.model.device) for k, v in batch.items()}
+    #             print("Prediction pass")
+    #             outputs = trainer.model(**encoding)
+    #             print("Retrieving logits")
+    #             logits = outputs.logits
+
+    #             print("Parsing logits")
+    #             sigmoid = torch.nn.Sigmoid()
+    #             probs = sigmoid(logits.cpu())
+    #             predictions = np.zeros(probs.shape)
+    #             predictions[np.where(probs >= 0.5)] = 1
+
+    #             print("Concatenating raw predictions")
+    #             if raw_predictions is None:
+    #                 raw_predictions = predictions
+    #             else:
+    #                 raw_predictions = np.concatenate((raw_predictions, predictions))
+                
+    #             print("Transforming to predictions")
+    #             pred = mlb.inverse_transform(predictions)
+    #             if test_predicted_labels is None:
+    #                 test_predicted_labels = pred
+    #             else:
+    #                 test_predicted_labels = np.concatenate((test_predicted_labels, pred))
+    #     return test_predicted_labels.tolist(), np.asarray(raw_predictions, dtype=int)
+    
+    # # We manually evaluate so we can compute the confusion matrix
+    # print("Manual prediction on dev_set")
+    # dev_predicted_labels, dev_raw_predictions = predict(dev)
+
+    # ts = int(time.time())
+    # pred_path, _ = save_predictions(dev_df, dev_predicted_labels, "dev", ts)
+
+    # prec, rec, f1 = evaluate_h(pred_path, GOLD_PATH)
+    # print(f"\nValidation set:\n\tPrecision: {prec}\n\tRecall: {rec}\n\tF1: {f1}\n")
+
+    # cf_mtx = binary_relevance_confusion_matrix(np.asarray(dev_labels, dtype=int), dev_raw_predictions, labels[0])
+
+    # results_csv_path = f"{OUTPUT_DIR}/ft_with_class_results.csv"
+    # print(f"Saving validation set results to {results_csv_path}")
+    # if os.path.exists(results_csv_path):
+    #     results = pd.read_csv(results_csv_path, index_col=0)
+    # else:
+    #     dir = os.path.sep.join(results_csv_path.split(os.path.sep)[:-1])
+    #     print(f"Creating dir {dir}")
+    #     os.makedirs(dir, exist_ok=True)
+    #     results = pd.DataFrame(
+    #         columns=[
+    #             "Model",
+    #             "Dataset",
+    #             "Test Dataset",
+    #             "F1",
+    #             "Precision",
+    #             "Recall",
+    #             "Confusion Matrix"
+    #             "Timestamp"])
+    
+    # results.loc[len(results.index) + 1] = [args.model,
+    #                                        args.dataset,
+    #                                        "dev_set",
+    #                                        f1,
+    #                                        prec,
+    #                                        rec,
+    #                                        cf_mtx,
+    #                                        ts]
+    # results.to_csv(results_csv_path)
+    
+    # # # Prediction
+    # print("Predicting for test file. Tokenizing test df")
+    # ds = Dataset.from_pandas(test_df)
+
+    # def tokenize_test_df(data):
+    #     encoding = tokenizer(data["text"], max_length=max_length, padding=True, truncation=True)
+    #     return encoding
+    
+    # ds = ds.map(tokenize_test_df, batched=True, batch_size=batch_size, num_proc=4, remove_columns=ds.column_names)
+
+    # test_predicted_labels, _ = predict(dev)
+    # pred_path, _ = save_predictions(test_df, test_predicted_labels, "dev_unlabeled", ts)
+    # print(f"Finished successfully. dev_unlabeled predictions saved at {pred_path}")
 
 
 if __name__ == "__main__":
@@ -248,6 +282,10 @@ if __name__ == "__main__":
     parser.add_argument("--weight_decay", type=float, default=0.001, help="training weight decay")
     parser.add_argument("--save_model", action="store_true", help="wheter to save adjusted model locally")
     parser.add_argument("--concat_train_dev",  action="store_true", help="wheter to concatenate train+dev(validation) datasets for training")
+    parser.add_argument("--hypsearch", action="store_true", help="wheter to use hyperparameter search")
+    parser.add_argument("--hpsearch_min", type=float, default=3.9e-5, help="training learning rate")
+    parser.add_argument("--hpsearch_max", type=float, default=3.9e-5, help="training learning rate")
+    parser.add_argument("--n_trials", type=int, default=10, help="number of trials for hyperparameter search")
     parser.add_argument(
         "--push_model_to_hf_hub",
         action="store_true",
