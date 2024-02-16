@@ -1,0 +1,3 @@
+,FE Model,FE Method,FE Layers,FE Layers Agg Method,FE Dataset,Test Dataset,Classifier,F1,Precision,Recall,Confusion Matrix,Timestamp
+1,-,-,,-,semeval2024_test_unlabeled,test_set,jhu-clsp/bernice,0.5724888035828535,0.7431893687707641,0.4655567117585848,,1708039876
+2,jhu-clsp/bernice,cls,,-,semeval2024_test_unlabeled,test_set,MLP,0.5063016668925329,0.7257187257187258,0.3887617065556711,,1708039876
