@@ -12,12 +12,15 @@ datasets = "*"
 scikit-learn = "*"
 notebook = "*"
 nltk = "*"
+scikit-multilearn = "*"
+sklearn-hierarchical-classification = "*"
+imbalanced-learn = "*"
+matplotlib = "*"
+optuna = "*"
 flake8 = "*"
 autopep8 = "*"
-scikit-multilearn = "*"
-sentence-transformers = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.11"
+python_version = "3.8"

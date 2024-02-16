@@ -6,7 +6,22 @@ from src.utils.workspace import get_workdir
 DATASET_DIR = f"{get_workdir()}/dataset"
 
 
-def _load_semeval2024() -> List[pd.DataFrame]:
+def _load_semeval2024_augmented_smears() -> List[pd.DataFrame]:
+    # with open(f"{DATASET_DIR}/augmented/augmented_chatgpt_2201.json", "r") as f:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    # with open(f"{DATASET_DIR}/augmented/augmented_chatgpt_2201.json", "r") as g:
+    with open(f"{DATASET_DIR}/augmented/augmented_chatgpt_2601_br_Smears.json", "r") as g:
+        train_augmented = pd.DataFrame().from_records(json.load(g))
+        train = pd.concat([train, train_augmented])
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
+        validation = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_unlabeled.json", "r") as f:
+        dev_unlabeled = pd.DataFrame().from_records(json.load(f))
+    return train, validation, dev_unlabeled
+
+
+def _load_semeval2024_test() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
     with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
@@ -15,7 +30,43 @@ def _load_semeval2024() -> List[pd.DataFrame]:
         dev_unlabeled = pd.DataFrame().from_records(json.load(f))
     # with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
     #     test_unlabeled = pd.DataFrame().from_records(json.load(f))
-    return train, validation, dev_unlabeled# , test_unlabeled
+    return train, validation, dev_unlabeled  # , test_unlabeled
+
+# TODO: fix loading of augmented datasets, broker by the reversion below
+
+
+def _load_semeval2024() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
+        validation = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_unlabeled.json", "r") as f:
+        dev_unlabeled = pd.DataFrame().from_records(json.load(f))
+    return train, validation, dev_unlabeled
+
+
+def _load_semeval2024_dev_labeled() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
+        validation = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_subtask1_en.json", "r") as f:
+        dev_labeled = pd.DataFrame().from_records(json.load(f))
+    return train, validation, dev_labeled
+
+
+def _load_semeval2024_test_unlabeled() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
+        validation = pd.DataFrame().from_records(json.load(f))
+        train = pd.concat([train, validation])
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_subtask1_en.json", "r") as f:
+        validation = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
+        test_unlabeled = pd.DataFrame().from_records(json.load(f))
+    return train, validation, test_unlabeled
+
 
 def _load_semeval_augmented() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval_augmented/train_aug_ptc_reductio.json", "r") as f:
@@ -26,7 +77,8 @@ def _load_semeval_augmented() -> List[pd.DataFrame]:
         dev_unlabeled = pd.DataFrame().from_records(json.load(f))
     # with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
     #     test_unlabeled = pd.DataFrame().from_records(json.load(f))
-    return train, validation, dev_unlabeled# , test_unlabeled
+    return train, validation, dev_unlabeled  # , test_unlabeled
+
 
 def _load_semeval_internal() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval_internal/train_internal.json", "r") as f:
@@ -37,7 +89,7 @@ def _load_semeval_internal() -> List[pd.DataFrame]:
         dev_unlabeled = pd.DataFrame().from_records(json.load(f))
     # with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
     #     test_unlabeled = pd.DataFrame().from_records(json.load(f))
-    return train, validation, dev_unlabeled# , test_unlabeled
+    return train, validation, dev_unlabeled  # , test_unlabeled
 
 
 def _load_ptc2019() -> List[pd.DataFrame]:
@@ -66,7 +118,7 @@ def load_dataset(dataset: str) -> List[pd.DataFrame]:
     Parameters:
     -----------
     dataset : str
-              name of dataset, currently only 'ptc2019' or 'semeval2024' are supported
+              name of dataset
 
     Returns:
     --------
@@ -75,6 +127,14 @@ def load_dataset(dataset: str) -> List[pd.DataFrame]:
     """
     if dataset == "semeval2024":
         return _load_semeval2024()
+    elif dataset == "semeval2024_test_set_no_concat":
+        return _load_semeval2024_test()
+    elif dataset == "semeval2024_dev_set_labeled":
+        return _load_semeval2024_dev_labeled()
+    elif dataset == "semeval2024_test_set_unlabeled":
+        return _load_semeval2024_test_unlabeled()
+    elif dataset == "semeval2024_augmented_smears":
+        return _load_semeval2024_augmented_smears()
     elif dataset == "ptc2019":
         return _load_ptc2019()
     elif dataset == "semeval_augmented":

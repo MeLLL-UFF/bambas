@@ -8,3 +8,8 @@ notebook
 nltk
 scikit-multilearn
 sklearn-hierarchical-classification
+imbalanced-learn
+matplotlib
+optuna
+flake8
+autopep8

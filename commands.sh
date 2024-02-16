@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ft extraction using semeval base
 python -m src.feature_extraction \
  --dataset semeval_internal \

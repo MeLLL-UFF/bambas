@@ -137,12 +137,12 @@ def save_ft_files(ft_data: Dict[str, Any], ft_path: str):
 def feature_extraction(args: Namespace):
     train, dev, test = load_dataset(args.dataset)
     print("Dataset Lengths", len(train), len(dev), len(test))
-    tokenizer = AutoTokenizer.from_pretrained(args.model, use_fast=True, use_auth_token=True)
+    tokenizer = AutoTokenizer.from_pretrained(args.model, use_fast=True)
     device_map = {"": "cpu"}
     if torch.cuda.is_available():
         device_map = {"": 0}
     print(f"Using device: {device_map}")
-    model = AutoModel.from_pretrained(args.model, device_map=device_map, output_hidden_states=True, use_auth_token=True)
+    model = AutoModel.from_pretrained(args.model, device_map=device_map, output_hidden_states=True)
     train_dl = load_data_split(tokenizer=tokenizer, dataset=train)
     dev_dl = load_data_split(tokenizer=tokenizer, dataset=dev)
     test_dl = load_data_split(tokenizer=tokenizer, dataset=test)
@@ -162,8 +162,8 @@ def feature_extraction(args: Namespace):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     ts = int(time.time())
-    ft_prefix = f"{ts}_{args.model.replace('/', '-')}_" if args.output_dir=="" else ""
-    output_dir = args.output_dir if args.output_dir.endswith("/") else args.output_dir+"/"
+    ft_prefix = f"{ts}_{args.model.replace('/', '-')}_" if args.output_dir == "" else ""
+    output_dir = args.output_dir if args.output_dir.endswith("/") else args.output_dir + "/"
     train_ft_path = f"{OUTPUT_DIR}{output_dir}{ft_prefix}train_features.json"
     print("train_ft_path:", train_ft_path)
     save_ft_files(train_ft_json, train_ft_path)
@@ -187,14 +187,17 @@ if __name__ == "__main__":
         choices=[
             "ptc2019",
             "semeval2024",
+            "semeval2024_augmented_smears",
             "semeval_augmented",
-            "semeval_internal"],
+            "semeval_internal",
+            "semeval2024_test_set_unlabeled",
+            "semeval2024_test_set_no_concat"],
         help="corpus for feature-extraction",
         required=True)
     parser.add_argument(
-        "--model", 
-        type=str, 
-        help="name or path to fine-tuned model", 
+        "--model",
+        type=str,
+        help="name or path to fine-tuned model",
         required=True)
     parser.add_argument(
         "--extraction_method",

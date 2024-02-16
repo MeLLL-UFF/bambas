@@ -1,4 +1,6 @@
 .ipynb_checkpoints
 __pycache__
+feature_extraction/**
+classification/*.json
+classification/*.txt
 .*_old
-feature_extraction/*

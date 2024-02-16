@@ -111,6 +111,7 @@ hier = {
     ]
 }
 
+
 def get_dag_leaves() -> List[str]:
     leaves = []
     parents = hier.keys()
@@ -121,8 +122,10 @@ def get_dag_leaves() -> List[str]:
                 leaves.append(v)
     return leaves
 
+
 def get_dag_parents() -> List[str]:
     return hier.keys()
+
 
 def get_leaf_parents(leaf: str) -> List[str]:
     parents = []
@@ -130,6 +133,7 @@ def get_leaf_parents(leaf: str) -> List[str]:
         if k not in parents and leaf in v:
             parents.append(k)
     return parents
+
 
 def get_dag_labels() -> List[str]:
     all_labels = []
@@ -256,6 +260,21 @@ def _read_gold_and_pred(pred_fpath, gold_fpath):
             'There are either missing or added examples to the prediction file. Make sure you only have the gold examples in the prediction file.')
 
     return pred_labels, gold_labels
+
+
+def hf1_score(gold, pred):
+    with multi_labeled(gold, pred, G) as (gold_, pred_, graph_):
+        return _h_fbeta_score(gold_, pred_, graph_)
+
+
+def hprec_score(gold, pred):
+    with multi_labeled(gold, pred, G) as (gold_, pred_, graph_):
+        return h_precision_score(gold_, pred_, graph_)
+
+
+def hrec_score(gold, pred):
+    with multi_labeled(gold, pred, G) as (gold_, pred_, graph_):
+        return h_recall_score(gold_, pred_, graph_)
 
 
 def evaluate_h(pred_fpath, gold_fpath):
