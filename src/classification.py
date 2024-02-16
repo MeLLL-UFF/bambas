@@ -27,6 +27,7 @@ from copy import deepcopy
 OUTPUT_DIR = f"{get_workdir()}/classification"
 GOLD_DIR = f"{get_workdir()}/dataset/semeval2024/subtask1"
 
+
 def append_dag_parents(leaves: List[str]) -> List[str]:
     labels = deepcopy(leaves)
     for leaf in leaves:
@@ -34,15 +35,19 @@ def append_dag_parents(leaves: List[str]) -> List[str]:
         labels = list(set(labels.extend(parents)))
     return labels
 
+
 def remove_non_leaf_nodes(df: pd.DataFrame) -> pd.DataFrame:
     parents = get_dag_parents()
+
     def remove_parents(labels: List[str]) -> List[str]:
         return list(filter(lambda x: x not in parents, labels))
 
     df["labels"] = df["labels"].apply(remove_parents)
     return df
 
-def save_predictions(test_df: pd.DataFrame, predictions: List[List[str]], kind: str, timestamp: int) -> Tuple[str, List[Dict[str, Any]]]:
+
+def save_predictions(test_df: pd.DataFrame, predictions: List[List[str]],
+                     kind: str, timestamp: int) -> Tuple[str, List[Dict[str, Any]]]:
     predictions_json = []
     for idx, row in test_df.iterrows():
         predictions_json.append({
@@ -94,7 +99,7 @@ def classify(args: Namespace):
         labels[0].sort()
     print(f"Labels: {labels}")
     print(f"No. of labels in {'DAG' if args.classifier == 'HiMLP' else 'train+dev datasets'}: {len(labels[0])}")
-    
+
     # Transforming label lists into Multihot encoding
     mlb = MultiLabelBinarizer(classes=labels[0])
     train_labels = mlb.fit(labels).transform(train["labels"].to_numpy())
@@ -103,7 +108,7 @@ def classify(args: Namespace):
         dev_labels = mlb.fit(labels).transform(dev_internals["labels"].to_numpy())
     else:
         dev_labels = mlb.fit(labels).transform(dev["labels"].to_numpy())
-    
+
     print("Loading features array files")
     train_ft, test_ft, dev_ft = map(
         load_features_array, [
@@ -123,35 +128,35 @@ def classify(args: Namespace):
         oversamplers = RandomOverSampler(random_state=args.seed, sampling_strategy=args.sampling_strategy)
     elif args.oversampling == "Combination":
         oversamplers = {
-            "Simplification":None,
-            "Bandwagon":None,
-            "Ethos":None,
-            "Reasoning":None,
-            "Pathos":None,
-            "Justification":None,
-            "Ad Hominem":None,
-            "Distraction":None,
-            "Logos":None,
-            "Flag-waving":SMOTE(sampling_strategy=0.5, random_state=args.seed),
-            "Exaggeration/Minimisation":SMOTE(sampling_strategy=0.4, random_state=args.seed),
-            "Glittering generalities (Virtue)":RandomOverSampler(sampling_strategy=0.7, random_state=args.seed),
-            "Doubt":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
-            "Causal Oversimplification":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
-            "Slogans":RandomOverSampler(sampling_strategy=0.6, random_state=args.seed),
-            "Appeal to authority":SMOTE(sampling_strategy=0.8, random_state=args.seed),
-            "Thought-terminating cliché":RandomOverSampler(sampling_strategy=0.8, random_state=args.seed),
-            "Name calling/Labeling":SMOTE(sampling_strategy=0.8, random_state=args.seed),
-            "Repetition":RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
-            "Smears":SMOTE(sampling_strategy=0.8, random_state=args.seed),
-            "Reductio ad hitlerum":None, # SMOTE(sampling_strategy=args.sampling_strategy, random_state=args.seed),
-            "Misrepresentation of Someone's Position (Straw Man)":None,
-            "Appeal to fear/prejudice":SMOTE(sampling_strategy=0.8, random_state=args.seed),
-            "Black-and-white Fallacy/Dictatorship":SMOTE(sampling_strategy=0.4, random_state=args.seed),
-            "Presenting Irrelevant Data (Red Herring)":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
-            "Obfuscation, Intentional vagueness, Confusion":None,
-            "Loaded Language":SMOTE(sampling_strategy=0.9, random_state=args.seed),
-            "Bandwagon":RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
-            "Whataboutism":SMOTE(sampling_strategy=0.9, random_state=args.seed)
+            "Simplification": None,
+            "Bandwagon": None,
+            "Ethos": None,
+            "Reasoning": None,
+            "Pathos": None,
+            "Justification": None,
+            "Ad Hominem": None,
+            "Distraction": None,
+            "Logos": None,
+            "Flag-waving": SMOTE(sampling_strategy=0.5, random_state=args.seed),
+            "Exaggeration/Minimisation": SMOTE(sampling_strategy=0.4, random_state=args.seed),
+            "Glittering generalities (Virtue)": RandomOverSampler(sampling_strategy=0.7, random_state=args.seed),
+            "Doubt": RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+            "Causal Oversimplification": RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+            "Slogans": RandomOverSampler(sampling_strategy=0.6, random_state=args.seed),
+            "Appeal to authority": SMOTE(sampling_strategy=0.8, random_state=args.seed),
+            "Thought-terminating cliché": RandomOverSampler(sampling_strategy=0.8, random_state=args.seed),
+            "Name calling/Labeling": SMOTE(sampling_strategy=0.8, random_state=args.seed),
+            "Repetition": RandomOverSampler(sampling_strategy=0.5, random_state=args.seed),
+            "Smears": SMOTE(sampling_strategy=0.8, random_state=args.seed),
+            "Reductio ad hitlerum": None,  # SMOTE(sampling_strategy=args.sampling_strategy, random_state=args.seed),
+            "Misrepresentation of Someone's Position (Straw Man)": None,
+            "Appeal to fear/prejudice": SMOTE(sampling_strategy=0.8, random_state=args.seed),
+            "Black-and-white Fallacy/Dictatorship": SMOTE(sampling_strategy=0.4, random_state=args.seed),
+            "Presenting Irrelevant Data (Red Herring)": RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+            "Obfuscation, Intentional vagueness, Confusion": None,
+            "Loaded Language": SMOTE(sampling_strategy=0.9, random_state=args.seed),
+            "Bandwagon": RandomOverSampler(sampling_strategy=0.4, random_state=args.seed),
+            "Whataboutism": SMOTE(sampling_strategy=0.9, random_state=args.seed)
         }
 
     # Initializing Classifier
@@ -185,43 +190,44 @@ def classify(args: Namespace):
             mlb_prediction_threshold=0.35,
         )
     elif args.classifier == "DecisionTreeClassifier":
-        clf = DecisionTreeClassifier() # BinaryRelevance(DecisionTreeClassifier(), labels=labels[0], oversampler=oversamplers)
+        clf = DecisionTreeClassifier()  # BinaryRelevance(DecisionTreeClassifier(), labels=labels[0], oversampler=oversamplers)
     elif args.classifier == "ExtraTreeClassifier":
-        clf = ExtraTreeClassifier() # BinaryRelevance(ExtraTreeClassifier(), labels=labels[0], oversampler=oversamplers)
+        clf = ExtraTreeClassifier()  # BinaryRelevance(ExtraTreeClassifier(), labels=labels[0], oversampler=oversamplers)
     elif args.classifier == "ExtraTreesClassifier":
-        clf = ExtraTreesClassifier() # BinaryRelevance(ExtraTreesClassifier(), labels=labels[0], oversampler=oversamplers)
+        clf = ExtraTreesClassifier()  # BinaryRelevance(ExtraTreesClassifier(), labels=labels[0], oversampler=oversamplers)
     elif args.classifier == "KNeighborsClassifier":
-        clf = KNeighborsClassifier() # BinaryRelevance(KNeighborsClassifier(), labels=labels[0], oversampler=oversamplers)
+        clf = KNeighborsClassifier()  # BinaryRelevance(KNeighborsClassifier(), labels=labels[0], oversampler=oversamplers)
     elif args.classifier == "MLPClassifier":
         clf = MLPClassifier()
     elif args.classifier == "RadiusNeighborsClassifier":
-        clf = RadiusNeighborsClassifier() # BinaryRelevance(RadiusNeighborsClassifier(), labels=labels[0], oversampler=oversamplers)
+        # BinaryRelevance(RadiusNeighborsClassifier(), labels=labels[0], oversampler=oversamplers)
+        clf = RadiusNeighborsClassifier()
     elif args.classifier == "RandomForestClassifier":
-        clf = RandomForestClassifier() # BinaryRelevance(RandomForestClassifier(), labels=labels[0], oversampler=oversamplers)
+        clf = RandomForestClassifier()  # BinaryRelevance(RandomForestClassifier(), labels=labels[0], oversampler=oversamplers)
     elif args.classifier == "RidgeClassifier":
-        clf = RidgeClassifier() # BinaryRelevance(RidgeClassifier(), labels=labels[0], oversampler=oversamplers)
+        clf = RidgeClassifier()  # BinaryRelevance(RidgeClassifier(), labels=labels[0], oversampler=oversamplers)
     elif args.classifier == "RidgeClassifierCV":
         clf = RidgeClassifierCV()
     elif args.classifier == "BRMLP":
         clf = BinaryRelevance(
-            classifier = MLPClassifier(random_state=args.seed, 
-                                       max_iter=400),
-            labels = labels[0],
-            oversampler = oversamplers
+            classifier=MLPClassifier(random_state=args.seed,
+                                     max_iter=400),
+            labels=labels[0],
+            oversampler=oversamplers
         )
     elif args.classifier == "LogisticRegression":
         clf = BinaryRelevance(
-            classifier = LogisticRegression(random_state=args.seed,
-                                            max_iter=600,
-                                            multi_class="multinomial"),
-            labels = labels[0],
-            oversampler = oversamplers         
+            classifier=LogisticRegression(random_state=args.seed,
+                                          max_iter=600,
+                                          multi_class="multinomial"),
+            labels=labels[0],
+            oversampler=oversamplers
         )
     elif args.classifier == "GradientBoostingClassifier":
-         clf = BinaryRelevance(
-            classifier = GradientBoostingClassifier(random_state=args.seed),
-            labels = labels[0],
-            oversampler = oversamplers
+        clf = BinaryRelevance(
+            classifier=GradientBoostingClassifier(random_state=args.seed),
+            labels=labels[0],
+            oversampler=oversamplers
         )
     elif args.classifier == "ClassifierChain":
         from sklearn.multioutput import ClassifierChain
@@ -231,7 +237,7 @@ def classify(args: Namespace):
 
     # Check if label order is preserved in the binarizer
     clf = clf.fit(train_ft, train_labels)
-    dev_predicted_labels_binarized = clf.predict(dev_ft) #, dev_labels)
+    dev_predicted_labels_binarized = clf.predict(dev_ft)
     if args.classifier != "HiMLP" and args.classifier != "MLP":
         evaluate_per_label(dev_labels, dev_predicted_labels_binarized, labels[0])
     if args.classifier != "HiMLP":
@@ -280,7 +286,7 @@ def classify(args: Namespace):
                 "Recall",
                 "Confusion Matrix",
                 "Timestamp"])
-    
+
     results.loc[len(results.index) + 1] = [train_ft_info["model"],
                                            train_ft_info["extraction_method"],
                                            train_ft_info["layers"],
@@ -291,7 +297,7 @@ def classify(args: Namespace):
                                            f1,
                                            prec,
                                            rec,
-                                           cf_mtx,                                           
+                                           cf_mtx,
                                            ts]
     results.to_csv(results_csv_path)
 
@@ -305,29 +311,45 @@ def classify(args: Namespace):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("classification", description="classification with feedforward model")
-    parser.add_argument("--classifier", type=str, 
+    parser.add_argument("--classifier", type=str,
                         default="MLP")
     parser.add_argument(
         "--dataset",
         type=str,
         choices=[
             "ptc2019",
-            "semeval2024", 
-            "semeval2024_augmented",
+            "semeval2024",
+            "semeval2024_augmented_smears",
             "semeval_augmented",
             "semeval_internal",
-            "semeval2024_test_unlabeled"],
+            "semeval2024_test_set_unlabeled",
+            "semeval2024_test_set_no_concat"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)
     parser.add_argument("--test_features", type=str, help="path to extracted features file (JSON)", required=True)
-    parser.add_argument("--dev_features", type=str, help="path to extracted features file (JSON). Currently not used", required=True)
-    parser.add_argument("--max_iter", type=int, default=200, help="max iterations for ff classifier")
+    parser.add_argument(
+        "--dev_features",
+        type=str,
+        help="path to extracted features file (JSON). Currently not used",
+        required=True)
+    parser.add_argument("--max_iter", type=int, default=400, help="max iterations for ff classifier")
     parser.add_argument("--alpha", type=float, default=0.0001, help="weight of the L2 regularitation term")
     parser.add_argument("--seed", type=int, default=1, help="random seed for reproducibility")
-    parser.add_argument("--oversampling", type=str, default=None, help="if oversampling methods should be used (available only with binary relevance classifiers)")
-    parser.add_argument("--sampling_strategy", type=float, default=None, help="define the sampling strategy for oversamplers (available only with binary relevance classifiers)")
-    parser.add_argument("--concat_train_dev",  action="store_true", help="wheter to concatenate train+dev(validation) datasets for training")
+    parser.add_argument(
+        "--oversampling",
+        type=str,
+        default=None,
+        help="if oversampling methods should be used (available only with binary relevance classifiers)")
+    parser.add_argument(
+        "--sampling_strategy",
+        type=float,
+        default=None,
+        help="define the sampling strategy for oversamplers (available only with binary relevance classifiers)")
+    parser.add_argument(
+        "--concat_train_dev",
+        action="store_true",
+        help="wheter to concatenate train+dev(validation) datasets for training")
     args = parser.parse_args()
     print("Arguments:", args)
     classify(args)

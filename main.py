@@ -34,10 +34,9 @@ def load_ptc() -> List[pd.DataFrame]:
     test = test.drop_duplicates(subset=["text"])
     return train, test
 
+
 def feature_extraction_with_pretrained_model(model_name, train_dataset, test_dataset):
-    
-    
-    
+
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, normalization=True)
     model = AutoModel.from_pretrained(model_name).to(DEVICE)
 

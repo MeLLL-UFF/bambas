@@ -24,6 +24,7 @@ from optuna import trial
 OUTPUT_DIR = f"{get_workdir()}/fine_tuning_with_class"
 GOLD_DIR = f"{get_workdir()}/dataset/semeval2024/subtask1"
 
+
 def fine_tune(args: Namespace):
     model = args.model
     dataset = args.dataset
@@ -43,7 +44,7 @@ def fine_tune(args: Namespace):
     epochs = args.epochs
 
     train_df, dev_df, test_df = load_dataset(dataset)
-    
+
     if concat_train_dev:
         print("Concatenating train and dev sets")
         train_df = pd.concat([train_df, dev_df])
@@ -57,7 +58,7 @@ def fine_tune(args: Namespace):
     dev_labels = np.asarray(mlb.transform(dev_df["labels"].to_numpy()), dtype=float).tolist()
     dev_df["labels"] = dev_labels
     test_labels = None
-    if dataset == "semeval2024_dev_labeled":
+    if dataset == "semeval2024_dev_set_labeled":
         test_labels = np.asarray(mlb.transform(test_df["labels"].to_numpy()), dtype=float).tolist()
         test_df["labels"] = test_labels
 
@@ -86,7 +87,7 @@ def fine_tune(args: Namespace):
             num_labels=len(labels[0]),
             problem_type="multi_label_classification",
         )
-    
+
     def model_init(trial):
         return model_template()
 
@@ -131,11 +132,11 @@ def fine_tune(args: Namespace):
         pred = mlb.inverse_transform(predictions)
 
         return {
-            "hier_f1": hf1_score(gold, pred), 
-            "hier_precision": hprec_score(gold, pred), 
+            "hier_f1": hf1_score(gold, pred),
+            "hier_precision": hprec_score(gold, pred),
             "hier_recall": hrec_score(gold, pred),
         }
-    
+
     trainer = Trainer(
         model=model_template() if not hypsearch else None,
         model_init=None if not hypsearch else model_init,
@@ -150,6 +151,7 @@ def fine_tune(args: Namespace):
 
     if hypsearch:
         print(f"Making hyperparameter search")
+
         def optuna_hp_space(trial):
             return {
                 "learning_rate": trial.suggest_float("learning_rate", hpsearch_min, hpsearch_max, log=True),
@@ -162,7 +164,7 @@ def fine_tune(args: Namespace):
         )
         print(f"Trial results: {json.dumps(best_trial, indent=4)}")
     else:
-    
+
         trainer.train()
 
         eval_results = trainer.evaluate()
@@ -178,7 +180,7 @@ def fine_tune(args: Namespace):
         if push_model:
             print(f"Uploading fine-tuned model ({fine_tuned_name}) to HuggingFace Hub")
             trainer.push_to_hub()
-    
+
         def predict(ds: Dataset) -> Tuple[List[str], np.ndarray]:
             data_collator = DataCollatorWithPadding(tokenizer=tokenizer, padding="max_length", max_length=max_length)
             dl = DataLoader(dataset=ds,
@@ -192,7 +194,7 @@ def fine_tune(args: Namespace):
             with torch.no_grad():
                 for idx, batch in enumerate(dl):
                     print(f'Batch no. {idx+1}. Transferring to device')
-                    encoding = {k:v.to(trainer.model.device) for k, v in batch.items()}
+                    encoding = {k: v.to(trainer.model.device) for k, v in batch.items()}
                     outputs = trainer.model(**encoding)
                     logits = outputs.logits
 
@@ -205,7 +207,7 @@ def fine_tune(args: Namespace):
                         raw_predictions = predictions
                     else:
                         raw_predictions = np.concatenate((raw_predictions, predictions))
-                    
+
                     pred = list(mlb.inverse_transform(predictions))
                     if test_predicted_labels is None:
                         test_predicted_labels = pred
@@ -218,7 +220,7 @@ def fine_tune(args: Namespace):
         def tokenize_test_df(data):
             encoding = tokenizer(data["text"], max_length=max_length, padding=True, truncation=True)
             return encoding
-        
+
         test = Dataset.from_pandas(test_df)
         test = test.map(tokenize_test_df, batched=True, batch_size=batch_size, num_proc=4, remove_columns=test.column_names)
         test_predicted_labels, test_raw_predictions = predict(test)
@@ -228,7 +230,7 @@ def fine_tune(args: Namespace):
 
         gold_file = (
             "dev_subtask1_en.json"
-            if dataset == "semeval2024_dev_labeled"
+            if dataset == "semeval2024_dev_set_labeled"
             else "validation.json"
         )
 
@@ -260,7 +262,7 @@ def fine_tune(args: Namespace):
                     "Confusion Matrix"
                     "Timestamp"])
             idx = 0
-        
+
         results.loc[idx] = [args.model,
                             args.dataset,
                             "test_set",
@@ -275,12 +277,25 @@ def fine_tune(args: Namespace):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("fine_tuning",
                                      description="fine-tuning a language model with a final multilabel classification layer")
-    parser.add_argument("--model", type=str, choices=["xlm-roberta-base", "jhu-clsp/bernice"], help="model to fine-tune", required=True)
+    parser.add_argument(
+        "--model",
+        type=str,
+        choices=[
+            "xlm-roberta-base",
+            "jhu-clsp/bernice"],
+        help="model to fine-tune",
+        required=True)
     parser.add_argument(
         "--dataset",
         type=str,
-        choices=["ptc2019", "semeval2024", "semeval2024_augmented", "semeval2024_dev_labeled", "semeval2024_test_unlabeled"],
-        help="corpus for masked-language model pretraining task",
+        choices=[
+            "ptc2019",
+            "semeval2024",
+            "semeval2024_augmented_smears",
+            "semeval2024_dev_set_labeled",
+            "semeval2024_test_set_unlabeled",
+            "semeval2024_test_set_no_concat"],
+        help="corpus for classification task",
         required=True)
     parser.add_argument("--fine_tuned_name", type=str, help="fine-tuned model name", required=True)
     parser.add_argument("--batch_size", type=int, help="batch size for pretraining", default=32)
@@ -288,7 +303,10 @@ if __name__ == "__main__":
     parser.add_argument("--lr", type=float, default=3.9e-5, help="training learning rate")
     parser.add_argument("--weight_decay", type=float, default=0.001, help="training weight decay")
     parser.add_argument("--save_model", action="store_true", help="wheter to save adjusted model locally")
-    parser.add_argument("--concat_train_dev",  action="store_true", help="wheter to concatenate train+dev(validation) datasets for training")
+    parser.add_argument(
+        "--concat_train_dev",
+        action="store_true",
+        help="wheter to concatenate train+dev(validation) datasets for training")
     parser.add_argument("--hypsearch", action="store_true", help="wheter to use hyperparameter search")
     parser.add_argument("--hpsearch_min", type=float, default=3.9e-5, help="training learning rate")
     parser.add_argument("--hpsearch_max", type=float, default=3.9e-5, help="training learning rate")
@@ -298,7 +316,11 @@ if __name__ == "__main__":
         "--push_model_to_hf_hub",
         action="store_true",
         help="wheter to upload adjusted model to HuggingFace hub. If True, you will be prompted for your authentication token")
-    parser.add_argument("--save_strategy", type=str, help="save strategy for trainer, can be no, epoch or steps", default="epoch")
+    parser.add_argument(
+        "--save_strategy",
+        type=str,
+        help="save strategy for trainer, can be no, epoch or steps",
+        default="epoch")
     args = parser.parse_args()
     print("Arguments:", args)
     fine_tune(args)

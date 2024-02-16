@@ -38,7 +38,7 @@ For a working Google Colab example, please refer to [this notebook](./Fine_tunin
 
 For a quickstart using a shell script, please refer to [this shell script](./quickstart.sh)
 
-### Fine-tuning
+### Fine-tuning for MLM
 ```sh
 python -m src.fine_tuning \
   --model xlm-roberta-base \
@@ -47,7 +47,21 @@ python -m src.fine_tuning \
   --save_model
 ```
 
+### Fine-tuning + multilabel classification layer
+```sh
+python -m src.fine_tuning_with_class \
+  --model jhu-clsp/bernice \
+  --dataset semeval2024_dev_labeled \
+  --fine_tuned_name jhu-clsp-bernice-semeval2024-dev-labeled-classifier \
+  --batch_size 8 \
+  --save_strategy epoch \
+  --lr 3.9e-5 \
+  --epochs 5 \
+  --save_model
+```
+
 ### Feature-extraction
+Using the `[CLS]` token:
 ```sh
 python -m src.feature_extraction \
   --model xlm-roberta-base \
@@ -97,11 +111,12 @@ python -m src.classification \
   --oversampler Combination \
   --sample_strategy 1
 ```
-Using a hierarchic classifier
+
+Using a multilabel feedforward classifier:
 
 ```sh
 python -m src.classification \
-  --classifier "HiMLP" \
+  --classifier "MLP" \
   --dataset semeval2024 \
   --train_features "./feature_extraction/train_features.json" \
   --test_features "./feature_extraction/test_features.json" \

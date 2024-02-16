@@ -105,7 +105,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dataset",
         type=str,
-        choices=["ptc2019", "semeval2024", "semeval2024_augmented"],
+        choices=["ptc2019", "semeval2024", "semeval2024_augmented_smears", "semeval2024_test_set_no_concat"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--fine_tuned_name", type=str, help="fine-tuned model name", required=True)
@@ -119,7 +119,11 @@ if __name__ == "__main__":
         "--push_model_to_hf_hub",
         action="store_true",
         help="wheter to upload adjusted model to HuggingFace hub. If True, you will be prompted for your authentication token")
-    parser.add_argument("--save_strategy", type=str, help="save strategy for trainer, can be no, epoch or steps", default="epoch")
+    parser.add_argument(
+        "--save_strategy",
+        type=str,
+        help="save strategy for trainer, can be no, epoch or steps",
+        default="epoch")
     args = parser.parse_args()
     print("Arguments:", args)
     fine_tune(args)

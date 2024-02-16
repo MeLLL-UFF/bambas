@@ -162,8 +162,8 @@ def feature_extraction(args: Namespace):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     ts = int(time.time())
-    ft_prefix = f"{ts}_{args.model.replace('/', '-')}_" if args.output_dir=="" else ""
-    output_dir = args.output_dir if args.output_dir.endswith("/") else args.output_dir+"/"
+    ft_prefix = f"{ts}_{args.model.replace('/', '-')}_" if args.output_dir == "" else ""
+    output_dir = args.output_dir if args.output_dir.endswith("/") else args.output_dir + "/"
     train_ft_path = f"{OUTPUT_DIR}{output_dir}{ft_prefix}train_features.json"
     print("train_ft_path:", train_ft_path)
     save_ft_files(train_ft_json, train_ft_path)
@@ -187,16 +187,17 @@ if __name__ == "__main__":
         choices=[
             "ptc2019",
             "semeval2024",
-            "semeval2024_augmented",
+            "semeval2024_augmented_smears",
             "semeval_augmented",
             "semeval_internal",
-            "semeval2024_test_unlabeled"],
+            "semeval2024_test_set_unlabeled",
+            "semeval2024_test_set_no_concat"],
         help="corpus for feature-extraction",
         required=True)
     parser.add_argument(
-        "--model", 
-        type=str, 
-        help="name or path to fine-tuned model", 
+        "--model",
+        type=str,
+        help="name or path to fine-tuned model",
         required=True)
     parser.add_argument(
         "--extraction_method",
