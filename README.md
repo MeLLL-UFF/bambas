@@ -38,6 +38,8 @@ For a working Google Colab example, please refer to [this notebook](./Fine_tunin
 
 For a quickstart using a shell script, please refer to [this shell script](./quickstart.sh)
 
+For a multilabel classification example, please refer to [this notebook](./bambas_fine_tuning_with_classification_bernice.ipynb).
+
 ### Fine-tuning for MLM
 ```sh
 python -m src.fine_tuning \
