@@ -1,3 +1,5 @@
+#!/bin/bash
+
 python -m src.classification \
 --dataset semeval2024 \
 --train_features feature_extraction/1701981179_xlm-roberta-base_train_features.json \

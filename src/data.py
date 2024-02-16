@@ -41,6 +41,27 @@ def _load_semeval2024() -> List[pd.DataFrame]:
         dev_unlabeled = pd.DataFrame().from_records(json.load(f))
     return train, validation, dev_unlabeled
 
+def _load_semeval2024_dev_labeled() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
+        validation = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_subtask1_en.json", "r") as f:
+        dev_labeled = pd.DataFrame().from_records(json.load(f))
+    return train, validation, dev_labeled
+
+def _load_semeval2024_test_unlabeled() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
+        validation = pd.DataFrame().from_records(json.load(f))
+        train = pd.concat([train, validation])
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_subtask1_en.json", "r") as f:
+        validation = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
+        test_unlabeled = pd.DataFrame().from_records(json.load(f))
+    return train, validation, test_unlabeled
+
 def _load_semeval_augmented() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval_augmented/train_aug_ptc_reductio.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
@@ -101,6 +122,10 @@ def load_dataset(dataset: str) -> List[pd.DataFrame]:
         return _load_semeval2024()
     elif dataset == "semeval2024_test":
         return _load_semeval2024_test()
+    elif dataset == "semeval2024_dev_labeled":
+        return _load_semeval2024_dev_labeled()
+    elif dataset == "semeval2024_test_unlabeled":
+        return _load_semeval2024_test_unlabeled()
     elif dataset == "semeval2024_augmented":
         return _load_semeval2024_augmented()
     elif dataset == "ptc2019":

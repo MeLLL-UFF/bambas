@@ -25,7 +25,7 @@ from imblearn.over_sampling import RandomOverSampler, SMOTE
 from copy import deepcopy
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
-GOLD_PATH = f"{get_workdir()}/dataset/semeval2024/subtask1/validation.json"
+GOLD_DIR = f"{get_workdir()}/dataset/semeval2024/subtask1"
 
 def append_dag_parents(leaves: List[str]) -> List[str]:
     labels = deepcopy(leaves)
@@ -87,7 +87,7 @@ def classify(args: Namespace):
 
     all_labels = pd.concat([train["labels"], dev["labels"]])
 
-    if args.classifier == "HiMLP" or args.classifier == "GridHiMLP":
+    if args.classifier == "HiMLP":
         labels = [get_dag_labels()]
     else:
         labels = [list(set(reduce(lambda x, y: x + y, all_labels.to_numpy().tolist())))]
@@ -98,9 +98,11 @@ def classify(args: Namespace):
     # Transforming label lists into Multihot encoding
     mlb = MultiLabelBinarizer(classes=labels[0])
     train_labels = mlb.fit(labels).transform(train["labels"].to_numpy())
-    dev_internals = add_internals(deepcopy(dev))
-    dev_labels = mlb.fit(labels).transform(dev_internals["labels"].to_numpy())
-    # test_labels = mlb.fit(labels).transform(test["labels"].to_numpy())
+    if args.classifier != "HiMLP" and args.classifier != "MLP":
+        dev_internals = add_internals(deepcopy(dev))
+        dev_labels = mlb.fit(labels).transform(dev_internals["labels"].to_numpy())
+    else:
+        dev_labels = mlb.fit(labels).transform(dev["labels"].to_numpy())
     
     print("Loading features array files")
     train_ft, test_ft, dev_ft = map(
@@ -154,12 +156,9 @@ def classify(args: Namespace):
 
     # Initializing Classifier
     if args.classifier == "MLP":
-        # TODO: we are not using the validation set correctly. As such, only the train and test splits are used throughout this code.
-        # We must implement manual validation set evaluation
         clf = MLPClassifier(
             hidden_layer_sizes=(768, ),
             random_state=args.seed,
-            # max_iter=args.max_iter,
             alpha=args.alpha,
             shuffle=True,
             early_stopping=True,
@@ -170,7 +169,6 @@ def classify(args: Namespace):
             base_estimator=MLPClassifier(
                 hidden_layer_sizes=(768, ),
                 random_state=args.seed,
-                # max_iter=args.max_iter,
                 alpha=args.alpha,
                 shuffle=True,
                 early_stopping=True,
@@ -186,43 +184,6 @@ def classify(args: Namespace):
             # no labels with prob lower than that will be considered for prediction
             mlb_prediction_threshold=0.35,
         )
-    # elif args.classifier == "GridHiMLP":
-    #     estimator = HierarchicalClassifier(
-    #         base_estimator=MLPClassifier(
-    #             random_state=args.seed,
-    #             max_iter=args.max_iter,
-    #             alpha=args.alpha,
-    #             shuffle=True,
-    #             early_stopping=True,
-    #             verbose=True
-    #         ),
-    #         class_hierarchy=get_dag(),
-    #         mlb=mlb,
-    #     )
-
-    #     def hf1_custom_scorer(y_true, y_pred):
-    #         return hf1_score(y_true, y_pred)
-        
-    #     scorer = make_scorer(hf1_custom_scorer, greater_is_better=True)
-
-    #     parameters = {
-    #         # 'base_estimator': [
-    #         #     MLPClassifier(
-    #         #         random_state=args.seed,
-    #         #         max_iter=args.max_iter,
-    #         #         alpha=args.alpha,
-    #         #         shuffle=True,
-    #         #         early_stopping=True,
-    #         #         verbose=True
-    #         #     ),
-    #         # ],
-    #         # 'class_hierarchy': [get_dag()],
-    #         # 'mlb': [mlb],
-    #         'prediction_depth': ['mlnp'],
-    #         'feature_extraction': ['raw'],
-    #         'mlb_prediction_threshold': [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6],
-    #     }
-    #     clf = GridSearchCV(estimator=estimator, param_grid=parameters, scoring=scorer, n_jobs=-1)
     elif args.classifier == "DecisionTreeClassifier":
         clf = DecisionTreeClassifier() # BinaryRelevance(DecisionTreeClassifier(), labels=labels[0], oversampler=oversamplers)
     elif args.classifier == "ExtraTreeClassifier":
@@ -271,17 +232,30 @@ def classify(args: Namespace):
     # Check if label order is preserved in the binarizer
     clf = clf.fit(train_ft, train_labels)
     dev_predicted_labels_binarized = clf.predict(dev_ft) #, dev_labels)
-    evaluate_per_label(dev_labels, dev_predicted_labels_binarized, labels[0])
+    if args.classifier != "HiMLP" and args.classifier != "MLP":
+        evaluate_per_label(dev_labels, dev_predicted_labels_binarized, labels[0])
     if args.classifier != "HiMLP":
         dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels_binarized)
+    else:
+        dev_predicted_labels = dev_predicted_labels_binarized
 
     ts = int(time.time())
     pred_path, _ = save_predictions(dev, dev_predicted_labels, "dev", ts)
 
     # Create the Binary Relevance Confusion Matrix
-    cf_mtx = binary_relevance_confusion_matrix(np.array(dev_labels), np.array(dev_predicted_labels_binarized), labels[0])
+    cf_mtx = ""
+    if args.classifier != "HiMLP" and args.classifier != "MLP":
+        cf_mtx = binary_relevance_confusion_matrix(np.array(dev_labels), np.array(dev_predicted_labels_binarized), labels[0])
 
-    prec, rec, f1 = evaluate_h(pred_path, GOLD_PATH)
+    gold_file = (
+        "dev_subtask1_en.json"
+        if args.dataset == "semeval2024_test_unlabeled"
+        else "validation.json"
+    )
+
+    gold_path = os.path.sep.join([GOLD_DIR, gold_file])
+
+    prec, rec, f1 = evaluate_h(pred_path, gold_path)
     print(f"\nValidation set:\n\tPrecision: {prec}\n\tRecall: {rec}\n\tF1: {f1}\n")
 
     results_csv_path = f"{OUTPUT_DIR}/results.csv"
@@ -323,7 +297,7 @@ def classify(args: Namespace):
 
     print("\nPredicting for test file")
     test_predicted_labels = clf.predict(test_ft)
-    if args.classifier != "HiMLP" and args.classifier != "GridHiMLP":
+    if args.classifier != "HiMLP":
         test_predicted_labels = mlb.inverse_transform(test_predicted_labels)
     pred_path, _ = save_predictions(test, test_predicted_labels, "dev_unlabeled", ts)
     print(f"Finished successfully. dev_unlabeled predictions saved at {pred_path}")
@@ -341,7 +315,8 @@ if __name__ == "__main__":
             "semeval2024", 
             "semeval2024_augmented",
             "semeval_augmented",
-            "semeval_internal"],
+            "semeval_internal",
+            "semeval2024_test_unlabeled"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)

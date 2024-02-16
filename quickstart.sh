@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ft extraction using bernice with cls token
 python -m src.feature_extraction \
  --dataset semeval2024 \
