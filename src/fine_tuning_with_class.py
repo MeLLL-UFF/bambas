@@ -97,7 +97,6 @@ def fine_tune(args: Namespace):
         learning_rate=lr,
         weight_decay=weight_decay,
         push_to_hub=push_model,
-        # TODO: proper configuration
         no_cuda=False,
         report_to=["none"],
         per_device_train_batch_size=batch_size,
@@ -294,7 +293,8 @@ if __name__ == "__main__":
             "semeval2024_augmented_smears",
             "semeval2024_dev_set_labeled",
             "semeval2024_test_set_unlabeled",
-            "semeval2024_test_set_no_concat"],
+            "semeval2024_test_set_no_concat",
+            "semeval2024_all"],
         help="corpus for classification task",
         required=True)
     parser.add_argument("--fine_tuned_name", type=str, help="fine-tuned model name", required=True)
