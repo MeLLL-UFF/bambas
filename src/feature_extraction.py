@@ -191,7 +191,8 @@ if __name__ == "__main__":
             "semeval_augmented",
             "semeval_internal",
             "semeval2024_test_set_unlabeled",
-            "semeval2024_test_set_no_concat"],
+            "semeval2024_test_set_no_concat",
+            "semeval2024_all"],
         help="corpus for feature-extraction",
         required=True)
     parser.add_argument(

@@ -32,8 +32,6 @@ def _load_semeval2024_test() -> List[pd.DataFrame]:
     #     test_unlabeled = pd.DataFrame().from_records(json.load(f))
     return train, validation, dev_unlabeled  # , test_unlabeled
 
-# TODO: fix loading of augmented datasets, broker by the reversion below
-
 
 def _load_semeval2024() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
@@ -53,6 +51,18 @@ def _load_semeval2024_dev_labeled() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_subtask1_en.json", "r") as f:
         dev_labeled = pd.DataFrame().from_records(json.load(f))
     return train, validation, dev_labeled
+
+
+def _load_semeval2024_all() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
+        validation = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_subtask1_en.json", "r") as f:
+        dev_labeled = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
+        test_unlabeled = pd.DataFrame().from_records(json.load(f))
+    return train, validation, dev_labeled, test_unlabeled
 
 
 def _load_semeval2024_test_unlabeled() -> List[pd.DataFrame]:
@@ -135,6 +145,8 @@ def load_dataset(dataset: str) -> List[pd.DataFrame]:
         return _load_semeval2024_test_unlabeled()
     elif dataset == "semeval2024_augmented_smears":
         return _load_semeval2024_augmented_smears()
+    elif dataset == "semeval2024_all":
+        return _load_semeval2024_all()
     elif dataset == "ptc2019":
         return _load_ptc2019()
     elif dataset == "semeval_augmented":
