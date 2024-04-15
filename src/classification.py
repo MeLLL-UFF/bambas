@@ -1,3 +1,4 @@
+#%%
 import argparse
 from argparse import Namespace
 import json
@@ -23,6 +24,7 @@ from functools import reduce
 from src.subtask_1_2a import get_dag, get_dag_labels, get_dag_parents, get_leaf_parents
 from imblearn.over_sampling import RandomOverSampler, SMOTE
 from copy import deepcopy
+from src.mlsmote import MLSMOTE
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
 GOLD_DIR = f"{get_workdir()}/dataset/semeval2024/subtask1"
@@ -113,8 +115,16 @@ def classify(args: Namespace):
     train_ft, test_ft, dev_ft = map(
         load_features_array, [
             train_ft_info["features"], test_ft_info["features"], dev_ft_info["features"]])
-    print("Features Lengths", len(train_ft), len(test_ft), len(dev_ft))
+    
+    #%%
+    # Using MLSMOTE to oversample the training data
+    train_ft, train_labels = MLSMOTE(pd.DataFrame(train_ft), pd.DataFrame(train_labels), n_sample=1000)
+    train_ft, train_labels = train_ft.to_numpy(), train_labels.to_numpy()
 
+    print("Features Lengths", len(train_ft), len(test_ft), len(dev_ft))
+    print(train_ft)
+    print(type(train_labels))
+    #%%
     if args.concat_train_dev:
         print("Concatenating train and dev features arrays")
         train_ft = np.concatenate((train_ft, dev_ft))
@@ -221,7 +231,7 @@ def classify(args: Namespace):
                                           max_iter=600,
                                           multi_class="multinomial"),
             labels=labels[0],
-            oversampler=oversamplers
+            oversampler= None # oversamplers
         )
     elif args.classifier == "GradientBoostingClassifier":
         clf = BinaryRelevance(
