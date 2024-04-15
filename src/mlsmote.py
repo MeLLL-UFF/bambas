@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 # Importing required Library
+
+# Code adapted from
+# https://github.com/niteshsukhwani/MLSMOTE
+
+
 import numpy as np
 import pandas as pd
 import random
