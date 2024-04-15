@@ -109,7 +109,7 @@ def evaluate_per_label(y_true:np.ndarray, y_pred:np.ndarray, labels:list):
     # Evaluate prediction for each label
     for idx in range(num_labels):
         preds_for_label = y_pred.transpose()[idx]
-        precision, recall, f1, _ = precision_recall_fscore_support(y_true.transpose()[idx], preds_for_label)
+        precision, recall, f1, _ = precision_recall_fscore_support(y_true.transpose()[idx], preds_for_label, zero_division=0)
         _, precision = precision
         _, recall = recall
         _, f1 = f1

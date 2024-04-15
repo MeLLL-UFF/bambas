@@ -95,7 +95,7 @@ def _load_semeval_internal() -> List[pd.DataFrame]:
         train = pd.DataFrame().from_records(json.load(f))
     with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
         validation = pd.DataFrame().from_records(json.load(f))
-    with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_unlabeled.json", "r") as f:
         dev_unlabeled = pd.DataFrame().from_records(json.load(f))
     # with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
     #     test_unlabeled = pd.DataFrame().from_records(json.load(f))
