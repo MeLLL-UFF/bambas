@@ -5,7 +5,7 @@ import os
 import time
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import MultiLabelBinarizer
+from sklearn.preprocessing import MultiLabelBinarizer, LabelBinarizer
 from sklearn.neural_network import MLPClassifier
 from src.utils.br import BinaryRelevance
 from src.utils.br import BinaryRelevance, add_internals, evaluate_per_label
@@ -26,7 +26,6 @@ from copy import deepcopy
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
 GOLD_DIR = f"{get_workdir()}/dataset/semeval2024/subtask1"
-
 
 def append_dag_parents(leaves: List[str]) -> List[str]:
     labels = deepcopy(leaves)
@@ -108,6 +107,10 @@ def classify(args: Namespace):
         dev_labels = mlb.fit(labels).transform(dev_internals["labels"].to_numpy())
     else:
         dev_labels = mlb.fit(labels).transform(dev["labels"].to_numpy())
+    
+    # Creating a MultiLabelBinarizer, in case of MultiLabel classifiers
+    train_labels_lp = [str(labelset) for labelset in train_labels]
+    mlb_lp = MultiLabelBinarizer(classes=train_labels_lp)
 
     print("Loading features array files")
     train_ft, test_ft, dev_ft = map(
@@ -119,8 +122,6 @@ def classify(args: Namespace):
         print("Concatenating train and dev features arrays")
         train_ft = np.concatenate((train_ft, dev_ft))
         print("Merged features array length:", train_ft.shape)
-
-    # Oversampling the Whole Dataset
     
     
     # Loading oversamplers
@@ -129,6 +130,18 @@ def classify(args: Namespace):
         oversamplers = SMOTE(random_state=args.seed, sampling_strategy=args.sampling_strategy)
     elif args.oversampling == "RandomOverSampler":
         oversamplers = RandomOverSampler(random_state=args.seed, sampling_strategy=args.sampling_strategy)
+    elif args.oversampling == "MLSMOTE":
+        # Since we are applying the oversampling to the whole dataset, no need to specify an oversampler for the BR strategies
+        oversamplers = None
+        
+        # Apply a reversible LP transformation to the labels
+        train_labels = mlb_lp.fit_transform(train_labels_lp)
+        
+        # Apply SMOTE
+        smote = SMOTE()
+        train_ft, train_labels = smote.fit_resample(train_ft, train_labels)
+
+
     elif args.oversampling == "Combination":
         oversamplers = {
             "Simplification": None,
@@ -238,12 +251,13 @@ def classify(args: Namespace):
     else:
         raise Exception("Not implemented yet")
 
-    # Check if label order is preserved in the binarizer
     clf = clf.fit(train_ft, train_labels)
     dev_predicted_labels_binarized = clf.predict(dev_ft)
     if args.classifier != "HiMLP" and args.classifier != "MLP":
         evaluate_per_label(dev_labels, dev_predicted_labels_binarized, labels[0])
     if args.classifier != "HiMLP":
+        if args.orversampling == "MLSMOTE":
+            dev_predicted_labels_binarized = mlb_lp.inverse_transform(dev_predicted_labels_binarized)
         dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels_binarized)
     else:
         dev_predicted_labels = dev_predicted_labels_binarized
