@@ -27,13 +27,22 @@ from copy import deepcopy
 OUTPUT_DIR = f"{get_workdir()}/classification"
 GOLD_DIR = f"{get_workdir()}/dataset/semeval2024/subtask1"
 
+def multihot_parse(labelset_string:str):
+    labelset = []
+    for char in labelset_string:
+        if char=="0":
+            labelset.append(0)
+        elif char=="1":
+            labelset.append(1)
+        else: continue
+    return labelset
+
 def append_dag_parents(leaves: List[str]) -> List[str]:
     labels = deepcopy(leaves)
     for leaf in leaves:
         parents = get_leaf_parents(leaf)
         labels = list(set(labels.extend(parents)))
     return labels
-
 
 def remove_non_leaf_nodes(df: pd.DataFrame) -> pd.DataFrame:
     parents = get_dag_parents()
@@ -43,7 +52,6 @@ def remove_non_leaf_nodes(df: pd.DataFrame) -> pd.DataFrame:
 
     df["labels"] = df["labels"].apply(remove_parents)
     return df
-
 
 def save_predictions(test_df: pd.DataFrame, predictions: List[List[str]],
                      kind: str, timestamp: int) -> Tuple[str, List[Dict[str, Any]]]:
@@ -62,17 +70,14 @@ def save_predictions(test_df: pd.DataFrame, predictions: List[List[str]],
 
     return predictions_json_path, predictions_json
 
-
 def load_features_info(path: str) -> Dict[str, Any]:
     with open(path, "r") as f:
         return json.load(f)
-
 
 def load_features_array(path: str) -> np.ndarray:
     with open(path, "r") as f:
         df = pd.DataFrame().from_records(json.load(f))
         return np.array(df)
-
 
 def classify(args: Namespace):
     print("Loading features info files")
@@ -109,8 +114,7 @@ def classify(args: Namespace):
         dev_labels = mlb.fit(labels).transform(dev["labels"].to_numpy())
     
     # Creating a MultiLabelBinarizer, in case of MultiLabel classifiers
-    train_labels_lp = [str(labelset) for labelset in train_labels]
-    mlb_lp = MultiLabelBinarizer(classes=train_labels_lp)
+    train_labels_lp = np.array([str(labelset) for labelset in train_labels], dtype=str)
 
     print("Loading features array files")
     train_ft, test_ft, dev_ft = map(
@@ -135,11 +139,24 @@ def classify(args: Namespace):
         oversamplers = None
         
         # Apply a reversible LP transformation to the labels
-        train_labels = mlb_lp.fit_transform(train_labels_lp)
+        train_labels = train_labels_lp
+        train_labels = pd.get_dummies(train_labels_lp, dtype=float)
+        label_dummies = train_labels.columns.to_list()
+        train_labels = train_labels.to_numpy()
+
+        # print("Dummies Columns", label_dummies)
+        # print("Train Labels Shape:", train_labels.shape)
         
+        multihot_labels = pd.from_dummies(pd.DataFrame(train_labels, columns=label_dummies))
+        multihot_labels = [multihot_parse(str(labelset)) for _, labelset in multihot_labels.iterrows()]
+
+        # print("Multihot Labels:", multihot_labels)
+        
+        # exit()
         # Apply SMOTE
-        smote = SMOTE()
+        smote = RandomOverSampler()
         train_ft, train_labels = smote.fit_resample(train_ft, train_labels)
+
 
 
     elif args.oversampling == "Combination":
@@ -257,7 +274,9 @@ def classify(args: Namespace):
         evaluate_per_label(dev_labels, dev_predicted_labels_binarized, labels[0])
     if args.classifier != "HiMLP":
         if args.orversampling == "MLSMOTE":
-            dev_predicted_labels_binarized = mlb_lp.inverse_transform(dev_predicted_labels_binarized)
+            # Converting back from the lp transformed labels
+            dev_predicted_labels_binarized = pd.from_dummies(pd.DataFrame(dev_predicted_labels_binarized, columns=label_dummies))
+            dev_predicted_labels_binarized = [multihot_parse(str(labelset)) for _, labelset in dev_predicted_labels_binarized.iterrows()]
         dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels_binarized)
     else:
         dev_predicted_labels = dev_predicted_labels_binarized
