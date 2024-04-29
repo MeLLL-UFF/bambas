@@ -202,7 +202,7 @@ def classify(args: Namespace):
             shuffle=True,
             early_stopping=True,
             verbose=True,
-            max_iter=10
+            max_iter=1
         )
     elif args.classifier == "HiMLP":
         clf = HierarchicalClassifier(
@@ -271,18 +271,20 @@ def classify(args: Namespace):
         raise Exception("Not implemented yet")
 
     clf = clf.fit(train_ft, train_labels)
-    dev_predicted_labels_binarized = clf.predict(dev_ft)
+    dev_preds_bin = clf.predict(dev_ft)
     if args.classifier != "HiMLP" and args.classifier != "MLP":
-        evaluate_per_label(dev_labels, dev_predicted_labels_binarized, labels[0])
+        evaluate_per_label(dev_labels, dev_preds_bin, labels[0])
     if args.classifier != "HiMLP":
         if args.oversampling == "MLSMOTE":
             # Converting back from the lp transformed labels
-            df = pd.DataFrame(dev_predicted_labels_binarized, columns=label_dummies)
-            dev_predicted_labels_binarized = pd.from_dummies()
-            dev_predicted_labels_binarized = [multihot_parse(str(labelset)) for _, labelset in dev_predicted_labels_binarized.iterrows()]
-        dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels_binarized)
+            df = pd.DataFrame(dev_preds_bin, columns=label_dummies)
+            dev_preds_bin = df.idxmax(axis=1)
+            for labelset in dev_preds_bin: print(labelset)
+            dev_preds_bin = np.array([multihot_parse(str(labelset)) for labelset in dev_preds_bin])
+            print(dev_preds_bin)
+        dev_predicted_labels = mlb.inverse_transform(dev_preds_bin)
     else:
-        dev_predicted_labels = dev_predicted_labels_binarized
+        dev_predicted_labels = dev_preds_bin
 
     ts = int(time.time())
     pred_path, _ = save_predictions(dev, dev_predicted_labels, "dev", ts)
@@ -290,7 +292,7 @@ def classify(args: Namespace):
     # Create the Binary Relevance Confusion Matrix
     cf_mtx = ""
     if args.classifier != "HiMLP" and args.classifier != "MLP":
-        cf_mtx = binary_relevance_confusion_matrix(np.array(dev_labels), np.array(dev_predicted_labels_binarized), labels[0])
+        cf_mtx = binary_relevance_confusion_matrix(np.array(dev_labels), np.array(dev_preds_bin), labels[0])
 
     gold_file = (
         "dev_subtask1_en.json"
