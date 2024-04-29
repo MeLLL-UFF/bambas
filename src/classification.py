@@ -143,19 +143,20 @@ def classify(args: Namespace):
         train_labels = pd.get_dummies(train_labels_lp, dtype=float)
         label_dummies = train_labels.columns.to_list()
         train_labels = train_labels.to_numpy()
-
-        # print("Dummies Columns", label_dummies)
-        # print("Train Labels Shape:", train_labels.shape)
         
-        multihot_labels = pd.from_dummies(pd.DataFrame(train_labels, columns=label_dummies))
-        multihot_labels = [multihot_parse(str(labelset)) for _, labelset in multihot_labels.iterrows()]
+        # Create a dict to select labelsets to oversample
+        sampling_dict: dict = {}
+        for idx, label_list in enumerate(train_labels.transpose()):
+            num_samples = len(label_list[label_list==1])
+            if num_samples > 10 and num_samples < 100:
+                sampling_dict[idx] = num_samples + 10
+            else:
+                sampling_dict[idx] = num_samples
 
-        # print("Multihot Labels:", multihot_labels)
-        
-        # exit()
         # Apply SMOTE
-        smote = RandomOverSampler()
+        smote = SMOTE(sampling_strategy=sampling_dict)
         train_ft, train_labels = smote.fit_resample(train_ft, train_labels)
+        # exit()
 
 
 
@@ -200,7 +201,8 @@ def classify(args: Namespace):
             alpha=args.alpha,
             shuffle=True,
             early_stopping=True,
-            verbose=True
+            verbose=True,
+            max_iter=10
         )
     elif args.classifier == "HiMLP":
         clf = HierarchicalClassifier(
@@ -273,9 +275,10 @@ def classify(args: Namespace):
     if args.classifier != "HiMLP" and args.classifier != "MLP":
         evaluate_per_label(dev_labels, dev_predicted_labels_binarized, labels[0])
     if args.classifier != "HiMLP":
-        if args.orversampling == "MLSMOTE":
+        if args.oversampling == "MLSMOTE":
             # Converting back from the lp transformed labels
-            dev_predicted_labels_binarized = pd.from_dummies(pd.DataFrame(dev_predicted_labels_binarized, columns=label_dummies))
+            df = pd.DataFrame(dev_predicted_labels_binarized, columns=label_dummies)
+            dev_predicted_labels_binarized = pd.from_dummies()
             dev_predicted_labels_binarized = [multihot_parse(str(labelset)) for _, labelset in dev_predicted_labels_binarized.iterrows()]
         dev_predicted_labels = mlb.inverse_transform(dev_predicted_labels_binarized)
     else:
