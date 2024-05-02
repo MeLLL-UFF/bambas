@@ -1,0 +1,9 @@
+{
+    "model": "jhu-clsp/bernice",
+    "embeddings_type": "word",
+    "extraction_method": "cls",
+    "layers": "",
+    "layers_aggregation_method": "-",
+    "dataset": "paraphrase",
+    "features": "/home/arthur/Documents/Trab/NLP/bambas/feature_extraction/1714596252_jhu-clsp-bernice_train_features_array.json"
+}

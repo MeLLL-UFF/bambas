@@ -5,7 +5,6 @@ from src.utils.workspace import get_workdir
 
 DATASET_DIR = f"{get_workdir()}/dataset"
 
-
 def _load_semeval2024_augmented_smears() -> List[pd.DataFrame]:
     # with open(f"{DATASET_DIR}/augmented/augmented_chatgpt_2201.json", "r") as f:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
@@ -121,6 +120,13 @@ def _load_ptc2019() -> List[pd.DataFrame]:
     train, test, dev = map(rename_label_column, [train, test, dev])
     return train, test, dev
 
+def _load_paraphrase() -> List[pd.DataFrame]:
+    # with open(f"{DATASET_DIR}/augmented/augmented_chatgpt_2201.json", "r") as f:
+    dataset = pd.read_csv(f"{DATASET_DIR}/paraphrasing/paraphrasing.csv")
+    original = dataset.rename(axis=1, mapper={"original_text":"text"})
+    paraphrase = dataset.rename(axis=1, mapper={"paraphrase":"text"})
+    print(original.columns)
+    return original, paraphrase, paraphrase
 
 def load_dataset(dataset: str) -> List[pd.DataFrame]:
     """Load a given dataset, returning splits
@@ -151,6 +157,8 @@ def load_dataset(dataset: str) -> List[pd.DataFrame]:
         return _load_ptc2019()
     elif dataset == "semeval_augmented":
         return _load_semeval_augmented()
+    elif dataset == "paraphrase":
+        return _load_paraphrase()
     elif dataset == "semeval_internal":
         return _load_semeval_internal()
     raise Exception(f"{dataset} is not available")
