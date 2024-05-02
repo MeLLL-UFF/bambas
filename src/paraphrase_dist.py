@@ -1,28 +1,13 @@
-import argparse
-from argparse import Namespace
 import json
-import os
-import time
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import MultiLabelBinarizer
-from sklearn.neural_network import MLPClassifier
-from src.utils.br import BinaryRelevance
-from src.utils.br import BinaryRelevance, add_internals, evaluate_per_label
-from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
-from sklearn.linear_model import LogisticRegression, RidgeClassifier, RidgeClassifierCV
-from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier
-from sklearn.neighbors import KNeighborsClassifier, RadiusNeighborsClassifier
 from typing import List, Dict, Any, Tuple
-from src.data import load_dataset
-from src.utils.workspace import get_workdir
-from src.confusion_matrix import *
-from src.subtask_1_2a import evaluate_h
-from sklearn_hierarchical_classification.classifier import HierarchicalClassifier
-from functools import reduce
-from src.subtask_1_2a import get_dag, get_dag_labels, get_dag_parents, get_leaf_parents
-from imblearn.over_sampling import RandomOverSampler, SMOTE
-from copy import deepcopy
+from imblearn.over_sampling import SMOTE
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+ORIGINAL_FTS_PATH = "/home/arthur/Documents/Trabs/Semeval2024/semeval4/bambas/feature_extraction_paraphrasing/1714596252_jhu-clsp-bernice_train_features_array.json"
+PARAPHRASE_FTS_PATH = "/home/arthur/Documents/Trabs/Semeval2024/semeval4/bambas/feature_extraction_paraphrasing/1714596252_jhu-clsp-bernice_test_features_array.json"
 
 def load_features_info(path: str) -> Dict[str, Any]:
     with open(path, "r") as f:
@@ -33,4 +18,43 @@ def load_features_array(path: str) -> np.ndarray:
         df = pd.DataFrame().from_records(json.load(f))
         return np.array(df)
     
-# TODO: Calculate distance between original and paraphrasing
+def euclidian_dist(a:np.ndarray, b:np.ndarray):
+    return np.linalg.norm(a-b)
+
+if __name__ == "__main__":
+    original_fts = load_features_array(ORIGINAL_FTS_PATH)
+    paraphrase_fts = load_features_array(PARAPHRASE_FTS_PATH)
+
+
+    distances = [euclidian_dist(original, paraphrase) for original,paraphrase in zip(original_fts, paraphrase_fts)]
+    print("Distances between original and paraphrases")
+    print(distances)
+
+    smote = SMOTE(sampling_strategy={0:6, 1:12})
+    smote_fts,_ = smote.fit_resample(np.concatenate([original_fts, original_fts]), np.array([0,0,0,0,0,0,1,1,1,1,1,1]))
+    synthetic_smote_fts = smote_fts[-6:]
+    distances = [euclidian_dist(original, paraphrase) for original,paraphrase in zip(original_fts, synthetic_smote_fts)]
+    print("Distances between original and smote")
+    print(distances)
+    
+    distance_matrix =  []
+    fts_concat = np.concatenate([original_fts, synthetic_smote_fts, paraphrase_fts])
+    
+    for home_ft in fts_concat:
+        matrix_line = []
+        for out_ft in fts_concat:
+            matrix_line.append(euclidian_dist(home_ft, out_ft))
+        distance_matrix.append(matrix_line)
+    
+    print(distance_matrix)
+
+    heatmap_axis = [f"original#{i+1}" for i in range(6)]
+    heatmap_axis.extend([f"smote#{i+1}" for i in range(6)])
+    heatmap_axis.extend([f"paraphrase#{i+1}" for i in range(6)])
+
+    print(heatmap_axis)
+
+    heatmap = sns.heatmap(distance_matrix, annot=True , xticklabels=heatmap_axis, yticklabels=heatmap_axis)
+
+    plt.show()
+
