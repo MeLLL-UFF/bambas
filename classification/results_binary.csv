@@ -1,0 +1,2 @@
+,FE Model,FE Method,FE Layers,FE Layers Agg Method,FE Dataset,Test Dataset,Classifier,F1,Precision,Recall,Confusion Matrix,Timestamp
+1,xlm-roberta-base,cls,,-,semeval2024,dev_set,MLP,[0.41666667 0.90186916],[0.53571429 0.86936937],[0.34090909 0.9368932 ],,1715721892
