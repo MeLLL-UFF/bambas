@@ -5,9 +5,9 @@ import os
 import time
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import MultiLabelBinarizer, LabelBinarizer
+from sklearn.metrics import precision_recall_fscore_support, confusion_matrix
+from sklearn.preprocessing import LabelBinarizer
 from sklearn.neural_network import MLPClassifier
-from src.utils.br import BinaryRelevance
 from src.utils.br import BinaryRelevance, add_internals, evaluate_per_label
 from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
 from sklearn.linear_model import LogisticRegression, RidgeClassifier, RidgeClassifierCV
@@ -88,7 +88,7 @@ def classify(args: Namespace):
     print("Loading dataset files")
     train, dev, test = load_dataset(args.dataset)
     print("Dataset Lengths", len(train), len(dev), len(test))
-    
+
     if args.concat_train_dev:
         print("Concatenating train and dev sets")
         train = pd.concat([train, dev])
@@ -96,19 +96,8 @@ def classify(args: Namespace):
 
     all_labels = pd.concat([train["labels"], dev["labels"]])
 
-    # Transform problem into binary classification if specified
-    def binarize(labelset):
-        labelset = str(labelset)
-        if labelset == "[]":
-            return 0
-        else: return 1
-
     if args.classifier == "HiMLP":
         labels = [get_dag_labels()]
-    elif args.binary == "True":
-        train["labels"] = [binarize(labelset) for labelset in train["labels"]]
-        dev["labels"] = [binarize(labelset) for labelset in dev["labels"]]
-        labels = [[0, 1]]
     else:
         labels = [list(set(reduce(lambda x, y: x + y, all_labels.to_numpy().tolist())))]
         labels[0].sort()
@@ -116,24 +105,16 @@ def classify(args: Namespace):
     print(f"No. of labels in {'DAG' if args.classifier == 'HiMLP' else 'train+dev datasets'}: {len(labels[0])}")
 
     # Transforming label lists into Multihot encoding
-    if args.binary:
-        mlb = LabelBinarizer(pos_label=1, neg_label=0)
-    else:
-        mlb = MultiLabelBinarizer(classes=labels[0])
+    mlb = MultiLabelBinarizer(classes=labels[0])
     train_labels = mlb.fit(labels).transform(train["labels"].to_numpy())
-    dataset : str = args.dataset
-    if dataset.endswith("internal"):
+    if args.classifier != "HiMLP" and args.classifier != "MLP":
         dev_internals = add_internals(deepcopy(dev))
         dev_labels = mlb.fit(labels).transform(dev_internals["labels"].to_numpy())
     else:
-        dev_labels = mlb.fit(labels[0]).transform(dev["labels"].to_numpy())
-        
+        dev_labels = mlb.fit(labels).transform(dev["labels"].to_numpy())
+    
     # Creating a MultiLabelBinarizer, in case of MultiLabel classifiers
-    train_labels_lp = np.array([str(labelset) for labelset in train["labels"]], dtype=str)
-
-    # print("Verify if labels got binarized")
-    # print(train_labels)
-    # print(dev_labels)
+    train_labels_lp = np.array([str(labelset) for labelset in train_labels], dtype=str)
 
     print("Loading features array files")
     train_ft, test_ft, dev_ft = map(
@@ -221,7 +202,7 @@ def classify(args: Namespace):
             shuffle=True,
             early_stopping=True,
             verbose=True,
-            max_iter=100
+            max_iter=1
         )
     elif args.classifier == "HiMLP":
         clf = HierarchicalClassifier(
@@ -300,13 +281,13 @@ def classify(args: Namespace):
             dev_preds_bin = df.idxmax(axis=1)
             for labelset in dev_preds_bin: print(labelset)
             dev_preds_bin = np.array([multihot_parse(str(labelset)) for labelset in dev_preds_bin])
+            print(dev_preds_bin)
         dev_predicted_labels = mlb.inverse_transform(dev_preds_bin)
     else:
         dev_predicted_labels = dev_preds_bin
-    
-    # Save results to file if not in binary mode
+
     ts = int(time.time())
-    if args.binary != "True": pred_path, _ = save_predictions(dev, dev_predicted_labels, "dev", ts)
+    pred_path, _ = save_predictions(dev, dev_predicted_labels, "dev", ts)
 
     # Create the Binary Relevance Confusion Matrix
     cf_mtx = ""
@@ -321,13 +302,7 @@ def classify(args: Namespace):
 
     gold_path = os.path.sep.join([GOLD_DIR, gold_file])
 
-    if args.binary == "True":
-        from sklearn.metrics import precision_recall_fscore_support
-        # print("dev_labels: ", dev_labels)
-        # print("dev_preds_bin", dev_preds_bin[dev_preds_bin==0])
-        prec, rec, f1, _= precision_recall_fscore_support(dev_labels, dev_preds_bin)
-    else:
-        prec, rec, f1 = evaluate_h(pred_path, gold_path)
+    prec, rec, f1 = evaluate_h(pred_path, gold_path)
     print(f"\nValidation set:\n\tPrecision: {prec}\n\tRecall: {rec}\n\tF1: {f1}\n")
 
     results_csv_path = f"{OUTPUT_DIR}/results.csv"
@@ -371,13 +346,138 @@ def classify(args: Namespace):
     test_predicted_labels = clf.predict(test_ft)
     if args.classifier != "HiMLP":
         test_predicted_labels = mlb.inverse_transform(test_predicted_labels)
-    if args.binary != "True": pred_path, _ = save_predictions(test, test_predicted_labels, "dev_unlabeled", ts)
+    pred_path, _ = save_predictions(test, test_predicted_labels, "dev_unlabeled", ts)
     print(f"Finished successfully. dev_unlabeled predictions saved at {pred_path}")
 
+def binary_classify(args: Namespace):
+    print("Loading features info files")
+    train_ft_info, dev_ft_info, test_ft_info = map(
+        load_features_info, [
+            args.train_features, args.dev_features, args.test_features])
+
+    print("Loading dataset files")
+    train, dev, test = load_dataset(args.dataset)
+    print("Dataset Lengths", len(train), len(dev), len(test))
+
+    # Transform dataset into binary
+    def binarize(labelset):
+        labelset = str(labelset)
+        if labelset == "[]": return 0
+        else: return 1
+
+    train_labels = [binarize(labelset) for labelset in train["labels"]]
+    dev_labels = [binarize(labelset) for labelset in dev["labels"]]
+    labels = [[0, 1]]
+
+    print(f"Labels: {labels[0]}")
+
+    print("Loading features array files")
+    train_ft, test_ft, dev_ft = map(
+        load_features_array, [
+            train_ft_info["features"], test_ft_info["features"], dev_ft_info["features"]])
+    print("Features Lengths", len(train_ft), len(test_ft), len(dev_ft))
+    
+    # Loading oversamplers
+    if args.sampling_strategy == None: args.sampling_strategy = "auto"
+    if args.oversampling == "SMOTE":
+        oversampler = SMOTE(random_state=args.seed, sampling_strategy=args.sampling_strategy)
+    elif args.oversampling == "RandomOverSampler":
+        oversampler = RandomOverSampler(random_state=args.seed, sampling_strategy=args.sampling_strategy)
+    else:
+        print("Oversampler not implemented or not suported, using None instead")
+        oversampler = None
+
+    # Apply oversampling
+    if oversampler != None:
+        print("Oversampling training data")
+        train_ft, train_labels = oversampler.fit_resample(train_ft, train_labels)
+
+    # Initializing Classifier
+    if args.classifier == "MLP":
+        clf = MLPClassifier(
+            hidden_layer_sizes=(768, ),
+            random_state=args.seed,
+            alpha=args.alpha,
+            shuffle=True,
+            early_stopping=True,
+            verbose=True,
+            max_iter=1
+        )
+    elif args.classifier == "DecisionTreeClassifier":
+        clf = DecisionTreeClassifier()
+    elif args.classifier == "ExtraTreeClassifier":
+        clf = ExtraTreeClassifier()
+    elif args.classifier == "ExtraTreesClassifier":
+        clf = ExtraTreesClassifier()
+    elif args.classifier == "KNeighborsClassifier":
+        clf = KNeighborsClassifier()
+    elif args.classifier == "MLPClassifier":
+        clf = MLPClassifier()
+    elif args.classifier == "RadiusNeighborsClassifier":
+        clf = RadiusNeighborsClassifier()
+    elif args.classifier == "RandomForestClassifier":
+        clf = RandomForestClassifier() 
+    elif args.classifier == "RidgeClassifier":
+        clf = RidgeClassifier()
+    elif args.classifier == "RidgeClassifierCV":
+        clf = RidgeClassifierCV()
+    elif args.classifier == "LogisticRegression":
+        clf = LogisticRegression(random_state=args.seed, max_iter=600, multi_class="multinomial")
+    elif args.classifier == "GradientBoostingClassifier":
+        clf = GradientBoostingClassifier(random_state=args.seed)
+    else:
+        raise Exception("Not implemented yet or unavailable in binary mode")
+
+    clf = clf.fit(train_ft, train_labels)
+    dev_preds = clf.predict(dev_ft)
+    ts = int(time.time())
+
+    # Create the Binary Relevance Confusion Matrix
+    cf_mtx = str(confusion_matrix(np.array(dev_labels), np.array(dev_preds))).replace("\n","")
+    prec, rec, f1, _ = precision_recall_fscore_support(dev_labels, dev_preds)
+    print(f"\nValidation set:\n\tPrecision: {prec}\n\tRecall: {rec}\n\tF1: {f1}\n")
+
+    results_csv_path = f"{OUTPUT_DIR}/results.csv"
+    print(f"Saving validation set results to {results_csv_path}")
+    if os.path.exists(results_csv_path):
+        results = pd.read_csv(results_csv_path, index_col=0)
+    else:
+        dir = os.path.sep.join(results_csv_path.split(os.path.sep)[:-1])
+        print(f"Creating dir {dir}")
+        os.makedirs(dir, exist_ok=True)
+        results = pd.DataFrame(
+            columns=[
+                "FE Model",
+                "FE Method",
+                "FE Layers",
+                "FE Layers Agg Method",
+                "FE Dataset",
+                "Test Dataset",
+                "Classifier",
+                "F1",
+                "Precision",
+                "Recall",
+                "Confusion Matrix",
+                "Timestamp"])
+
+    results.loc[len(results.index) + 1] = [train_ft_info["model"],
+                                           train_ft_info["extraction_method"],
+                                           train_ft_info["layers"],
+                                           train_ft_info["layers_aggregation_method"],
+                                           train_ft_info["dataset"],
+                                           "dev_set",
+                                           args.classifier,
+                                           f1,
+                                           prec,
+                                           rec,
+                                           cf_mtx,
+                                           ts]
+    results.to_csv(results_csv_path)
+
+    print(f"Finished successfully. results saved to results.csv")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("classification", description="classification with feedforward model")
-    parser.add_argument("--binary", type=str, default="False")
     parser.add_argument("--classifier", type=str,
                         default="MLP")
     parser.add_argument(
@@ -418,6 +518,14 @@ if __name__ == "__main__":
         "--concat_train_dev",
         action="store_true",
         help="wheter to concatenate train+dev(validation) datasets for training")
+    parser.add_argument(
+        "--binary",
+        action="store_true",
+        help="wheter to transform the problem into a binary problem")
     args = parser.parse_args()
     print("Arguments:", args)
-    classify(args)
+    
+    if args.binary:
+        binary_classify(args)
+    else: 
+        classify(args)
