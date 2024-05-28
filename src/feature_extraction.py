@@ -25,13 +25,15 @@ def load_data_split(tokenizer: AutoTokenizer,
     # # Create Dataset object
     ds = Dataset.from_pandas(dataset)
     # Define tokenizer function
-
     def remove_additional_columns(ds: Dataset):
         columns = ds.column_names
         to_remove = [col for col in columns if col != "text"]
         return ds.remove_columns(to_remove)
 
     ds = remove_additional_columns(ds)
+
+    print("dataset")
+    print(ds)
 
     def tokenize_function(examples):
         return tokenizer(examples["text"], max_length=120, truncation=True, padding="max_length")
@@ -159,7 +161,7 @@ def feature_extraction(args: Namespace):
         "dataset": args.dataset,
         "features": ft,
     }, [train_ft, test_ft, dev_ft])
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(OUTPUT_DIR+args.output_dir, exist_ok=True)
 
     ts = int(time.time())
     ft_prefix = f"{ts}_{args.model.replace('/', '-')}_" if args.output_dir == "" else ""
@@ -193,6 +195,7 @@ if __name__ == "__main__":
             "semeval2024_test_set_unlabeled",
             "semeval2024_test_set_no_concat",
             "semeval2024_all",
+            "paraphrase4",
             "paraphrase"],
         help="corpus for feature-extraction",
         required=True)

@@ -1,0 +1,6 @@
+,FE Model,FE Method,FE Layers,FE Layers Agg Method,FE Dataset,Test Dataset,Classifier,F1,Precision,Recall,Confusion Matrix,Timestamp
+1,jhu-clsp/bernice,cls,,-,semeval2024,dev_set,LogisticRegression,[0.46666667 0.90588235],[0.56451613 0.87899543],[0.39772727 0.93446602],[[ 35  53] [ 27 385]],1715812710
+2,jhu-clsp/bernice,cls,,-,semeval2024,dev_set,LogisticRegression,[0.5        0.85897436],[0.41666667 0.91032609],[0.625     0.8131068],[[ 55  33] [ 77 335]],1715812753
+3,jhu-clsp/bernice,cls,,-,semeval2024,dev_set,LogisticRegression,[0.50228311 0.86043534],[0.41984733 0.91056911],[0.625      0.81553398],[[ 55  33] [ 76 336]],1715812854
+4,jhu-clsp/bernice,cls,,-,paraphrase,dev_set,LogisticRegression,[0.53571429 0.90625   ],[0.5625     0.89761905],[0.51136364 0.91504854],[[ 45  43] [ 35 377]],1716485323
+5,jhu-clsp/bernice,cls,,-,paraphrase4,dev_set,LogisticRegression,[0.51162791 0.89855072],[0.52380952 0.89423077],[0.5        0.90291262],[[ 44  44] [ 40 372]],1716855823

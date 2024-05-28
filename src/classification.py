@@ -491,7 +491,9 @@ if __name__ == "__main__":
             "semeval_internal",
             "semeval2024_test_set_unlabeled",
             "semeval2024_test_set_no_concat",
-            "semeval2024_all"],
+            "semeval2024_all",
+            "paraphrase",
+            "paraphrase4"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)
