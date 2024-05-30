@@ -36,7 +36,10 @@ def load_data_split(tokenizer: AutoTokenizer,
     print(ds)
 
     def tokenize_function(examples):
-        return tokenizer(examples["text"], max_length=120, truncation=True, padding="max_length")
+        try:
+            return tokenizer(examples["text"], max_length=120, truncation=True, padding="max_length")
+        except:
+            print(examples["text"])
     # Tokenize values in Dataset object
     ds = ds.map(tokenize_function, batched=True, batch_size=64, num_proc=4, remove_columns=["text"])
     # Remove original text from dataset
@@ -196,7 +199,8 @@ if __name__ == "__main__":
             "semeval2024_test_set_no_concat",
             "semeval2024_all",
             "paraphrase4",
-            "paraphrase"],
+            "paraphrase",
+            "paraphrase_dict"],
         help="corpus for feature-extraction",
         required=True)
     parser.add_argument(

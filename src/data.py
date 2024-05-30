@@ -146,6 +146,13 @@ def _load_paraphrase_4() -> List[pd.DataFrame]:
     print(validation.columns)
     return train, validation, dev_unlabeled
 
+def _load_paraphrase_dict() -> List[pd.DataFrame]:
+    paraphrase = pd.read_csv(f"/home/arthur/Documents/Trab/NLP/bambas/dataset/paraphrase_csvs/negative_paraphrasing_4f.csv")
+    paraphrase["labels"] = [[] for _ in range(len(paraphrase))]
+    train = paraphrase[["paraphrase","labels"]].rename({"paraphrase":"text"}, axis=1)
+    test = paraphrase[["original_text","labels"]].rename({"original_text":"text"}, axis=1)
+    return train, test, test
+
 def load_dataset(dataset: str) -> List[pd.DataFrame]:
     """Load a given dataset, returning splits
 
@@ -181,4 +188,6 @@ def load_dataset(dataset: str) -> List[pd.DataFrame]:
         return _load_paraphrase_4()
     elif dataset == "semeval_internal":
         return _load_semeval_internal()
+    elif dataset == "paraphrase_dict":
+        return _load_paraphrase_dict()
     raise Exception(f"{dataset} is not available")
