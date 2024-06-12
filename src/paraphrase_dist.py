@@ -5,7 +5,7 @@ from typing import List, Dict, Any, Tuple
 from imblearn.over_sampling import SMOTE
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.decomposition import PCA
+from sklearn.decomposition import PCA, TruncatedSVD
 from sklearn.metrics.pairwise import cosine_similarity
 
 ORIGINAL_FTS_PATH = "/home/arthur/Documents/Trab/NLP/bambas/feature_extraction_paraphrasing/paraphrasing_4f/test_features_array.json"
@@ -33,12 +33,14 @@ if __name__ == "__main__":
     smote_fts,smote_lbls = smote.fit_resample(np.concatenate([original_fts, original_fts]), dummy_labels)
     smote_fts = smote_fts[:len(original_fts)]
 
-    # Reduce dimensionality of features
-    pca = PCA(copy=True, n_components=2)
+    # Reduce dimensionality of features and convert into pandas
+    # pca = PCA(copy=True, n_components=2)
+    pca = TruncatedSVD(n_components=2)
     original_reduced = pd.DataFrame(pca.fit_transform(X=original_fts), columns=["X", "Y"])
     paraphrase_reduced = pd.DataFrame(pca.fit_transform(X=paraphrase_fts), columns=["X", "Y"])
     smote_reduced = pd.DataFrame(pca.fit_transform(X=smote_fts), columns=["X", "Y"])
     
+    # Concatenate all reduced feature sets
     original_reduced["src"] = ["original"]*len(original_reduced)
     paraphrase_reduced["src"] = ["paraphrase"]*len(paraphrase_reduced)
     smote_reduced["src"] = ["smote"]*len(smote_reduced)
@@ -49,10 +51,17 @@ if __name__ == "__main__":
         smote_reduced,
     ]) 
 
+
     # Create Scatterplot
     scatterplot = sns.scatterplot(data=data, x="X", y="Y", hue="src")
     import matplotlib.pyplot as plt
     plt.show()
+
+    # Smote and Original examples reduce to the same X and Y
+    original_reduced["X_smote"] = smote_reduced["X"]
+    original_reduced["Y_smote"] = smote_reduced["Y"]
+    print(original_reduced)
+
     exit()
 
     # Calculate Distances
