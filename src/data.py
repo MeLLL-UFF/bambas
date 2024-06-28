@@ -133,6 +133,19 @@ def _load_paraphrase() -> List[pd.DataFrame]:
     print(validation.columns)
     return train, validation, dev_unlabeled
 
+def _load_paraphrase_outliers() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/paraphrasing/semeval_outliers.json", "r") as f:
+    # with open(f"{DATASET_DIR}/paraphrasing/semeval_binarized_paraphrased.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/validation.json", "r") as f:
+        validation = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_unlabeled.json", "r") as f:
+        dev_unlabeled = pd.DataFrame().from_records(json.load(f))
+    print("check to see if data was loaded successfuly: ")
+    print(train.columns)
+    print(validation.columns)
+    return train, validation, dev_unlabeled
+
 def _load_paraphrase_4() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/paraphrasing/semeval_binarized_paraphrased_4.json", "r") as f:
     # with open(f"{DATASET_DIR}/paraphrasing/semeval_binarized_paraphrased.json", "r") as f:
@@ -145,6 +158,18 @@ def _load_paraphrase_4() -> List[pd.DataFrame]:
     print(train.columns)
     print(validation.columns)
     return train, validation, dev_unlabeled
+
+def _load_positive_examples() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
+        examples = pd.DataFrame().from_records(json.load(f))
+
+    def binarize(labelset):
+        labelset=str(labelset)
+        if labelset=="[]":return 0
+        else: return 1
+    examples["labels"]=[binarize(labelset) for labelset in examples["labels"]]
+    positive = examples[examples["labels"]==1]
+    return positive, positive, positive
 
 def _load_paraphrase_dict() -> List[pd.DataFrame]:
     paraphrase = pd.read_csv(f"/home/arthur/Documents/Trab/NLP/bambas/dataset/paraphrase_csvs/negative_paraphrasing_4f.csv")
@@ -190,4 +215,8 @@ def load_dataset(dataset: str) -> List[pd.DataFrame]:
         return _load_semeval_internal()
     elif dataset == "paraphrase_dict":
         return _load_paraphrase_dict()
+    elif dataset == "positive":
+        return _load_positive_examples()
+    elif dataset == "outliers":
+        return _load_paraphrase_outliers()
     raise Exception(f"{dataset} is not available")

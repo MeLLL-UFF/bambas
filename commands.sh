@@ -2,24 +2,25 @@
 
 # ft extraction using semeval base
 python -m src.feature_extraction \
- --dataset semeval_internal \
+ --dataset paraphrase4 \
  --model jhu-clsp/bernice \
- --extraction_method cls
+ --extraction_method cls \
+ --output_dir paraphrase_binary_4
 
 # semeval_internal
 python -m src.classification \
- --dataset semeval2024 \
- --train_features feature_extraction/semeval2024/bernice/1707079469_jhu-clsp-bernice_train_features.json \
- --test_features feature_extraction/semeval2024/bernice/1707079469_jhu-clsp-bernice_test_features.json \
- --dev_features feature_extraction/semeval2024/bernice/1707079469_jhu-clsp-bernice_dev_features.json \
+ --dataset paraphrase \
+ --train_features feature_extraction/paraphrase_binary/1716484315_jhu-clsp-bernice_train_features.json \
+ --test_features feature_extraction/paraphrase_binary/1716484315_jhu-clsp-bernice_test_features.json \
+ --dev_features feature_extraction/paraphrase_binary/1716484315_jhu-clsp-bernice_dev_features.json \
  --classifier LogisticRegression
 
 # semeval_internal trained with train test dev
 python -m src.classification \
  --dataset semeval_internal \
- --train_features feature_extraction/1706826974_jhu-clsp-bernice_train_features.json \
- --test_features feature_extraction/1706826974_jhu-clsp-bernice_test_features.json \
- --dev_features feature_extraction/1706826974_jhu-clsp-bernice_dev_features.json \
+ --train_features feature_extraction/semeval_internal/bernice/1707069752_jhu-clsp-bernice_train_features.json \
+ --test_features feature_extraction/semeval_internal/bernice/1707069752_jhu-clsp-bernice_test_features.json \
+ --dev_features feature_extraction/semeval_internal/bernice/1707069752_jhu-clsp-bernice_dev_features.json \
  --classifier LogisticRegression
 
 # ft extraction semeval augmented
@@ -32,9 +33,9 @@ python -m src.feature_extraction \
 # semeval2024
 python -m src.classification \
  --dataset semeval2024 \
- --train_features feature_extraction/1701981179_xlm-roberta-base_train_features.json \
- --test_features feature_extraction/1701981179_xlm-roberta-base_test_features.json \
- --dev_features feature_extraction/1701981179_xlm-roberta-base_dev_features.json \
+ --train_features feature_extraction/semeval2024/bernice/1707079469_jhu-clsp-bernice_train_features.json \
+ --test_features feature_extraction/semeval2024/bernice/1707079469_jhu-clsp-bernice_test_features.json \
+ --dev_features feature_extraction/semeval2024/bernice/1707079469_jhu-clsp-bernice_dev_features.json \
  --classifier LogisticRegression
 
 # using ft from bernice

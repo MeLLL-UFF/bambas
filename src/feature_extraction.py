@@ -200,7 +200,9 @@ if __name__ == "__main__":
             "semeval2024_all",
             "paraphrase4",
             "paraphrase",
-            "paraphrase_dict"],
+            "paraphrase_dict",
+            "positive",
+            "outliers"],
         help="corpus for feature-extraction",
         required=True)
     parser.add_argument(
