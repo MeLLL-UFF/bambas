@@ -202,7 +202,15 @@ if __name__ == "__main__":
             "paraphrase",
             "paraphrase_dict",
             "positive",
-            "outliers"],
+            "outliers",
+            "outsiders",
+            "semeval2015",
+            "semeval2015_paraphrased",
+            "semeval2015_2",
+            "semeval2015_paraphrased2",
+            "semeval2016",
+            "semeval2016_paraphrased",
+            "semeval2016_paraphrased_1to4"],
         help="corpus for feature-extraction",
         required=True)
     parser.add_argument(

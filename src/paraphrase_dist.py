@@ -28,8 +28,9 @@ def euclidian_dist(a:np.ndarray, b:np.ndarray):
     return np.linalg.norm(a-b)
 
 def get_quadrant(dataset:pd.DataFrame, filter:pd.DataFrame):
-    res = dataset[filter["Y"]>10]
-    return res
+    upper = dataset[filter["Y"] > 10]
+    under = dataset[filter["Y"] < 0]
+    return pd.concat([upper, under])
 
 if __name__ == "__main__":
 
@@ -65,25 +66,25 @@ if __name__ == "__main__":
     outlier_reduced["src"] = ["outlier"]*len(outlier_reduced)
     
     # outlier_paraphrase_pairs = get_quadrant(dataset, paraphrase_reduced)
-    # outlier_paraphrase_pairs.to_csv("plots/outlier_paraphrase_pairs.csv")    
+    # outlier_paraphrase_pairs.to_csv("plots/outsider_paraphrase_pairs.csv")
     # print(len(outlier_paraphrase_pairs))
     # exit()
 
     # Concatenate data for Scatterplot
     data = pd.concat([
         # positive_reduced,
-        negative_reduced,
+        # negative_reduced,
         # smote_reduced,
-        # paraphrase_reduced, 
+        paraphrase_reduced, 
         # outlier_reduced
     ])
 
 
-    # data = data[data["Y"]>10]
+    data = get_quadrant(data, data)
 
     print("len of paraphrase_reduced: ", len(data))
-    print("len of outlier_reduced: ", len(outlier_reduced))
-    exit()
+    # print("len of outlier_reduced: ", len(outlier_reduced))
+    # exit()
 
     # Create Scatterplot
     plt.figure(1)
@@ -92,12 +93,12 @@ if __name__ == "__main__":
         x="X", 
         y="Y", 
         hue="src",
-        palette=sns.color_palette("dark:blue_r")
+        palette=sns.color_palette("dark:salmon")
     )
     #, palette=sns.color_palette("dark:blue_r"))
     plt.xlim((-22,22));plt.ylim((-7,22))
     # plt.show()
-    plt.savefig("./plots/PCA_negative.png")
+    plt.savefig("./plots/PCA_outsiders.png")
     exit()
 
     # Comparison between distances with reduced features

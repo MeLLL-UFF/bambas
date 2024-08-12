@@ -6,7 +6,7 @@ import time
 import numpy as np
 import pandas as pd
 from sklearn.metrics import precision_recall_fscore_support, confusion_matrix
-from sklearn.preprocessing import LabelBinarizer
+from sklearn.preprocessing import MultiLabelBinarizer, LabelBinarizer
 from sklearn.neural_network import MLPClassifier
 from src.utils.br import BinaryRelevance, add_internals, evaluate_per_label
 from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
@@ -362,8 +362,12 @@ def binary_classify(args: Namespace):
     # Transform dataset into binary
     def binarize(labelset):
         labelset = str(labelset)
-        if labelset == "[]": return 0
-        else: return 1
+        if args.dataset == "semeval2015" or args.dataset == "semeval2016":
+            if labelset=="negative": return 0
+            else: return 1
+        else:
+            if labelset == "[]": return 0
+            else: return 1
 
     train_labels = [binarize(labelset) for labelset in train["labels"]]
     dev_labels = [binarize(labelset) for labelset in dev["labels"]]
@@ -419,8 +423,6 @@ def binary_classify(args: Namespace):
         clf = RandomForestClassifier() 
     elif args.classifier == "RidgeClassifier":
         clf = RidgeClassifier()
-    elif args.classifier == "RidgeClassifierCV":
-        clf = RidgeClassifierCV()
     elif args.classifier == "LogisticRegression":
         clf = LogisticRegression(random_state=args.seed, max_iter=600, multi_class="multinomial")
     elif args.classifier == "GradientBoostingClassifier":
@@ -493,7 +495,15 @@ if __name__ == "__main__":
             "semeval2024_test_set_no_concat",
             "semeval2024_all",
             "paraphrase",
-            "paraphrase4"],
+            "paraphrase4",
+            "outsiders",
+            "semeval2015",
+            "semeval2015_paraphrased",
+            "semeval2015_2",
+            "semeval2015_paraphrased2",
+            "semeval2016",
+            "semeval2016_paraphrased",
+            "semeval2016_paraphrased_1to4"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)
