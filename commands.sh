@@ -2,22 +2,24 @@
 
 # ft extraction using semeval base
 python -m src.feature_extraction \
- --dataset semeval2015_paraphrased2 \
+ --dataset semeval2015_paraphrased2_1to4_selected2 \
  --model jhu-clsp/bernice \
  --extraction_method cls \
- --output_dir semeval2015_paraphrased2
+ --output_dir semeval2015_paraphrased2_1to4_selected2
 
-# semeval 2016
+# run classification on paraphrased dataset
 python -m src.classification \
- --dataset semeval2015_paraphrased2 \
- --train_features feature_extraction/semeval2015_paraphrased2/train_features.json \
- --test_features feature_extraction/semeval2015_paraphrased2/test_features.json \
- --dev_features feature_extraction/semeval2015_paraphrased2/dev_features.json \
+ --dataset semeval2015_paraphrased2_1to4_selected2 \
+ --train_features feature_extraction/semeval2015_paraphrased2_1to4_selected2/train_features.json \
+ --test_features feature_extraction/semeval2015_paraphrased2_1to4_selected2/test_features.json \
+ --dev_features feature_extraction/semeval2015_paraphrased2_1to4_selected2/dev_features.json \
  --classifier LogisticRegression --binary --oversampling None
 
+
+# run classification with classic oversampling techniques
 python -m src.classification \
  --dataset semeval2015_2 \
  --train_features feature_extraction/semeval2015_2/train_features.json \
  --test_features feature_extraction/semeval2015_2/test_features.json \
  --dev_features feature_extraction/semeval2015_2/dev_features.json \
- --classifier LogisticRegression --binary --oversampling SMOTE --sampling_strategy 0.3455
+ --classifier LogisticRegression --binary --oversampling SMOTE --sampling_strategy 1

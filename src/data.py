@@ -234,6 +234,20 @@ def _load_semeval2015_paraphrased2() -> List[pd.DataFrame]:
         test = pd.DataFrame().from_records(json.load(f))
     return train, test, test
 
+def _load_semeval2015_paraphrased2_1to4_selected() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/semeval2015_paraphrased/semeval2015_paraphrased2_1to4_selected_train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2015_paraphrased/semeval2015_paraphrased2_1to4_selected_test.json", "r") as f:
+        test = pd.DataFrame().from_records(json.load(f))
+    return train, test, test
+
+def _load_semeval2015_paraphrased2_1to4_selected2() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/semeval2015_paraphrased/semeval2015_paraphrased2_1to4_selected2_train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/semeval2015_paraphrased/semeval2015_paraphrased2_1to4_selected2_test.json", "r") as f:
+        test = pd.DataFrame().from_records(json.load(f))
+    return train, test, test
+
 def _load_semeval2016() -> List[pd.DataFrame]:
     dataset = pd.read_csv(f"{DATASET_DIR}/semeval2016/SemEval16.csv")
     dataset = dataset.rename(columns={"tweet":"text", "class":"labels"})
@@ -307,6 +321,10 @@ def load_dataset(dataset: str) -> List[pd.DataFrame]:
         return _load_semeval2015_paraphrased()
     elif dataset == "semeval2015_paraphrased2":
         return _load_semeval2015_paraphrased2()
+    elif dataset == "semeval2015_paraphrased2_1to4_selected":
+        return _load_semeval2015_paraphrased2_1to4_selected()
+    elif dataset == "semeval2015_paraphrased2_1to4_selected2":
+        return _load_semeval2015_paraphrased2_1to4_selected2()
     elif dataset == "semeval2016":
         return _load_semeval2016()
     elif dataset == "semeval2016_paraphrased":

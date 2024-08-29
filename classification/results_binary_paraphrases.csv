@@ -6,3 +6,4 @@
 5,jhu-clsp/bernice,cls,,-,paraphrase4,dev_set,LogisticRegression,[0.51162791 0.89855072],[0.52380952 0.89423077],[0.5        0.90291262],[[ 44  44] [ 40 372]],1716855823
 6,jhu-clsp/bernice,cls,,-,semeval2024,dev_set,LogisticRegression,[0.50537634 0.88697789],[0.47959184 0.89800995],[0.53409091 0.87621359],[[ 47  41] [ 51 361]],1719600043
 7,jhu-clsp/bernice,cls,,-,semeval2024,dev_set,LogisticRegression,[0.48618785 0.88644689],[0.47311828 0.89189189],[0.5        0.88106796],[[ 44  44] [ 49 363]],1719600190
+8,jhu-clsp/bernice,cls,,-,outsiders,dev_set,LogisticRegression,[0.10526316 0.90607735],[0.71428571 0.831643  ],[0.05681818 0.99514563],[[  5  83] [  2 410]],1721916099

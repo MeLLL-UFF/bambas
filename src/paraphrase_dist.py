@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import json
+import os
 import numpy as np
 import pandas as pd
 from typing import List, Dict, Any, Tuple
@@ -8,12 +9,13 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA, TruncatedSVD
 from sklearn.metrics.pairwise import cosine_similarity
+from evaluate import load
 
-ORIGINAL_FTS_PATH = "/home/arthur/Documents/Trab/NLP/bambas/feature_extraction_paraphrasing/paraphrasing_1f/test_features_array.json"
+DATASET_PATH = "/home/arthur/Documents/Trab/NLP/bambas/dataset/paraphrase_csvs/negative_paraphrasing.csv"
+NEGATIVE_FTS_PATH = "/home/arthur/Documents/Trab/NLP/bambas/feature_extraction_paraphrasing/paraphrasing_1f/test_features_array.json"
 POSITIVE_FTS_PATH = "/home/arthur/Documents/Trab/NLP/bambas/feature_extraction/positive/test_features_array.json"
 PARAPHRASE_FTS_PATH = "/home/arthur/Documents/Trab/NLP/bambas/feature_extraction_paraphrasing/paraphrasing_1f/train_features_array.json"
 OUTLIER_FTS_PATH = "/home/arthur/Documents/Trab/NLP/bambas/feature_extraction/outliers/train_features_array.json"
-DATASET_PATH = "/home/arthur/Documents/Trab/NLP/bambas/dataset/paraphrase_csvs/negative_paraphrasing.csv"
 
 def load_features_info(path: str) -> Dict[str, Any]:
     with open(path, "r") as f:
@@ -25,6 +27,9 @@ def load_features_array(path: str) -> np.ndarray:
         return np.array(df)
     
 def euclidian_dist(a:np.ndarray, b:np.ndarray):
+    return [euclidian_dist_single(original, paraphrase) for original,paraphrase in zip(a, b)]
+
+def euclidian_dist_single(a:np.ndarray, b:np.ndarray):
     return np.linalg.norm(a-b)
 
 def get_quadrant(dataset:pd.DataFrame, filter:pd.DataFrame):
@@ -32,11 +37,31 @@ def get_quadrant(dataset:pd.DataFrame, filter:pd.DataFrame):
     under = dataset[filter["Y"] < 0]
     return pd.concat([upper, under])
 
+def plot_figure(data:pd.DataFrame, fig_output:str, figure:int, palette:str, show:bool=False)->None:
+    # Create Scatterplot
+    plt.figure(figure)
+    scatterplot = sns.scatterplot(
+        data=data, 
+        x="X", 
+        y="Y", 
+        hue="src",
+        palette=sns.color_palette(palette)
+    )
+    #, palette=sns.color_palette("dark:blue_r"))
+    plt.xlim((-22,22));plt.ylim((-7,22)) 
+    
+    if os.path.exists(f"./plots/{fig_output}"):
+        fig_name, fig_ext = fig_output.split(".")
+        fig_output = fig_name + "_copy." + fig_ext
+    plt.savefig(f"./plots/{fig_output}")
+
+    if show: plt.show()
+
 if __name__ == "__main__":
 
     dataset = pd.read_csv(DATASET_PATH).drop(columns=["Unnamed: 0"])
 
-    negative_fts = load_features_array(ORIGINAL_FTS_PATH)
+    negative_fts = load_features_array(NEGATIVE_FTS_PATH)
     positive_fts = load_features_array(POSITIVE_FTS_PATH)
     paraphrase_fts = load_features_array(PARAPHRASE_FTS_PATH)
     outlier_fts = load_features_array(OUTLIER_FTS_PATH)
@@ -48,7 +73,7 @@ if __name__ == "__main__":
     smote_fts = smote_fts[len(negative_fts)*2:]
 
     # for i in range(smote_fts.shape[0]):
-    #     print(any(np.array_equal(smote_fts[i],j) for j in original_fts),i)
+    #     print(any(np.array_equal(smote_fts[i],j) for j in negative_fts),i)
 
     # Reduce dimensionality of features and convert into pandas
     pca = PCA(copy=True, n_components=2)
@@ -78,60 +103,42 @@ if __name__ == "__main__":
         paraphrase_reduced, 
         # outlier_reduced
     ])
+    # data = get_quadrant(data, data)
 
-
-    data = get_quadrant(data, data)
-
-    print("len of paraphrase_reduced: ", len(data))
-    # print("len of outlier_reduced: ", len(outlier_reduced))
-    # exit()
-
-    # Create Scatterplot
-    plt.figure(1)
-    scatterplot = sns.scatterplot(
-        data=data, 
-        x="X", 
-        y="Y", 
-        hue="src",
-        palette=sns.color_palette("dark:salmon")
-    )
-    #, palette=sns.color_palette("dark:blue_r"))
-    plt.xlim((-22,22));plt.ylim((-7,22))
-    # plt.show()
-    plt.savefig("./plots/PCA_outsiders.png")
-    exit()
-
-    # Comparison between distances with reduced features
-    dist_csv = negative_reduced.drop(columns=["src"]).rename(columns={"X":"X_original", "Y":"Y_original"})
-
-    dist_csv["X_paraphrase"] = paraphrase_reduced["X"]
-    dist_csv["Y_paraphrase"] = paraphrase_reduced["Y"]
-    
-    dist_csv["X_smote"] = smote_reduced["X"]
-    dist_csv["Y_smote"] = smote_reduced["Y"]
-    
-    dist_csv.to_csv("plots/dist.csv")
+    # Plot figures
+    plot_figure(data, "PCA_outsiders.png", 1, "dark:salmon")
 
     # Calculate Distances
-    # distances = [euclidian_dist(original, paraphrase) for original,paraphrase in zip(original_fts, paraphrase_fts)]
-    # distances = cosine_similarity(original_fts, paraphrase_fts)
-    # print("Distances between original and paraphrases")
-    # print(distances)
+    euclid_distances = euclidian_dist(negative_fts, paraphrase_fts)
+    cossim_distances = cosine_similarity(negative_fts, paraphrase_fts)
     
-    # distance_matrix =  []
-    # fts_concat = np.concatenate([original_fts, paraphrase_fts])
-    
-    # for home_ft in fts_concat:
-    #     matrix_line = []
-    #     for out_ft in fts_concat:
-    #         matrix_line.append(euclidian_dist(home_ft, out_ft))
-    #     distance_matrix.append(matrix_line)
-    
-    # print(distance_matrix)
+    # Calculate BERTScores
+    bertscore = load("bertscore")
+    bertsc_scores = bertscore.compute(references=dataset["original_text"], predictions=dataset["paraphrase"], lang="en")
 
-    # heatmap_axis = [f"original#{i+1}" for i in range(len(original_fts))]
-    # heatmap_axis.extend([f"smote#{i+1}" for i in range(len(original_fts))])
-    # heatmap_axis.extend([f"paraphrase#{i+1}" for i in range(len(original_fts))])
+    dataset["bert_precision"] = bertsc_scores["precision"]
+    dataset["bert_recall"] = bertsc_scores["recall"]
+    dataset["bert_f1"] = bertsc_scores["f1"]
+    
+    dataset.to_csv("plots/negative_paraphrases_bertscore.csv")
+
+    exit()
+    
+    # Create Matrix
+    distance_matrix =  []
+    fts_concat = np.concatenate([negative_fts, paraphrase_fts])
+    
+    for home_ft in fts_concat:
+        matrix_line = []
+        for out_ft in fts_concat:
+            matrix_line.append(euclidian_dist_single(home_ft, out_ft))
+        distance_matrix.append(matrix_line)
+    
+    print(distance_matrix)
+
+    # heatmap_axis = [f"original#{i+1}" for i in range(len(negative_fts))]
+    # heatmap_axis.extend([f"smote#{i+1}" for i in range(len(negative_fts))])
+    # heatmap_axis.extend([f"paraphrase#{i+1}" for i in range(len(negative_fts))])
 
     # print(heatmap_axis)
 
