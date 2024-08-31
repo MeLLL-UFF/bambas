@@ -13,25 +13,85 @@ from src.confusion_matrix import *
 from functools import reduce
 from copy import deepcopy
 
-from transformers import AutoModelForSequenceClassification, AutoTokenizer, TrainingArguments, Trainer, DataCollatorWithPadding
+import torch
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, DataCollatorWithPadding
+from transformers import AdamW, Adafactor
+from datasets import Dataset
+from torch.utils.data import DataLoader
+from evaluate import load
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
 GOLD_DIR = f"{get_workdir()}/dataset/semeval2024/subtask1"
+DEVICE = 0 if torch.cuda.is_available() else "cpu"
+MODEL = "jhu-clsp/bernice"
 
-# TODO : Create compute_metrics for metric computation at each epoch
+def load_data_split(tokenizer: AutoTokenizer,
+                    dataset: pd.DataFrame,
+                    batch_size: int = 64) -> DataLoader:
+    # Create Dataset object
+    ds = Dataset.from_pandas(dataset)
+    def remove_additional_columns(ds: Dataset):
+        columns = ds.column_names
+        to_remove = [col for col in columns if ((col != "text") and (col !="labels"))]
+        print("removing columns:", to_remove)
+        return ds.remove_columns(to_remove)
 
-def compute_metrics(eval_pred):
-    preds, labels = eval_pred
+    ds = remove_additional_columns(ds)
 
-def multihot_parse(labelset_string:str):
-    labelset = []
-    for char in labelset_string:
-        if char=="0":
-            labelset.append(0)
-        elif char=="1":
-            labelset.append(1)
-        else: continue
-    return labelset
+    print("dataset")
+    print(ds)
+
+    # Define tokenizer function
+    def tokenize_function(examples):
+        try:
+            return tokenizer(examples["text"], max_length=120, truncation=True, padding="max_length")
+        except:
+            print(examples["text"])
+    # Tokenize values in Dataset object
+    ds = ds.map(tokenize_function, batched=True, batch_size=64, num_proc=4, remove_columns=["text"])
+    # Remove original text from dataset
+
+    # Create DataCollator object
+    data_collator = DataCollatorWithPadding(tokenizer=tokenizer, padding="max_length")
+    # Create DataLoader to be returned
+    return DataLoader(dataset=ds,
+                      batch_size=batch_size,
+                      collate_fn=data_collator)
+
+def train(net, trainloader, epochs, lr):
+    optimizer = AdamW(net.parameters(), lr=lr)  # Adafactor(net.parameters(), warmup_init=True) 
+    training_loss = 0
+    net.train()
+    for i in range(epochs):
+        for batch in trainloader:
+            pass
+            # TODO : Separate input and label
+            # batch = {k: v.to(DEVICE) for k, v in batch.items()}
+            # outputs = net(**batch)
+            # training_loss += outputs.loss.item()
+            # loss = outputs.loss
+            # loss.backward()
+            # optimizer.step()
+            # optimizer.zero_grad()
+        
+        # training_loss /= len(trainloader.dataset)
+
+        print(f"Epoch {i+1} | Loss = {training_loss}")
+
+def pred(net, valloader):
+    net.eval()
+    preds = []
+    with torch.no_grad():
+        for batch in valloader:
+            batch = {k: v.to(DEVICE) for k, v in batch.items()}
+            with torch.no_grad():
+                outputs = net(**batch)
+            logits = outputs.logits
+            loss += outputs.loss.item()
+            predictions = torch.argmax(logits, dim=-1)
+            preds.extend(predictions.tolist())
+
+    return preds
 
 def save_predictions(test_df: pd.DataFrame, predictions: List[List[str]],
                      kind: str, timestamp: int) -> Tuple[str, List[Dict[str, Any]]]:
@@ -53,9 +113,10 @@ def save_predictions(test_df: pd.DataFrame, predictions: List[List[str]],
 def binary_classify(args: Namespace):
    
     print("Loading dataset files")
-    train, dev, test = load_dataset(args.dataset)
-    print("Dataset Lengths", len(train), len(dev), len(test))
+    train_ds, dev_ds, test_ds = load_dataset(args.dataset)
+    print("Dataset Lengths", len(train_ds), len(dev_ds), len(test_ds))
 
+    
     # Transform dataset into binary
     def binarize(labelset):
         labelset = str(labelset)
@@ -66,45 +127,22 @@ def binary_classify(args: Namespace):
             if labelset == "[]": return 0
             else: return 1
 
-    train_labels = [binarize(labelset) for labelset in train["labels"]]
-    dev_labels = [binarize(labelset) for labelset in dev["labels"]]
+    train_labels = [binarize(labelset) for labelset in train_ds["labels"]]
+    dev_labels = [binarize(labelset) for labelset in dev_ds["labels"]]
     labels = [[0, 1]]
 
     print(f"Labels: {labels[0]}")
     
-    # Initializing Classifier
-    tokenizer = AutoTokenizer.from_pretrained("jhu-clsp/bernice")
+    exit()
+    # Loading dataset into DataLoader objects
+    tokenizer = AutoTokenizer.from_pretrained(MODEL)
 
-    data_collator = DataCollatorWithPadding(
+    train_dl = load_data_split(tokenizer=tokenizer, dataset=train_ds)
+    dev_dl = load_data_split(tokenizer=tokenizer, dataset=dev_ds)
 
-    )
-    
-    model = AutoModelForSequenceClassification.from_pretrained("jhu-clsp/bernice")
-
-    training_args = TrainingArguments(
-        save_strategy="no",
-        learning_rate=2e-5,
-        per_device_eval_batch_size=16,
-        per_device_train_batch_size=16,
-        num_train_epochs=10,
-        weight_decay=0.01,
-        eval_strategy="epoch",
-        push_to_hub=False,
-        
-    )
-    trainer = Trainer(
-        model=model,
-        args=training_args,
-        train_dataset=train,
-        eval_dataset=dev,
-        tokenizer=tokenizer,
-        data_collator=data_collator,
-        compute_metrics=compute_metrics,
-    )
-
-    trainer.train()
-
-    dev_preds = NotImplemented()
+    model = AutoModelForSequenceClassification.from_pretrained(MODEL)
+    train(net=model, trainloader=train_dl, epochs=args.epochs, lr=args.lr)
+    dev_preds = pred(net=model, vallloader=dev_dl)
     ts = int(time.time())
 
     # Create the Binary Relevance Confusion Matrix
@@ -135,11 +173,11 @@ def binary_classify(args: Namespace):
                 "Timestamp"])
 
     # TODO : Create a dummy train_ft with fields "model" and "dataset" 
-    results.loc[len(results.index) + 1] = [train_ft_info["model"], 
+    results.loc[len(results.index) + 1] = [MODEL, 
                                            "fine-tuning",
                                            "na",
                                            "na",
-                                           train_ft_info["dataset"],
+                                           args.dataset,
                                            "val_set",
                                            "see model",
                                            f1,
@@ -181,30 +219,9 @@ if __name__ == "__main__":
             "semeval2016_paraphrased_1to4"],
         help="corpus for masked-language model pretraining task",
         required=True)
-    parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)
-    parser.add_argument("--test_features", type=str, help="path to extracted features file (JSON)", required=True)
-    parser.add_argument(
-        "--dev_features",
-        type=str,
-        help="path to extracted features file (JSON). Currently not used",
-        required=True)
-    parser.add_argument("--max_iter", type=int, default=400, help="max iterations for ff classifier")
-    parser.add_argument("--alpha", type=float, default=0.0001, help="weight of the L2 regularitation term")
+    parser.add_argument("--epochs", type=int, default=50, help="epochs for training language model")
+    parser.add_argument("--lr", type=float, default=2e-5, help="learning rate training language model")
     parser.add_argument("--seed", type=int, default=1, help="random seed for reproducibility")
-    parser.add_argument(
-        "--oversampling",
-        type=str,
-        default=None,
-        help="if oversampling methods should be used (available only with binary relevance classifiers)")
-    parser.add_argument(
-        "--sampling_strategy",
-        type=float,
-        default=None,
-        help="define the sampling strategy for oversamplers (available only with binary relevance classifiers)")
-    parser.add_argument(
-        "--concat_train_dev",
-        action="store_true",
-        help="wheter to concatenate train+dev(validation) datasets for training")
 
     args = parser.parse_args()
     print("Arguments:", args)
