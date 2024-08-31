@@ -27,7 +27,7 @@ MODEL = "jhu-clsp/bernice"
 
 def load_data_split(tokenizer: AutoTokenizer,
                     dataset: pd.DataFrame,
-                    batch_size: int = 64) -> DataLoader:
+                    batch_size: int = 16) -> DataLoader:
     # Create Dataset object
     ds = Dataset.from_pandas(dataset)
     def remove_additional_columns(ds: Dataset):
@@ -64,15 +64,14 @@ def train(net, trainloader, epochs, lr):
     net.train()
     for i in range(epochs):
         for batch in trainloader:
-            pass
             # TODO : Separate input and label
-            # batch = {k: v.to(DEVICE) for k, v in batch.items()}
-            # outputs = net(**batch)
-            # training_loss += outputs.loss.item()
-            # loss = outputs.loss
-            # loss.backward()
-            # optimizer.step()
-            # optimizer.zero_grad()
+            batch = {k: v.to(DEVICE) for k, v in batch.items()}
+            outputs = net(**batch)
+            training_loss += outputs.loss.item()
+            loss = outputs.loss
+            loss.backward()
+            optimizer.step()
+            optimizer.zero_grad()
         
         # training_loss /= len(trainloader.dataset)
 
@@ -131,9 +130,9 @@ def binary_classify(args: Namespace):
     dev_labels = [binarize(labelset) for labelset in dev_ds["labels"]]
     labels = [[0, 1]]
 
-    print(f"Labels: {labels[0]}")
-    
-    exit()
+    train_ds["labels"] = train_labels
+    dev_ds["labels"] = dev_labels
+
     # Loading dataset into DataLoader objects
     tokenizer = AutoTokenizer.from_pretrained(MODEL)
 
@@ -141,8 +140,9 @@ def binary_classify(args: Namespace):
     dev_dl = load_data_split(tokenizer=tokenizer, dataset=dev_ds)
 
     model = AutoModelForSequenceClassification.from_pretrained(MODEL)
+    model.to(DEVICE)
     train(net=model, trainloader=train_dl, epochs=args.epochs, lr=args.lr)
-    dev_preds = pred(net=model, vallloader=dev_dl)
+    dev_preds = pred(net=model, valloader=dev_dl)
     ts = int(time.time())
 
     # Create the Binary Relevance Confusion Matrix

@@ -1,12 +1,8 @@
 ,FE Model,FE Method,FE Layers,FE Layers Agg Method,FE Dataset,Test Dataset,Classifier,F1,Precision,Recall,Confusion Matrix,Timestamp
-1,jhu-clsp/bernice,cls,,-,semeval2015,dev_set,LogisticRegression,[0.94674556 0.64      ],[0.93023256 0.72727273],[0.96385542 0.57142857],[[80  3] [ 6  8]],1720471206
-2,jhu-clsp/bernice,cls,,-,semeval2015,dev_set,LogisticRegression,[0.94047619 0.61538462],[0.92941176 0.66666667],[0.95180723 0.57142857],[[79  4] [ 6  8]],1720471230
-3,jhu-clsp/bernice,cls,,-,semeval2015,dev_set,LogisticRegression,[0.94047619 0.61538462],[0.92941176 0.66666667],[0.95180723 0.57142857],[[79  4] [ 6  8]],1720471242
-4,jhu-clsp/bernice,cls,,-,semeval2015_paraphrased,dev_set,LogisticRegression,[0.93413174 0.59259259],[0.92857143 0.61538462],[0.93975904 0.57142857],[[78  5] [ 6  8]],1720471309
-5,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.95348837 0.63636364],[0.92134831 0.875     ],[0.98795181 0.5       ],[[82  1] [ 7  7]],1723220157
-6,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.94736842 0.60869565],[0.92045455 0.77777778],[0.97590361 0.5       ],[[81  2] [ 7  7]],1723220172
-7,jhu-clsp/bernice,cls,,-,semeval2015_paraphrased2,dev_set,LogisticRegression,[0.94736842 0.60869565],[0.92045455 0.77777778],[0.97590361 0.5       ],[[81  2] [ 7  7]],1723220200
-8,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.95402299 0.6       ],[0.91208791 1.        ],[1.         0.42857143],[[83  0] [ 8  6]],1724506854
-9,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.94047619 0.61538462],[0.92941176 0.66666667],[0.95180723 0.57142857],[[79  4] [ 6  8]],1724506860
-10,jhu-clsp/bernice,cls,,-,semeval2015_paraphrased2_1to4_selected,dev_set,LogisticRegression,[0.91764706 0.41666667],[0.89655172 0.5       ],[0.93975904 0.35714286],[[78  5] [ 9  5]],1724507587
-11,jhu-clsp/bernice,cls,,-,semeval2015_paraphrased2_1to4_selected2,dev_set,LogisticRegression,[0.91764706 0.41666667],[0.89655172 0.5       ],[0.93975904 0.35714286],[[78  5] [ 9  5]],1724594115
+1,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.95402299 0.6       ],[0.91208791 1.        ],[1.         0.42857143],[[83  0] [ 8  6]],1725124805
+2,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.95348837 0.63636364],[0.92134831 0.875     ],[0.98795181 0.5       ],[[82  1] [ 7  7]],1725124760
+3,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.94736842 0.60869565],[0.92045455 0.77777778],[0.97590361 0.5       ],[[81  2] [ 7  7]],1725124771
+4,jhu-clsp/bernice,cls,,-,semeval2015_paraphrased2,dev_set,LogisticRegression,[0.94736842 0.60869565],[0.92045455 0.77777778],[0.97590361 0.5       ],[[81  2] [ 7  7]],1725124923
+5,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.94047619 0.61538462],[0.92941176 0.66666667],[0.95180723 0.57142857],[[79  4] [ 6  8]],1725124959
+6,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.94047619 0.61538462],[0.92941176 0.66666667],[0.95180723 0.57142857],[[79  4] [ 6  8]],1725124961
+7,jhu-clsp/bernice,cls,,-,semeval2015_paraphrased2_1to4_selected,dev_set,LogisticRegression,[0.91764706 0.41666667],[0.89655172 0.5       ],[0.93975904 0.35714286],[[78  5] [ 9  5]],1725125015
