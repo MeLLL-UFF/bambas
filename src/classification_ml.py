@@ -15,9 +15,10 @@ from copy import deepcopy
 
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, DataCollatorWithPadding
-from transformers import AdamW, Adafactor
+# from transformers import AdamW, Adafactor
 from datasets import Dataset
 from torch.utils.data import DataLoader
+from torch.optim import AdamW
 from evaluate import load
 
 OUTPUT_DIR = f"{get_workdir()}/classification"
@@ -27,9 +28,10 @@ MODEL = "jhu-clsp/bernice"
 
 def load_data_split(tokenizer: AutoTokenizer,
                     dataset: pd.DataFrame,
-                    batch_size: int = 16) -> DataLoader:
+                    batch_size: int = 64) -> DataLoader:
     # Create Dataset object
     ds = Dataset.from_pandas(dataset)
+    
     def remove_additional_columns(ds: Dataset):
         columns = ds.column_names
         to_remove = [col for col in columns if ((col != "text") and (col !="labels"))]
@@ -76,6 +78,7 @@ def train(net, trainloader, epochs, lr):
         # training_loss /= len(trainloader.dataset)
 
         print(f"Epoch {i+1} | Loss = {training_loss}")
+        training_loss = 0
 
 def pred(net, valloader):
     net.eval()
@@ -86,7 +89,6 @@ def pred(net, valloader):
             with torch.no_grad():
                 outputs = net(**batch)
             logits = outputs.logits
-            loss += outputs.loss.item()
             predictions = torch.argmax(logits, dim=-1)
             preds.extend(predictions.tolist())
 
@@ -144,6 +146,11 @@ def binary_classify(args: Namespace):
     train(net=model, trainloader=train_dl, epochs=args.epochs, lr=args.lr)
     dev_preds = pred(net=model, valloader=dev_dl)
     ts = int(time.time())
+
+    # Debug prediction print
+    print("\nPREDS:\n")
+    print(dev_preds)
+    print("\n\n")
 
     # Create the Binary Relevance Confusion Matrix
     cf_mtx = str(confusion_matrix(np.array(dev_labels), np.array(dev_preds))).replace("\n","")
