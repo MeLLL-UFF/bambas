@@ -498,7 +498,7 @@ if __name__ == "__main__":
             "semeval2015_2",
             "semeval2015_paraphrased2",
             "semeval2015_paraphrased2_1to4_selected",
-            "semeval2015_paraphrased2_1to4_selected2",
+            "semeval2015_paraphrased2_tweet_1to4",
             "semeval2016",
             "semeval2016_paraphrased",
             "semeval2016_paraphrased_1to4"],

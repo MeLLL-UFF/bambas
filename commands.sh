@@ -13,10 +13,10 @@ python -m src.feature_extraction \
  --output_dir semeval2016_paraphrased
 
 python -m src.feature_extraction \
- --dataset semeval2016_paraphrased_1to4 \
+ --dataset semeval2015_paraphrased2_tweet_1to4 \
  --model jhu-clsp/bernice \
  --extraction_method cls \
- --output_dir semeval2016_paraphrased_1to4
+ --output_dir semeval2015_paraphrased2_tweet_1to4
 
 
 # run pure classification
@@ -52,8 +52,8 @@ python -m src.classification \
  --classifier LogisticRegression --binary --oversampling None
 
 python -m src.classification \
- --dataset paraphrase4 \
- --train_features feature_extraction/paraphrase4/train_features.json \
- --test_features feature_extraction/paraphrase4/test_features.json \
- --dev_features feature_extraction/paraphrase4/dev_features.json \
+ --dataset semeval2015_paraphrased2_tweet_1to4 \
+ --train_features feature_extraction/semeval2015_paraphrased2_tweet_1to4/train_features.json \
+ --test_features feature_extraction/semeval2015_paraphrased2_tweet_1to4/test_features.json \
+ --dev_features feature_extraction/semeval2015_paraphrased2_tweet_1to4/dev_features.json \
  --classifier LogisticRegression --binary --oversampling None
