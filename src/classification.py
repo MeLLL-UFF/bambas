@@ -18,7 +18,7 @@ from src.data import load_dataset
 from src.utils.workspace import get_workdir
 from src.confusion_matrix import *
 from src.subtask_1_2a import evaluate_h
-from sklearn_hierarchical_classification.classifier import HierarchicalClassifier
+# from sklearn_hierarchical_classification.classifier import HierarchicalClassifier
 from functools import reduce
 from src.subtask_1_2a import get_dag, get_dag_labels, get_dag_parents, get_leaf_parents
 from imblearn.over_sampling import RandomOverSampler, SMOTE
@@ -204,26 +204,26 @@ def classify(args: Namespace):
             verbose=True,
             max_iter=1
         )
-    elif args.classifier == "HiMLP":
-        clf = HierarchicalClassifier(
-            base_estimator=MLPClassifier(
-                hidden_layer_sizes=(768, ),
-                random_state=args.seed,
-                alpha=args.alpha,
-                shuffle=True,
-                early_stopping=True,
-                verbose=True
-            ),
-            class_hierarchy=get_dag(),
-            # prediction_depth="nmlnp",
-            # stopping_criteria=0.5,
-            prediction_depth="mlnp",
-            # Overcomes problem with dimension validation on sklearn_hierarchical_classification
-            feature_extraction="raw",
-            mlb=mlb,
-            # no labels with prob lower than that will be considered for prediction
-            mlb_prediction_threshold=0.35,
-        )
+    # elif args.classifier == "HiMLP":
+    #     clf = HierarchicalClassifier(
+    #         base_estimator=MLPClassifier(
+    #             hidden_layer_sizes=(768, ),
+    #             random_state=args.seed,
+    #             alpha=args.alpha,
+    #             shuffle=True,
+    #             early_stopping=True,
+    #             verbose=True
+    #         ),
+    #         class_hierarchy=get_dag(),
+    #         # prediction_depth="nmlnp",
+    #         # stopping_criteria=0.5,
+    #         prediction_depth="mlnp",
+    #         # Overcomes problem with dimension validation on sklearn_hierarchical_classification
+    #         feature_extraction="raw",
+    #         mlb=mlb,
+    #         # no labels with prob lower than that will be considered for prediction
+    #         mlb_prediction_threshold=0.35,
+    #     )
     elif args.classifier == "DecisionTreeClassifier":
         clf = DecisionTreeClassifier()  # BinaryRelevance(DecisionTreeClassifier(), labels=labels[0], oversampler=oversamplers)
     elif args.classifier == "ExtraTreeClassifier":
@@ -362,12 +362,8 @@ def binary_classify(args: Namespace):
     # Transform dataset into binary
     def binarize(labelset):
         labelset = str(labelset)
-        if args.dataset == "semeval2015" or args.dataset == "semeval2016":
-            if labelset=="negative": return 0
-            else: return 1
-        else:
-            if labelset == "[]": return 0
-            else: return 1
+        if labelset == "[]": return 0
+        else: return 1
 
     train_labels = [binarize(labelset) for labelset in train["labels"]]
     dev_labels = [binarize(labelset) for labelset in dev["labels"]]

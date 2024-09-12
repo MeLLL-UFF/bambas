@@ -258,7 +258,13 @@ def _load_semeval2016() -> List[pd.DataFrame]:
     dataset = dataset.rename(columns={"tweet":"text", "class":"labels"})
     train, test = train_test_split(dataset, test_size=0.3, random_state=1, stratify=dataset["labels"])
     print(train.columns)
-    print(train)
+    train.loc[train["labels"]=="positive","labels"]="[positive]"
+    train.loc[train["labels"]=="negative","labels"]="[]"
+    test.loc[test["labels"]=="positive","labels"]="[positive]"
+    test.loc[test["labels"]=="negative","labels"]="[]"
+    print("Positive examples: ", len(train[train["labels"]=="[positive]"]))
+    print("Negative examples: ", len(train[train["labels"]=="[]"]))
+    # print(train)
     return train, test, test
 
 def _load_semeval2016_paraphrased() -> List[pd.DataFrame]:
@@ -338,3 +344,14 @@ def load_dataset(dataset: str) -> List[pd.DataFrame]:
     elif dataset == "semeval2016_paraphrased_1to4":
         return _load_semeval2016_paraphrased_1to4()
     raise Exception(f"{dataset} is not available")
+
+if __name__ == "__main__":
+    print("\n===============================\nTesting semeval2024 data output")
+    train, test, _ = load_dataset("semeval2024")
+    print(train.head())
+    print("\n===============================\nTesting semeval2015 data output")
+    train, test, _ = load_dataset("semeval2015")
+    print(train.head())
+    print("\n===============================\nTesting semeval2016 data output")
+    train, test, _ = load_dataset("semeval2016")
+    print(train.head())

@@ -1,0 +1,12 @@
+,FE Model,FE Method,FE Layers,FE Layers Agg Method,FE Dataset,Test Dataset,Classifier,F1,Precision,Recall,Confusion Matrix,Timestamp
+1,jhu-clsp/bernice,fine-tuning,na,na,semeval2024,val_set,see model,[0.5952381  0.91826923],[0.625      0.90952381],[0.56818182 0.92718447],[[ 50  38] [ 30 382]],1725474383
+2,jhu-clsp/bernice,fine-tuning,na,na,paraphrase,val_set,see model,[0.         0.90350877],[0.    0.824],[0. 1.],[[  0  88] [  0 412]],1725474828
+3,jhu-clsp/bernice,fine-tuning,na,na,paraphrase4,val_set,see model,[0.         0.90350877],[0.    0.824],[0. 1.],[[  0  88] [  0 412]],1725475364
+4,jhu-clsp/bernice,fine-tuning,na,na,paraphrase,val_set,see model,[0.         0.90350877],[0.    0.824],[0. 1.],[[  0  88] [  0 412]],1725475830
+5,jhu-clsp/bernice,fine-tuning,na,na,paraphrase,val_set,see model,[0.         0.90350877],[0.    0.824],[0. 1.],[[  0  88] [  0 412]],1725475996
+6,jhu-clsp/bernice,fine-tuning,na,na,semeval2015_2,val_set,see model,[0.95906433 0.69565217],[0.93181818 0.88888889],[0.98795181 0.57142857],[[82  1] [ 6  8]],1725476581
+7,jhu-clsp/bernice,fine-tuning,na,na,semeval2015_paraphrased2,val_set,see model,[0.9704142 0.8      ],[0.95348837 0.90909091],[0.98795181 0.71428571],[[82  1] [ 4 10]],1725476614
+8,jhu-clsp/bernice,fine-tuning,na,na,semeval2015_paraphrased2_1to4_selected,val_set,see model,[0.95238095 0.69230769],[0.94117647 0.75      ],[0.96385542 0.64285714],[[80  3] [ 5  9]],1725476649
+9,jhu-clsp/bernice,fine-tuning,na,na,semeval2016,val_set,see model,[0.85088188 0.94889174],[0.91075515 0.9279828 ],[0.79839519 0.97076462],[[ 796  201] [  78 2590]],1725476870
+10,jhu-clsp/bernice,fine-tuning,na,na,semeval2016_paraphrased,val_set,see model,[0.         0.84257066],[0.         0.72796726],[0. 1.],[[   0  997] [   0 2668]],1725477252
+11,jhu-clsp/bernice,fine-tuning,na,na,semeval2016_paraphrased_1to4,val_set,see model,[0.         0.84257066],[0.         0.72796726],[0. 1.],[[   0  997] [   0 2668]],1725477559
