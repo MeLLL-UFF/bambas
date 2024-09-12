@@ -5,5 +5,3 @@
 12,jhu-clsp/bernice,cls,,-,semeval2016_paraphrased,dev_set,LogisticRegression,[0.85785536 0.94647887],[0.8531746  0.94843809],[0.86258776 0.94452774],[[ 860  137] [ 148 2520]],1726113800
 13,jhu-clsp/bernice,cls,,-,semeval2016,dev_set,LogisticRegression,[0.81216803 0.92603156],[0.783054   0.93979159],[0.84353059 0.91266867],[[ 841  156] [ 233 2435]],1726113890
 14,jhu-clsp/bernice,cls,,-,semeval2016,dev_set,LogisticRegression,[0.80700049 0.92471079],[0.78301887 0.93589251],[0.83249749 0.9137931 ],[[ 830  167] [ 230 2438]],1726113924
-7,jhu-clsp/bernice,cls,,-,semeval2016_paraphrased_1to4,dev_set,LogisticRegression,[0.78915663 0.92131885],[0.78994975 0.92097378],[0.7883651  0.92166417],[[ 786  211] [ 209 2459]],1726146710
-

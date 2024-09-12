@@ -1,0 +1,8 @@
+,FE Model,FE Method,FE Layers,FE Layers Agg Method,FE Dataset,Test Dataset,Classifier,F1,Precision,Recall,Confusion Matrix,Timestamp
+1,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.95402299 0.6       ],[0.91208791 1.        ],[1.         0.42857143],[[83  0] [ 8  6]],1726112363
+2,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.95348837 0.63636364],[0.92134831 0.875     ],[0.98795181 0.5       ],[[82  1] [ 7  7]],1726112365
+3,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.95348837 0.63636364],[0.92134831 0.875     ],[0.98795181 0.5       ],[[82  1] [ 7  7]],1726112367
+4,jhu-clsp/bernice,cls,,-,semeval2015_paraphrased2,dev_set,LogisticRegression,[0.95348837 0.63636364],[0.92134831 0.875     ],[0.98795181 0.5       ],[[82  1] [ 7  7]],1726112380
+6,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.95294118 0.66666667],[0.93103448 0.8       ],[0.97590361 0.57142857],[[81  2] [ 6  8]],1726112459
+7,jhu-clsp/bernice,cls,,-,semeval2015_2,dev_set,LogisticRegression,[0.94674556 0.64      ],[0.93023256 0.72727273],[0.96385542 0.57142857],[[80  3] [ 6  8]],1726112461
+8,jhu-clsp/bernice,cls,,-,semeval2015_paraphrased2_1to4_selected,dev_set,LogisticRegression,[0.91764706 0.41666667],[0.89655172 0.5       ],[0.93975904 0.35714286],[[78  5] [ 9  5]],1726112473
