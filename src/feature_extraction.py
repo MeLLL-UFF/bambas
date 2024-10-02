@@ -51,12 +51,10 @@ def load_data_split(tokenizer: AutoTokenizer,
                       batch_size=batch_size,
                       collate_fn=data_collator)
 
-
 def get_cls_token_features(outputs: BaseModelOutput) -> np.ndarray:
     last_hidden_states = outputs[0].to("cpu")
     # extract [CLS] token (position 0) hidden representation from last (output) layer
     return last_hidden_states[:, 0, :].cpu().numpy()
-
 
 def get_layer_features(outputs: BaseModelOutput, layers: List[int], aggregation_method: str = "avg") -> np.ndarray:
     assert aggregation_method == "avg" or aggregation_method == "concatenate", "to aggregate hidden representation from multiple layers, you must select the aggregation method: 'avg' or 'concatenate'"
@@ -92,7 +90,6 @@ def get_sentence_features(outputs: BaseModelOutput, attention_mask: torch.Tensor
     embeddings = torch.sum(token_embeddings * input_mask_expanded, 1) / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
     return embeddings.cpu().numpy()
 
-
 def extract_features(
         model: AutoModel,
         data_loader: DataLoader,
@@ -127,7 +124,6 @@ def extract_features(
                 features = np.concatenate((features, batch_features))
         return np.array(features)
 
-
 def save_ft_files(ft_data: Dict[str, Any], ft_path: str):
     ft_json = ft_data
     ft_array_path = os.path.dirname(ft_path) + os.path.sep + os.path.basename(ft_path).split('.')[0] + "_array.json"
@@ -137,7 +133,6 @@ def save_ft_files(ft_data: Dict[str, Any], ft_path: str):
         json.dump(ft_json, f, indent=4)
 
     pd.Series(list(ft_array)).to_json(ft_array_path, orient="records")
-
 
 def feature_extraction(args: Namespace):
     train, dev, test = load_dataset(args.dataset)
@@ -212,7 +207,10 @@ if __name__ == "__main__":
             "semeval2015_paraphrased2_tweet_1to4",
             "semeval2016",
             "semeval2016_paraphrased",
-            "semeval2016_paraphrased_1to4"],
+            "semeval2016_paraphrased_1to4",
+            "semeval2024_paraphrased_select_low",
+            "semeval2024_paraphrased_select_mid",   
+            "semeval2024_paraphrased_select_high"],
         help="corpus for feature-extraction",
         required=True)
     parser.add_argument(

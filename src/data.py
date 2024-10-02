@@ -20,7 +20,6 @@ def _load_semeval2024_augmented_smears() -> List[pd.DataFrame]:
         dev_unlabeled = pd.DataFrame().from_records(json.load(f))
     return train, validation, dev_unlabeled
 
-
 def _load_semeval2024_test() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
@@ -32,7 +31,6 @@ def _load_semeval2024_test() -> List[pd.DataFrame]:
     #     test_unlabeled = pd.DataFrame().from_records(json.load(f))
     return train, validation, dev_unlabeled  # , test_unlabeled
 
-
 def _load_semeval2024() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
@@ -43,7 +41,6 @@ def _load_semeval2024() -> List[pd.DataFrame]:
     
     return train, validation, dev_unlabeled
 
-
 def _load_semeval2024_dev_labeled() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
@@ -52,7 +49,6 @@ def _load_semeval2024_dev_labeled() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/dev_subtask1_en.json", "r") as f:
         dev_labeled = pd.DataFrame().from_records(json.load(f))
     return train, validation, dev_labeled
-
 
 def _load_semeval2024_all() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
@@ -64,7 +60,6 @@ def _load_semeval2024_all() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
         test_unlabeled = pd.DataFrame().from_records(json.load(f))
     return train, validation, dev_labeled, test_unlabeled
-
 
 def _load_semeval2024_test_unlabeled() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval2024/subtask1/train.json", "r") as f:
@@ -78,7 +73,6 @@ def _load_semeval2024_test_unlabeled() -> List[pd.DataFrame]:
         test_unlabeled = pd.DataFrame().from_records(json.load(f))
     return train, validation, test_unlabeled
 
-
 def _load_semeval_augmented() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval_augmented/train_aug_ptc_reductio.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
@@ -90,7 +84,6 @@ def _load_semeval_augmented() -> List[pd.DataFrame]:
     #     test_unlabeled = pd.DataFrame().from_records(json.load(f))
     return train, validation, dev_unlabeled  # , test_unlabeled
 
-
 def _load_semeval_internal() -> List[pd.DataFrame]:
     with open(f"{DATASET_DIR}/semeval_internal/train_internal.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
@@ -101,7 +94,6 @@ def _load_semeval_internal() -> List[pd.DataFrame]:
     # with open(f"{DATASET_DIR}/semeval2024/subtask1/test_unlabeled.json", "r") as f:
     #     test_unlabeled = pd.DataFrame().from_records(json.load(f))
     return train, validation, dev_unlabeled  # , test_unlabeled
-
 
 def _load_ptc2019() -> List[pd.DataFrame]:
     train = pd.read_csv(f"{DATASET_DIR}/ptc_adjust/ptc_preproc_train.csv",
@@ -281,6 +273,26 @@ def _load_semeval2016_paraphrased_1to4() -> List[pd.DataFrame]:
         test = pd.DataFrame().from_records(json.load(f))
     return train, test, test
 
+def _load_semeval2024_paraphrased_select_low() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_low_train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_low_test.json", "r") as f:
+        test = pd.DataFrame().from_records(json.load(f))
+    return train, test, test
+
+def _load_semeval2024_paraphrased_select_mid() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_mid_train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_mid_test.json", "r") as f:
+        test = pd.DataFrame().from_records(json.load(f))
+    return train, test, test
+
+def _load_semeval2024_paraphrased_select_high() -> List[pd.DataFrame]:
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_high_train.json", "r") as f:
+        train = pd.DataFrame().from_records(json.load(f))
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_high_test.json", "r") as f:
+        test = pd.DataFrame().from_records(json.load(f))
+    return train, test, test
 
 def load_dataset(dataset: str) -> List[pd.DataFrame]:
     """Load a given dataset, returning splits
@@ -343,6 +355,12 @@ def load_dataset(dataset: str) -> List[pd.DataFrame]:
         return _load_semeval2016_paraphrased()
     elif dataset == "semeval2016_paraphrased_1to4":
         return _load_semeval2016_paraphrased_1to4()
+    elif dataset == "semeval2024_paraphrased_select_low":
+        return _load_semeval2024_paraphrased_select_low()
+    elif dataset == "semeval2024_paraphrased_select_mid":
+        return _load_semeval2024_paraphrased_select_mid()
+    elif dataset == "semeval2024_paraphrased_select_high":
+        return _load_semeval2024_paraphrased_select_high()
     raise Exception(f"{dataset} is not available")
 
 if __name__ == "__main__":

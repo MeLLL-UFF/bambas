@@ -501,7 +501,10 @@ if __name__ == "__main__":
             "semeval2015_paraphrased2_tweet_1to4",
             "semeval2016",
             "semeval2016_paraphrased",
-            "semeval2016_paraphrased_1to4"],
+            "semeval2016_paraphrased_1to4",
+            "semeval2024_paraphrased_select_low",
+            "semeval2024_paraphrased_select_mid",   
+            "semeval2024_paraphrased_select_high"],
         help="corpus for masked-language model pretraining task",
         required=True)
     parser.add_argument("--train_features", type=str, help="path to extracted features file (JSON)", required=True)
