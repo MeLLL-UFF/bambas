@@ -274,23 +274,23 @@ def _load_semeval2016_paraphrased_1to4() -> List[pd.DataFrame]:
     return train, test, test
 
 def _load_semeval2024_paraphrased_select_low() -> List[pd.DataFrame]:
-    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_low_train.json", "r") as f:
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_meme_1to12_low_train.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
-    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_low_test.json", "r") as f:
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_meme_1to12_low_test.json", "r") as f:
         test = pd.DataFrame().from_records(json.load(f))
     return train, test, test
 
 def _load_semeval2024_paraphrased_select_mid() -> List[pd.DataFrame]:
-    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_mid_train.json", "r") as f:
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_meme_1to12_mid_train.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
-    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_mid_test.json", "r") as f:
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_meme_1to12_mid_test.json", "r") as f:
         test = pd.DataFrame().from_records(json.load(f))
     return train, test, test
 
 def _load_semeval2024_paraphrased_select_high() -> List[pd.DataFrame]:
-    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_high_train.json", "r") as f:
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_meme_1to12_hi_train.json", "r") as f:
         train = pd.DataFrame().from_records(json.load(f))
-    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_paraphrased_1to6_select_high_test.json", "r") as f:
+    with open(f"{DATASET_DIR}/paraphrase_csvs/semeval2024_meme_1to12_hi_test.json", "r") as f:
         test = pd.DataFrame().from_records(json.load(f))
     return train, test, test
 
