@@ -7,10 +7,22 @@
 
 # ft extraction
 python -m src.feature_extraction \
- --dataset semeval2016_paraphrased \
+ --dataset semeval2024_paraphrased_select_low \
  --model jhu-clsp/bernice \
  --extraction_method cls \
- --output_dir semeval2016_paraphrased
+ --output_dir semeval2024_paraphrased_select_low_12
+
+python -m src.feature_extraction \
+ --dataset semeval2024_paraphrased_select_mid \
+ --model jhu-clsp/bernice \
+ --extraction_method cls \
+ --output_dir semeval2024_paraphrased_select_mid_12
+
+python -m src.feature_extraction \
+ --dataset semeval2024_paraphrased_select_high \
+ --model jhu-clsp/bernice \
+ --extraction_method cls \
+ --output_dir semeval2024_paraphrased_select_high_12
 
 python -m src.feature_extraction \
  --dataset semeval2015_paraphrased2_tweet_1to4 \
@@ -21,10 +33,10 @@ python -m src.feature_extraction \
 
 # run pure classification
 python -m src.classification \
- --dataset semeval2024 \
- --train_features feature_extraction/semeval2024/train_features.json \
- --test_features feature_extraction/semeval2024/test_features.json \
- --dev_features feature_extraction/semeval2024/dev_features.json \
+ --dataset semeval2024_paraphrased_select_high \
+ --train_features feature_extraction/semeval2024_paraphrased_select_high_12/train_features.json \
+ --test_features feature_extraction/semeval2024_paraphrased_select_high_12/test_features.json \
+ --dev_features feature_extraction/semeval2024_paraphrased_select_high_12/dev_features.json \
  --classifier LogisticRegression --binary --oversampling None
 
 # run classification with ros
