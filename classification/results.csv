@@ -1,0 +1,9 @@
+,FE Model,FE Method,FE Layers,FE Layers Agg Method,FE Dataset,Test Dataset,Classifier,F1,Precision,Recall,Confusion Matrix,Timestamp
+1,jhu-clsp/bernice,cls,,-,semeval2024,dev_set,LogisticRegression,[0.46666667 0.90588235],[0.56451613 0.87899543],[0.39772727 0.93446602],[[ 35  53] [ 27 385]],1727899024
+2,jhu-clsp/bernice,cls,,-,semeval2024_paraphrased_select_low,dev_set,LogisticRegression,[0.5443787  0.90734055],[0.56790123 0.89976134],[0.52272727 0.91504854],[[ 46  42] [ 35 377]],1727899079
+3,jhu-clsp/bernice,cls,,-,semeval2024_paraphrased_select_mid,dev_set,LogisticRegression,[0.54022989 0.9031477 ],[0.54651163 0.90096618],[0.53409091 0.90533981],[[ 47  41] [ 39 373]],1727899116
+4,jhu-clsp/bernice,cls,,-,semeval2024_paraphrased_select_high,dev_set,LogisticRegression,[0.52631579 0.90229192],[0.54216867 0.89688249],[0.51136364 0.90776699],[[ 45  43] [ 38 374]],1727899152
+5,jhu-clsp/bernice,cls,,-,paraphrase4,dev_set,LogisticRegression,[0.51162791 0.89855072],[0.52380952 0.89423077],[0.5        0.90291262],[[ 44  44] [ 40 372]],1716855823
+6,jhu-clsp/bernice,cls,,-,semeval2024_paraphrased_select_low,dev_set,LogisticRegression,[0.4969697 0.9005988],[0.53246753 0.88888889],[0.46590909 0.91262136],[[ 41  47] [ 36 376]],1729221382
+7,jhu-clsp/bernice,cls,,-,semeval2024_paraphrased_select_mid,dev_set,LogisticRegression,[0.48235294 0.8939759 ],[0.5        0.88755981],[0.46590909 0.90048544],[[ 41  47] [ 41 371]],1729221623
+8,jhu-clsp/bernice,cls,,-,semeval2024_paraphrased_select_high,dev_set,LogisticRegression,[0.49122807 0.89505428],[0.5060241  0.88968825],[0.47727273 0.90048544],[[ 42  46] [ 41 371]],1729221845
